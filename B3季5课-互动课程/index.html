@@ -1,0 +1,1911 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第五课 · 比金子更好｜互动课程</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌍</text></svg>">
+<style>
+:root{
+  --ink:#3a2e5c; --ink2:#5b4a8a; --paper:#fffdf6; --gold:#ffb703; --sun:#ffd166;
+  --sky1:#7ec8ff; --sky2:#dff1ff; --grass:#8fd46f; --grass2:#5aa848;
+  --orange:#ff8c42; --pink:#ff90b3; --purple:#9b7ede; --teal:#3ec6b0;
+  --shadow:0 10px 30px rgba(50,30,90,.25);
+  --r:24px;
+}
+*{box-sizing:border-box; -webkit-tap-highlight-color:transparent; user-select:none;}
+html,body{margin:0; padding:0; width:100%; height:100%; overflow:hidden;
+  font-family:"PingFang TC","Microsoft JhengHei","Noto Sans TC","Heiti TC",sans-serif;
+  background:radial-gradient(1200px 700px at 20% -10%, #2b2150 0%, #171233 45%, #0d0a22 100%);
+  color:var(--ink);}
+/* ===== 16:9 stage ===== */
+#stage{position:fixed; left:50%; top:50%; width:1280px; height:720px;
+  transform-origin:center center; transform:translate(-50%,-50%) scale(1);
+  border-radius:20px; overflow:hidden; box-shadow:0 20px 70px rgba(0,0,0,.55);
+  background:#fff;}
+.slide{position:absolute; inset:0; display:none; flex-direction:column;
+  overflow:hidden; background:var(--paper);}
+.slide.active{display:flex; animation:slideIn .55s cubic-bezier(.2,.8,.25,1);}
+@keyframes slideIn{from{opacity:0; transform:scale(1.02) translateY(14px);} to{opacity:1; transform:none;}}
+/* ===== top bar ===== */
+#topbar{position:absolute; top:0; left:0; right:0; height:56px; z-index:40;
+  display:flex; align-items:center; gap:12px; padding:0 18px;
+  background:linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.55));
+  border-bottom:2px solid rgba(155,126,222,.25); backdrop-filter:blur(4px);}
+#brand{display:flex; align-items:center; gap:8px; font-weight:800; color:var(--purple); font-size:17px; letter-spacing:.5px;}
+#brand .logo{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-size:20px;
+  background:linear-gradient(135deg,#ffd166,#ff8c42); box-shadow:0 3px 8px rgba(255,140,66,.4);}
+#crumbs{flex:1; display:flex; gap:6px; justify-content:center; flex-wrap:nowrap; overflow:hidden;}
+.crumb{width:9px;height:9px;border-radius:50%;background:#d8cff2; transition:.3s; flex:none;}
+.crumb.done{background:var(--gold);}
+.crumb.on{background:var(--purple); transform:scale(1.45); box-shadow:0 0 0 3px rgba(155,126,222,.25);}
+#topbar .btn{padding:7px 12px; border:none; border-radius:14px; background:#fff; color:var(--ink2);
+  font-size:14px; font-weight:700; cursor:pointer; box-shadow:0 2px 8px rgba(60,40,100,.15); transition:.2s;}
+#topbar .btn:hover{transform:translateY(-1px);}
+#topbar .btn:active{transform:scale(.95);}
+#soundBtn.off{background:#e8e0f7; color:#999;}
+#starsBox{display:flex; align-items:center; gap:4px; background:linear-gradient(135deg,#fff7dd,#ffe9b3);
+  padding:6px 12px; border-radius:14px; font-weight:800; color:#b07d0a; box-shadow:0 2px 8px rgba(255,183,3,.3);}
+/* ===== nav ===== */
+#nav{position:absolute; z-index:50; bottom:16px; left:0; right:0; display:flex;
+  align-items:center; justify-content:center; gap:14px; pointer-events:none;}
+#nav > *{pointer-events:auto;}
+.navbtn{width:52px;height:52px;border-radius:50%;border:none;cursor:pointer;font-size:22px;
+  background:linear-gradient(135deg,#9b7ede,#7a5cc4); color:#fff; box-shadow:0 6px 16px rgba(122,92,196,.5);
+  transition:.15s; display:grid; place-items:center;}
+.navbtn:hover{transform:translateY(-2px);}
+.navbtn:active{transform:scale(.9);}
+.navbtn:disabled{opacity:.35; transform:none; cursor:default;}
+#pageCount{background:rgba(255,255,255,.9); padding:6px 14px; border-radius:14px; font-weight:800; color:var(--ink2); font-size:14px; box-shadow:0 2px 8px rgba(0,0,0,.2);}
+#progressWrap{position:absolute; top:56px; left:0; right:0; height:6px; background:rgba(155,126,222,.15); z-index:45;}
+#progressFill{height:100%; width:0%; background:linear-gradient(90deg,#ffd166,#ff8c42,#ff90b3); transition:width .45s;}
+/* ===== generic UI ===== */
+.content{position:relative; flex:1; display:flex; flex-direction:column; align-items:center;
+  justify-content:center; padding:54px 48px 60px; text-align:center; z-index:5; min-height:0;
+  overflow-y:auto; scrollbar-width:none;}
+.content::-webkit-scrollbar{display:none;}
+.kicker{font-size:15px; font-weight:800; letter-spacing:3px; color:var(--orange); text-transform:uppercase; margin-bottom:6px;}
+h1.title{font-size:46px; margin:6px 0 10px; color:var(--ink); line-height:1.2; text-shadow:0 2px 0 rgba(255,255,255,.8);}
+h2.title{font-size:32px; margin:4px 0 8px; color:var(--ink); line-height:1.25;}
+.sub{font-size:18px; color:var(--ink2); line-height:1.7; max-width:960px; margin:6px 0;}
+.bigbtn{display:inline-flex; align-items:center; gap:10px; margin-top:16px; padding:14px 32px;
+  border:none; border-radius:40px; cursor:pointer; font-size:24px; font-weight:800; color:#fff;
+  background:linear-gradient(135deg,#ff8c42,#ff5d73); box-shadow:0 8px 22px rgba(255,93,115,.4); transition:.2s;}
+.bigbtn:hover{transform:translateY(-3px);}
+.bigbtn:active{transform:scale(.95);}
+.card{background:#fff; border-radius:var(--r); padding:16px 20px; box-shadow:var(--shadow);}
+.chip{display:inline-block; background:#eef5ff; color:#3a7bd5; border-radius:20px; padding:6px 14px; font-size:15px; font-weight:700; margin:4px;}
+.pill{display:inline-block; background:var(--purple); color:#fff; border-radius:20px; padding:5px 14px; font-size:14px; font-weight:700;}
+/* speech button */
+.speakbtn{display:inline-flex; align-items:center; gap:8px; border:none; cursor:pointer;
+  background:linear-gradient(135deg,#3ec6b0,#2aa89a); color:#fff; font-weight:800; font-size:17px;
+  padding:11px 22px; border-radius:30px; box-shadow:0 5px 14px rgba(62,198,176,.4); transition:.15s;}
+.speakbtn:hover{transform:translateY(-2px);}
+.speakbtn:active{transform:scale(.95);}
+.speakbtn.playing{background:linear-gradient(135deg,#ff8c42,#ff5d73); animation:pulse 1s infinite;}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(255,93,115,.5);} 50%{box-shadow:0 0 0 12px rgba(255,93,115,0);}}
+.floaty{animation:floaty 3.2s ease-in-out infinite;}
+@keyframes floaty{0%,100%{transform:translateY(0);} 50%{transform:translateY(-10px);}}
+.bounce{animation:bounce 1.6s ease-in-out infinite;}
+@keyframes bounce{0%,100%{transform:translateY(0);} 40%{transform:translateY(-16px);}}
+.twinkle{animation:twinkle 1.4s ease-in-out infinite;}
+@keyframes twinkle{0%,100%{opacity:.35; transform:scale(.8);} 50%{opacity:1; transform:scale(1.25);}}
+.spin-slow{animation:spin 14s linear infinite;}
+@keyframes spin{to{transform:rotate(360deg);}}
+.wiggle{animation:wiggle 1.2s ease-in-out infinite;}
+@keyframes wiggle{0%,100%{transform:rotate(-6deg);} 50%{transform:rotate(6deg);}}
+/* ===== story scene ===== */
+.scene{position:relative; width:min(100%, 900px); height:340px; border-radius:26px; overflow:hidden;
+  box-shadow:var(--shadow); background:linear-gradient(180deg,var(--sky1) 0%,var(--sky2) 78%,#cdecc2 78%,#a8dd8f 100%);}
+.scene.night{background:linear-gradient(180deg,#1b2450 0%,#3c3a7a 60%,#4c4a8a 70%,#2c2c58 100%);}
+.scene .skyline{position:absolute; inset:0;}
+.ground{position:absolute; left:0; right:0; bottom:0; height:22%; background:linear-gradient(180deg,#8fd46f,#5aa848); border-radius:26px 26px 0 0;}
+.scene-txt{position:relative; z-index:8; pointer-events:none; padding:10px 16px 8px; text-align:center; font-size:17px; font-weight:700; color:#2c4a6b; background:rgba(255,255,255,.78); backdrop-filter:blur(3px);}
+.scene-txt.light{color:#fff; background:rgba(30,20,70,.45);}
+.interact-hint{position:absolute; z-index:9; pointer-events:none; left:50%; bottom:6px; transform:translateX(-50%);
+  background:rgba(255,255,255,.92); border-radius:16px; padding:5px 14px; font-size:13px; font-weight:800; color:var(--orange); box-shadow:0 2px 8px rgba(0,0,0,.2);}
+/* floating objects */
+.fobj{position:absolute; z-index:7; cursor:pointer; transition:transform .25s;}
+.fobj:hover{transform:scale(1.12);}
+.fobj:active{transform:scale(.92);}
+.sun{width:110px;height:110px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#fff3b0,#ffd166 55%,#ff9f1c);
+  box-shadow:0 0 60px 18px rgba(255,209,102,.55);}
+.moon{width:84px;height:84px;border-radius:50%;background:radial-gradient(circle at 38% 38%,#fff,#ffe9b0 70%,#ffd166);
+  box-shadow:0 0 40px 12px rgba(255,233,176,.5);}
+.star{width:34px;height:34px;filter:drop-shadow(0 0 8px #ffe9a8);}
+.tree{width:110px;height:150px;}
+.flower{width:54px;height:54px;}
+.cloud{font-size:72px; position:absolute; opacity:.95;}
+.bird{font-size:46px;}
+.fish{font-size:48px;}
+.animal{font-size:56px;}
+/* light switch */
+#switchBox{position:absolute; z-index:10; right:18px; top:18px; background:rgba(255,255,255,.9); border-radius:16px; padding:10px; box-shadow:0 4px 12px rgba(0,0,0,.25); text-align:center; cursor:pointer;}
+#switchBox .sw{width:26px;height:52px;border-radius:14px;background:linear-gradient(180deg,#d8d8d8,#b8b8b8); display:grid; place-items:start center; padding:4px 0;}
+#switchBox .sw i{display:block;width:20px;height:20px;border-radius:50%;background:#5b5b5b; transition:.2s;}
+#switchBox .sw.on i{background:#ffd166; transform:translateY(26px); box-shadow:0 0 12px #ffd166;}
+#switchBox .lbl{font-size:12px; font-weight:800; color:#666; margin-top:6px;}
+/* dark overlay */
+#darkOverlay{position:absolute; inset:0; background:#05040f; z-index:6; opacity:0; pointer-events:none; transition:opacity .6s;}
+#darkOverlay.on{opacity:.92; pointer-events:auto;}
+/* ===== quiz ===== */
+.quiz-wrap{width:min(100%,960px);}
+.qcard{background:#fff; border-radius:24px; padding:18px 26px; box-shadow:var(--shadow); text-align:center;}
+.q-num{font-size:15px; font-weight:800; color:#fff; background:var(--purple); border-radius:20px; padding:4px 16px; display:inline-block;}
+.q-q{font-size:24px; font-weight:800; color:var(--ink); margin:16px 0 4px; line-height:1.4;}
+.q-img{font-size:44px; margin:4px 0;}
+.q-opts{display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:14px;}
+.q-opt{position:relative; padding:12px 10px; border-radius:18px; border:3px solid #e6dcf8; background:#faf7ff;
+  font-size:21px; font-weight:800; color:var(--ink2); cursor:pointer; transition:.18s; text-align:center;}
+.q-opt:hover{border-color:var(--purple); background:#f3ecff; transform:translateY(-2px);}
+.q-opt.sel-correct{border-color:#2ecc71; background:#eafaf1; color:#1e8449;}
+.q-opt.sel-wrong{border-color:#ff5d73; background:#ffeef0; color:#c0392b; animation:shake .4s;}
+.q-opt.sel-dim{opacity:.45;}
+@keyframes shake{0%,100%{transform:translateX(0);} 25%{transform:translateX(-6px);} 75%{transform:translateX(6px);}}
+.q-fb{margin-top:18px; min-height:56px; display:flex; align-items:center; justify-content:center; gap:10px; font-size:20px; font-weight:800;}
+.q-fb.ok{color:#1e8449;} .q-fb.no{color:#c0392b;}
+.q-next{margin-top:8px;}
+.scorebar{display:flex; align-items:center; gap:14px; justify-content:center; margin-bottom:12px;}
+.scorebar .stars{font-size:22px; letter-spacing:2px;}
+/* confetti */
+#confettiWrap{position:absolute; inset:0; pointer-events:none; z-index:60; overflow:hidden;}
+.confetti{position:absolute; top:-20px; width:12px; height:12px; opacity:.95; border-radius:3px;}
+/* ===== games ===== */
+.days-path{display:flex; gap:10px; justify-content:center; flex-wrap:wrap;}
+.day-node{width:74px; height:74px; border-radius:22px; display:grid; place-items:center; flex-direction:column;
+  background:#fff; border:3px solid #e6dcf8; cursor:pointer; font-size:15px; font-weight:800; color:var(--ink2); transition:.18s; box-shadow:0 3px 8px rgba(0,0,0,.08);}
+.day-node:hover{border-color:var(--gold); transform:translateY(-3px);}
+.day-node.correct{background:#eafaf1; border-color:#2ecc71;}
+.day-node.wrong{background:#ffeef0; border-color:#ff5d73; animation:shake .4s;}
+.g-item{font-size:48px; animation:pop .5s;}
+@keyframes pop{0%{transform:scale(0);} 70%{transform:scale(1.25);} 100%{transform:scale(1);}}
+/* memory */
+.mgrid{display:grid; grid-template-columns:repeat(4,1fr); gap:12px; width:min(100%,620px);}
+.mcard{aspect-ratio:1; border-radius:18px; cursor:pointer; display:grid; place-items:center; font-size:46px;
+  background:linear-gradient(135deg,#9b7ede,#7a5cc4); box-shadow:0 5px 14px rgba(122,92,196,.4); transition:.25s; border:none;}
+.mcard.flip{background:#fff; box-shadow:var(--shadow);}
+.mcard.matched{background:#eafaf1; box-shadow:0 3px 10px rgba(46,204,113,.4); cursor:default;}
+/* find game */
+.find-scene{position:relative; width:min(100%,860px); height:330px; border-radius:26px; overflow:hidden;
+  background:linear-gradient(180deg,#a8e0ff 0%,#dff4ff 60%,#a8dd8f 60%,#7bc25e 100%); box-shadow:var(--shadow);}
+.find-scene .target{position:absolute; cursor:pointer; transition:transform .2s;}
+.find-scene .target.found{animation:foundPop .6s; opacity:.4; pointer-events:none;}
+@keyframes foundPop{0%{transform:scale(1);} 50%{transform:scale(1.6);} 100%{transform:scale(1);}}
+.findlist{display:flex; gap:12px; justify-content:center; margin-top:10px; flex-wrap:wrap;}
+.findlist .fl{width:66px; padding:6px 0; border-radius:16px; background:#fff; box-shadow:0 3px 8px rgba(0,0,0,.1); font-size:34px; text-align:center;}
+.findlist .fl.found{background:#eafaf1;}
+/* ===== songs ===== */
+.song-tabs{display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin-bottom:16px;}
+.song-tab{padding:9px 18px; border-radius:22px; border:3px solid #e6dcf8; background:#fff; cursor:pointer;
+  font-size:16px; font-weight:800; color:var(--ink2); transition:.18s;}
+.song-tab.on{background:var(--purple); border-color:var(--purple); color:#fff;}
+.song-lyric{background:#fff; border-radius:24px; box-shadow:var(--shadow); padding:16px 28px; max-width:900px; width:100%;}
+.song-lyric .line{font-size:20px; font-weight:800; color:var(--ink); padding:7px 0; line-height:1.6; transition:.3s;}
+.song-lyric .line .action{font-size:16px; color:var(--orange); font-weight:700; display:block;}
+.song-lyric .line.hl{color:var(--purple); transform:scale(1.06);}
+/* ===== crafts ===== */
+.craft-grid{display:grid; grid-template-columns:repeat(5,1fr); gap:16px; width:min(100%,980px);}
+.craft-card{background:#fff; border-radius:22px; padding:16px 12px; box-shadow:var(--shadow); text-align:center; transition:.2s;}
+.craft-card:hover{transform:translateY(-4px);}
+.craft-card .ico{font-size:42px; margin-bottom:6px;}
+.craft-card .nm{font-size:16px; font-weight:800; color:var(--ink);}
+.craft-card .wk{font-size:13px; color:var(--orange); font-weight:800; margin-top:2px;}
+/* ===== parent activities ===== */
+.pact-grid{display:grid; grid-template-columns:repeat(5,1fr); gap:10px; width:min(100%,1000px);}
+.pact{background:#fff; border-radius:18px; padding:9px 8px; box-shadow:0 4px 12px rgba(0,0,0,.1); text-align:center; cursor:pointer; transition:.18s; border:3px solid transparent;}
+.pact:hover{border-color:var(--gold); transform:translateY(-3px);}
+.pact .num{display:inline-block; width:26px;height:26px;border-radius:50%;background:var(--purple);color:#fff;font-weight:800;font-size:14px;line-height:26px;}
+.pact .txt{font-size:13px; font-weight:700; color:var(--ink2); margin-top:6px; line-height:1.5;}
+.pact.done{border-color:#2ecc71; background:#f0fbf4;}
+/* ===== modal ===== */
+#modal{position:absolute; inset:0; z-index:70; display:none; place-items:center; background:rgba(20,10,50,.55); backdrop-filter:blur(4px);}
+#modal.show{display:grid;}
+.modal-card{background:#fff; border-radius:26px; padding:30px 36px; max-width:640px; width:90%; text-align:center; box-shadow:0 20px 60px rgba(0,0,0,.4); animation:pop .35s;}
+.modal-card h3{font-size:26px; margin:8px 0; color:var(--ink);}
+.modal-card p{font-size:18px; color:var(--ink2); line-height:1.7;}
+.modal-card .memoji{font-size:64px;}
+/* certificate */
+#cert{width:min(100%,940px); background:linear-gradient(135deg,#fffdf3,#fff3d6); border:6px double var(--gold);
+  border-radius:24px; padding:18px 24px; box-shadow:var(--shadow); position:relative;}
+#cert .ribbon{position:absolute; top:-14px; left:50%; transform:translateX(-50%); background:var(--orange); color:#fff;
+  padding:6px 22px; border-radius:20px; font-weight:800; letter-spacing:2px; box-shadow:0 4px 10px rgba(255,140,66,.4);}
+#cert h2{font-size:28px; color:var(--ink); margin:10px 0 4px;}
+#cert .name-input{border:3px dashed var(--purple); border-radius:16px; padding:12px 18px; font-size:26px; font-weight:800;
+  color:var(--ink); text-align:center; width:300px; outline:none; background:#fff; margin:6px auto;}
+#cert .name-input:focus{border-style:solid; border-color:var(--gold);}
+#cert .seal{display:inline-block; width:88px;height:88px;border-radius:50%;border:5px solid var(--gold); color:var(--orange);
+  display:grid; place-items:center; font-size:15px; font-weight:800; transform:rotate(-12deg); background:#fff8e6;}
+#cert .row{display:flex; align-items:center; justify-content:center; gap:24px; margin-top:8px;}
+/* ===== misc ===== */
+.verse-big{font-size:36px; font-weight:900; color:#fff; text-shadow:0 3px 12px rgba(0,0,0,.35);
+  background:linear-gradient(135deg,#9b7ede,#5f6cff); border-radius:26px; padding:22px 34px; display:inline-block; box-shadow:var(--shadow);}
+.word-chips{display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-top:20px;}
+.wchip{background:#fff; border-radius:16px; padding:10px 18px; font-size:22px; font-weight:800; color:var(--ink2);
+  box-shadow:0 4px 10px rgba(0,0,0,.12); cursor:pointer; transition:.15s; border:none;}
+.wchip:hover{transform:translateY(-2px); background:#f3ecff;}
+.wchip.picked{background:#e6dcf8; opacity:.45; pointer-events:none;}
+.wslot{display:inline-flex; min-width:110px; min-height:52px; border-bottom:4px dashed var(--purple); align-items:center; justify-content:center;
+  margin:0 6px; font-size:24px; font-weight:900; color:var(--ink);}
+.wslot.filled{border-bottom-style:solid; border-color:#2ecc71;}
+.talk{display:inline-block; background:#fff; border-radius:22px; padding:14px 24px; box-shadow:var(--shadow);
+  font-size:22px; font-weight:800; color:var(--ink2); position:relative; max-width:820px;}
+.talk::before{content:""; position:absolute; left:30px; bottom:-14px; border:14px solid transparent; border-top-color:#fff; border-bottom-width:0;}
+.hidden{display:none !important;}
+.emoji-big{font-size:90px; line-height:1.1;}
+.emoji-xl{font-size:120px; line-height:1;}
+.glow{filter:drop-shadow(0 0 16px rgba(255,220,100,.8));}
+.note{font-size:15px; color:#8a7fb0; margin-top:10px;}
+.checklist{text-align:left; display:inline-block; font-size:19px; font-weight:700; color:var(--ink2); line-height:2;}
+.checklist li{margin:2px 0;}
+.sky-bg{background:linear-gradient(160deg,#cfe8ff 0%,#eef8ff 55%,#fff6d8 100%);}
+.grass-bg{background:linear-gradient(160deg,#e2f6d2 0%,#f3fbea 60%,#fff8dc 100%);}
+.sunset-bg{background:linear-gradient(160deg,#ffe3c2 0%,#fff1dd 55%,#fff6f0 100%);}
+.purple-bg{background:linear-gradient(160deg,#efe9ff 0%,#faf7ff 60%,#e9f6ff 100%);}
+.pink-bg{background:linear-gradient(160deg,#ffe3ec 0%,#fff3f7 60%,#fff6e8 100%);}
+
+/* ===== 涂色时间 ===== */
+#colorModal{position:absolute; inset:0; z-index:80; display:none; place-items:center; background:rgba(20,10,50,.6); backdrop-filter:blur(4px);}
+#colorModal.show{display:grid;}
+.color-card{background:#fff; border-radius:22px; width:min(96%,1080px); height:min(94%,660px); padding:12px 18px; display:flex; flex-direction:column; box-shadow:0 20px 60px rgba(0,0,0,.45);}
+.color-head{display:flex; align-items:center; justify-content:space-between; margin-bottom:8px;}
+.color-title{font-size:24px; font-weight:900; color:var(--ink);}
+.color-tools{display:flex; gap:8px; flex-wrap:wrap; margin-bottom:8px;}
+.ctool{padding:8px 14px; border-radius:14px; border:none; background:#f0ebfb; color:var(--ink2); font-weight:800; font-size:15px; cursor:pointer; transition:.15s;}
+.ctool:hover{transform:translateY(-1px);}
+.ctool.on{background:var(--purple); color:#fff;}
+.color-palette{display:flex; gap:8px; flex-wrap:wrap; margin-bottom:10px; align-items:center;}
+.csw{width:38px; height:38px; border-radius:50%; cursor:pointer; border:3px solid #ddd; transition:.15s;}
+.csw:hover{transform:scale(1.1);}
+.csw.on{border:4px solid var(--ink); transform:scale(1.15);}
+.color-stage{flex:1; background:#fff; border-radius:16px; overflow:hidden; border:3px solid #efe9ff; display:grid; place-items:center; min-height:0;}
+.color-stage svg{width:100%; height:100%; touch-action:none; display:block;}
+.color-hint{text-align:center; font-size:14px; color:#8a7fb0; margin-top:8px; font-weight:700;}
+.c-r{stroke:#3a3a3a; stroke-width:5; stroke-linejoin:round; cursor:pointer;}
+.c-s{stroke-width:34; fill:none; stroke-linecap:round; cursor:pointer;}
+
+/* ===== AI 小精灵 ===== */
+#aiModal{position:absolute; inset:0; z-index:82; display:none; place-items:center; background:rgba(20,10,50,.6); backdrop-filter:blur(4px);}
+#aiModal.show{display:grid;}
+.ai-card{background:#fff; border-radius:22px; width:min(94%,780px); padding:16px 22px; display:flex; flex-direction:column; box-shadow:0 20px 60px rgba(0,0,0,.45); max-height:92%;}
+.ai-head{display:flex; align-items:center; justify-content:space-between; font-size:22px; font-weight:900; color:var(--ink); margin-bottom:8px;}
+.ai-avatar{font-size:70px; text-align:center; line-height:1;}
+.ai-bubble{background:#f0ebfb; border-radius:20px; padding:13px 18px; font-size:19px; font-weight:800; color:var(--ink2); margin:10px 0; min-height:58px; display:flex; align-items:center; justify-content:center; text-align:center; line-height:1.6;}
+.ai-chips{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin-bottom:10px;}
+.aichip{background:#fff; border:3px solid #e6dcf8; border-radius:18px; padding:8px 14px; font-size:15px; font-weight:800; color:var(--ink2); cursor:pointer; transition:.15s;}
+.aichip:hover{border-color:var(--purple); background:#f3ecff; transform:translateY(-1px);}
+.ai-input-row{display:flex; gap:8px;}
+.ai-input-row input{flex:1; border:3px solid #e6dcf8; border-radius:14px; padding:10px 14px; font-size:16px; outline:none; font-family:inherit; color:var(--ink);}
+.ai-input-row input:focus{border-color:var(--purple);}
+.ai-input-row button{background:var(--purple); color:#fff; border:none; border-radius:14px; padding:10px 20px; font-weight:800; font-size:16px; cursor:pointer;}
+/* ===== AI 跟读教练 ===== */
+#coachModal{position:absolute; inset:0; z-index:83; display:none; place-items:center; background:rgba(20,10,50,.6); backdrop-filter:blur(4px);}
+#coachModal.show{display:grid;}
+.coach-card{background:#fff; border-radius:22px; width:min(94%,660px); padding:18px 24px; text-align:center; box-shadow:0 20px 60px rgba(0,0,0,.45);}
+.coach-verse{background:linear-gradient(135deg,#9b7ede,#5f6cff); color:#fff; border-radius:18px; padding:16px 20px; font-size:24px; font-weight:900; margin:14px 0; line-height:1.6;}
+.coach-status{font-size:16px; font-weight:800; color:var(--ink2); min-height:44px; display:flex; align-items:center; justify-content:center; margin:10px 0;}
+/* ===== 音乐钢琴 ===== */
+#pianoModal{position:absolute; inset:0; z-index:84; display:none; place-items:center; background:rgba(20,10,50,.6); backdrop-filter:blur(4px);}
+#pianoModal.show{display:grid;}
+.piano-card{background:#fff; border-radius:22px; width:min(94%,880px); padding:16px 22px; box-shadow:0 20px 60px rgba(0,0,0,.45);}
+.piano-keys{display:grid; grid-template-columns:repeat(8,1fr); gap:10px; margin:12px 0;}
+.pkey{border:none; border-radius:14px; height:110px; font-size:20px; font-weight:900; color:#fff; cursor:pointer; box-shadow:0 6px 14px rgba(0,0,0,.2); transition:.12s;}
+.pkey:active{transform:scale(.93);}
+/* ===== 贴纸收集册 ===== */
+#albumModal{position:absolute; inset:0; z-index:85; display:none; place-items:center; background:rgba(20,10,50,.6); backdrop-filter:blur(4px);}
+#albumModal.show{display:grid;}
+.album-card{background:#fff; border-radius:22px; width:min(94%,740px); padding:16px 22px; text-align:center; box-shadow:0 20px 60px rgba(0,0,0,.45);}
+.album-grid{display:grid; grid-template-columns:repeat(5,1fr); gap:12px; margin:12px 0;}
+.sticker{background:#f7f4ff; border:3px dashed #d8cff2; border-radius:18px; padding:12px 6px; text-align:center;}
+.sticker.earned{border-style:solid; border-color:var(--gold); background:#fff8e6;}
+.sticker .sico{font-size:38px;}
+.sticker .snm{font-size:13px; font-weight:800; color:var(--ink2); margin-top:6px;}
+
+/* ===== 手机 / 窄屏响应式 ===== */
+body.mobile #stage{left:0; top:0; width:100%; height:100%; transform:none; border-radius:0; box-shadow:none;}
+body.mobile .slide{overflow-y:auto;}
+body.mobile .content{padding:64px 14px 96px; justify-content:flex-start;}
+body.mobile h1.title{font-size:34px;}
+body.mobile h2.title{font-size:26px;}
+body.mobile .sub{font-size:16px;}
+body.mobile .kicker{font-size:13px;}
+body.mobile .bigbtn{font-size:17px; padding:13px 22px; margin-top:12px;}
+body.mobile .emoji-xl{font-size:78px;}
+body.mobile .scene{height:300px; border-radius:18px;}
+body.mobile .scene-txt{font-size:15px; padding:8px 12px 6px;}
+body.mobile .q-opts{grid-template-columns:1fr 1fr; gap:8px;}
+body.mobile .q-opt{font-size:16px; padding:11px 8px;}
+body.mobile .q-q{font-size:20px;}
+body.mobile .mgrid{width:100%; gap:8px;}
+body.mobile .mcard{font-size:38px;}
+body.mobile .craft-grid{grid-template-columns:repeat(2,1fr); gap:10px;}
+body.mobile .pact-grid{grid-template-columns:repeat(2,1fr); gap:8px;}
+body.mobile .pact .txt{font-size:12px;}
+body.mobile .day-node{width:58px; height:58px; font-size:11px; border-radius:16px;}
+body.mobile .days-path{gap:6px;}
+body.mobile .g-item{font-size:44px;}
+body.mobile .find-scene{height:300px;}
+body.mobile .findlist .fl{width:54px; font-size:28px;}
+body.mobile .song-lyric{padding:14px 18px;}
+body.mobile .song-lyric .line{font-size:17px;}
+body.mobile .song-tab{font-size:13px; padding:7px 12px;}
+body.mobile .wchip{font-size:17px; padding:8px 12px;}
+body.mobile .wslot{min-width:72px; min-height:44px; font-size:19px;}
+body.mobile #crumbs{display:none;}
+body.mobile #topbar{gap:6px; padding:0 8px;}
+body.mobile #brand span:last-child{display:none;}
+body.mobile #brand .logo{width:30px;height:30px;font-size:17px;}
+body.mobile #topbar .btn{padding:6px 9px; font-size:12px; border-radius:11px;}
+body.mobile #starsBox{padding:4px 9px; font-size:13px;}
+body.mobile .navbtn{width:46px; height:46px; font-size:19px;}
+body.mobile .speakbtn{font-size:15px; padding:9px 16px;}
+body.mobile .pkey{height:74px; font-size:15px;}
+body.mobile .color-card{width:100%; height:100%; border-radius:0; padding:10px 10px;}
+body.mobile .color-stage svg{max-height:46vh;}
+body.mobile .ai-card, body.mobile .coach-card, body.mobile .piano-card, body.mobile .album-card{width:100%; max-height:100%; border-radius:16px;}
+body.mobile .cert{ }
+body.mobile #cert{padding:14px 12px; width:100%;}
+body.mobile #cert h2{font-size:22px;}
+body.mobile .verse-big{font-size:26px; padding:16px 20px;}
+body.mobile .talk{font-size:18px;}
+
+/* ===== 语音选择器 ===== */
+#voiceModal{position:absolute; inset:0; z-index:86; display:none; place-items:center; background:rgba(20,10,50,.6); backdrop-filter:blur(4px);}
+#voiceModal.show{display:grid;}
+.voice-card{background:#fff; border-radius:22px; width:min(94%,620px); padding:16px 22px; box-shadow:0 20px 60px rgba(0,0,0,.45); max-height:92%; display:flex; flex-direction:column;}
+.voice-list{overflow-y:auto; margin:10px 0; min-height:0; flex:1;}
+.vrow{display:flex; align-items:center; gap:10px; padding:10px 12px; border-radius:14px; cursor:pointer; transition:.15s; border:2px solid transparent;}
+.vrow:hover{background:#f6f2ff;}
+.vrow.sel{background:#f0e9ff; border-color:var(--purple);}
+.vrow .vname{font-weight:800; color:var(--ink); font-size:16px;}
+.vrow .vlang{font-size:12px; color:#8a7fb0; font-weight:700;}
+.vrow .vpreview{margin-left:auto; border:none; border-radius:12px; padding:6px 12px; font-size:13px; font-weight:800; background:#efe9ff; color:var(--purple); cursor:pointer;}
+.vrow .vpreview:hover{background:var(--purple); color:#fff;}
+.voice-note{font-size:13px; color:#8a7fb0; font-weight:700; line-height:1.7;}
+</style>
+</head>
+<body>
+<div id="stage">
+  <div id="topbar">
+    <div id="brand"><span class="logo">👩</span><span>比金子更好</span></div>
+    <div id="crumbs"></div>
+    <button class="btn" id="fullBtn" title="全萤幕">⛶</button>
+    <button class="btn" id="soundBtn" title="声音开关">🔊 声音</button>
+    <button class="btn" id="voiceBtn" title="选择朗读语音">🗣️ 语音</button>
+    <button class="btn" id="aiBtn" title="AI 小精灵">🤖 AI</button>
+    <button class="btn" id="albumBtn" title="我的收集册">📒 收集册</button>
+    <button class="btn" id="colorBtn" title="涂色时间">🎨 涂色</button>
+    <div id="starsBox">⭐ <span id="starCount">0</span></div>
+  </div>
+  <div id="progressWrap"><div id="progressFill"></div></div>
+
+  <!-- ============ 0 封面 ============ -->
+  <section class="slide purple-bg" id="s0">
+    <div class="content">
+      <div class="kicker">B3季 · 互动课程</div>
+      <div class="emoji-xl floaty" style="margin-bottom:6px;">👩</div>
+      <h1 class="title">第五课 · 比金子更好</h1>
+      <div class="sub">彼得和约翰借着圣灵的能力去服侍一个人，这个人是天生的瘸子，但是被医治好了。他们要他站起来行走，他就照做了。于是人们都因着这样的神迹前来，彼得告诉他们关于耶稣的事，很多人便相信了。这是关于服侍的教导当我们帮助他人时，就是在服侍上帝。我们向他人……</div>
+      <div style="margin-top:10px;"><span class="chip">📖 经文：参本课</span><span class="chip">💜 信息：借着服侍他人，我向人们彰显耶稣。</span><span class="chip">⭐ 存心节：先生，我们愿意见耶稣。</span></div>
+      <button class="bigbtn" onclick="go(1)">🚀 开始上课</button>
+      <div class="note">🎧 点「🔊」可以开关朗读声音（请在浏览器允许语音）</div>
+    </div>
+    <div style="position:absolute; top:150px;right:80px; font-size:64px;" class="fobj floaty">👩</div><div style="position:absolute; top:120px;left:80px; font-size:64px;" class="fobj floaty">✨</div><div style="position:absolute; bottom:120px;right:110px; font-size:64px;" class="fobj floaty">👨‍🦱</div>
+  </section>
+  <!-- ============ 1 认识本课 ============ -->
+  <section class="slide sky-bg" id="s1">
+    <div class="content">
+      <div class="kicker">先来认识这一课</div>
+      <h2 class="title">📖 这一课我们要学</h2>
+      <div style="display:flex; gap:22px; flex-wrap:wrap; justify-content:center; margin-top:12px;">        <div class="card" style="width:270px; padding:14px 16px;">
+          <div style="font-size:36px;">👀</div>
+          <div style="font-weight:900; font-size:20px; color:当他们服务他人时，就是向他人彰显耶稣。; margin:6px 0;">晓得</div>
+          <div style="font-size:16px; color:var(--ink2);">#9b7ede</div>
+        </div>        <div class="card" style="width:270px; padding:14px 16px;">
+          <div style="font-size:36px;">💛</div>
+          <div style="font-weight:900; font-size:20px; color:盼望他人也认识耶稣。; margin:6px 0;">感受</div>
+          <div style="font-size:16px; color:var(--ink2);">#ff8c42</div>
+        </div>        <div class="card" style="width:270px; padding:14px 16px;">
+          <div style="font-size:36px;">🙏</div>
+          <div style="font-weight:900; font-size:20px; color:选择做一些事，帮助他人认识耶稣。; margin:6px 0;">回应</div>
+          <div style="font-size:16px; color:var(--ink2);">#2ecc71</div>
+        </div>
+      </div>
+      <button class="speakbtn" data-speak="这一课，我们要晓得：借着服侍他人，我向人们彰显耶稣。。彼得和约翰借着圣灵的能力去服侍一个人，这个人是天生的瘸子，但是被医治好了。他们要他站起来行走，他就照" onclick="speakThis(this)">🔊 听听这一课</button>
+      <div style="margin-top:14px;"><span class="pill">💜 信息：借着服侍他人，我向人们彰显耶稣。</span></div>
+    </div>
+  </section>
+  <!-- ============ 2 存心节 ============ -->
+  <section class="slide sunset-bg" id="s2">
+    <div class="content">
+      <div class="kicker">背诵存心节</div>
+      <h2 class="title" style="font-size:32px;">🎵 先生，我们愿意见耶稣。</h2>
+      <div class="sub" style="color:#8a7fb0;">（约12:21） · 按顺序把字卡放进空格里，一起背起来！</div>
+      <div id="verseLine" style="margin-top:8px; font-size:26px;"></div>
+      <div class="word-chips" id="verseChips"></div>
+      <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+        <button class="speakbtn" data-speak="先生，我们愿意见耶稣。。先生，我们愿意见，耶稣。" onclick="speakThis(this)">🔊 跟著念</button>
+        <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px;" onclick="verseReset()">🔄 再来一次</button>
+        <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px; background:linear-gradient(135deg,#3ec6b0,#2aa89a);" onclick="addStar(1); go(3);">✅ 我背好了！</button>
+      </div>
+    </div>
+  </section>
+  <!-- ============ 3 第一幕 母亲和上帝 ============ -->
+  <section class="slide sunset-bg" id="s3">
+    <div class="content">
+      <div class="kicker">体验故事 · 第一幕</div>
+      <h2 class="title" style="font-size:34px;">母亲和上帝 👩</h2>
+      <div class="scene" id="s0scene">
+        <div class="ground"></div>
+        <div style="position:absolute; left:16%;bottom:30%;font-size:58px; font-size:56px;" class="fobj" id="a00">👩</div>
+<div style="position:absolute; left:52%;bottom:34%;font-size:56px; font-size:56px;" class="fobj" id="a01">✨</div>
+<div style="position:absolute; right:12%;bottom:30%;font-size:60px; font-size:56px;" class="fobj" id="a02">👨‍🦱</div>
+
+        <div class="scene-txt" style="">”妈妈是想为杰米买的，但是有个问题不得不考虑。<br>妈妈对他说：“我们现在买不起，杰米，我知道你很失望，但是我们应该有感恩的心，因为我们能在一起，上帝一直在许多方面赐福给我们。<br>”“没关系，”杰米笑道，“我很高兴我们能在一起，这比有钱好多了。<br>”在今天的故事里，彼得和约翰跟一个乞丐分享了一个比钱还要好的东西。<br>你觉得那个乞丐会有什么感受呢？<br>午后的阳光，暖暖地照着匆匆走向圣殿的人们，快要到献晚祭的时候了。<br>彼得和约翰来到美门口，朝一个坐在门前的人笑了笑。<br>那人弯着身子坐在地上，他的脚踝是扭曲的。</div>
+        <div class="interact-hint">👇 点一点，听听它们说什么</div>
+      </div>
+      <div style="margin-top:14px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+        <button class="speakbtn" data-speak="”妈妈是想为杰米买的，但是有个问题不得不考虑。妈妈对他说：“我们现在买不起，杰米，我知道你很失望，但是我们应该有感恩的心，因为我们能在一起，上帝一直在许多方面赐福给我们。”“没关系，”杰米笑道，“我很高兴我们能在一起，这比有钱好多了。”在今天的故事里，彼得和约翰跟一个乞丐分享了一个比钱还要好的东西。你觉得那个乞丐会有什么感受呢？午后的阳光，暖暖地照着匆匆走向圣殿的人们，快要到献晚祭的时候了。彼得和约翰来到美门口，朝一个坐在门前的人笑了笑。那人弯着身子坐在地上，他的脚踝是扭曲的。" onclick="speakThis(this)">🔊 听故事</button>
+        <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px;" onclick="go(4)">下一幕 ➡️</button>
+      </div>
+    </div>
+  </section>
+  <!-- ============ 4 第二幕 朋友和彼得 ============ -->
+  <section class="slide sky-bg" id="s4">
+    <div class="content">
+      <div class="kicker">体验故事 · 第二幕</div>
+      <h2 class="title" style="font-size:34px;">朋友和彼得 🤝</h2>
+      <div class="scene" id="s1scene">
+        <div class="ground"></div>
+        <div style="position:absolute; left:16%;bottom:30%;font-size:58px; font-size:56px;" class="fobj" id="a10">🤝</div>
+<div style="position:absolute; left:52%;bottom:34%;font-size:56px; font-size:56px;" class="fobj" id="a11">👨‍🦱</div>
+<div style="position:absolute; right:12%;bottom:30%;font-size:60px; font-size:56px;" class="fobj" id="a12">📜</div>
+
+        <div class="scene-txt" style="">日复一日，他的好心朋友们送他到这里，以便他能向去做礼拜的人讨些钱。<br>当彼得和约翰路过时，那人伸出手。<br>他以为这两个朝他微笑的人会施舍一些钱。<br>突然，圣灵感动彼得和约翰。<br>他们应该做点什么的！<br>他们便停住56了脚步，转身向着那个乞丐。<br>“看着我们！<br>”彼得说。</div>
+        <div class="interact-hint">👇 点一点，听听它们说什么</div>
+      </div>
+      <div style="margin-top:14px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+        <button class="speakbtn" data-speak="日复一日，他的好心朋友们送他到这里，以便他能向去做礼拜的人讨些钱。当彼得和约翰路过时，那人伸出手。他以为这两个朝他微笑的人会施舍一些钱。突然，圣灵感动彼得和约翰。他们应该做点什么的！他们便停住56了脚步，转身向着那个乞丐。“看着我们！”彼得说。" onclick="speakThis(this)">🔊 听故事</button>
+        <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px; background:linear-gradient(135deg,#9b7ede,#7a5cc4);" onclick="go(3)">⬅️ 上一幕</button><button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px;" onclick="go(5)">下一幕 ➡️</button>
+      </div>
+    </div>
+  </section>
+  <!-- ============ 5 第三幕 彼得和宝石 ============ -->
+  <section class="slide grass-bg" id="s5">
+    <div class="content">
+      <div class="kicker">体验故事 · 第三幕</div>
+      <h2 class="title" style="font-size:34px;">彼得和宝石 👨‍🦱</h2>
+      <div class="scene" id="s2scene">
+        <div class="ground"></div>
+        <div style="position:absolute; left:16%;bottom:30%;font-size:58px; font-size:56px;" class="fobj" id="a20">👨‍🦱</div>
+<div style="position:absolute; left:52%;bottom:34%;font-size:56px; font-size:56px;" class="fobj" id="a21">💎</div>
+<div style="position:absolute; right:12%;bottom:30%;font-size:60px; font-size:56px;" class="fobj" id="a22">✝️</div>
+
+        <div class="scene-txt" style="">乞丐顿时满怀希望，以为这个和他说话的人要给他钱！<br>但是彼得的下一句话让他的希望破灭了。<br>“我没有黄金和银子。<br>”他说。<br>那人转过脸，像一个泻了气的皮球。<br>彼得说，“我没有钱，但有别的东西给你，”他继续说道，“以拿撒勒人耶稣基督之名，叫你站起来行走！<br>”那个瘸腿的人盯着彼得，因为腿部弯曲，他从来就没有走过路。<br>彼得走过去轻轻地抓住他的手，搀扶着他。</div>
+        <div class="interact-hint">👇 点一点，听听它们说什么</div>
+      </div>
+      <div style="margin-top:14px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+        <button class="speakbtn" data-speak="乞丐顿时满怀希望，以为这个和他说话的人要给他钱！但是彼得的下一句话让他的希望破灭了。“我没有黄金和银子。”他说。那人转过脸，像一个泻了气的皮球。彼得说，“我没有钱，但有别的东西给你，”他继续说道，“以拿撒勒人耶稣基督之名，叫你站起来行走！”那个瘸腿的人盯着彼得，因为腿部弯曲，他从来就没有走过路。彼得走过去轻轻地抓住他的手，搀扶着他。" onclick="speakThis(this)">🔊 听故事</button>
+        <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px; background:linear-gradient(135deg,#9b7ede,#7a5cc4);" onclick="go(4)">⬅️ 上一幕</button><button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px;" onclick="go(6)">下一幕 ➡️</button>
+      </div>
+    </div>
+  </section>
+  <!-- ============ 6 第四幕 上帝和彼得 ============ -->
+  <section class="slide sunset-bg" id="s6">
+    <div class="content">
+      <div class="kicker">体验故事 · 第四幕</div>
+      <h2 class="title" style="font-size:34px;">上帝和彼得 ✨</h2>
+      <div class="scene" id="s3scene">
+        <div class="ground"></div>
+        <div style="position:absolute; left:16%;bottom:30%;font-size:58px; font-size:56px;" class="fobj" id="a30">✨</div>
+<div style="position:absolute; left:52%;bottom:34%;font-size:56px; font-size:56px;" class="fobj" id="a31">👨‍🦱</div>
+<div style="position:absolute; right:12%;bottom:30%;font-size:60px; font-size:56px;" class="fobj" id="a32">📜</div>
+
+        <div class="scene-txt" style="">他的脚顿时变得有力起来。<br>真是难以置信！<br>乞丐跳了起来，他往前迈了迈，又跳几下。<br>他开始赞美上帝！<br>用很大的声音赞美！<br>开心地合不拢嘴。<br>乞丐跟着彼得和约翰一起进了圣殿，圣殿里的每个人都认识他，因为他们看着乞丐乞讨多年。<br>现在他不仅能走，还会跳！</div>
+        <div class="interact-hint">👇 点一点，听听它们说什么</div>
+      </div>
+      <div style="margin-top:14px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+        <button class="speakbtn" data-speak="他的脚顿时变得有力起来。真是难以置信！乞丐跳了起来，他往前迈了迈，又跳几下。他开始赞美上帝！用很大的声音赞美！开心地合不拢嘴。乞丐跟着彼得和约翰一起进了圣殿，圣殿里的每个人都认识他，因为他们看着乞丐乞讨多年。现在他不仅能走，还会跳！" onclick="speakThis(this)">🔊 听故事</button>
+        <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px; background:linear-gradient(135deg,#9b7ede,#7a5cc4);" onclick="go(5)">⬅️ 上一幕</button><button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px;" onclick="go(7)">下一幕 ➡️</button>
+      </div>
+    </div>
+  </section>
+  <!-- ============ 7 第五幕 彼得和先知 ============ -->
+  <section class="slide sky-bg" id="s7">
+    <div class="content">
+      <div class="kicker">体验故事 · 第五幕</div>
+      <h2 class="title" style="font-size:34px;">彼得和先知 👨‍🦱</h2>
+      <div class="scene" id="s4scene">
+        <div class="ground"></div>
+        <div style="position:absolute; left:16%;bottom:30%;font-size:58px; font-size:56px;" class="fobj" id="a40">👨‍🦱</div>
+<div style="position:absolute; left:52%;bottom:34%;font-size:56px; font-size:56px;" class="fobj" id="a41">📜</div>
+<div style="position:absolute; right:12%;bottom:30%;font-size:60px; font-size:56px;" class="fobj" id="a42">🏛️</div>
+
+        <div class="scene-txt" style="">跟着彼得和约翰进了圣殿，后面有一大群人跟着他们。<br>彼得看到人们惊讶地聚在一起议论、咨询、叫嚷着。<br>看到人们惊讶的表情和乞丐喜乐的面孔，彼得自己也咯咯地笑了。<br>他现在明白了，圣灵为什么治愈这个瘸腿的人，圣灵是在给彼得另一个机会和人分享耶稣。<br>彼得抓住了这个机会，说道：“以色列人哪，为什么把这事当作希奇呢？<br>为什么定睛看我们，以为我们凭自己的能力和虔诚使这人行走呢？<br>我们因信他的名，他的名便叫你们所看见所认识的这人健壮了；正是他所赐的信心，叫这人在你们众人面前全然好了。<br>”（徒3:12，16）彼得告诉他们，耶稣才是他们素来所盼望的弥赛亚。</div>
+        <div class="interact-hint">👇 点一点，听听它们说什么</div>
+      </div>
+      <div style="margin-top:14px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+        <button class="speakbtn" data-speak="跟着彼得和约翰进了圣殿，后面有一大群人跟着他们。彼得看到人们惊讶地聚在一起议论、咨询、叫嚷着。看到人们惊讶的表情和乞丐喜乐的面孔，彼得自己也咯咯地笑了。他现在明白了，圣灵为什么治愈这个瘸腿的人，圣灵是在给彼得另一个机会和人分享耶稣。彼得抓住了这个机会，说道：“以色列人哪，为什么把这事当作希奇呢？为什么定睛看我们，以为我们凭自己的能力和虔诚使这人行走呢？我们因信他的名，他的名便叫你们所看见所认识的这人健壮了；正是他所赐的信心，叫这人在你们众人面前全然好了。”（徒3:12，16）彼得告诉他们，耶稣才是他们素来所盼望的弥赛亚。" onclick="speakThis(this)">🔊 听故事</button>
+        <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px; background:linear-gradient(135deg,#9b7ede,#7a5cc4);" onclick="go(6)">⬅️ 上一幕</button><button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px;" onclick="go(8)">下一幕 ➡️</button>
+      </div>
+    </div>
+  </section>
+  <!-- ============ 8 第六幕 耶稣和上帝 ============ -->
+  <section class="slide grass-bg" id="s8">
+    <div class="content">
+      <div class="kicker">体验故事 · 第六幕</div>
+      <h2 class="title" style="font-size:34px;">耶稣和上帝 ✝️</h2>
+      <div class="scene" id="s5scene">
+        <div class="ground"></div>
+        <div style="position:absolute; left:16%;bottom:30%;font-size:58px; font-size:56px;" class="fobj" id="a50">✝️</div>
+<div style="position:absolute; left:52%;bottom:34%;font-size:56px; font-size:56px;" class="fobj" id="a51">✨</div>
+<div style="position:absolute; right:12%;bottom:30%;font-size:60px; font-size:56px;" class="fobj" id="a52">👨‍🦱</div>
+
+        <div class="scene-txt" style="">他告诉他们应该跟随耶稣，只有这样，上帝才会赦免他们的罪。<br>彼得和那一群人聊到天黑，许许多多的人开始相信耶稣！<br>他们相信，是上帝借着彼得和约翰治愈了那人。</div>
+        <div class="interact-hint">👇 点一点，听听它们说什么</div>
+      </div>
+      <div style="margin-top:14px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+        <button class="speakbtn" data-speak="他告诉他们应该跟随耶稣，只有这样，上帝才会赦免他们的罪。彼得和那一群人聊到天黑，许许多多的人开始相信耶稣！他们相信，是上帝借着彼得和约翰治愈了那人。" onclick="speakThis(this)">🔊 听故事</button>
+        <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px; background:linear-gradient(135deg,#9b7ede,#7a5cc4);" onclick="go(7)">⬅️ 上一幕</button><button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px;" onclick="go(9)">下一幕 ➡️</button>
+      </div>
+    </div>
+  </section>
+  <!-- ============ 9 第七幕 我们的回应 ============ -->
+  <section class="slide purple-bg" id="s9">
+    <div class="content">
+      <div class="kicker">体验故事 · 第七幕</div>
+      <h2 class="title" style="font-size:34px;">我们学到了 💜</h2>
+      <div class="scene" id="s6scene">
+        <div class="ground"></div>
+        <div style="position:absolute; left:20%;bottom:34%;font-size:60px; font-size:56px;" class="fobj" id="r0">👩</div>
+<div style="position:absolute; left:50%;bottom:36%;font-size:56px; font-size:56px;" class="fobj" id="r1">📖</div>
+<div style="position:absolute; right:14%;bottom:34%;font-size:58px; font-size:56px;" class="fobj" id="r2">💜</div>
+
+        <div class="scene-txt" style="">这一课我们学到：<b>借着服侍他人，我向人们彰显耶稣。</b><br>选择做一些事，帮助他人认识耶稣。</div>
+        <div class="interact-hint">👇 点一点，复习这一课</div>
+      </div>
+      <div style="margin-top:14px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+        <button class="speakbtn" data-speak="这一课我们学到：借着服侍他人，我向人们彰显耶稣。选择做一些事，帮助他人认识耶稣。" onclick="speakThis(this)">🔊 听故事</button>
+        <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px; background:linear-gradient(135deg,#9b7ede,#7a5cc4);" onclick="go(8)">⬅️ 上一幕</button><button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px;" onclick="addStar(1); go(10);">➡️ 小测验</button>
+      </div>
+    </div>
+  </section>
+  <!-- ============ 10 问答小测验 ============ -->
+  <section class="slide pink-bg" id="s10">
+    <div class="content">
+      <div class="quiz-wrap">
+        <div class="scorebar"><span style="font-weight:800; color:var(--ink2); font-size:18px;">我的星星</span> <span class="stars" id="quizStars">☆☆☆☆☆</span></div>
+        <div class="qcard">
+          <div class="q-num" id="qNum">第 1 题</div>
+          <div class="q-img" id="qImg">🌍</div>
+          <div class="q-q" id="qQ">问题</div>
+          <div class="q-opts" id="qOpts"></div>
+          <div class="q-fb" id="qFb"></div>
+          <button class="bigbtn hidden" id="qNext" style="font-size:19px; padding:12px 28px;" onclick="quizNext()">下一题 ➡️</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 11 游戏：哪一天造的 ============ -->
+  <section class="slide sky-bg" id="s11">
+    <div class="content">
+      <div class="kicker">游戏时间 ①</div>
+      <h2 class="title" style="font-size:32px;">🧩 故事里有什么？</h2>
+      <div class="sub">看看出现的东西，它是不是这个故事里的？</div>
+      <div class="card" style="width:min(100%,960px); padding:20px 24px;">
+        <div style="font-size:72px;" class="g-item" id="gdItem">🌍</div>
+        <div class="days-path" id="gdPath" style="margin-top:16px;"></div>
+        <div id="gdFb" style="font-size:19px; font-weight:800; min-height:30px; margin-top:10px;"></div>
+        <div style="margin-top:6px; display:flex; gap:10px; justify-content:center; flex-wrap:wrap;">
+          <button class="bigbtn" style="font-size:18px; padding:10px 24px; margin-top:0;" onclick="gdNext()">下一个 🎲</button>
+          <button class="bigbtn hidden" id="gdDone" style="font-size:18px; padding:10px 24px; margin-top:0; background:linear-gradient(135deg,#2ecc71,#27ae60);" onclick="addStar(2); go(12);">玩下一个游戏 ➡️</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 12 游戏：记忆翻牌 ============ -->
+  <section class="slide purple-bg" id="s12">
+    <div class="content">
+      <div class="kicker">游戏时间 ②</div>
+      <h2 class="title" style="font-size:32px;">🃏 记忆翻牌：找出相同的两张</h2>
+      <div class="sub" id="memMsg">翻开卡片，把一样的两张配对起来！</div>
+      <div class="mgrid" id="mgrid"></div>
+      <div style="margin-top:16px;">
+        <button class="bigbtn hidden" id="memDone" style="font-size:19px; padding:12px 28px; background:linear-gradient(135deg,#2ecc71,#27ae60);" onclick="addStar(2); go(13);">太棒了！下一个 ➡️</button>
+        <button class="bigbtn" style="font-size:17px; padding:10px 22px; margin-top:0; margin-left:8px;" onclick="memInit()">🔄 重玩</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 13 游戏：找找看 ============ -->
+  <section class="slide grass-bg" id="s13">
+    <div class="content">
+      <div class="kicker">游戏时间 ③</div>
+      <h2 class="title" style="font-size:28px;">🔍 找找看：找找看：故事里的宝贝</h2>
+      <div class="sub">在图画里找出所有和故事有关的东西吧！</div>
+      <div class="find-scene" id="findScene">
+        <div class="fobj sun" style="left:80%; top:6%; opacity:.9;">☀️</div><div class="cloud fobj" style="left:8%; top:7%;">☁️</div><div class="cloud fobj" style="left:46%; top:4%;">☁️</div><div class="fobj tree" style="left:6%; bottom:28%;">🌳</div><div class="fobj tree" style="right:8%; bottom:26%;">🌳</div><div class="fobj" style="left:50%; bottom:6%; font-size:30px;">🌼</div>        <div class="target" style="left:16%; top:20%; font-size:42px;" data-found="母亲">👩</div>
+        <div class="target" style="left:55%; top:10%; font-size:40px;" data-found="上帝">✨</div>
+        <div class="target" style="left:34%; top:44%; font-size:46px;" data-found="彼得">👨‍🦱</div>
+        <div class="target" style="left:72%; top:34%; font-size:44px;" data-found="先知">📜</div>
+        <div class="target" style="left:22%; top:58%; font-size:40px;" data-found="光">💡</div>
+        <div class="target" style="left:62%; top:58%; font-size:46px;" data-found="圣殿">🏛️</div>
+        <div style="position:absolute; left:50%; bottom:6%; transform:translateX(-50%); font-size:22px; font-weight:800; color:#fff; background:rgba(20,30,60,.55); border-radius:14px; padding:4px 16px;" id="findMsg">找到 <span id="findCount">0</span> / 6</div>
+      </div>
+      <div class="findlist" id="findList">
+                <div class="fl" data-key="母亲">👩</div>
+        <div class="fl" data-key="上帝">✨</div>
+        <div class="fl" data-key="彼得">👨‍🦱</div>
+        <div class="fl" data-key="先知">📜</div>
+        <div class="fl" data-key="光">💡</div>
+        <div class="fl" data-key="圣殿">🏛️</div>
+      </div>      <button class="bigbtn hidden" id="findDone" style="font-size:19px; padding:12px 28px; background:linear-gradient(135deg,#2ecc71,#27ae60);" onclick="addStar(2); go(14);">找到了！去唱游 ➡️</button>
+    </div>
+  </section>
+
+  <!-- ============ 14 唱游时间 ============ -->
+  <section class="slide sky-bg" id="s14">
+    <div class="content">
+      <div class="kicker">唱游时间</div>
+      <h2 class="title" style="font-size:32px;">🎵 一起唱、一起动！</h2>
+      <div class="song-tabs" id="songTabs"></div>
+      <div class="song-lyric" id="songLyric"></div>
+      <div style="margin-top:14px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+        <button class="speakbtn" id="songSpeak" onclick="speakSong()">🔊 念歌词</button>
+        <button class="bigbtn" style="font-size:19px; padding:12px 26px; background:linear-gradient(135deg,#ffd166,#ff8c42);" onclick="openPiano()">🎹 音乐钢琴</button>
+        <button class="bigbtn" style="font-size:19px; padding:12px 26px;" onclick="go(15)">➡️ 动手做做看</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 15 动手做做看 ============ -->
+  <section class="slide grass-bg" id="s15">
+    <div class="content">
+      <div class="kicker">动手做做看</div>
+      <h2 class="title" style="font-size:32px;">✂️ 每周小创作</h2>
+      <div class="sub">跟爸爸妈妈一起动手，把上帝造的美好事物做出来！</div>
+      <div class="craft-grid" id="craftGrid"></div>
+      <div style="margin-top:10px;"><button class="bigbtn" style="font-size:19px; padding:12px 28px; background:linear-gradient(135deg,#3ec6b0,#2aa89a);" onclick="openColor()">🎨 来涂色</button></div>
+      <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+        <button class="bigbtn" style="font-size:19px; padding:12px 26px; background:linear-gradient(135deg,#9b7ede,#7a5cc4);" onclick="go(14)">⬅️ 唱游</button>
+        <button class="bigbtn" style="font-size:19px; padding:12px 26px;" onclick="go(16)">➡️ 亲子时间</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 16 亲子时间 ============ -->
+  <section class="slide sunset-bg" id="s16">
+    <div class="content">
+      <div class="kicker">亲子时间 · 每天一起做</div>
+      <h2 class="title" style="font-size:32px;">👨‍👩‍👧 15 件和宝贝一起做的事</h2>
+      <div class="sub">点一点完成它，集满会得到小星星！</div>
+      <div class="pact-grid" id="pactGrid"></div>
+      <div style="margin-top:14px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+        <button class="bigbtn" style="font-size:19px; padding:12px 26px; background:linear-gradient(135deg,#9b7ede,#7a5cc4);" onclick="go(15)">⬅️ 创作</button>
+        <button class="bigbtn" style="font-size:19px; padding:12px 26px;" onclick="go(17)">➡️ 给父母的话</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 17 给父母的话 ============ -->
+  <section class="slide pink-bg" id="s17">
+    <div class="content">
+      <div class="kicker">给爸爸妈妈</div>
+      <h2 class="title" style="font-size:32px;">💌 给父母的话</h2>
+      <div style="display:flex; gap:18px; justify-content:center; flex-wrap:wrap; max-width:980px;">        <div class="card" style="flex:1; min-width:260px; text-align:left;">
+          <div style="font-size:38px; text-align:center;">📖</div>
+          <div style="font-weight:900; color:#9b7ede; font-size:19px; margin:6px 0;">陪孩子读圣经</div>
+          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">孩子所听到的故事，可以在上帝的话——圣经中找到（参本课经文）。和孩子一起翻开圣经念一念。</div>
+        </div>        <div class="card" style="flex:1; min-width:260px; text-align:left;">
+          <div style="font-size:38px; text-align:center;">🙏</div>
+          <div style="font-weight:900; color:#ff8c42; font-size:19px; margin:6px 0;">常常祷告</div>
+          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">常常与孩子一起祷告。这一课的信息是：借着服侍他人，我向人们彰显耶稣。。帮助孩子把故事里的教训用在生活中。</div>
+        </div>        <div class="card" style="flex:1; min-width:260px; text-align:left;">
+          <div style="font-size:38px; text-align:center;">💝</div>
+          <div style="font-weight:900; color:#2ecc71; font-size:19px; margin:6px 0;">本周信息</div>
+          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「钱。」。寻求帮助他人的方法。。</div>
+        </div>
+      </div>
+      <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+        <button class="bigbtn" style="font-size:19px; padding:12px 26px; background:linear-gradient(135deg,#9b7ede,#7a5cc4);" onclick="go(16)">⬅️ 亲子时间</button>
+        <button class="bigbtn" style="font-size:19px; padding:12px 26px;" onclick="go(18)">➡️ 祷告</button>
+      </div>
+    </div>
+  </section>
+  <!-- ============ 18 祷告 ============ -->
+  <section class="slide purple-bg" id="s18">
+    <div class="content">
+      <div class="kicker">和上帝说话</div>
+      <h2 class="title" style="font-size:34px;">🙏 一起祷告</h2>
+      <div class="card" style="max-width:820px; width:100%; position:relative; padding:14px 20px;">
+        <div style="font-size:52px; line-height:1;" class="floaty">🌟</div>
+        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢借着服侍他人，我向人们彰显耶稣。。<br>就像「钱。」的故事一样，<br>求祢帮助我选择做一些事，帮助他人认识耶稣。。<br>奉耶稣的名祷告，阿们！</div>
+        <div style="display:flex; justify-content:center;">
+          <button class="speakbtn" onclick="speakText(document.getElementById('prayerText').innerText.replace(/<br>/g,'。'))">🔊 跟著念</button>
+        </div>
+      </div>
+      <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+        <button class="bigbtn" style="font-size:19px; padding:12px 26px; background:linear-gradient(135deg,#9b7ede,#7a5cc4);" onclick="go(17)">⬅️ 给父母的话</button>
+        <button class="bigbtn" style="font-size:19px; padding:12px 26px;" onclick="addStar(1); go(19);">➡️ 领奖励 🏆</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 19 奖励与证书 ============ -->
+  <section class="slide sunset-bg" id="s19">
+    <div class="content">
+      <div class="kicker">你完成了这一课！</div>
+      <h2 class="title" style="font-size:34px;">🏆 我的奖励与证书</h2>
+      <div id="cert">
+        <div class="ribbon">🎖️ 完成证书</div>
+        <h2>比金子更好</h2>
+        <div style="font-size:17px; color:var(--ink2);">恭喜你完成了第五课的互动课程！</div>
+        <input class="name-input" id="nameInput" placeholder="✏️ 写下你的名字" maxlength="12">
+        <div style="font-size:20px; font-weight:800; color:var(--ink); margin-top:8px;">我获得了 <span id="finalStars">0</span> 颗 ⭐</div>
+        <div class="row">
+          <div style="font-size:19px; font-weight:800; color:var(--ink2); line-height:1.8;">
+            存心节：<br><span style="color:var(--orange);">先生，我们愿意见耶稣。</span>
+          </div>
+          <div class="seal">完成<br>五<br>💜</div>
+        </div>
+        <div style="margin-top:14px;">
+          <button class="bigbtn" style="font-size:19px; padding:12px 26px;" onclick="printCert()">🖨️ 列印证书</button>
+          <button class="bigbtn" style="font-size:19px; padding:12px 26px; background:linear-gradient(135deg,#9b7ede,#7a5cc4);" onclick="go(0)">🏠 回到封面</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- nav & modal -->
+  <div id="nav">
+    <button class="navbtn" id="prevBtn" onclick="go(cur-1)">◀</button>
+    <span id="pageCount">1 / 20</span>
+    <button class="navbtn" id="nextBtn" onclick="go(cur+1)">▶</button>
+  </div>
+  <div id="confettiWrap"></div>
+  <div id="colorModal">
+    <div class="color-card">
+      <div class="color-head">
+        <div class="color-title">🎨 涂色时间</div>
+        <button class="btn" onclick="closeColor()">✖ 关闭</button>
+      </div>
+      <div class="color-tools">
+        <button class="ctool on" id="ctModeFill" onclick="colorSetMode('fill')">🪣 涂色</button>
+        <button class="ctool" id="ctModeBrush" onclick="colorSetMode('brush')">🖌️ 画笔</button>
+        <button class="ctool" id="ctModeErase" onclick="colorSetMode('erase')">🧽 橡皮</button>
+        <button class="ctool" onclick="colorUndo()">↩️ 上一笔</button>
+        <button class="ctool" onclick="colorClear()">🗑️ 重画</button>
+        <button class="ctool" onclick="colorPrint()">🖨️ 列印</button>
+      </div>
+      <div class="color-palette" id="colorPalette"></div>
+      <div class="color-stage" id="colorStage"></div>
+      <div class="color-hint" id="colorHint">先选颜色，再点图案涂上去！全部涂完会得到星星喔 ⭐</div>
+    </div>
+  </div>
+  <div id="aiModal">
+    <div class="ai-card">
+      <div class="ai-head"><span>🤖 AI 小精灵</span><button class="btn" onclick="closeAI()">✖ 关闭</button></div>
+      <div class="ai-avatar" id="aiAvatar">🤖</div>
+      <div class="ai-bubble" id="aiBubble">你好呀！点下面的问题问我，也可以打字问我喔！</div>
+      <div class="ai-chips" id="aiChips"></div>
+      <div class="ai-input-row"><input id="aiInput" placeholder="打字问我…" maxlength="60"><button onclick="aiAskInput()">问</button></div>
+    </div>
+  </div>
+  <div id="coachModal">
+    <div class="coach-card">
+      <div class="ai-head"><span>🎤 AI 跟读教练</span><button class="btn" onclick="closeCoach()">✖ 关闭</button></div>
+      <div class="coach-verse" id="coachVerse"></div>
+      <div style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap;">
+        <button class="bigbtn" style="margin-top:0; font-size:18px; padding:12px 24px; background:linear-gradient(135deg,#3ec6b0,#2aa89a);" onclick="coachListen()">🔊 先听念</button>
+        <button class="bigbtn" style="margin-top:0; font-size:18px; padding:12px 24px; background:linear-gradient(135deg,#5f9fff,#3a7bd5);" onclick="coachMic()">🎤 换你念</button>
+      </div>
+      <div class="coach-status" id="coachStatus">先听小精灵念，再按 🎤 换你念！</div>
+    </div>
+  </div>
+  <div id="pianoModal">
+    <div class="piano-card">
+      <div class="ai-head"><span>🎹 音乐钢琴</span><button class="btn" onclick="closePiano()">✖ 关闭</button></div>
+      <div class="piano-keys" id="pianoKeys"></div>
+      <div style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap;">
+        <button class="bigbtn" style="margin-top:0; font-size:18px; padding:12px 24px; background:linear-gradient(135deg,#ffd166,#ff8c42);" onclick="playTwinkle()">⭐ 播放「小星星」</button>
+      </div>
+    </div>
+  </div>
+  <div id="albumModal">
+    <div class="album-card">
+      <div class="ai-head"><span>📒 我的收集册</span><button class="btn" onclick="closeAlbum()">✖ 关闭</button></div>
+      <div style="font-size:20px; font-weight:800; color:var(--ink);">⭐ 我的星星：<span id="albumStars">0</span></div>
+      <div class="album-grid" id="albumGrid"></div>
+      <div style="font-size:14px; color:#8a7fb0; font-weight:700;">完成任务就能收集贴纸！星星和名字会自动记住（存在这台电脑）</div>
+    </div>
+  </div>
+  <div id="voiceModal">
+    <div class="voice-card">
+      <div class="ai-head"><span>🗣️ 选择朗读语音</span><button class="btn" onclick="closeVoice()">✖ 关闭</button></div>
+      <div class="voice-list" id="voiceList"></div>
+      <div class="voice-note">✨ 已内建 <b>微软云端 AI 语音</b>（晓晓女声／云希男声）！全部内容已预生成 MP3，<b>完全免费</b>、任何设备都能听。<br>也可选「自动选择」用浏览器语音。选好会自动记住。</div>
+    </div>
+  </div>
+
+  <div id="modal">
+    <div class="modal-card">
+      <div class="memoji" id="modalEmoji">🎉</div>
+      <h3 id="modalTitle">好棒！</h3>
+      <p id="modalText"></p>
+      <button class="bigbtn" onclick="closeModal()">继续 ➡️</button>
+    </div>
+  </div>
+</div>
+<script>
+/* ================= 基础 ================= */
+const SLIDES = document.querySelectorAll('.slide');
+let cur = 0, stars = 0, soundOn = true;
+let voices = [];
+
+function resize(){
+  const stage = document.getElementById('stage');
+  const mobile = innerWidth < 700 || (innerWidth < innerHeight && innerWidth < 900);
+  document.body.classList.toggle('mobile', mobile);
+  if(mobile){
+    stage.style.left = '0'; stage.style.top = '0';
+    stage.style.width = '100%'; stage.style.height = '100%';
+    stage.style.borderRadius = '0';
+    stage.style.transform = 'none';
+  } else {
+    const s = Math.min(innerWidth/1280, innerHeight/720);
+    stage.style.left = '50%'; stage.style.top = '50%';
+    stage.style.width = '1280px'; stage.style.height = '720px';
+    stage.style.borderRadius = '20px';
+    stage.style.transform = 'translate(-50%,-50%) scale(' + s + ')';
+  }
+}
+addEventListener('resize', resize);
+resize();
+
+/* 页面跳转 */
+function go(n){
+  if(n < 0) n = 0; if(n > SLIDES.length-1) n = SLIDES.length-1;
+  SLIDES[cur].classList.remove('active');
+  cur = n;
+  SLIDES[cur].classList.add('active');
+  document.getElementById('prevBtn').disabled = cur === 0;
+  document.getElementById('nextBtn').disabled = cur === SLIDES.length-1;
+  document.getElementById('pageCount').textContent = `${cur+1} / ${SLIDES.length}`;
+  document.getElementById('progressFill').style.width = ((cur+1)/SLIDES.length*100) + '%';
+  // crumbs
+  document.querySelectorAll('.crumb').forEach((c,i)=>{
+    c.classList.toggle('on', i===cur);
+    c.classList.toggle('done', i<cur);
+  });
+  stopSpeak();
+  if(cur===2) verseInit();
+  if(cur===10) quizInit();
+  if(cur===11) gdInit();
+  if(cur===12) memInit();
+  if(cur===13) findInit();
+  if(cur===14) songRender();
+  if(cur===15) craftRender();
+  if(cur===16) pactRender();
+  if(cur===19) finalStars();
+}
+document.addEventListener('keydown', e=>{
+  if(e.key==='ArrowRight') go(cur+1);
+  if(e.key==='ArrowLeft') go(cur-1);
+  if(e.key==='f'||e.key==='F') toggleFull();
+});
+
+/* 全萤幕 */
+function toggleFull(){
+  if(document.fullscreenElement) document.exitFullscreen();
+  else document.documentElement.requestFullscreen?.();
+}
+document.getElementById('fullBtn').onclick = toggleFull;
+
+/* 声音开关 */
+document.getElementById('soundBtn').onclick = ()=>{
+  soundOn = !soundOn;
+  const b = document.getElementById('soundBtn');
+  b.textContent = soundOn ? '🔊 声音' : '🔇 静音';
+  b.classList.toggle('off', !soundOn);
+  if(!soundOn) stopSpeak();
+};
+
+/* ================= 语音 TTS ================= */
+function pickVoice(){
+  voices = speechSynthesis.getVoices();
+  if(VOICE_PICK){
+    const saved = voices.find(v=>v.voiceURI === VOICE_PICK);
+    if(saved) return saved;
+  }
+  return voices.find(v=>/zh[-_]TW/i.test(v.lang)) ||
+         voices.find(v=>/zh[-_]HK/i.test(v.lang)) ||
+         voices.find(v=>/zh/i.test(v.lang)) || null;
+}
+if('speechSynthesis' in window){
+  speechSynthesis.onvoiceschanged = ()=>{ voices = speechSynthesis.getVoices(); };
+}
+function fnv1a64(str){
+  let h = 0xcbf29ce484222325n, prime = 0x100000001b3n;
+  const bytes = new TextEncoder().encode(str);
+  for(let i=0;i<bytes.length;i++){ h ^= BigInt(bytes[i]); h = (h * prime) & 0xffffffffffffffffn; }
+  return h.toString(16).padStart(16,'0');
+}
+let cloudAudio = null;
+function stopCloudAudio(){ if(cloudAudio){ try{ cloudAudio.pause(); }catch(e){} cloudAudio = null; } }
+function cloudSpeak(text, code, cb){
+  stopCloudAudio();
+  const a = new Audio('audio/' + fnv1a64(text) + '_' + code + '.mp3');
+  a.preload = 'auto';
+  let done = false, fallbackDone = false;
+  const finish = ()=>{ if(done) return; done = true; if(cb) cb(); };
+  const fallback = ()=>{
+    if(fallbackDone) return; fallbackDone = true;
+    speakTextFallback(text, null, cb);
+  };
+  a.onended = ()=>{ cloudAudio = null; finish(); };
+  a.onerror = ()=>{ cloudAudio = null; fallback(); };
+  a.play().then(()=>{ cloudAudio = a; }).catch(()=>{ cloudAudio = null; fallback(); });
+}
+function speakText(text, voice, cb){
+  if(typeof voice === 'function'){ cb = voice; voice = null; }
+  if(!soundOn) return;
+  if(voice){ speakTextFallback(text, voice, cb); return; }
+  if(VOICE_PICK && VOICE_PICK.indexOf('cloud:') === 0){
+    const code = VOICE_PICK === 'cloud:yunxi' ? 'yunxi' : 'xiaoxiao';
+    cloudSpeak(text, code, cb); return;
+  }
+  speakTextFallback(text, null, cb);
+}
+function speakTextFallback(text, voice, cb){
+  if(!('speechSynthesis' in window)){ if(cb) cb(); return; }
+  speechSynthesis.cancel();
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = 'zh-TW';
+  const v = voice || pickVoice(); if(v) u.voice = v;
+  u.rate = 0.92; u.pitch = 1.08;
+  u.onend = ()=>{ if(cb) cb(); };
+  u.onerror = ()=>{ if(cb) cb(); };
+  speechSynthesis.speak(u);
+}
+function stopSpeak(){
+  stopCloudAudio();
+  if('speechSynthesis' in window) speechSynthesis.cancel();
+  document.querySelectorAll('.speakbtn.playing').forEach(b=>b.classList.remove('playing'));
+}
+function speakThis(btn){
+  const txt = btn.dataset.speak || '';
+  if(btn.classList.contains('playing')){ stopSpeak(); return; }
+  stopSpeak();
+  btn.classList.add('playing');
+  speakText(txt, ()=> btn.classList.remove('playing'));
+}
+
+/* ================= 音效 ================= */
+let actx;
+function sfx(freq, dur=0.18, type='sine', vol=0.18){
+  try{
+    actx = actx || new (window.AudioContext||window.webkitAudioContext)();
+    const o = actx.createOscillator(), g = actx.createGain();
+    o.type = type; o.frequency.value = freq;
+    g.gain.setValueAtTime(vol, actx.currentTime);
+    g.gain.exponentialRampToValueAtTime(0.001, actx.currentTime+dur);
+    o.connect(g); g.connect(actx.destination);
+    o.start(); o.stop(actx.currentTime+dur);
+  }catch(e){}
+}
+const ding = ()=> sfx(880, .22, 'sine', .16);
+const dingHi = ()=> { sfx(1046,.16); setTimeout(()=>sfx(1318,.2), 90); };
+const pop = ()=> sfx(520, .08, 'triangle', .2);
+const wrong = ()=> sfx(220, .3, 'sawtooth', .12);
+const chime = ()=>{ sfx(659,.2); setTimeout(()=>sfx(784,.2),120); setTimeout(()=>sfx(1046,.3),240); };
+
+/* ================= 星星 & 弹窗 & 彩带 ================= */
+function addStar(n=1){
+  stars += n;
+  document.getElementById('starCount').textContent = stars;
+  sfx(1200,.12,'sine',.12); setTimeout(()=>sfx(1500,.12,'sine',.12),80);
+  saveProgress();
+}
+function showModal(emoji, title, text){
+  document.getElementById('modalEmoji').textContent = emoji;
+  document.getElementById('modalTitle').textContent = title;
+  document.getElementById('modalText').textContent = text;
+  document.getElementById('modal').classList.add('show');
+}
+function closeModal(){ document.getElementById('modal').classList.remove('show'); }
+
+function confetti(){
+  const w = document.getElementById('confettiWrap');
+  const colors = ['#ffd166','#ff8c42','#ff90b3','#9b7ede','#3ec6b0','#5aa848','#ff5d73'];
+  for(let i=0;i<60;i++){
+    const c = document.createElement('div');
+    c.className = 'confetti';
+    c.style.left = (Math.random()*100)+'%';
+    c.style.background = colors[i%colors.length];
+    c.style.transform = `rotate(${Math.random()*360}deg)`;
+    w.appendChild(c);
+    const dur = 1.4 + Math.random()*1.4;
+    c.animate([
+      {transform:'translateY(0) rotate(0)', opacity:1},
+      {transform:`translateY(${380+Math.random()*200}px) rotate(${360+Math.random()*720}deg)`, opacity:0.6}
+    ], {duration: dur*1000, easing:'cubic-bezier(.2,.7,.4,1)'}).onfinish = ()=> c.remove();
+  }
+}
+
+/* ================= 顶部 crumbs ================= */
+(function(){
+  const box = document.getElementById('crumbs');
+  SLIDES.forEach(()=>{ const d = document.createElement('div'); d.className='crumb'; box.appendChild(d); });
+})();
+
+/* ================= 存心节拼字 ================= */
+const VERSE = ['先生','我们愿意见','耶稣'];
+let versePicked = [];
+function verseInit(){
+  versePicked = [];
+  const line = document.getElementById('verseLine');
+  line.innerHTML = VERSE.map(()=>'<span class="wslot"></span>').join('');
+  const chips = document.getElementById('verseChips');
+  const shuffled = [...VERSE].sort(()=>Math.random()-.5);
+  chips.innerHTML = '';
+  shuffled.forEach(w=>{
+    const b = document.createElement('button');
+    b.className = 'wchip'; b.textContent = w;
+    b.onclick = ()=> versePick(b, w);
+    chips.appendChild(b);
+  });
+}
+function versePick(btn, w){
+  if(versePicked.length >= VERSE.length) return;
+  versePicked.push(w);
+  btn.classList.add('picked');
+  pop();
+  const slots = document.querySelectorAll('#verseLine .wslot');
+  slots[versePicked.length-1].textContent = w;
+  slots[versePicked.length-1].classList.add('filled');
+  if(versePicked.length === VERSE.length){
+    const ok = VERSE.every((v,i)=> v === versePicked[i]);
+    if(ok){ dingHi(); confetti(); earnSticker('verse'); showModal('🌟','太棒了！','你把存心节背起来了！上帝所造的每一样都是好的。'); addStar(1); }
+    else { wrong(); showModal('💪','再试一次！','顺序好像不太对，按「再来一次」重新排排看！'); verseReset(); }
+  }
+}
+function verseReset(){ verseInit(); }
+
+/* ================= 第一天：光 ================= *//* ================= 第一幕：母亲和上帝 ================= */
+const s0M = {'a00':'”妈妈是想为杰米买的，但是有个问题不得不考虑。。', 'a01':'妈妈对他说：“我们现在买不起，杰米，我知道你很失望，但是我们应该有感恩的心，因为。', 'a02':'”在今天的故事里，彼得和约翰跟一个乞丐分享了一个比钱还要好的东西。。'};
+let s0Seen = {}, s0Done = 0;
+document.addEventListener('click', e=>{
+  const t = e.target;
+  if(s0M[t.id]){
+    if(!s0Seen[t.id]){ s0Seen[t.id]=1; s0Done++; }
+    t.classList.add('wiggle'); setTimeout(()=>t.classList.remove('wiggle'),1100);
+    ding(); pop(); speakText(s0M[t.id]);
+  }
+  if(s0Done >= 3 && !document.getElementById('s0done')){
+    const d=document.createElement('div'); d.id='s0done';
+    chime();
+    showModal('👩','精彩的一幕！','你发现了「母亲和上帝」的故事！好棒！'); addStar(1);
+  }
+});
+
+/* ================= 第二幕：朋友和彼得 ================= */
+const s1M = {'a10':'日复一日，他的好心朋友们送他到这里，以便他能向去做礼拜的人讨些钱。。', 'a11':'当彼得和约翰路过时，那人伸出手。。', 'a12':'当彼得和约翰路过时，那人伸出手。。'};
+let s1Seen = {}, s1Done = 0;
+document.addEventListener('click', e=>{
+  const t = e.target;
+  if(s1M[t.id]){
+    if(!s1Seen[t.id]){ s1Seen[t.id]=1; s1Done++; }
+    t.classList.add('wiggle'); setTimeout(()=>t.classList.remove('wiggle'),1100);
+    ding(); pop(); speakText(s1M[t.id]);
+  }
+  if(s1Done >= 3 && !document.getElementById('s1done')){
+    const d=document.createElement('div'); d.id='s1done';
+    chime();
+    showModal('🤝','精彩的一幕！','你发现了「朋友和彼得」的故事！好棒！'); addStar(1);
+  }
+});
+
+/* ================= 第三幕：彼得和宝石 ================= */
+const s2M = {'a20':'但是彼得的下一句话让他的希望破灭了。。', 'a21':'“我没有黄金和银子。。', 'a22':'彼得说，“我没有钱，但有别的东西给你，”他继续说道，“以拿撒勒人耶稣基督之名，叫。'};
+let s2Seen = {}, s2Done = 0;
+document.addEventListener('click', e=>{
+  const t = e.target;
+  if(s2M[t.id]){
+    if(!s2Seen[t.id]){ s2Seen[t.id]=1; s2Done++; }
+    t.classList.add('wiggle'); setTimeout(()=>t.classList.remove('wiggle'),1100);
+    ding(); pop(); speakText(s2M[t.id]);
+  }
+  if(s2Done >= 3 && !document.getElementById('s2done')){
+    const d=document.createElement('div'); d.id='s2done';
+    chime();
+    showModal('👨‍🦱','精彩的一幕！','你发现了「彼得和宝石」的故事！好棒！'); addStar(1);
+  }
+});
+
+/* ================= 第四幕：上帝和彼得 ================= */
+const s3M = {'a30':'他开始赞美上帝！。', 'a31':'乞丐跟着彼得和约翰一起进了圣殿，圣殿里的每个人都认识他，因为他们看着乞丐乞讨多年。', 'a32':'乞丐跟着彼得和约翰一起进了圣殿，圣殿里的每个人都认识他，因为他们看着乞丐乞讨多年。'};
+let s3Seen = {}, s3Done = 0;
+document.addEventListener('click', e=>{
+  const t = e.target;
+  if(s3M[t.id]){
+    if(!s3Seen[t.id]){ s3Seen[t.id]=1; s3Done++; }
+    t.classList.add('wiggle'); setTimeout(()=>t.classList.remove('wiggle'),1100);
+    ding(); pop(); speakText(s3M[t.id]);
+  }
+  if(s3Done >= 3 && !document.getElementById('s3done')){
+    const d=document.createElement('div'); d.id='s3done';
+    chime();
+    showModal('✨','精彩的一幕！','你发现了「上帝和彼得」的故事！好棒！'); addStar(1);
+  }
+});
+
+/* ================= 第五幕：彼得和先知 ================= */
+const s4M = {'a40':'跟着彼得和约翰进了圣殿，后面有一大群人跟着他们。。', 'a41':'跟着彼得和约翰进了圣殿，后面有一大群人跟着他们。。', 'a42':'跟着彼得和约翰进了圣殿，后面有一大群人跟着他们。。'};
+let s4Seen = {}, s4Done = 0;
+document.addEventListener('click', e=>{
+  const t = e.target;
+  if(s4M[t.id]){
+    if(!s4Seen[t.id]){ s4Seen[t.id]=1; s4Done++; }
+    t.classList.add('wiggle'); setTimeout(()=>t.classList.remove('wiggle'),1100);
+    ding(); pop(); speakText(s4M[t.id]);
+  }
+  if(s4Done >= 3 && !document.getElementById('s4done')){
+    const d=document.createElement('div'); d.id='s4done';
+    chime();
+    showModal('👨‍🦱','精彩的一幕！','你发现了「彼得和先知」的故事！好棒！'); addStar(1);
+  }
+});
+
+/* ================= 第六幕：耶稣和上帝 ================= */
+const s5M = {'a50':'他告诉他们应该跟随耶稣，只有这样，上帝才会赦免他们的罪。。', 'a51':'他告诉他们应该跟随耶稣，只有这样，上帝才会赦免他们的罪。。', 'a52':'彼得和那一群人聊到天黑，许许多多的人开始相信耶稣！。'};
+let s5Seen = {}, s5Done = 0;
+document.addEventListener('click', e=>{
+  const t = e.target;
+  if(s5M[t.id]){
+    if(!s5Seen[t.id]){ s5Seen[t.id]=1; s5Done++; }
+    t.classList.add('wiggle'); setTimeout(()=>t.classList.remove('wiggle'),1100);
+    ding(); pop(); speakText(s5M[t.id]);
+  }
+  if(s5Done >= 3 && !document.getElementById('s5done')){
+    const d=document.createElement('div'); d.id='s5done';
+    chime();
+    showModal('✝️','精彩的一幕！','你发现了「耶稣和上帝」的故事！好棒！'); addStar(1);
+  }
+});
+
+/* ================= 第七幕：我们的回应 ================= */
+const s6M = {'r0':'借着服侍他人，我向人们彰显耶稣。。', 'r1':'存心节：先生，我们愿意见耶稣。。', 'r2':'选择做一些事，帮助他人认识耶稣。'};
+let s6Seen = {}, s6Done = 0;
+document.addEventListener('click', e=>{
+  const t = e.target;
+  if(s6M[t.id]){
+    if(!s6Seen[t.id]){ s6Seen[t.id]=1; s6Done++; }
+    t.classList.add('wiggle'); setTimeout(()=>t.classList.remove('wiggle'),1100);
+    ding(); pop(); speakText(s6M[t.id]);
+  }
+  if(s6Done >= 3 && !document.getElementById('s6done')){
+    const d=document.createElement('div'); d.id='s6done';
+    chime();
+    showModal('💜','你学得真好！','把这一课的信息记在心里，做个好孩子！'); addStar(1);
+  }
+});
+/* ================= 问答测验 ================= */
+const QUIZ = [
+  {img:'📖', q:'什么东西最难找？', opts:['没有/每个物品都难找，接受所有可行的答案', '高兴，渴望开始，很愿意，不错等等', '不没有/每个物品都难找。', '当正常握手时，两个人是平等的。但当要拉某人起来时，站着负责拉的那个人，必须要用更大的力气'], a:0, ok:'答对了！没有/每个物品都难找，接受所有可行的答案', no:'再想想……答案就在故事里喔！'},
+  {img:'📖', q:'当你跟别人正常握手或击掌和跟你被别人拉起来，有何不同感受？', opts:['当正常握手时，两个人是平等的。但当要拉某人起来时，站着负责拉的那个人，必须要用更大的力气', '高兴，渴望开始，很愿意，不错等等', '不当正常握手时。', '没有/每个物品都难找，接受所有可行的答案'], a:0, ok:'答对了！当正常握手时，两个人是平等的。但当要拉某人起', no:'再想想……答案就在故事里喔！'},
+  {img:'📖', q:'当我们按自己的计划去服侍他人的时候，你有何感受？', opts:['高兴，渴望开始，很愿意，不错等等', '没有/每个物品都难找，接受所有可行的答案', '不高兴。', '当正常握手时，两个人是平等的。但当要拉某人起来时，站着负责拉的那个人，必须要用更大的力气'], a:0, ok:'答对了！高兴，渴望开始，很愿意，不错等等', no:'再想想……答案就在故事里喔！'},
+  {img:'👩', q:'故事里说：「”＿＿＿＿是想为杰米买的，但是有个问题不得不考虑。」，横线里应该填什么？', opts:['母亲', '彼得', '先知', '上帝'], a:0, ok:'对！就是「母亲」！你读得好仔细！', no:'再想想，答案在故事里喔！'},
+  {img:'✨', q:'故事里说：「他开始赞美＿＿＿＿！」，横线里应该填什么？', opts:['上帝', '先知', '母亲', '彼得'], a:0, ok:'对！就是「上帝」！你读得好仔细！', no:'再想想，答案在故事里喔！'},
+  {img:'👨\u200d🦱', q:'故事里说：「”在今天的故事里，＿＿＿＿和约翰跟一个乞丐分享了一个比钱还要好的东西。」，横线里应该填什么？', opts:['母亲', '先知', '上帝', '彼得'], a:3, ok:'对！就是「彼得」！你读得好仔细！', no:'再想想，答案在故事里喔！'},
+  {img:'📜', q:'故事里说：「”在今天的故事里，彼得和＿＿＿＿跟一个乞丐分享了一个比钱还要好的东西。」，横线里应该填什么？', opts:['彼得', '先知', '上帝', '母亲'], a:1, ok:'对！就是「先知」！你读得好仔细！', no:'再想想，答案在故事里喔！'},
+  {img:'💡', q:'故事里说：「午后的阳＿＿＿＿，暖暖地照着匆匆走向圣殿的人们，快要到献晚祭的时候了。」，横线里应该填什么？', opts:['母亲', '光', '上帝', '彼得'], a:1, ok:'对！就是「光」！你读得好仔细！', no:'再想想，答案在故事里喔！'}
+];
+let qIdx = 0, qScore = 0, qAnswered = false;
+function quizInit(){
+  qIdx = 0; qScore = 0; qAnswered = false;
+  renderQ();
+  document.getElementById('quizStars').textContent = '☆☆☆☆☆';
+}
+function renderQ(){
+  const q = QUIZ[qIdx];
+  document.getElementById('qNum').textContent = `第 ${qIdx+1} 题 / 共 ${QUIZ.length} 题`;
+  document.getElementById('qImg').textContent = q.img;
+  document.getElementById('qQ').textContent = q.q;
+  const box = document.getElementById('qOpts');
+  box.innerHTML = '';
+  q.opts.forEach((o,i)=>{
+    const b = document.createElement('button');
+    b.className = 'q-opt'; b.textContent = o;
+    b.onclick = ()=> answer(i, b);
+    box.appendChild(b);
+  });
+  document.getElementById('qFb').textContent = '';
+  document.getElementById('qFb').className = 'q-fb';
+  document.getElementById('qNext').classList.add('hidden');
+  qAnswered = false;
+  speakText(`第${qIdx+1}题。${q.q} 选一选，点一点！`);
+}
+function answer(i, btn){
+  if(qAnswered) return;
+  qAnswered = true;
+  const q = QUIZ[qIdx];
+  const btns = document.querySelectorAll('.q-opt');
+  const fb = document.getElementById('qFb');
+  if(i === q.a){
+    qScore++;
+    btn.classList.add('sel-correct');
+    fb.className = 'q-fb ok'; fb.innerHTML = `🎉 ${q.ok} +1⭐`;
+    dingHi(); addStar(1); confetti();
+    updateQuizStars();
+  } else {
+    btn.classList.add('sel-wrong');
+    btns[q.a].classList.add('sel-correct');
+    btns.forEach((b,j)=>{ if(j!==q.a && j!==i) b.classList.add('sel-dim'); });
+    fb.className = 'q-fb no'; fb.innerHTML = `😅 ${q.no}`;
+    wrong();
+  }
+  const nb = document.getElementById('qNext');
+  nb.classList.remove('hidden');
+  nb.textContent = qIdx === QUIZ.length-1 ? '看看成绩 🏁' : '下一题 ➡️';
+}
+function updateQuizStars(){
+  const s = '⭐'.repeat(Math.min(qScore,5)) + '☆'.repeat(Math.max(0,5-qScore));
+  document.getElementById('quizStars').textContent = s;
+}
+function quizNext(){
+  if(qIdx < QUIZ.length-1){ qIdx++; renderQ(); }
+  else {
+    stopSpeak();
+    if(qScore === QUIZ.length){ chime(); earnSticker('quiz'); }
+    const msg = qScore === QUIZ.length ? '满分！你就是创造小博士！🌟'
+      : qScore >= 6 ? '好厉害！你对这一课很熟啰！👏'
+      : qScore >= 4 ? '很不错！再听一次故事会更棒！💪'
+      : '没关系，我们再回去听听故事吧！😊';
+    showModal(qScore===QUIZ.length?'🏆':qScore>=6?'🎉':'💪', `你答对了 ${qScore} / ${QUIZ.length} 题`, msg);
+    if(qScore>=4) addStar(2);
+  }
+}
+
+/* ================= 游戏①：哪一天造的 ================= */
+const GD = [
+  {e:'👩', v:true, name:'母亲'},
+  {e:'🍕', v:false, name:'披萨'},
+  {e:'👨\u200d🦱', v:true, name:'彼得'},
+  {e:'🎮', v:false, name:'游戏机'},
+  {e:'🏛️', v:true, name:'圣殿'},
+  {e:'📜', v:true, name:'先知'},
+  {e:'📺', v:false, name:'电视'},
+  {e:'✨', v:true, name:'上帝'},
+  {e:'💡', v:true, name:'光'},
+  {e:'🚗', v:false, name:'汽车'}
+];
+const DAY_NAMES = ['','第一天','第二天','第三天','第四天','第五天','第六天','第七天'];
+/* ================= 游戏①：分类配对 ================= */
+let gdIdx = 0, gdCorrect = 0;
+function gdInit(){ gdIdx = 0; gdCorrect = 0; gdRender(); document.getElementById('gdDone').classList.add('hidden'); }
+function gdRender(){
+  const item = GD[gdIdx];
+  const it = document.getElementById('gdItem');
+  it.textContent = item.e;
+  it.classList.remove('pop'); void it.offsetWidth; it.classList.add('pop');
+  const path = document.getElementById('gdPath');
+  path.innerHTML = '';
+  const mk = (label, cls, val)=>{ const b = document.createElement('button'); b.className = 'day-node ' + cls; b.style.width='150px'; b.style.height='92px'; b.style.fontSize='18px'; b.innerHTML = label; b.onclick = ()=> gdAnswer(val, b); return b; };
+  path.appendChild(mk('是','', true));
+  path.appendChild(mk('不是','', false));
+  document.getElementById('gdFb').textContent = '';
+  speakText(`这是什么？${item.name}。这个故事里有它吗？点一点答案。`);
+}
+function gdAnswer(v, btn){
+  const item = GD[gdIdx];
+  if(btn.dataset.answered) return;
+  btn.dataset.answered = '1';
+  if(v === item.v){
+    gdCorrect++;
+    btn.classList.add('correct'); dingHi();
+    document.getElementById('gdFb').textContent = `✅ 对！${item.name}${item.v ? '有！' : '没有！'}`;
+    confetti();
+  } else {
+    btn.classList.add('wrong'); wrong();
+    document.getElementById('gdFb').textContent = `😅 再想想，${item.name}${item.v ? '有！' : '没有！'}`;
+  }
+}
+function gdNext(){
+  if(gdIdx < GD.length-1){ gdIdx++; gdRender(); }
+  else {
+    const d = document.getElementById('gdDone');
+    d.classList.remove('hidden');
+    if(gdCorrect >= GD.length-2) addStar(2);
+    showModal(gdCorrect>=GD.length-3?'🌟':'💪', `你答对了 ${gdCorrect} / ${GD.length} 题`, gdCorrect>=GD.length-3?'你是故事小专家！':'再多玩几次，一定可以全对！');
+  }
+}/* ================= 游戏②：记忆翻牌 ================= */
+const MEM = [
+  {e:'👩', k:'母亲'},
+  {e:'✨', k:'上帝'},
+  {e:'👨\u200d🦱', k:'彼得'},
+  {e:'📜', k:'先知'},
+  {e:'💡', k:'光'},
+  {e:'🏛️', k:'圣殿'},
+  {e:'👩', k:'母亲'},
+  {e:'✨', k:'上帝'},
+  {e:'👨\u200d🦱', k:'彼得'},
+  {e:'📜', k:'先知'},
+  {e:'💡', k:'光'},
+  {e:'🏛️', k:'圣殿'}
+];
+let memOpen = [], memLock = false, memPairs = 0;
+function memInit(){
+  const grid = document.getElementById('mgrid');
+  grid.innerHTML = '';
+  memOpen = []; memLock = false; memPairs = 0;
+  document.getElementById('memMsg').textContent = '翻开卡片，把一样的两张配对起来！';
+  document.getElementById('memDone').classList.add('hidden');
+  const arr = [...MEM].sort(()=>Math.random()-.5);
+  arr.forEach((m,i)=>{
+    const c = document.createElement('button');
+    c.className = 'mcard';
+    c.dataset.k = m.k; c.dataset.i = i; c.textContent = '❓';
+    c.onclick = ()=> memFlip(c);
+    grid.appendChild(c);
+  });
+}
+function memFlip(c){
+  if(memLock || c.classList.contains('flip') || c.classList.contains('matched')) return;
+  c.classList.add('flip'); c.textContent = MEM[c.dataset.i].e; pop();
+  memOpen.push(c);
+  if(memOpen.length === 2){
+    memLock = true;
+    const [a,b] = memOpen;
+    if(a.dataset.k === b.dataset.k){
+      setTimeout(()=>{
+        a.classList.add('matched'); b.classList.add('matched');
+        a.style.visibility='hidden'; b.style.visibility='hidden';
+        memPairs++; dingHi(); memOpen = []; memLock = false;
+        if(memPairs === MEM.length/2){
+          document.getElementById('memMsg').textContent = '全部配对成功！你太厉害了！🎉';
+          document.getElementById('memDone').classList.remove('hidden');
+          addStar(2); confetti();
+        }
+      }, 450);
+    } else {
+      setTimeout(()=>{
+        a.classList.remove('flip'); a.textContent='❓';
+        b.classList.remove('flip'); b.textContent='❓';
+        memOpen = []; memLock = false; wrong();
+      }, 800);
+    }
+  }
+}
+
+/* ================= 游戏③：找找看 ================= *//* ================= 游戏③：找找看 ================= */
+let findCount = 0;
+function findRender(){
+  document.getElementById('findMsg').innerHTML = '找到 <span id="findCount">' + findCount + '</span> / 6';
+}
+function findInit(){
+  findCount = 0;
+  document.querySelectorAll('#findScene .target').forEach(t=>{ t.classList.remove('found'); });
+  document.querySelectorAll('#findList .fl').forEach(f=>f.classList.remove('found'));
+  document.getElementById('findDone').classList.add('hidden');
+  findRender();
+}
+document.addEventListener('click', e=>{
+  const t = e.target;
+  if(t.classList && t.classList.contains('target') && !t.classList.contains('found')){
+    t.classList.add('found'); findCount++;
+    document.querySelector(`#findList .fl[data-key="${t.dataset.found}"]`)?.classList.add('found');
+    findRender();
+    dingHi();
+    const speakMap = {"母亲":"找到了母亲！好眼力！", "上帝":"找到了上帝！好眼力！", "彼得":"找到了彼得！好眼力！", "先知":"找到了先知！好眼力！", "光":"找到了光！好眼力！", "圣殿":"找到了圣殿！好眼力！"};
+    speakText(speakMap[t.dataset.found] || '找到了！');
+    if(findCount === 6){
+      document.getElementById('findDone').classList.remove('hidden');
+      addStar(2); confetti(); chime();
+      document.getElementById('findMsg').innerHTML = '全部找到了！你真会观察！🌟';
+    }
+  }
+});
+/* ================= 唱游时间 ================= */
+const SONGS = [
+  {name:'我们是祂的手', lines:[['唱呀唱，我们是祂的手！', '拍拍手'], ['我们一起唱！', '左右摇一摇'], ['赞美上帝真美好！', '举起双手'], ['哈利路亚！', '转个圈圈']]},
+  {name:'耶稣让我们发光', lines:[['唱呀唱，耶稣让我们发光！', '拍拍手'], ['我们一起唱！', '左右摇一摇'], ['赞美上帝真美好！', '举起双手'], ['哈利路亚！', '转个圈圈']]}
+];
+let songIdx = 0, songTimer = null;
+function songRender(){
+  const tabs = document.getElementById('songTabs');
+  tabs.innerHTML = '';
+  SONGS.forEach((s,i)=>{
+    const b = document.createElement('button');
+    b.className = 'song-tab' + (i===songIdx?' on':'');
+    b.textContent = s.name;
+    b.onclick = ()=>{ songIdx = i; songRender(); };
+    tabs.appendChild(b);
+  });
+  const box = document.getElementById('songLyric');
+  box.innerHTML = '';
+  SONGS[songIdx].lines.forEach((l,li)=>{
+    const div = document.createElement('div');
+    div.className = 'line';
+    div.innerHTML = `${l[0]}${l[1]?`<span class="action">🎬 ${l[1]}</span>`:''}`;
+    div.dataset.line = li;
+    box.appendChild(div);
+  });
+}
+function speakSong(){
+  const btn = document.getElementById('songSpeak');
+  if(btn.classList.contains('playing')){ stopSpeak(); return; }
+  stopSpeak(); btn.classList.add('playing');
+  const lines = SONGS[songIdx].lines;
+  const full = lines.map(l=>l[0]).join('。');
+  speakText(full, ()=> btn.classList.remove('playing'));
+  // highlight lines in sync
+  const divs = document.querySelectorAll('#songLyric .line');
+  let i = 0;
+  clearInterval(songTimer);
+  songTimer = setInterval(()=>{
+    divs.forEach(d=>d.classList.remove('hl'));
+    if(i < divs.length){ divs[i].classList.add('hl'); i++; }
+    else { clearInterval(songTimer); }
+  }, 2200);
+}
+
+/* ================= 动手做做看 ================= */
+const CRAFTS = [
+  {ico:'📖', nm:'做三明治巾', wk:'第1周', desc:'和爸爸妈妈一起完成「做三明治巾」的小创作吧！'},
+  {ico:'📖', nm:'寻宝游戏Ｂ·做三明治', wk:'第2周', desc:'和爸爸妈妈一起完成「寻宝游戏Ｂ·做三明治」的小创作吧！'}
+];
+function craftRender(){
+  const g = document.getElementById('craftGrid');
+  if(g.dataset.done) return; g.dataset.done = '1';
+  g.innerHTML = '';
+  CRAFTS.forEach(c=>{
+    const d = document.createElement('div');
+    d.className = 'craft-card';
+    d.innerHTML = `<div class="ico">${c.ico}</div><div class="nm">${c.nm}</div><div class="wk">${c.wk}</div><div style="font-size:13px; color:var(--ink2); margin-top:6px;">${c.desc}</div>`;
+    g.appendChild(d);
+  });
+}
+
+/* ================= 亲子时间 ================= */
+const PACTS = [
+  '·一起读存心节',
+  '·在家庭崇拜时，阅读徒3:1-',
+  '谢上帝为他们所做的一切',
+  '·在家庭崇拜的时候，阅读徒3:7，8',
+  '歌或画画受到表扬',
+  '·在家庭崇拜时，用你自己的话说说本',
+  '一幅画来表达你的计划',
+  '·一起回顾存心节',
+  '·在今天的家庭崇拜中，阅读徒3:6-',
+  '了一件很神奇的事情时，你会赞美',
+  '·假想你不能走路了，说一说你如何',
+  '·和你的家人一起读',
+  '明：从下方的单词中，找出你的存心节',
+  '·和家人一起阅读徒',
+  '告，祈求耶稣让你'
+];
+let pactDone = 0;
+function pactRender(){
+  const g = document.getElementById('pactGrid');
+  if(g.dataset.done) return; g.dataset.done = '1';
+  g.innerHTML = '';
+  PACTS.forEach((t,i)=>{
+    const d = document.createElement('div');
+    d.className = 'pact';
+    d.innerHTML = `<span class="num">${i+1}</span><div class="txt">${t}</div>`;
+    d.onclick = ()=>{
+      if(d.classList.contains('done')) return;
+      d.classList.add('done'); pactDone++; pop(); ding();
+      if(pactDone % 3 === 0) addStar(1);
+      if(pactDone === PACTS.length){ confetti(); chime(); earnSticker('pact'); showModal('🌟','全部完成！','你和宝贝一起完成了 15 件大自然的小任务！上帝造的每一样都是好的！'); addStar(2); }
+    };
+    g.appendChild(d);
+  });
+}
+
+/* ================= 证书 ================= */
+function finalStars(){ document.getElementById('finalStars').textContent = stars; }
+function printCert(){
+  const name = document.getElementById('nameInput').value || '小朋友';
+  const w = window.open('', '_blank');
+  w.document.write(`<!DOCTYPE html><html lang="zh-Hant"><head><meta charset="UTF-8"><title>完成证书</title>
+  <style>body{font-family:"PingFang TC","Microsoft JhengHei",sans-serif; display:grid; place-items:center; min-height:100vh; margin:0; background:#fff;}
+  .c{width:900px; border:6px double #ffb703; border-radius:30px; padding:50px 40px; text-align:center; background:linear-gradient(135deg,#fffdf3,#fff3d6);}
+  h1{font-size:38px; color:#3a2e5c; margin:10px 0;} .big{font-size:60px;} .row{display:flex; justify-content:center; align-items:center; gap:40px; margin:20px 0;}
+  .seal{width:120px;height:120px;border-radius:50%;border:5px solid #ffb703;display:grid;place-items:center;color:#ff8c42;font-weight:800;transform:rotate(-12deg);}
+  p{font-size:20px; color:#5b4a8a; line-height:1.9;}</style></head><body>
+  <div class="c"><div class="big">🎖️</div><h1>完成证书</h1>
+  <p>亲爱的 <b style="font-size:26px;">${name}</b>，<br>恭喜你完成了第五课「比金子更好」的互动课程，<br>并获得了 <b>${stars}</b> 颗星星！</p>
+  <div class="row"><div><p style="text-align:left;">存心节：<br><b style="color:#ff8c42; font-size:22px;">「上帝所造的每一样都是好的。」</b><br>（创世记 1:31）</p></div><div class="seal">完成<br>五<br>💜</div></div>
+  <p>上帝创造我们的世界，因为祂爱我们。💜</p></div>
+  <script>window.print();<\/script></body></html>`);
+  w.document.close();
+}
+
+
+/* ================= 涂色时间 ================= */
+const COLORS = ['#ff5d73','#ff8c42','#ffd166','#8fd46f','#3ec6b0','#5f9fff','#9b7ede','#ff90b3','#c98a5b','#f5f5f5','#9aa0a6','#3a3a3a'];
+let colorMode = 'fill', colorPick = COLORS[0];
+let colorStack = [], colorAllDone = false;
+let colorSvg = null, colorDrawing = null, colorPointing = false;
+
+const COLOR_SCENE = `<rect class="c-r" data-n="天空" x="0" y="0" width="900" height="300" fill="#ffffff"/>
+<rect class="c-r" data-n="草地" x="0" y="300" width="900" height="220" fill="#ffffff"/>
+<circle class="c-r" data-n="太阳" cx="120" cy="100" r="55" fill="#ffffff"/>
+<g stroke="#3a3a3a" stroke-width="5" stroke-linecap="round"><line x1="120" y1="24" x2="120" y2="40"/><line x1="120" y1="160" x2="120" y2="176"/><line x1="44" y1="100" x2="60" y2="100"/><line x1="180" y1="100" x2="196" y2="100"/></g>
+<path class="c-r" data-n="白云" d="M300 170 Q290 120 340 120 Q350 85 400 90 Q450 85 455 125 Q500 130 495 170 Z" fill="#ffffff"/>
+<circle class="c-r" data-n="树冠" cx="520" cy="200" r="80" fill="#ffffff"/>
+<rect class="c-r" data-n="树干" x="496" y="260" width="48" height="120" rx="12" fill="#ffffff"/>
+<path class="c-r" data-n="大爱心" d="M450 430 C410 390 360 410 360 455 C360 500 420 535 450 555 C480 535 540 500 540 455 C540 410 490 390 450 430 Z" fill="#ffffff"/>
+<text x="450" y="338" text-anchor="middle" font-size="28" font-weight="bold" fill="#9a8cb8">比金子更好</text>`;
+
+function openColor(){
+  document.getElementById('colorModal').classList.add('show');
+  colorAllDone = false;
+  const stage = document.getElementById('colorStage');
+  if(!stage.dataset.built){
+    stage.innerHTML = '<svg id="colorSvg" viewBox="0 0 900 520" xmlns="http://www.w3.org/2000/svg"><g id="colorRegions">' + COLOR_SCENE + '</g><g id="brushLayer"></g></svg>';
+    const pal = document.getElementById('colorPalette');
+    pal.innerHTML = '';
+    COLORS.forEach((c,i)=>{
+      const b = document.createElement('button');
+      b.className = 'csw' + (i===0 ? ' on' : '');
+      b.style.background = c;
+      b.title = c;
+      b.onclick = ()=> colorPickColor(c, b);
+      pal.appendChild(b);
+    });
+    colorSvg = document.getElementById('colorSvg');
+    colorSvg.addEventListener('pointerdown', colorDown);
+    colorSvg.addEventListener('pointermove', colorMove);
+    colorSvg.addEventListener('pointerup', colorUp);
+    colorSvg.addEventListener('pointercancel', colorUp);
+    stage.dataset.built = '1';
+  }
+  colorClear();
+}
+function closeColor(){ document.getElementById('colorModal').classList.remove('show'); }
+function colorSetMode(m){
+  colorMode = m;
+  ['ctModeFill','ctModeBrush','ctModeErase'].forEach(id=>document.getElementById(id).classList.remove('on'));
+  document.getElementById('ctMode' + (m==='fill'?'Fill': m==='brush'?'Brush':'Erase')).classList.add('on');
+  document.getElementById('colorHint').textContent = m==='fill' ? '先选颜色，再点图案涂上去！全部涂完会得到星星喔 ⭐' : m==='brush' ? '用手指／滑鼠在画面上画画！' : '把想擦掉的地方涂成白色！';
+}
+function colorPickColor(c, btn){
+  colorPick = c;
+  document.querySelectorAll('.csw').forEach(b=>b.classList.remove('on'));
+  btn.classList.add('on');
+  pop();
+}
+function colorFill(el){
+  const prev = el.dataset.stroke ? el.style.stroke : el.style.fill;
+  colorStack.push({t:'f', el, prev, stroke: !!el.dataset.stroke});
+  if(el.dataset.stroke){ el.style.stroke = colorPick; } else { el.style.fill = colorPick; }
+  ding();
+  colorCheckAll();
+}
+function colorCheckAll(){
+  const rs = document.querySelectorAll('#colorRegions .c-r, #colorRegions .c-s');
+  let all = true;
+  rs.forEach(r=>{
+    const v = r.dataset.stroke ? r.style.stroke : r.style.fill;
+    if(!v || v === '#ffffff' || v === 'rgb(255, 255, 255)') all = false;
+  });
+  if(all && !colorAllDone){
+    colorAllDone = true; earnSticker('color');
+    chime(); confetti(); addStar(1);
+    document.getElementById('colorHint').textContent = '🎉 你涂得好漂亮！得到 1 颗星星！';
+  }
+}
+function colorDown(e){
+  e.preventDefault();
+  if(colorMode === 'fill'){
+    const el = document.elementFromPoint(e.clientX, e.clientY);
+    if(el && (el.classList.contains('c-r') || el.classList.contains('c-s'))) colorFill(el);
+    return;
+  }
+  colorPointing = true;
+  const pt = svgPoint(e);
+  const NS = 'http://www.w3.org/2000/svg';
+  colorDrawing = document.createElementNS(NS, 'path');
+  colorDrawing.setAttribute('d', 'M ' + pt.x + ' ' + pt.y);
+  colorDrawing.setAttribute('fill', 'none');
+  colorDrawing.setAttribute('stroke', colorMode === 'erase' ? '#ffffff' : colorPick);
+  colorDrawing.setAttribute('stroke-width', colorMode === 'erase' ? 30 : 14);
+  colorDrawing.setAttribute('stroke-linecap', 'round');
+  colorDrawing.setAttribute('stroke-linejoin', 'round');
+  document.getElementById('brushLayer').appendChild(colorDrawing);
+  colorStack.push({t:'b', el: colorDrawing});
+  sfx(600,.05,'sine',.06);
+}
+function colorMove(e){
+  if(!colorPointing || !colorDrawing) return;
+  const pt = svgPoint(e);
+  colorDrawing.setAttribute('d', colorDrawing.getAttribute('d') + ' L ' + pt.x + ' ' + pt.y);
+}
+function colorUp(){ colorPointing = false; colorDrawing = null; }
+function svgPoint(e){
+  const r = colorSvg.getBoundingClientRect();
+  return { x: (e.clientX - r.left) / r.width * 900, y: (e.clientY - r.top) / r.height * 520 };
+}
+function colorUndo(){
+  if(!colorStack.length){ pop(); return; }
+  const a = colorStack.pop();
+  if(a.t === 'f'){ if(a.stroke){ a.el.style.stroke = a.prev; } else { a.el.style.fill = a.prev; } }
+  else { a.el.remove(); }
+  pop();
+}
+function colorClear(){
+  colorStack = [];
+  document.querySelectorAll('#colorRegions .c-r').forEach(el=> el.style.fill = '#ffffff');
+  document.querySelectorAll('#colorRegions .c-s').forEach(el=> el.style.stroke = '#ffffff');
+  document.getElementById('brushLayer').innerHTML = '';
+  colorAllDone = false;
+}
+function colorPrint(){
+  const svg = document.getElementById('colorSvg').outerHTML;
+  const w = window.open('', '_blank');
+  w.document.write('<!DOCTYPE html><html><head><meta charset="UTF-8"><title>我的涂色作品</title><style>body{margin:0;display:grid;place-items:center;min-height:100vh;}svg{width:100%;max-width:1000px;height:auto;}</style></head><body>' + svg + '<scr' + 'ipt>window.print();</scr' + 'ipt></body></html>');
+  w.document.close();
+}
+
+document.getElementById('colorBtn').onclick = openColor;
+document.getElementById('aiBtn').onclick = openAI;
+document.getElementById('voiceBtn').onclick = openVoice;
+document.getElementById('albumBtn').onclick = openAlbum;
+
+
+const COURSE_ID = 'b3m5';
+const AI_KB = [
+  {keys:['什么东西最难找'], a:'没有/每个物品都难找，接受所有可行的答案'},
+  {keys:['当你跟别人正常握手或击掌和跟你被别人拉起来有何不同感受', '当你跟别人正常握手或击掌和跟你被别人拉起来', '有何不同感受'], a:'当正常握手时，两个人是平等的。但当要拉某人起来时，站着负责拉的那个人，必须要用更大的力气'},
+  {keys:['当我们按自己的计划去服侍他人的时候你有何感受', '当我们按自己的计划去服侍他人的时候', '你有何感受'], a:'高兴，渴望开始，很愿意，不错等等'},
+  {keys:['故事', '讲了什么', '主要内容', '这个故事', '在讲'], a:'这一课讲的是：彼得和约翰借着圣灵的能力去服侍一个人，这个人是天生的瘸子，但是被医治好了。他们要他站起来行走，他就照做了。于是人们都因着这样的神迹前来，彼得告诉他们关于耶稣的事，很多人便相信了。这是关于服侍的教导当我们帮助他人时，就是在服侍上帝。我们向他人……。借着服侍他人，我向人们彰显耶稣。'},
+  {keys:['主角', '人物', '故事里', '里面'], a:'这个故事里有：母亲、彼得、先知、光。借着服侍他人，我向人们彰显耶稣。'},
+  {keys:['信息', '这一课', '告诉我们', '道理', '学习', '明白', '主题', '重点'], a:'借着服侍他人，我向人们彰显耶稣。'},
+  {keys:['存心节', '金句', '经文', '背诵', '记忆'], a:'「先生，我们愿意见耶稣。」（约12:21）'},
+  {keys:['上帝', '耶稣'], a:'借着服侍他人，我向人们彰显耶稣。上帝爱我们！'},
+  {keys:['你好', '哈喽', '你是谁', 'hello'], a:'你好呀！我是你的小帮手，今天我们一起认识「比金子更好」的故事！'},
+  {keys:['为什么', '结局', '后来', '然后', '结果', '最后'], a:'借着服侍他人，我向人们彰显耶稣。上帝爱我们！'}
+];
+const AI_SUGGEST = ['什么东西最难找？','当你跟别人正常握手或击掌和跟你被别人拉起来，有何不同感受？','当我们按自己的计划去服侍他人的时候，你有何感受？','这个故事讲了什么？','存心节是什么？','信息是什么？','你好！'];
+const COACH_VERSE = '先生，我们愿意见耶稣。';
+const COACH_WORDS = ['先生','我们愿意见','耶稣'];
+
+
+/* ================= AI 小精灵 ================= */
+function openAI(){
+  document.getElementById('aiModal').classList.add('show');
+  const chips = document.getElementById('aiChips');
+  if(!chips.dataset.built){
+    chips.innerHTML = '';
+    AI_SUGGEST.forEach(q=>{
+      const b = document.createElement('button');
+      b.className = 'aichip'; b.textContent = q;
+      b.onclick = ()=> aiAsk(q);
+      chips.appendChild(b);
+    });
+    chips.dataset.built = '1';
+  }
+  const i = document.getElementById('aiInput');
+  i.onkeydown = (e)=>{ if(e.key==='Enter') aiAskInput(); };
+}
+function closeAI(){ document.getElementById('aiModal').classList.remove('show'); }
+function aiAsk(text){
+  const t = String(text||'').replace(/[，。！？、？!~\s]/g,'');
+  if(!t) return;
+  const av = document.getElementById('aiAvatar');
+  av.classList.remove('bounce'); void av.offsetWidth; av.classList.add('bounce');
+  let found = null;
+  for(const e of AI_KB){ if(e.keys.some(k=>t.includes(k))){ found = e; break; } }
+  const bubble = document.getElementById('aiBubble');
+  if(found){ bubble.textContent = found.a; speakText(found.a); ding(); }
+  else {
+    const fb = '嗯……这个问题有点难，问问爸爸妈妈或老师吧！也可以点上面的问题问我喔！';
+    bubble.textContent = fb; speakText(fb);
+  }
+}
+function aiAskInput(){
+  const i = document.getElementById('aiInput');
+  const v = i.value.trim();
+  if(!v) return;
+  aiAsk(v); i.value = '';
+}
+
+/* ================= AI 跟读教练 ================= */
+let coachRec = null;
+function openCoach(){
+  document.getElementById('coachModal').classList.add('show');
+  document.getElementById('coachVerse').textContent = COACH_VERSE;
+  document.getElementById('coachStatus').textContent = '先听小精灵念，再按 🎤 换你念！';
+}
+function closeCoach(){ if(coachRec){ try{ coachRec.stop(); }catch(e){} coachRec=null; } document.getElementById('coachModal').classList.remove('show'); }
+function coachListen(){ speakText(COACH_VERSE); }
+function coachMic(){
+  const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+  const st = document.getElementById('coachStatus');
+  if(!SR){
+    earnSticker('read'); addStar(1); confetti();
+    st.textContent = '这个浏览器不支援语音辨识，但你大声念一定很棒！+1⭐';
+    return;
+  }
+  if(coachRec && coachRec.recognizing){ try{ coachRec.stop(); }catch(e){} coachRec.recognizing=false; return; }
+  try{
+    const rec = new SR();
+    rec.lang = 'zh-TW'; rec.interimResults = false; rec.maxAlternatives = 1;
+    rec.onresult = (e)=>{ const t = Array.from(e.results).map(r=>r[0].transcript).join(''); coachScore(t); };
+    rec.onend = ()=>{ if(coachRec) coachRec.recognizing = false; };
+    rec.onerror = ()=>{ st.textContent = '听不太清楚，靠近麦克风再大声念一次！'; };
+    rec.start();
+    coachRec = rec; coachRec.recognizing = true;
+    st.textContent = '🎤 请跟著大声念一遍……（再按一次结束）';
+  }catch(err){ st.textContent = '请允许麦克风权限，再按一次 🎤'; }
+}
+function coachScore(transcript){
+  const st = document.getElementById('coachStatus');
+  let hit = 0;
+  COACH_WORDS.forEach(w=>{ if(transcript.includes(w)) hit++; });
+  const ratio = hit / COACH_WORDS.length;
+  if(ratio >= 0.6){ earnSticker('read'); addStar(1); confetti(); st.textContent = '🎉 念得太好了！+1⭐'; speakText('念得太好了！你很棒！'); }
+  else if(ratio > 0){ st.textContent = '👍 很不错！再听一次，再念一次会更棒！（念到 ' + hit + ' 个关键词）'; }
+  else { st.textContent = '💪 没关系！先听小精灵念，再大声试一次！'; }
+}
+
+/* ================= 音乐钢琴 ================= */
+const NOTES = [523.25,587.33,659.25,698.46,783.99,880,987.77,1046.5];
+const NOTE_NAMES = ['Do','Re','Mi','Fa','Sol','La','Si','Do'];
+const KEY_COLORS = ['#ff5d73','#ff8c42','#ffd166','#8fd46f','#3ec6b0','#5f9fff','#9b7ede','#ff90b3'];
+function openPiano(){
+  document.getElementById('pianoModal').classList.add('show');
+  const k = document.getElementById('pianoKeys');
+  if(!k.dataset.built){
+    k.innerHTML = '';
+    NOTES.forEach((f,i)=>{
+      const b = document.createElement('button');
+      b.className = 'pkey'; b.textContent = NOTE_NAMES[i];
+      b.style.background = KEY_COLORS[i];
+      b.onclick = ()=> note(i);
+      k.appendChild(b);
+    });
+    k.dataset.built = '1';
+  }
+}
+function closePiano(){ document.getElementById('pianoModal').classList.remove('show'); }
+function note(i){ sfx(NOTES[i], .55, 'triangle', .28); }
+function playTwinkle(){
+  const seq = [0,0,4,4,5,5,4, 3,3,2,2,1,1,0];
+  seq.forEach((n,i)=> setTimeout(()=>note(n), i*420));
+}
+
+/* ================= 贴纸收集册 + 进度保存 ================= */
+const STICKERS = [
+  {id:'verse', ico:'⭐', name:'存心节之星'},
+  {id:'quiz', ico:'🎯', name:'测验小达人'},
+  {id:'color', ico:'🎨', name:'涂色大师'},
+  {id:'pact', ico:'💪', name:'亲子任务王'},
+  {id:'read', ico:'🎤', name:'跟读小老师'}
+];
+let PROGRESS = {stars:0, name:'', stickers:[]};
+function saveProgress(){
+  try{
+    PROGRESS.stars = stars;
+    const ni = document.getElementById('nameInput');
+    if(ni) PROGRESS.name = ni.value;
+    localStorage.setItem('sab_' + COURSE_ID, JSON.stringify(PROGRESS));
+  }catch(e){}
+}
+function loadProgress(){
+  try{
+    const raw = localStorage.getItem('sab_' + COURSE_ID);
+    if(raw) PROGRESS = Object.assign({stars:0,name:'',stickers:[]}, JSON.parse(raw));
+    if(PROGRESS.stars){ stars = PROGRESS.stars; document.getElementById('starCount').textContent = stars; }
+    const ni = document.getElementById('nameInput');
+    if(ni){
+      if(PROGRESS.name) ni.value = PROGRESS.name;
+      ni.addEventListener('input', ()=>{ PROGRESS.name = ni.value; saveProgress(); });
+    }
+  }catch(e){}
+}
+function earnSticker(id){
+  if(!PROGRESS.stickers.includes(id)) PROGRESS.stickers.push(id);
+  saveProgress();
+  const g = document.getElementById('albumGrid');
+  if(g && document.getElementById('albumModal').classList.contains('show')) openAlbum();
+}
+function openAlbum(){
+  document.getElementById('albumModal').classList.add('show');
+  document.getElementById('albumStars').textContent = stars;
+  const g = document.getElementById('albumGrid');
+  g.innerHTML = '';
+  STICKERS.forEach(s=>{
+    const earned = PROGRESS.stickers.includes(s.id);
+    const d = document.createElement('div');
+    d.className = 'sticker' + (earned ? ' earned' : '');
+    d.innerHTML = '<div class="sico">' + (earned ? s.ico : '❓') + '</div><div class="snm">' + s.name + '</div>';
+    g.appendChild(d);
+  });
+}
+function closeAlbum(){ document.getElementById('albumModal').classList.remove('show'); }
+
+
+/* ================= 语音选择器 ================= */
+let VOICE_PICK = null;
+try{ VOICE_PICK = localStorage.getItem('sab_voice') || 'cloud:xiao'; }catch(e){ VOICE_PICK = 'cloud:xiao'; }
+function voiceList(){
+  const v = speechSynthesis.getVoices();
+  const zh = v.filter(x=>/zh/i.test(x.lang));
+  return zh.length ? zh : v;
+}
+function openVoice(){
+  document.getElementById('voiceModal').classList.add('show');
+  const box = document.getElementById('voiceList');
+  box.innerHTML = '';
+  const all = voiceList();
+  const mk = (label, detail, sel, onClick)=>{
+    const row = document.createElement('div');
+    row.className = 'vrow' + (sel ? ' sel' : '');
+    row.innerHTML = '<div><div class="vname">' + label + '</div><div class="vlang">' + detail + '</div></div><button class="vpreview">试听</button>';
+    row.querySelector('.vpreview').onclick = (e)=>{ e.stopPropagation(); previewVoice(row.__voice); };
+    row.onclick = ()=>{ VOICE_PICK = row.__voice ? row.__voice.voiceURI : null; saveVoicePick(); renderVoiceSel(); };
+    row.__voice = null;
+    return row;
+  };
+  // 自动选择
+  box.appendChild(mk('自动选择（推荐）', '依设备挑选中文语音', !VOICE_PICK, ()=>{}));
+  const cloudOpts = [
+    {code:'cloud:xiao',  label:'☁️ 云端·晓晓（女声）', detail:'微软 AI 神经语音 · 已预生成 MP3 · 免费'},
+    {code:'cloud:yunxi', label:'☁️ 云端·云希（男声）', detail:'微软 AI 神经语音 · 已预生成 MP3 · 免费'}
+  ];
+  cloudOpts.forEach(c=>{
+    const row = mk(c.label, c.detail, VOICE_PICK===c.code, ()=>{});
+    row.__cloud = c.code;
+    row.onclick = ()=>{ VOICE_PICK = c.code; saveVoicePick(); renderVoiceSel(); };
+    row.querySelector('.vpreview').onclick = (e)=>{ e.stopPropagation(); previewVoiceCloud(c.code); };
+    box.appendChild(row);
+  });
+  if(all.length === 0){
+    const d = document.createElement('div');
+    d.style.cssText = 'padding:18px;text-align:center;color:#8a7fb0;font-weight:700;';
+    d.textContent = '这个浏览器没有侦测到语音。建议改用 Edge／Chrome 开启，并在系统设定中安装中文语音。';
+    box.appendChild(d);
+  } else {
+    all.forEach(v=>{
+      const sel = VOICE_PICK && v.voiceURI === VOICE_PICK;
+      const row = mk(v.name, v.lang + (v.localService ? '（本机）' : '（线上）'), sel, ()=>{});
+      row.__voice = v;
+      row.onclick = ()=>{ VOICE_PICK = v.voiceURI; saveVoicePick(); renderVoiceSel(); };
+      row.querySelector('.vpreview').onclick = (e)=>{ e.stopPropagation(); previewVoice(v); };
+      box.appendChild(row);
+    });
+  }
+  renderVoiceSel();
+}
+function closeVoice(){ document.getElementById('voiceModal').classList.remove('show'); }
+function renderVoiceSel(){
+  document.querySelectorAll('#voiceList .vrow').forEach(r=>{
+    const v = r.__voice;
+    const match = !VOICE_PICK ? (!v && !r.__cloud) : (r.__cloud ? VOICE_PICK === r.__cloud : (v && v.voiceURI === VOICE_PICK));
+    r.classList.toggle('sel', !!match);
+  });
+}
+function saveVoicePick(){
+  try{ localStorage.setItem('sab_voice', VOICE_PICK || ''); }catch(e){}
+}
+function previewVoice(v){
+  stopSpeak();
+  speakText('你好！这是我的声音。我喜欢和你一起读圣经、唱歌、玩游戏。', v);
+}
+function previewVoiceCloud(code){
+  stopSpeak();
+  const oldPick = VOICE_PICK, oldSound = soundOn;
+  VOICE_PICK = code; soundOn = true;
+  cloudSpeak('你好！这是我的声音。我喜欢和你一起读圣经、唱歌、玩游戏。', code, ()=>{ VOICE_PICK = oldPick; soundOn = oldSound; });
+}
+
+/* init */
+go(0);
+loadProgress();
+</script>
+</body>
+</html>
