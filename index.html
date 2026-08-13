@@ -9,12 +9,12 @@
 *{box-sizing:border-box; margin:0; padding:0;}
 body{font-family:"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;
   min-height:100vh; background:radial-gradient(1200px 700px at 20% -10%, #2b2150 0%, #171233 45%, #0d0a22 100%);
-  color:#3a2e5c; display:flex; flex-direction:column; align-items:center; padding:44px 18px 60px;}
-.hero{text-align:center; color:#fff; max-width:960px;}
+  color:#3a2e5c; display:flex; flex-direction:column; align-items:flex-start; padding:44px 18px 60px;}
+.hero{text-align:left; color:#fff; max-width:1080px; width:100%;}
 .hero .big{font-size:56px;}
-h1{color:#fff; font-size:32px; letter-spacing:1px; text-shadow:0 3px 14px rgba(0,0,0,.4); margin-top:8px;}
-.sub{color:#cbb9f0; margin:12px 0 6px; font-size:17px;}
-.pills{display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin-top:14px;}
+h1{color:#fff; font-size:32px; letter-spacing:1px; text-shadow:0 3px 14px rgba(0,0,0,.4); margin-top:8px; text-align:left;}
+.sub{color:#cbb9f0; margin:12px 0 6px; font-size:17px; text-align:left;}
+.pills{display:flex; gap:10px; justify-content:flex-start; flex-wrap:wrap; margin-top:14px;}
 .pill{background:rgba(255,255,255,.1); color:#e6dcff; border:1px solid rgba(255,255,255,.2); border-radius:20px; padding:6px 16px; font-size:14px; font-weight:700;}
 .voicebanner{display:flex; align-items:center; gap:16px; margin:26px auto 0; max-width:820px; width:100%;
   background:linear-gradient(120deg,#2b2150,#4a3670); color:#fff; border:1px solid rgba(255,255,255,.22);
@@ -31,6 +31,14 @@ h1{color:#fff; font-size:32px; letter-spacing:1px; text-shadow:0 3px 14px rgba(0
 .voicebanner.chujibanner .vb-btn{background:linear-gradient(135deg,#ffd166,#ff9e6d); color:#5a2d2d;}
 .voicebanner.vb-slim{margin-top:14px;}
 
+/* 初级/高级 大分区 */
+.big-sec{max-width:1280px; width:100%; margin:52px 0 6px; display:flex; align-items:center; gap:18px;
+  background:linear-gradient(120deg, rgba(255,255,255,.10), rgba(255,255,255,.03));
+  border:1px solid rgba(255,255,255,.18); border-left:6px solid #ffb74d; border-radius:22px; padding:18px 24px;}
+.big-sec .sec-icon{font-size:46px;}
+.big-sec .sec-title{color:#fff; font-size:28px; letter-spacing:1px; text-align:left;}
+.big-sec .sec-sub{color:#cbb9f0; font-size:15px; margin-top:4px; text-align:left;}
+.big-sec.gaoji{border-left-color:#7ec8ff;}
 .year{max-width:1280px; width:100%; margin-top:44px;}
 .yhead{display:flex; align-items:center; gap:14px; margin-bottom:20px; padding:0 4px;}
 .yemoji{font-size:44px; background:rgba(255,255,255,.12); width:76px; height:76px; border-radius:22px; display:grid; place-items:center; box-shadow:0 8px 22px rgba(0,0,0,.3);}
@@ -53,13 +61,13 @@ h2{font-size:20px; color:#3a2e5c; margin-bottom:6px; line-height:1.4;}
 .btn{display:inline-block; margin-top:12px; text-align:center; text-decoration:none; font-weight:800; font-size:16px; color:#fff;
   background:linear-gradient(135deg,#ff8c42,#ff5d73); border-radius:30px; padding:10px 16px; box-shadow:0 6px 18px rgba(255,93,115,.4); transition:.15s;}
 .btn:hover{transform:translateY(-2px);}
-.searchbox{max-width:640px; width:100%; margin:18px auto 0;}
+.searchbox{max-width:640px; width:100%; margin:18px 0 0;}
 .searchbox input{width:100%; padding:13px 18px; border-radius:30px; border:2px solid rgba(255,255,255,.35); background:rgba(255,255,255,.12); color:#fff; font-size:16px; outline:none; backdrop-filter:blur(4px);}
 .searchbox input::placeholder{color:#c9bdea;}
 .searchbox input:focus{border-color:#ff8c42; background:rgba(255,255,255,.2);}
 .searchinfo{color:#cbb9f0; font-size:14px; margin-top:8px; min-height:20px;}
 .course.hidden{display:none;}
-.foot{color:#8f7fc0; margin-top:46px; font-size:14px; text-align:center; line-height:1.9;}
+.foot{color:#8f7fc0; margin-top:46px; font-size:14px; text-align:left; line-height:1.9;}
 @media (max-width:700px){
   h1{font-size:24px;} .hero .big{font-size:44px;}
   .ytitle{font-size:24px;} .qtitle{font-size:20px;} .grid{grid-template-columns:1fr;}
@@ -80,7 +88,7 @@ h2{font-size:20px; color:#3a2e5c; margin-bottom:6px; line-height:1.4;}
       <span class="pill">🎹 音乐钢琴</span>
       <span class="pill">📱 手机／电脑都好看</span>
     </div>
-    <a class="voicebanner chujibanner" href="https://lqjymnl2026.github.io/chuji-xueke/">
+    <a class="voicebanner chujibanner" href="#sec-chuji">
       <div class="vb-icon">🧸</div>
       <div class="vb-text">
         <b>初级互动乐园 · 學課互動樂園</b>
@@ -100,6 +108,263 @@ h2{font-size:20px; color:#3a2e5c; margin-bottom:6px; line-height:1.4;}
     <div class="searchbox">
       <input id="qsearch" type="search" placeholder="🔍 搜课程：输入课名／人物／经文，例如「摩西」「彩虹」「耶稣」" autocomplete="off">
       <div class="searchinfo" id="searchinfo"></div>
+    </div>
+  </div>
+  <div class="big-sec" id="sec-chuji">
+    <div class="sec-icon">🧸</div>
+    <div class="sec-info">
+      <h2 class="sec-title">初级互动 · 24 课</h2>
+      <p class="sec-sub">旧版月度课程：A年1季 · A2-A4 · B1-B4（每月一课，云端 AI 朗读 · 涂色 · 问答 · 证书）</p>
+    </div>
+  </div>
+  <div class="year" id="year-primary">
+    <div class="grid">      <div class="course">
+      <img class="thumb" src="归档-旧版课程/A年1季1月-互动课程/preview/01-封面.png" alt="上帝创造我们这个世界" loading="lazy">
+      <div class="body">
+        <span class="tag">A年季 · 1月月</span>
+        <h2>上帝创造我们这个世界</h2>
+        <div class="verse">⭐ 上帝所造的每一样都是好的。</div>
+        <div class="desc">初级学课 · 旧版月度互动课程（听故事 · 玩游戏 · 答问题 · 云端AI朗读）。</div>
+        <a class="btn" href="归档-旧版课程/A年1季1月-互动课程/index.html">🚀 进入课程</a>
+      </div>
+    </div>
+      <div class="course">
+      <img class="thumb" src="归档-旧版课程/A年1季2月-互动课程/preview/01-封面.png" alt="挪亚的大船" loading="lazy">
+      <div class="body">
+        <span class="tag">A年季 · 2月月</span>
+        <h2>挪亚的大船</h2>
+        <div class="verse">⭐ 我唱出上帝爱的歌声。</div>
+        <div class="desc">初级学课 · 旧版月度互动课程（听故事 · 玩游戏 · 答问题 · 云端AI朗读）。</div>
+        <a class="btn" href="归档-旧版课程/A年1季2月-互动课程/index.html">🚀 进入课程</a>
+      </div>
+    </div>
+      <div class="course">
+      <img class="thumb" src="归档-旧版课程/A年1季3月-互动课程/preview/01-封面.png" alt="撒拉的婴孩" loading="lazy">
+      <div class="body">
+        <span class="tag">A年季 · 3月月</span>
+        <h2>撒拉的婴孩</h2>
+        <div class="verse">⭐ 彼此相爱。</div>
+        <div class="desc">初级学课 · 旧版月度互动课程（听故事 · 玩游戏 · 答问题 · 云端AI朗读）。</div>
+        <a class="btn" href="归档-旧版课程/A年1季3月-互动课程/index.html">🚀 进入课程</a>
+      </div>
+    </div>
+      <div class="course">
+      <img class="thumb" src="归档-旧版课程/A2季1月-互动课程/preview/01-封面.png" alt="海边的早餐" loading="lazy">
+      <div class="body">
+        <span class="tag">A2季 · 1月月</span>
+        <h2>海边的早餐</h2>
+        <div class="verse">⭐ 并以恩慈相待。</div>
+        <div class="desc">初级学课 · 旧版月度互动课程（听故事 · 玩游戏 · 答问题 · 云端AI朗读）。</div>
+        <a class="btn" href="归档-旧版课程/A2季1月-互动课程/index.html">🚀 进入课程</a>
+      </div>
+    </div>
+      <div class="course">
+      <img class="thumb" src="归档-旧版课程/A2季2月-互动课程/preview/01-封面.png" alt="耶稣前往教堂" loading="lazy">
+      <div class="body">
+        <span class="tag">A2季 · 2月月</span>
+        <h2>耶稣前往教堂</h2>
+        <div class="verse">⭐ 我们往耶和华的殿去。</div>
+        <div class="desc">初级学课 · 旧版月度互动课程（听故事 · 玩游戏 · 答问题 · 云端AI朗读）。</div>
+        <a class="btn" href="归档-旧版课程/A2季2月-互动课程/index.html">🚀 进入课程</a>
+      </div>
+    </div>
+      <div class="course">
+      <img class="thumb" src="归档-旧版课程/A2季3月-互动课程/preview/01-封面.png" alt="五饼二鱼" loading="lazy">
+      <div class="body">
+        <span class="tag">A2季 · 3月月</span>
+        <h2>五饼二鱼</h2>
+        <div class="verse">⭐ 有了机会就当向众人行善。</div>
+        <div class="desc">初级学课 · 旧版月度互动课程（听故事 · 玩游戏 · 答问题 · 云端AI朗读）。</div>
+        <a class="btn" href="归档-旧版课程/A2季3月-互动课程/index.html">🚀 进入课程</a>
+      </div>
+    </div>
+      <div class="course">
+      <img class="thumb" src="归档-旧版课程/A3季1月-互动课程/preview/01-封面.png" alt="撒母耳倾听主话" loading="lazy">
+      <div class="body">
+        <span class="tag">A3季 · 1月月</span>
+        <h2>撒母耳倾听主话</h2>
+        <div class="verse">⭐ 撒母耳侍奉上帝。</div>
+        <div class="desc">初级学课 · 旧版月度互动课程（听故事 · 玩游戏 · 答问题 · 云端AI朗读）。</div>
+        <a class="btn" href="归档-旧版课程/A3季1月-互动课程/index.html">🚀 进入课程</a>
+      </div>
+    </div>
+      <div class="course">
+      <img class="thumb" src="归档-旧版课程/A3季2月-互动课程/preview/01-封面.png" alt="以利亚的食粮" loading="lazy">
+      <div class="body">
+        <span class="tag">A3季 · 2月月</span>
+        <h2>以利亚的食粮</h2>
+        <div class="verse">⭐ 我的上帝必供应。</div>
+        <div class="desc">初级学课 · 旧版月度互动课程（听故事 · 玩游戏 · 答问题 · 云端AI朗读）。</div>
+        <a class="btn" href="归档-旧版课程/A3季2月-互动课程/index.html">🚀 进入课程</a>
+      </div>
+    </div>
+      <div class="course">
+      <img class="thumb" src="归档-旧版课程/A3季3月-互动课程/preview/01-封面.png" alt="一个新生儿" loading="lazy">
+      <div class="body">
+        <span class="tag">A3季 · 3月月</span>
+        <h2>一个新生儿</h2>
+        <div class="verse">⭐ 彼此仁慈相待。</div>
+        <div class="desc">初级学课 · 旧版月度互动课程（听故事 · 玩游戏 · 答问题 · 云端AI朗读）。</div>
+        <a class="btn" href="归档-旧版课程/A3季3月-互动课程/index.html">🚀 进入课程</a>
+      </div>
+    </div>
+      <div class="course">
+      <img class="thumb" src="归档-旧版课程/A4季1月-互动课程/preview/01-封面.png" alt="耶稣医治一个小女孩" loading="lazy">
+      <div class="body">
+        <span class="tag">A4季 · 1月月</span>
+        <h2>耶稣医治一个小女孩</h2>
+        <div class="verse">⭐ 你能有健康的身体。</div>
+        <div class="desc">初级学课 · 旧版月度互动课程（听故事 · 玩游戏 · 答问题 · 云端AI朗读）。</div>
+        <a class="btn" href="归档-旧版课程/A4季1月-互动课程/index.html">🚀 进入课程</a>
+      </div>
+    </div>
+      <div class="course">
+      <img class="thumb" src="归档-旧版课程/A4季2月-互动课程/preview/01-封面.png" alt="好牧人" loading="lazy">
+      <div class="body">
+        <span class="tag">A4季 · 2月月</span>
+        <h2>好牧人</h2>
+        <div class="verse">⭐ 我找到我的羊。</div>
+        <div class="desc">初级学课 · 旧版月度互动课程（听故事 · 玩游戏 · 答问题 · 云端AI朗读）。</div>
+        <a class="btn" href="归档-旧版课程/A4季2月-互动课程/index.html">🚀 进入课程</a>
+      </div>
+    </div>
+      <div class="course">
+      <img class="thumb" src="归档-旧版课程/A4季3月-互动课程/preview/01-封面.png" alt="小耶稣诞生" loading="lazy">
+      <div class="body">
+        <span class="tag">A4季 · 3月月</span>
+        <h2>小耶稣诞生</h2>
+        <div class="verse">⭐ 喔！上帝我爱你。</div>
+        <div class="desc">初级学课 · 旧版月度互动课程（听故事 · 玩游戏 · 答问题 · 云端AI朗读）。</div>
+        <a class="btn" href="归档-旧版课程/A4季3月-互动课程/index.html">🚀 进入课程</a>
+      </div>
+    </div>
+      <div class="course">
+      <img class="thumb" src="归档-旧版课程/B1季1月-互动课程/preview/01-封面.png" alt="小小耶稣是快乐的助手" loading="lazy">
+      <div class="body">
+        <span class="tag">B1季 · 1月月</span>
+        <h2>小小耶稣是快乐的助手</h2>
+        <div class="verse">⭐ 耶稣顺从他们。</div>
+        <div class="desc">初级学课 · 旧版月度互动课程（听故事 · 玩游戏 · 答问题 · 云端AI朗读）。</div>
+        <a class="btn" href="归档-旧版课程/B1季1月-互动课程/index.html">🚀 进入课程</a>
+      </div>
+    </div>
+      <div class="course">
+      <img class="thumb" src="归档-旧版课程/B1季2月-互动课程/preview/01-封面.png" alt="撒该爬上一棵树" loading="lazy">
+      <div class="body">
+        <span class="tag">B1季 · 2月月</span>
+        <h2>撒该爬上一棵树</h2>
+        <div class="verse">⭐ 上帝就是爱。</div>
+        <div class="desc">初级学课 · 旧版月度互动课程（听故事 · 玩游戏 · 答问题 · 云端AI朗读）。</div>
+        <a class="btn" href="归档-旧版课程/B1季2月-互动课程/index.html">🚀 进入课程</a>
+      </div>
+    </div>
+      <div class="course">
+      <img class="thumb" src="归档-旧版课程/B1季3月-互动课程/preview/01-封面.png" alt="壮观的行进队伍" loading="lazy">
+      <div class="body">
+        <span class="tag">B1季 · 3月月</span>
+        <h2>壮观的行进队伍</h2>
+        <div class="verse">⭐ 向耶和华唱新歌。</div>
+        <div class="desc">初级学课 · 旧版月度互动课程（听故事 · 玩游戏 · 答问题 · 云端AI朗读）。</div>
+        <a class="btn" href="归档-旧版课程/B1季3月-互动课程/index.html">🚀 进入课程</a>
+      </div>
+    </div>
+      <div class="course">
+      <img class="thumb" src="归档-旧版课程/B2季1月-互动课程/preview/01-封面.png" alt="海边的早餐" loading="lazy">
+      <div class="body">
+        <span class="tag">B2季 · 1月月</span>
+        <h2>海边的早餐</h2>
+        <div class="verse">⭐ 并以恩慈相待。</div>
+        <div class="desc">初级学课 · 旧版月度互动课程（听故事 · 玩游戏 · 答问题 · 云端AI朗读）。</div>
+        <a class="btn" href="归档-旧版课程/B2季1月-互动课程/index.html">🚀 进入课程</a>
+      </div>
+    </div>
+      <div class="course">
+      <img class="thumb" src="归档-旧版课程/B2季2月-互动课程/preview/01-封面.png" alt="耶稣前往教堂" loading="lazy">
+      <div class="body">
+        <span class="tag">B2季 · 2月月</span>
+        <h2>耶稣前往教堂</h2>
+        <div class="verse">⭐ 我们往耶和华的殿去。</div>
+        <div class="desc">初级学课 · 旧版月度互动课程（听故事 · 玩游戏 · 答问题 · 云端AI朗读）。</div>
+        <a class="btn" href="归档-旧版课程/B2季2月-互动课程/index.html">🚀 进入课程</a>
+      </div>
+    </div>
+      <div class="course">
+      <img class="thumb" src="归档-旧版课程/B2季3月-互动课程/preview/01-封面.png" alt="五饼二鱼" loading="lazy">
+      <div class="body">
+        <span class="tag">B2季 · 3月月</span>
+        <h2>五饼二鱼</h2>
+        <div class="verse">⭐ 有了机会就当向众人行善。</div>
+        <div class="desc">初级学课 · 旧版月度互动课程（听故事 · 玩游戏 · 答问题 · 云端AI朗读）。</div>
+        <a class="btn" href="归档-旧版课程/B2季3月-互动课程/index.html">🚀 进入课程</a>
+      </div>
+    </div>
+      <div class="course">
+      <img class="thumb" src="归档-旧版课程/B3季1月-互动课程/preview/01-封面.png" alt="幼年登基的约阿施" loading="lazy">
+      <div class="body">
+        <span class="tag">B3季 · 1月月</span>
+        <h2>幼年登基的约阿施</h2>
+        <div class="verse">⭐ 为所信的福音齐心努力。</div>
+        <div class="desc">初级学课 · 旧版月度互动课程（听故事 · 玩游戏 · 答问题 · 云端AI朗读）。</div>
+        <a class="btn" href="归档-旧版课程/B3季1月-互动课程/index.html">🚀 进入课程</a>
+      </div>
+    </div>
+      <div class="course">
+      <img class="thumb" src="归档-旧版课程/B3季2月-互动课程/preview/01-封面.png" alt="乃缦将军的小侍女" loading="lazy">
+      <div class="body">
+        <span class="tag">B3季 · 2月月</span>
+        <h2>乃缦将军的小侍女</h2>
+        <div class="verse">⭐ 用爱心互相服侍。</div>
+        <div class="desc">初级学课 · 旧版月度互动课程（听故事 · 玩游戏 · 答问题 · 云端AI朗读）。</div>
+        <a class="btn" href="归档-旧版课程/B3季2月-互动课程/index.html">🚀 进入课程</a>
+      </div>
+    </div>
+      <div class="course">
+      <img class="thumb" src="归档-旧版课程/B3季3月-互动课程/preview/01-封面.png" alt="婴孩摩西" loading="lazy">
+      <div class="body">
+        <span class="tag">B3季 · 3月月</span>
+        <h2>婴孩摩西</h2>
+        <div class="verse">⭐ 你们要称谢耶和华。</div>
+        <div class="desc">初级学课 · 旧版月度互动课程（听故事 · 玩游戏 · 答问题 · 云端AI朗读）。</div>
+        <a class="btn" href="归档-旧版课程/B3季3月-互动课程/index.html">🚀 进入课程</a>
+      </div>
+    </div>
+      <div class="course">
+      <img class="thumb" src="归档-旧版课程/B4季1月-互动课程/preview/01-封面.png" alt="彼得与瘸腿的人" loading="lazy">
+      <div class="body">
+        <span class="tag">B4季 · 1月月</span>
+        <h2>彼得与瘸腿的人</h2>
+        <div class="verse">⭐ 你们助人真好。</div>
+        <div class="desc">初级学课 · 旧版月度互动课程（听故事 · 玩游戏 · 答问题 · 云端AI朗读）。</div>
+        <a class="btn" href="归档-旧版课程/B4季1月-互动课程/index.html">🚀 进入课程</a>
+      </div>
+    </div>
+      <div class="course">
+      <img class="thumb" src="归档-旧版课程/B4季2月-互动课程/preview/01-封面.png" alt="保罗与船难" loading="lazy">
+      <div class="body">
+        <span class="tag">B4季 · 2月月</span>
+        <h2>保罗与船难</h2>
+        <div class="verse">⭐ 谈论祂奇妙的作为。</div>
+        <div class="desc">初级学课 · 旧版月度互动课程（听故事 · 玩游戏 · 答问题 · 云端AI朗读）。</div>
+        <a class="btn" href="归档-旧版课程/B4季2月-互动课程/index.html">🚀 进入课程</a>
+      </div>
+    </div>
+      <div class="course">
+      <img class="thumb" src="归档-旧版课程/B4季3月-互动课程/preview/01-封面.png" alt="天使向牧羊人歌唱" loading="lazy">
+      <div class="body">
+        <span class="tag">B4季 · 3月月</span>
+        <h2>天使向牧羊人歌唱</h2>
+        <div class="verse">⭐ 耶和华说我爱你。</div>
+        <div class="desc">初级学课 · 旧版月度互动课程（听故事 · 玩游戏 · 答问题 · 云端AI朗读）。</div>
+        <a class="btn" href="归档-旧版课程/B4季3月-互动课程/index.html">🚀 进入课程</a>
+      </div>
+    </div>
+    </div>
+  </div>
+  <div class="big-sec gaoji" id="sec-gaoji">
+    <div class="sec-icon">📖</div>
+    <div class="sec-info">
+      <h2 class="sec-title">高级互动 · 208 课</h2>
+      <p class="sec-sub">A / B / C / D 年 · 每季 13 课（云端 AI 朗读 · 问答游戏 · 唱游手工 · 亲子祷告 · 证书）</p>
     </div>
   </div>
   <div class="year" id="year-A">
