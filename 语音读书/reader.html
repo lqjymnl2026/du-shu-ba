@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>有声读书吧 · 阅读器</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📖</text></svg>">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="theme-paper size-md">
+
+<header class="reader-top">
+  <div class="wrap inner">
+    <a class="rt-btn" id="homeBtn" href="index.html" title="返回书架">🏠</a>
+    <button class="rt-btn" id="menuBtn" title="目录">☰</button>
+    <div class="titles">
+      <div class="book" id="topBook"></div>
+      <div class="ch" id="topCh"></div>
+    </div>
+    <div class="progress">
+      <div class="pbar"><i id="topBar" style="width:0%"></i></div>
+      <div style="font-size:11px;color:var(--ink-soft);margin-top:3px;text-align:right" id="topIdx"></div>
+    </div>
+    <button class="rt-btn" id="immersiveBtn" title="沉浸阅读">🧘</button>
+    <button class="rt-btn" id="setBtn" title="设置">⚙️</button>
+  </div>
+</header>
+
+<div class="reader">
+  <aside class="sidebar" id="sidebar">
+    <div class="shead">
+      <button class="rt-btn" id="closeSide" style="position:absolute;right:12px;top:12px">✕</button>
+      <h3 id="sideTitle"></h3>
+      <div class="sub" id="sideSub"></div>
+    </div>
+    <ul class="chlist" id="chList"></ul>
+  </aside>
+
+  <main class="main">
+    <div class="paper">
+      <div id="chapterBox"></div>
+      <div class="quiz" id="quizBox"></div>
+      <div style="text-align:center;color:var(--ink-soft);font-size:12.5px;margin-top:18px" id="readPct"></div>
+      <div class="chnav">
+        <button class="btn ghost" id="prevCh">← 上一章</button>
+        <button class="btn primary" id="nextCh">下一章 →</button>
+      </div>
+    </div>
+  </main>
+</div>
+
+<div class="ttsbar">
+  <button id="prevBtn" title="上一句">⏮</button>
+  <button class="play" id="playBtn" title="播放/暂停">▶</button>
+  <button id="nextBtn" title="下一句">⏭</button>
+  <button id="stopBtn" title="停止">⏹</button>
+  <span class="sep"></span>
+  <div class="rate">语速 <input type="range" id="rateRange" min="0.5" max="2" step="0.1" value="1"><span id="rateVal">1x</span></div>
+  <span class="sep"></span>
+  <select id="voiceSel" title="选择朗读声音"></select>
+  <div class="speaking" id="nowTxt"></div>
+</div>
+
+<div class="sheet" id="sheet">
+  <div class="panel">
+    <div style="display:flex;justify-content:space-between;align-items:center">
+      <h3>⚙️ 阅读设置</h3>
+      <button class="rt-btn" id="closeSheetBtn">✕</button>
+    </div>
+    <div class="setrow">
+      <div class="label">阅读主题<small>纸页 / 羊皮纸 / 夜间</small></div>
+      <div class="seg" data-set="theme">
+        <button data-v="paper">📄 纸页</button>
+        <button data-v="sepia">📜 羊皮纸</button>
+        <button data-v="night">🌙 夜间</button>
+      </div>
+    </div>
+    <div class="setrow">
+      <div class="label">字体大小<small>调整正文文字大小</small></div>
+      <div class="seg" data-set="size">
+        <button data-v="sm">小</button>
+        <button data-v="md">中</button>
+        <button data-v="lg">大</button>
+        <button data-v="xl">特大</button>
+      </div>
+    </div>
+    <div class="setrow">
+      <div class="label">环境音<small>轻柔的雨声与低音垫，帮助专注</small></div>
+      <label style="display:flex;gap:8px;align-items:center;font-size:14px">
+        <input type="checkbox" id="ambientChk" style="width:18px;height:18px;accent-color:#c9a24b"> 开启
+      </label>
+    </div>
+    <div class="setrow">
+      <div class="label">小贴士<small>空格键播放/暂停 · ← → 切句 · 点击句子即可跟读</small></div>
+      <span style="font-size:20px">💡</span>
+    </div>
+  </div>
+</div>
+
+<div id="toast"></div>
+<script src="data/books.js"></script>
+<script src="data/PP.js"></script>
+<script src="data/PK.js"></script>
+<script src="data/DA.js"></script>
+<script src="data/AA.js"></script>
+<script src="data/GC.js"></script>
+<script src="data/quizzes.js"></script>
+<script src="assets/common.js"></script>
+<script src="assets/reader.js"></script>
+</body>
+</html>

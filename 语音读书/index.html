@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>有声读书吧 · 《历代斗争丛书》</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📖</text></svg>">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap inner">
+    <a class="brand" href="index.html"><span class="logo">📖</span>有声读书吧</a>
+    <div class="spacer"></div>
+    <a class="btn ghost small" href="index.html">🏠 书架</a>
+  </div>
+</header>
+
+<section class="wrap hero">
+  <span class="kicker">🎧 边听边读 · 互动测验 · 阅读记录</span>
+  <h1>历代斗争丛书</h1>
+  <div class="sub">怀爱伦 著 · 五卷 324 章，从创造到新天新地</div>
+  <div class="cta">
+    <a class="btn primary" href="#shelf">📚 进入书架</a>
+    <a class="btn ghost" href="#badges">🏅 我的成就</a>
+  </div>
+  <div class="meta">
+    <span>🔊 中文朗读 · 逐句跟读</span>
+    <span>✅ 每章选择题测验</span>
+    <span>📊 阅读时长 / 字数 / 打卡</span>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="gold-sent"><span class="star">✨</span><div id="quote">“上帝与我们同在。”——以马内利</div></div>
+
+  <div id="continueBox" class="hidden">
+    <div class="shelf" style="margin-top:8px">
+      <h2>🔄 继续阅读</h2>
+      <div class="hint">接着上次的地方读下去</div>
+      <div style="display:flex;align-items:center;gap:16px;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:18px 20px;box-shadow:var(--shadow);flex-wrap:wrap">
+        <div style="flex:1;min-width:220px">
+          <div style="font-size:12px;color:var(--ink-soft)">当前书目</div>
+          <div id="contTitle" style="font-family:var(--font-read);font-size:19px;font-weight:800;margin:2px 0 8px"></div>
+          <div class="pbar" style="max-width:360px"><i id="contBar" style="width:0%"></i></div>
+          <div id="contPct" style="font-size:12px;color:var(--ink-soft);margin-top:5px"></div>
+        </div>
+        <a id="contBtn" class="btn primary" href="reader.html">🎧 继续听读</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><b id="statTime">0</b><span>累计阅读</span></div>
+    <div class="stat"><b id="statChars">0</b><span>累计字数</span></div>
+    <div class="stat"><b id="statCh">0</b><span>读完章节</span></div>
+    <div class="stat"><b id="statStreak">0</b><span>连续打卡(天)</span></div>
+  </div>
+
+  <div class="shelf" id="shelf">
+    <h2>📚 我的书架</h2>
+    <div class="hint">点开一本书开始阅读 · 每章结尾都有选择题测验 · 进度自动保存</div>
+    <div class="books" id="bookGrid"></div>
+  </div>
+
+  <div class="shelf">
+    <h2>🔥 近 14 天阅读打卡</h2>
+    <div class="hint">每天读一点，星星之火可以燎原</div>
+    <div class="streakbar" id="streakBar"></div>
+  </div>
+
+  <div class="shelf" id="badges">
+    <h2>🏅 我的成就</h2>
+    <div class="hint">坚持阅读，解锁更多徽章</div>
+    <div class="badges" id="badgeBox"></div>
+  </div>
+
+  <div class="foot">
+    📖 内容选自《历代斗争丛书》：先祖与先知 · 先知与君王 · 历代愿望 · 使徒行述 · 善恶之争<br>
+    仅供学习与灵修使用 · 已按作者要求删除「安息日会」字样 · 完全离线可用
+  </div>
+</div>
+
+<div id="toast"></div>
+<script src="data/books.js"></script>
+<script src="data/PP.js"></script>
+<script src="data/PK.js"></script>
+<script src="data/DA.js"></script>
+<script src="data/AA.js"></script>
+<script src="data/GC.js"></script>
+<script src="assets/common.js"></script>
+<script src="assets/home.js"></script>
+</body>
+</html>
