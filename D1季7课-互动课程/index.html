@@ -423,7 +423,7 @@ body.mobile .talk{font-size:18px;}
       <div id="verseLine" style="margin-top:8px; font-size:26px;"></div>
       <div class="word-chips" id="verseChips"></div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
-        <button class="speakbtn" data-speak="我留下平安给你们；我将我的平安赐给你们。……不要胆怯。。我留下平安，给你们，我将我的平，安赐给你们，。……不要，胆怯。" onclick="speakThis(this)">🔊 跟著念</button>
+        <button class="speakbtn" data-speak="我留下平安给你们；我将我的平安赐给你们。……不要胆怯。我留下平安，给你们，我将我的平，安赐给你们，。……不要，胆怯。" onclick="speakThis(this)">🔊 跟著念</button>
         <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px;" onclick="verseReset()">🔄 再来一次</button>
         <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px; background:linear-gradient(135deg,#3ec6b0,#2aa89a);" onclick="addStar(1); go(3);">✅ 我背好了！</button>
       </div>
@@ -703,7 +703,7 @@ body.mobile .talk{font-size:18px;}
         </div>        <div class="card" style="flex:1; min-width:260px; text-align:left;">
           <div style="font-size:38px; text-align:center;">💝</div>
           <div style="font-weight:900; color:#2ecc71; font-size:19px; margin:6px 0;">本周信息</div>
-          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「父母尽力划桨想赶快靠岸。」。无论我在哪里，上帝的爱都会寻找我。。</div>
+          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「暴风雨中的平安」。无论我在哪里，上帝的爱都会寻找我。</div>
         </div>
       </div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
@@ -719,7 +719,7 @@ body.mobile .talk{font-size:18px;}
       <h2 class="title" style="font-size:34px;">🙏 一起祷告</h2>
       <div class="card" style="max-width:820px; width:100%; position:relative; padding:14px 20px;">
         <div style="font-size:52px; line-height:1;" class="floaty">🌟</div>
-        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢当我在患难中时，耶稣会帮助我。<br>就像「父母尽力划桨想赶快靠岸。」的故事一样，<br>求祢帮助我无论他们身处何方，都会呼求耶稣并相信祂会看顾他们。。<br>奉耶稣的名祷告，阿们！</div>
+        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢当我在患难中时，耶稣会帮助我。<br>就像「暴风雨中的平安」的故事一样，<br>求祢帮助我无论他们身处何方，都会呼求耶稣并相信祂会看顾他们。<br>奉耶稣的名祷告，阿们！</div>
         <div style="display:flex; justify-content:center;">
           <button class="speakbtn" onclick="speakText(document.getElementById('prayerText').innerText.replace(/<br>/g,'。'))">🔊 跟著念</button>
         </div>
@@ -1072,7 +1072,7 @@ function versePick(btn, w){
 function verseReset(){ verseInit(); }
 
 /* ================= 第一天：光 ================= *//* ================= 第一幕：船和天空 ================= */
-const s0M = {'a00':'杰米和她的父母正在小湖上划船。。', 'a01':'突然，乌云密布。。', 'a02':'开始下雨刮风，电闪雷鸣，非常猛烈！。'};
+const s0M = {'a00':'杰米和她的父母正在小湖上划船。', 'a01':'突然，乌云密布。', 'a02':'开始下雨刮风，电闪雷鸣，非常猛烈！。'};
 let s0Seen = {}, s0Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1089,7 +1089,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第二幕：耶稣和门徒 ================= */
-const s1M = {'a10':'耶稣想那样的地方应该很适宜于休息。。', 'a11':'”耶稣转向门徒们问到：“我的朋友们，准备好了吗？。', 'a12':'”耶稣转向门徒们问到：“我的朋友们，准备好了吗？。'};
+const s1M = {'a10':'耶稣想那样的地方应该很适宜于休息。', 'a11':'”耶稣转向门徒们问到：“我的朋友们，准备好了吗？。', 'a12':'”耶稣转向门徒们问到：“我的朋友们，准备好了吗？。'};
 let s1Seen = {}, s1Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1123,7 +1123,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第四幕：海和水 ================= */
-const s3M = {'a30':'闪电照亮漆黑的海水，雷声隆隆震响。。', 'a31':'闪电照亮漆黑的海水，雷声隆隆震响。。', 'a32':'门徒吃了一惊，急忙跳起来，巨大的乌云遮住了门徒在几分钟前还在观赏的星星。。'};
+const s3M = {'a30':'闪电照亮漆黑的海水，雷声隆隆震响。', 'a31':'闪电照亮漆黑的海水，雷声隆隆震响。', 'a32':'门徒吃了一惊，急忙跳起来，巨大的乌云遮住了门徒在几分钟前还在观赏的星星。'};
 let s3Seen = {}, s3Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1140,7 +1140,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第五幕：耶稣和海 ================= */
-const s4M = {'a40':'”只见耶稣站起来，举高双手，命令海：“静了吧，住了吧！。', 'a41':'”只见耶稣站起来，举高双手，命令海：“静了吧，住了吧！。', 'a42':'”风立刻平息了，雷电也止住了，浪消失了，海面完全地平静下来。。'};
+const s4M = {'a40':'”只见耶稣站起来，举高双手，命令海：“静了吧，住了吧！。', 'a41':'”只见耶稣站起来，举高双手，命令海：“静了吧，住了吧！。', 'a42':'”风立刻平息了，雷电也止住了，浪消失了，海面完全地平静下来。'};
 let s4Seen = {}, s4Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1157,7 +1157,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第六幕：风和耶稣 ================= */
-const s5M = {'a50':'连风和浪也听从衪！。', 'a51':'”今天，及至永远，耶稣都与我们同在。。'};
+const s5M = {'a50':'连风和浪也听从衪！。', 'a51':'”今天，及至永远，耶稣都与我们同在。'};
 let s5Seen = {}, s5Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;

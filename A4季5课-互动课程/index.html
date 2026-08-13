@@ -423,7 +423,7 @@ body.mobile .talk{font-size:18px;}
       <div id="verseLine" style="margin-top:8px; font-size:26px;"></div>
       <div class="word-chips" id="verseChips"></div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
-        <button class="speakbtn" data-speak="你看父赐给我们是何等的慈爱，使我们得称为上帝的儿女；我们也真是他的儿女。。你看父赐给，我们是何等，的慈爱，使我们得称，为上帝的儿，女，我们也真是，他的儿女。" onclick="speakThis(this)">🔊 跟著念</button>
+        <button class="speakbtn" data-speak="你看父赐给我们是何等的慈爱，使我们得称为上帝的儿女；我们也真是他的儿女。你看父赐给，我们是何等，的慈爱，使我们得称，为上帝的儿，女，我们也真是，他的儿女。" onclick="speakThis(this)">🔊 跟著念</button>
         <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px;" onclick="verseReset()">🔄 再来一次</button>
         <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px; background:linear-gradient(135deg,#3ec6b0,#2aa89a);" onclick="addStar(1); go(3);">✅ 我背好了！</button>
       </div>
@@ -700,7 +700,7 @@ body.mobile .talk{font-size:18px;}
         </div>        <div class="card" style="flex:1; min-width:260px; text-align:left;">
           <div style="font-size:38px; text-align:center;">💝</div>
           <div style="font-weight:900; color:#2ecc71; font-size:19px; margin:6px 0;">本周信息</div>
-          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「生”，祂是什么意思呢？」。上帝的爱是一份白白赠送的礼物。。</div>
+          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「夜间的访客」。上帝的爱是一份白白赠送的礼物。</div>
         </div>
       </div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
@@ -716,7 +716,7 @@ body.mobile .talk{font-size:18px;}
       <h2 class="title" style="font-size:34px;">🙏 一起祷告</h2>
       <div class="card" style="max-width:820px; width:100%; position:relative; padding:14px 20px;">
         <div style="font-size:52px; line-height:1;" class="floaty">🌟</div>
-        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢耶稣的爱改变我们。48。<br>就像「生”，祂是什么意思呢？」的故事一样，<br>求祢帮助我在行动上接受耶稣，邀请祂进入他们的生命。。<br>奉耶稣的名祷告，阿们！</div>
+        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢耶稣的爱改变我们。48。<br>就像「夜间的访客」的故事一样，<br>求祢帮助我在行动上接受耶稣，邀请祂进入他们的生命。<br>奉耶稣的名祷告，阿们！</div>
         <div style="display:flex; justify-content:center;">
           <button class="speakbtn" onclick="speakText(document.getElementById('prayerText').innerText.replace(/<br>/g,'。'))">🔊 跟著念</button>
         </div>
@@ -1069,7 +1069,7 @@ function versePick(btn, w){
 function verseReset(){ verseInit(); }
 
 /* ================= 第一天：光 ================= *//* ================= 第一幕：琴和草 ================= */
-const s0M = {'a00':'夜莺在歌唱，蟋蟀在草丛里愉快地叫着。。', 'a01':'夜莺在歌唱，蟋蟀在草丛里愉快地叫着。。', 'a02':'尼哥底母悄悄地赶到一个地方，他听说耶稣就在那里。。'};
+const s0M = {'a00':'夜莺在歌唱，蟋蟀在草丛里愉快地叫着。', 'a01':'夜莺在歌唱，蟋蟀在草丛里愉快地叫着。', 'a02':'尼哥底母悄悄地赶到一个地方，他听说耶稣就在那里。'};
 let s0Seen = {}, s0Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1086,7 +1086,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第二幕：耶稣和上帝 ================= */
-const s1M = {'a10':'但由于尼哥底母是法利赛人中重要的人物，一时还很难完全相信耶稣就是上帝的儿子。。', 'a11':'但由于尼哥底母是法利赛人中重要的人物，一时还很难完全相信耶稣就是上帝的儿子。。', 'a12':'我已经老了，怎能再进入母亲的肚腹当中呢？。'};
+const s1M = {'a10':'但由于尼哥底母是法利赛人中重要的人物，一时还很难完全相信耶稣就是上帝的儿子。', 'a11':'但由于尼哥底母是法利赛人中重要的人物，一时还很难完全相信耶稣就是上帝的儿子。', 'a12':'我已经老了，怎能再进入母亲的肚腹当中呢？。'};
 let s1Seen = {}, s1Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1103,7 +1103,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第三幕：耶稣和朋友 ================= */
-const s2M = {'a20':'耶稣回答说：“说得没错，我的朋友，但是我所讲56的并不是指肉体上的新生，而是灵性。', 'a21':'耶稣回答说：“说得没错，我的朋友，但是我所讲56的并不是指肉体上的新生，而是灵性。', 'a22':'说实话，尼哥底母，你若不藉圣灵重生，必不得进上帝的国。。'};
+const s2M = {'a20':'耶稣回答说：“说得没错，我的朋友，但是我所讲56的并不是指肉体上的新生，而是灵性。', 'a21':'耶稣回答说：“说得没错，我的朋友，但是我所讲56的并不是指肉体上的新生，而是灵性。', 'a22':'说实话，尼哥底母，你若不藉圣灵重生，必不得进上帝的国。'};
 let s2Seen = {}, s2Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1120,7 +1120,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第四幕：耶稣和上帝 ================= */
-const s3M = {'a30':'”耶稣的这番话着实让尼哥底母困惑了好一会儿。。', 'a31':'“尼哥底母，你肉体的生命来自于父母，但你的属灵生命却来自于圣灵，”耶稣接着说，“。'};
+const s3M = {'a30':'”耶稣的这番话着实让尼哥底母困惑了好一会儿。', 'a31':'“尼哥底母，你肉体的生命来自于父母，但你的属灵生命却来自于圣灵，”耶稣接着说，“。'};
 let s3Seen = {}, s3Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1137,7 +1137,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第五幕：礼物和耶稣 ================= */
-const s4M = {'a40':'他们会得到一份珍贵的礼物，那就是永恒的生命。。', 'a41':'耶稣非常爱我们，祂现在就要去掉我们丑陋不堪又罪迹斑斑的心灵，为我们换上崭新的生命。'};
+const s4M = {'a40':'他们会得到一份珍贵的礼物，那就是永恒的生命。', 'a41':'耶稣非常爱我们，祂现在就要去掉我们丑陋不堪又罪迹斑斑的心灵，为我们换上崭新的生命。'};
 let s4Seen = {}, s4Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;

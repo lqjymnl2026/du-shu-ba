@@ -423,7 +423,7 @@ body.mobile .talk{font-size:18px;}
       <div id="verseLine" style="margin-top:8px; font-size:26px;"></div>
       <div class="word-chips" id="verseChips"></div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
-        <button class="speakbtn" data-speak="耶和华肯救我，所以，我们要一生一世在耶和华殿中用丝弦的乐器唱我的诗歌。。耶和华肯救，我，所以，我们要一生，一世在耶和，华殿中用丝，弦的乐器唱，我的诗歌。" onclick="speakThis(this)">🔊 跟著念</button>
+        <button class="speakbtn" data-speak="耶和华肯救我，所以，我们要一生一世在耶和华殿中用丝弦的乐器唱我的诗歌。耶和华肯救，我，所以，我们要一生，一世在耶和，华殿中用丝，弦的乐器唱，我的诗歌。" onclick="speakThis(this)">🔊 跟著念</button>
         <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px;" onclick="verseReset()">🔄 再来一次</button>
         <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px; background:linear-gradient(135deg,#3ec6b0,#2aa89a);" onclick="addStar(1); go(3);">✅ 我背好了！</button>
       </div>
@@ -704,7 +704,7 @@ body.mobile .talk{font-size:18px;}
         </div>        <div class="card" style="flex:1; min-width:260px; text-align:left;">
           <div style="font-size:38px; text-align:center;">💝</div>
           <div style="font-weight:900; color:#2ecc71; font-size:19px; margin:6px 0;">本周信息</div>
-          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「心迎候主来的家庭。」。赞美上帝赐下耶稣为礼物。。</div>
+          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「当耶稣再来时」。赞美上帝赐下耶稣为礼物。</div>
         </div>
       </div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
@@ -720,7 +720,7 @@ body.mobile .talk{font-size:18px;}
       <h2 class="title" style="font-size:34px;">🙏 一起祷告</h2>
       <div class="card" style="max-width:820px; width:100%; position:relative; padding:14px 20px;">
         <div style="font-size:52px; line-height:1;" class="floaty">🌟</div>
-        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢当耶稣再来时，我们要与祂一同住在天上，。<br>就像「心迎候主来的家庭。」的故事一样，<br>求祢帮助我选择接受上帝的邀请。。<br>奉耶稣的名祷告，阿们！</div>
+        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢当耶稣再来时，我们要与祂一同住在天上，。<br>就像「当耶稣再来时」的故事一样，<br>求祢帮助我选择接受上帝的邀请。<br>奉耶稣的名祷告，阿们！</div>
         <div style="display:flex; justify-content:center;">
           <button class="speakbtn" onclick="speakText(document.getElementById('prayerText').innerText.replace(/<br>/g,'。'))">🔊 跟著念</button>
         </div>
@@ -1073,7 +1073,7 @@ function versePick(btn, w){
 function verseReset(){ verseInit(); }
 
 /* ================= 第一天：光 ================= *//* ================= 第一幕：家和天空 ================= */
-const s0M = {'a00':'让我们一起来看一看下面这个切心迎候主来的家庭。。', 'a01':'白杰明一边享受着野餐的食物，一边微笑着看天上的浮云。。', 'a02':'他转过头对父亲说：“您看，爸爸，那些云让我想到耶稣基督的复临。。'};
+const s0M = {'a00':'让我们一起来看一看下面这个切心迎候主来的家庭。', 'a01':'白杰明一边享受着野餐的食物，一边微笑着看天上的浮云。', 'a02':'他转过头对父亲说：“您看，爸爸，那些云让我想到耶稣基督的复临。'};
 let s0Seen = {}, s0Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1090,7 +1090,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第二幕：耶稣和家 ================= */
-const s1M = {'a10':'“我真想主耶稣现在就来接我们回天家！。', 'a11':'“我真想主耶稣现在就来接我们回天家！。', 'a12':'”妈妈微笑着应和道。。'};
+const s1M = {'a10':'“我真想主耶稣现在就来接我们回天家！。', 'a11':'“我真想主耶稣现在就来接我们回天家！。', 'a12':'”妈妈微笑着应和道。'};
 let s1Seen = {}, s1Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1107,7 +1107,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第三幕：父亲和城 ================= */
-const s2M = {'a20':'”爸爸接着说，“新耶路撒冷好像一个大广场，有十二个城门和十二个根基。。', 'a21':'”爸爸接着说，“新耶路撒冷好像一个大广场，有十二个城门和十二个根基。。', 'a22':'看看所有用来建造根基的珠宝，”白杰明惊叹道，“碧玉、蓝宝石、黄136碧玺……”他。'};
+const s2M = {'a20':'”爸爸接着说，“新耶路撒冷好像一个大广场，有十二个城门和十二个根基。', 'a21':'”爸爸接着说，“新耶路撒冷好像一个大广场，有十二个城门和十二个根基。', 'a22':'看看所有用来建造根基的珠宝，”白杰明惊叹道，“碧玉、蓝宝石、黄136碧玺……”他。'};
 let s2Seen = {}, s2Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1124,7 +1124,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第四幕：母亲和耶稣 ================= */
-const s3M = {'a30':'妈妈笑了，她知道白莱森不喜欢睡午觉。。', 'a31':'“那里有从世界各国来的人，”白杰明又说，“就是那些爱耶稣，并顺从祂的人。。', 'a32':'”爸爸继续读启示录第7章。。'};
+const s3M = {'a30':'妈妈笑了，她知道白莱森不喜欢睡午觉。', 'a31':'“那里有从世界各国来的人，”白杰明又说，“就是那些爱耶稣，并顺从祂的人。', 'a32':'”爸爸继续读启示录第7章。'};
 let s3Seen = {}, s3Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;

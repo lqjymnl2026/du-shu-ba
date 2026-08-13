@@ -410,7 +410,7 @@ body.mobile .talk{font-size:18px;}
           <div style="font-size:16px; color:var(--ink2);">#2ecc71</div>
         </div>
       </div>
-      <button class="speakbtn" data-speak="这一课，我们要晓得：上帝爱我们。。摩押王巴勒要求先知巴兰咒诅以色列人。他用很多财物利诱巴兰。巴兰求问上帝，得到的答复是不要咒诅以色列人" onclick="speakThis(this)">🔊 听听这一课</button>
+      <button class="speakbtn" data-speak="这一课，我们要晓得：上帝爱我们。摩押王巴勒要求先知巴兰咒诅以色列人。他用很多财物利诱巴兰。巴兰求问上帝，得到的答复是不要咒诅以色列人" onclick="speakThis(this)">🔊 听听这一课</button>
       <div style="margin-top:14px;"><span class="pill">💜 信息：上帝爱我们。</span></div>
     </div>
   </section>
@@ -423,7 +423,7 @@ body.mobile .talk{font-size:18px;}
       <div id="verseLine" style="margin-top:8px; font-size:26px;"></div>
       <div class="word-chips" id="verseChips"></div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
-        <button class="speakbtn" data-speak="人若爱我，就必遵守我的道。。人若爱我，就必遵守我，的道。" onclick="speakThis(this)">🔊 跟著念</button>
+        <button class="speakbtn" data-speak="人若爱我，就必遵守我的道。人若爱我，就必遵守我，的道。" onclick="speakThis(this)">🔊 跟著念</button>
         <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px;" onclick="verseReset()">🔄 再来一次</button>
         <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px; background:linear-gradient(135deg,#3ec6b0,#2aa89a);" onclick="addStar(1); go(3);">✅ 我背好了！</button>
       </div>
@@ -700,7 +700,7 @@ body.mobile .talk{font-size:18px;}
         </div>        <div class="card" style="flex:1; min-width:260px; text-align:left;">
           <div style="font-size:38px; text-align:center;">💝</div>
           <div style="font-weight:900; color:#2ecc71; font-size:19px; margin:6px 0;">本周信息</div>
-          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「胜。」。我们顺从上帝，就是在敬拜祂。。</div>
+          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「巴兰和会说话的驴」。我们顺从上帝，就是在敬拜祂。</div>
         </div>
       </div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
@@ -716,7 +716,7 @@ body.mobile .talk{font-size:18px;}
       <h2 class="title" style="font-size:34px;">🙏 一起祷告</h2>
       <div class="card" style="max-width:820px; width:100%; position:relative; padding:14px 20px;">
         <div style="font-size:52px; line-height:1;" class="floaty">🌟</div>
-        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢。<br>就像「胜。」的故事一样，<br>求祢帮助我祈求上帝帮助我们倾听和顺从。信息当我们遵行上帝的教导。<br>奉耶稣的名祷告，阿们！</div>
+        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢。<br>就像「巴兰和会说话的驴」的故事一样，<br>求祢帮助我祈求上帝帮助我们倾听和顺从。信息当我们遵行上帝的教导。<br>奉耶稣的名祷告，阿们！</div>
         <div style="display:flex; justify-content:center;">
           <button class="speakbtn" onclick="speakText(document.getElementById('prayerText').innerText.replace(/<br>/g,'。'))">🔊 跟著念</button>
         </div>
@@ -1069,7 +1069,7 @@ function versePick(btn, w){
 function verseReset(){ verseInit(); }
 
 /* ================= 第一天：光 ================= *//* ================= 第一幕：雅各和家 ================= */
-const s0M = {'a00':'以色列人临近应许之地。。', 'a01':'不过，周围列国的人都想拦阻他们，他们不得不与这些国家争战。。', 'a02':'但上帝站在他们一边，所以每一次他们都能得胜。。'};
+const s0M = {'a00':'以色列人临近应许之地。', 'a01':'不过，周围列国的人都想拦阻他们，他们不得不与这些国家争战。', 'a02':'但上帝站在他们一边，所以每一次他们都能得胜。'};
 let s0Seen = {}, s0Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1086,7 +1086,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第二幕：雅各和敌人 ================= */
-const s1M = {'a10':'若是能请巴兰来咒诅以色列人，他的军队或许还有一线生机。。', 'a11':'若是能请巴兰来咒诅以色列人，他的军队或许还有一线生机。。', 'a12':'巴兰相信上帝，曾经是一个先知。。'};
+const s1M = {'a10':'若是能请巴兰来咒诅以色列人，他的军队或许还有一线生机。', 'a11':'若是能请巴兰来咒诅以色列人，他的军队或许还有一线生机。', 'a12':'巴兰相信上帝，曾经是一个先知。'};
 let s1Seen = {}, s1Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1103,7 +1103,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第三幕：上帝和天使 ================= */
-const s2M = {'a20':'巴兰知道上帝不容许，所以他说：“巴勒就是将他满屋的金银都给我，我行大事小136事。', 'a21':'巴兰看不见天使站在路上，拦阻去路。。'};
+const s2M = {'a20':'巴兰知道上帝不容许，所以他说：“巴勒就是将他满屋的金银都给我，我行大事小136事。', 'a21':'巴兰看不见天使站在路上，拦阻去路。'};
 let s2Seen = {}, s2Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1120,7 +1120,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第四幕：天使和上帝 ================= */
-const s3M = {'a30':'天使第二次出现，驴便挨着墙壁走，将巴兰的脚都挤伤了。。', 'a31':'巴兰第三次打驴时，上帝便使驴开口说话。。'};
+const s3M = {'a30':'天使第二次出现，驴便挨着墙壁走，将巴兰的脚都挤伤了。', 'a31':'巴兰第三次打驴时，上帝便使驴开口说话。'};
 let s3Seen = {}, s3Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1137,7 +1137,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第五幕：天使和上帝 ================= */
-const s4M = {'a40':'天使告诉巴兰：“驴若没有偏过去，我早就把你杀了。。', 'a41':'”天使说：“不必了，你可以同这些人去，但只能照上帝要求的话去说。。', 'a42':'他对王说：“我只会照上帝的话去说。。'};
+const s4M = {'a40':'天使告诉巴兰：“驴若没有偏过去，我早就把你杀了。', 'a41':'”天使说：“不必了，你可以同这些人去，但只能照上帝要求的话去说。', 'a42':'他对王说：“我只会照上帝的话去说。'};
 let s4Seen = {}, s4Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1171,7 +1171,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第七幕：我们的回应 ================= */
-const s6M = {'r0':'。', 'r1':'存心节：人若爱我，就必遵守我的道。。', 'r2':'祈求上帝帮助我们倾听和顺从。信息当我们遵行上帝的教导，就是在敬拜祂。128巴兰和会说话的驴本月主题我们顺从上帝，就是在敬拜祂。故事大纲摩押王巴勒要求先知巴兰咒诅以色列人。他用很多财物利诱巴兰。巴兰求问上帝，得到的答复是不要咒诅以色列人。但因着贪婪，巴兰还是昧着良心要去咒诅以色列人。在他骑驴去见巴勒的路上，驴看见上帝的使者站在前方，巴兰却看不见。最后，主使驴开口说话。于是，驴和巴兰有了一段关于怒气与虐待动物的对话。后来，巴兰终于认识到自己的错误，于是发誓，只说上帝要他说的话。结果巴兰不但没有咒诅，而是三次祝福以色列民，巴勒只好打发他走了。这是关于敬拜的教导敬拜不单指到教堂聚会，敬拜意味着基督徒在生活中各方面都遵从上帝的指示。敬拜是顺从上帝，听从祂的话和说祂要我们说的话。我们用说话、歌声来敬拜祂。教师补充材料“巴兰是亚兰的先知或预言家，受摩押王巴勒贿赂。巴勒希望巴兰咒诅以色列人，因为每个人都知道他有不同寻常的能力，不过，圣经没有称呼他为先知，尽管他传达主耶和华的话。”（《基督复临圣经词典》第八卷，原文第115页）事实上，希伯来语中用来描述巴兰预言能力的词语，跟描述以色列真先知的词语是截然不同的（参见新国际版研读本圣经，对民23:7的注释，佐德尔范出版社1985年）“巴兰曾一度作过正直的人，又是上帝的一位先知；但他后来竟离道反教，沉溺于贪欲之中；可是他还自称为至高上帝的仆人。他并不是不知道上帝为以色列人所施行的大事；而且当这些使者说明他们的来意时，他也明知自'};
+const s6M = {'r0':'。', 'r1':'存心节：人若爱我，就必遵守我的道。', 'r2':'祈求上帝帮助我们倾听和顺从。信息当我们遵行上帝的教导，就是在敬拜祂。128巴兰和会说话的驴本月主题我们顺从上帝，就是在敬拜祂。故事大纲摩押王巴勒要求先知巴兰咒诅以色列人。他用很多财物利诱巴兰。巴兰求问上帝，得到的答复是不要咒诅以色列人。但因着贪婪，巴兰还是昧着良心要去咒诅以色列人。在他骑驴去见巴勒的路上，驴看见上帝的使者站在前方，巴兰却看不见。最后，主使驴开口说话。于是，驴和巴兰有了一段关于怒气与虐待动物的对话。后来，巴兰终于认识到自己的错误，于是发誓，只说上帝要他说的话。结果巴兰不但没有咒诅，而是三次祝福以色列民，巴勒只好打发他走了。这是关于敬拜的教导敬拜不单指到教堂聚会，敬拜意味着基督徒在生活中各方面都遵从上帝的指示。敬拜是顺从上帝，听从祂的话和说祂要我们说的话。我们用说话、歌声来敬拜祂。教师补充材料“巴兰是亚兰的先知或预言家，受摩押王巴勒贿赂。巴勒希望巴兰咒诅以色列人，因为每个人都知道他有不同寻常的能力，不过，圣经没有称呼他为先知，尽管他传达主耶和华的话。”（《基督复临圣经词典》第八卷，原文第115页）事实上，希伯来语中用来描述巴兰预言能力的词语，跟描述以色列真先知的词语是截然不同的（参见新国际版研读本圣经，对民23:7的注释，佐德尔范出版社1985年）“巴兰曾一度作过正直的人，又是上帝的一位先知；但他后来竟离道反教，沉溺于贪欲之中；可是他还自称为至高上帝的仆人。他并不是不知道上帝为以色列人所施行的大事；而且当这些使者说明他们的来意时，他也明知自'};
 let s6Seen = {}, s6Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;

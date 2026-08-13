@@ -423,7 +423,7 @@ body.mobile .talk{font-size:18px;}
       <div id="verseLine" style="margin-top:8px; font-size:26px;"></div>
       <div class="word-chips" id="verseChips"></div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
-        <button class="speakbtn" data-speak="爱弟兄，要彼此亲热；恭敬人，要彼此推让。。爱弟兄，要彼此亲热，恭敬人，要彼此推让。" onclick="speakThis(this)">🔊 跟著念</button>
+        <button class="speakbtn" data-speak="爱弟兄，要彼此亲热；恭敬人，要彼此推让。爱弟兄，要彼此亲热，恭敬人，要彼此推让。" onclick="speakThis(this)">🔊 跟著念</button>
         <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px;" onclick="verseReset()">🔄 再来一次</button>
         <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px; background:linear-gradient(135deg,#3ec6b0,#2aa89a);" onclick="addStar(1); go(3);">✅ 我背好了！</button>
       </div>
@@ -688,7 +688,7 @@ body.mobile .talk{font-size:18px;}
         </div>        <div class="card" style="flex:1; min-width:260px; text-align:left;">
           <div style="font-size:38px; text-align:center;">💝</div>
           <div style="font-weight:900; color:#2ecc71; font-size:19px; margin:6px 0;">本周信息</div>
-          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「生就永远地改变了。」。我们归属于上帝的大家庭。。</div>
+          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「一碗红豆汤的交易」。我们归属于上帝的大家庭。</div>
         </div>
       </div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
@@ -704,7 +704,7 @@ body.mobile .talk{font-size:18px;}
       <h2 class="title" style="font-size:34px;">🙏 一起祷告</h2>
       <div class="card" style="max-width:820px; width:100%; position:relative; padding:14px 20px;">
         <div style="font-size:52px; line-height:1;" class="floaty">🌟</div>
-        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢我能爱跟我不同的人。108。<br>就像「生就永远地改变了。」的故事一样，<br>求祢帮助我接受和我们不一样的人们。。<br>奉耶稣的名祷告，阿们！</div>
+        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢我能爱跟我不同的人。108。<br>就像「一碗红豆汤的交易」的故事一样，<br>求祢帮助我接受和我们不一样的人们。<br>奉耶稣的名祷告，阿们！</div>
         <div style="display:flex; justify-content:center;">
           <button class="speakbtn" onclick="speakText(document.getElementById('prayerText').innerText.replace(/<br>/g,'。'))">🔊 跟著念</button>
         </div>
@@ -1074,7 +1074,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第二幕：雅各 ================= */
-const s1M = {'a10':'原来是雅各正在煮一锅汤。。'};
+const s1M = {'a10':'原来是雅各正在煮一锅汤。'};
 let s1Seen = {}, s1Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1159,7 +1159,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第七幕：我们的回应 ================= */
-const s6M = {'r0':'我能爱跟我不同的人。108。', 'r1':'存心节：爱弟兄，要彼此亲热；恭敬人，要彼此推让。。', 'r2':'接受和我们不一样的人们。'};
+const s6M = {'r0':'我能爱跟我不同的人。108。', 'r1':'存心节：爱弟兄，要彼此亲热；恭敬人，要彼此推让。', 'r2':'接受和我们不一样的人们。'};
 let s6Seen = {}, s6Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;

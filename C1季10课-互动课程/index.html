@@ -410,7 +410,7 @@ body.mobile .talk{font-size:18px;}
           <div style="font-size:16px; color:var(--ink2);">#2ecc71</div>
         </div>
       </div>
-      <button class="speakbtn" data-speak="这一课，我们要晓得：在上帝家庭里的人，会与他人分享祂的爱。。上帝吩咐约拿带一则信息给尼尼微城的人。这个信息能拯救尼尼微人脱离危险。可是约拿拒绝为上帝传递信息，而" onclick="speakThis(this)">🔊 听听这一课</button>
+      <button class="speakbtn" data-speak="这一课，我们要晓得：在上帝家庭里的人，会与他人分享祂的爱。上帝吩咐约拿带一则信息给尼尼微城的人。这个信息能拯救尼尼微人脱离危险。可是约拿拒绝为上帝传递信息，而" onclick="speakThis(this)">🔊 听听这一课</button>
       <div style="margin-top:14px;"><span class="pill">💜 信息：在上帝家庭里的人，会与他人分享祂的爱。</span></div>
     </div>
   </section>
@@ -698,11 +698,11 @@ body.mobile .talk{font-size:18px;}
         </div>        <div class="card" style="flex:1; min-width:260px; text-align:left;">
           <div style="font-size:38px; text-align:center;">🙏</div>
           <div style="font-weight:900; color:#ff8c42; font-size:19px; margin:6px 0;">常常祷告</div>
-          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">常常与孩子一起祷告。这一课的信息是：在上帝家庭里的人，会与他人分享祂的爱。。帮助孩子把故事里的教训用在生活中。</div>
+          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">常常与孩子一起祷告。这一课的信息是：在上帝家庭里的人，会与他人分享祂的爱。帮助孩子把故事里的教训用在生活中。</div>
         </div>        <div class="card" style="flex:1; min-width:260px; text-align:left;">
           <div style="font-size:38px; text-align:center;">💝</div>
           <div style="font-weight:900; color:#2ecc71; font-size:19px; margin:6px 0;">本周信息</div>
-          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「你的帮忙！”妈妈叫道。」。上帝教导我们怎样对待别人。。</div>
+          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「逃跑的先知」。上帝教导我们怎样对待别人。</div>
         </div>
       </div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
@@ -718,7 +718,7 @@ body.mobile .talk{font-size:18px;}
       <h2 class="title" style="font-size:34px;">🙏 一起祷告</h2>
       <div class="card" style="max-width:820px; width:100%; position:relative; padding:14px 20px;">
         <div style="font-size:52px; line-height:1;" class="floaty">🌟</div>
-        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢在上帝家庭里的人，会与他人分享祂的爱。。<br>就像「你的帮忙！”妈妈叫道。」的故事一样，<br>求祢帮助我选择向人宣扬上帝的爱。。<br>奉耶稣的名祷告，阿们！</div>
+        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢在上帝家庭里的人，会与他人分享祂的爱。<br>就像「逃跑的先知」的故事一样，<br>求祢帮助我选择向人宣扬上帝的爱。<br>奉耶稣的名祷告，阿们！</div>
         <div style="display:flex; justify-content:center;">
           <button class="speakbtn" onclick="speakText(document.getElementById('prayerText').innerText.replace(/<br>/g,'。'))">🔊 跟著念</button>
         </div>
@@ -1071,7 +1071,7 @@ function versePick(btn, w){
 function verseReset(){ verseInit(); }
 
 /* ================= 第一天：光 ================= *//* ================= 第一幕：上帝和朋友 ================= */
-const s0M = {'a00':'很久以前，上帝请一位朋友帮祂做一件事。。', 'a01':'很久以前，上帝请一位朋友帮祂做一件事。。', 'a02':'“你认识尼尼微城吧，就是那个大城市。。'};
+const s0M = {'a00':'很久以前，上帝请一位朋友帮祂做一件事。', 'a01':'很久以前，上帝请一位朋友帮祂做一件事。', 'a02':'“你认识尼尼微城吧，就是那个大城市。'};
 let s0Seen = {}, s0Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1105,7 +1105,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第三幕：上帝和城 ================= */
-const s2M = {'a20':'106约拿心想：不行，上帝不能叫我去尼尼微城。。', 'a21':'106约拿心想：不行，上帝不能叫我去尼尼微城。。', 'a22':'那里刚好有一艘要开往他施的船。。'};
+const s2M = {'a20':'106约拿心想：不行，上帝不能叫我去尼尼微城。', 'a21':'106约拿心想：不行，上帝不能叫我去尼尼微城。', 'a22':'那里刚好有一艘要开往他施的船。'};
 let s2Seen = {}, s2Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1122,7 +1122,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第四幕：海和船 ================= */
-const s3M = {'a30':'约拿看着海岸线越来越远，便感到很安全。。', 'a31':'他找到一个远离船员工作的僻静地方，倒头入睡了。。', 'a32':'船起初只是轻轻摇晃，但后来风浪愈来愈大，天空布满乌云。。'};
+const s3M = {'a30':'约拿看着海岸线越来越远，便感到很安全。', 'a31':'他找到一个远离船员工作的僻静地方，倒头入睡了。', 'a32':'船起初只是轻轻摇晃，但后来风浪愈来愈大，天空布满乌云。'};
 let s3Seen = {}, s3Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1139,7 +1139,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第五幕：船和家 ================= */
-const s4M = {'a40':'船主寻找每个人，发现约拿仍在睡觉，就大声对他说：“都这种时候了，你怎么还睡得着呢。', 'a41':'”接着有一名船员建议大家来掣签，看看是谁引起这风暴。。', 'a42':'”接着有一名船员建议大家来掣签，看看是谁引起这风暴。。'};
+const s4M = {'a40':'船主寻找每个人，发现约拿仍在睡觉，就大声对他说：“都这种时候了，你怎么还睡得着呢。', 'a41':'”接着有一名船员建议大家来掣签，看看是谁引起这风暴。', 'a42':'”接着有一名船员建议大家来掣签，看看是谁引起这风暴。'};
 let s4Seen = {}, s4Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1156,7 +1156,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第六幕：船 ================= */
-const s5M = {'a50':'约拿偷偷躲在后面，但是船员不许，“你必须参加掣签。。'};
+const s5M = {'a50':'约拿偷偷躲在后面，但是船员不许，“你必须参加掣签。'};
 let s5Seen = {}, s5Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1173,7 +1173,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第七幕：我们的回应 ================= */
-const s6M = {'r0':'在上帝家庭里的人，会与他人分享祂的爱。。', 'r1':'存心节：我的上帝啊，我乐意照你的旨意行……。', 'r2':'选择向人宣扬上帝的爱。'};
+const s6M = {'r0':'在上帝家庭里的人，会与他人分享祂的爱。', 'r1':'存心节：我的上帝啊，我乐意照你的旨意行……。', 'r2':'选择向人宣扬上帝的爱。'};
 let s6Seen = {}, s6Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;

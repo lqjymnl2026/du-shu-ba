@@ -423,7 +423,7 @@ body.mobile .talk{font-size:18px;}
       <div id="verseLine" style="margin-top:8px; font-size:26px;"></div>
       <div class="word-chips" id="verseChips"></div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
-        <button class="speakbtn" data-speak="各样美善的恩赐和各样全备的赏赐都是从上头来的，从众光之父那里降下来的。。各样美善的，恩赐和各样，全备的赏赐，都是从上头，来的，从众光之父，那里降下来，的。" onclick="speakThis(this)">🔊 跟著念</button>
+        <button class="speakbtn" data-speak="各样美善的恩赐和各样全备的赏赐都是从上头来的，从众光之父那里降下来的。各样美善的，恩赐和各样，全备的赏赐，都是从上头，来的，从众光之父，那里降下来，的。" onclick="speakThis(this)">🔊 跟著念</button>
         <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px;" onclick="verseReset()">🔄 再来一次</button>
         <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px; background:linear-gradient(135deg,#3ec6b0,#2aa89a);" onclick="addStar(1); go(3);">✅ 我背好了！</button>
       </div>
@@ -703,7 +703,7 @@ body.mobile .talk{font-size:18px;}
         </div>        <div class="card" style="flex:1; min-width:260px; text-align:left;">
           <div style="font-size:38px; text-align:center;">💝</div>
           <div style="font-weight:900; color:#2ecc71; font-size:19px; margin:6px 0;">本周信息</div>
-          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「这个婴孩是谁呢？」。上帝是我们最好的朋友。。</div>
+          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「给我的礼物？」。上帝是我们最好的朋友。</div>
         </div>
       </div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
@@ -719,7 +719,7 @@ body.mobile .talk{font-size:18px;}
       <h2 class="title" style="font-size:34px;">🙏 一起祷告</h2>
       <div class="card" style="max-width:820px; width:100%; position:relative; padding:14px 20px;">
         <div style="font-size:52px; line-height:1;" class="floaty">🌟</div>
-        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢上帝赐予我们各种美善的礼物，其中最好的是。<br>就像「这个婴孩是谁呢？」的故事一样，<br>求祢帮助我接受上帝赐予我们最好的礼物──耶稣。。<br>奉耶稣的名祷告，阿们！</div>
+        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢上帝赐予我们各种美善的礼物，其中最好的是。<br>就像「给我的礼物？」的故事一样，<br>求祢帮助我接受上帝赐予我们最好的礼物──耶稣。<br>奉耶稣的名祷告，阿们！</div>
         <div style="display:flex; justify-content:center;">
           <button class="speakbtn" onclick="speakText(document.getElementById('prayerText').innerText.replace(/<br>/g,'。'))">🔊 跟著念</button>
         </div>
@@ -1072,7 +1072,7 @@ function versePick(btn, w){
 function verseReset(){ verseInit(); }
 
 /* ================= 第一天：光 ================= *//* ================= 第一幕：婴孩和母亲 ================= */
-const s0M = {'a00':'她喜欢小婴孩，而她的妈妈很快就要带着刚出生的弟弟回家了。。', 'a01':'她喜欢小婴孩，而她的妈妈很快就要带着刚出生的弟弟回家了。。', 'a02':'她喜欢小婴孩，而她的妈妈很快就要带着刚出生的弟弟回家了。。'};
+const s0M = {'a00':'她喜欢小婴孩，而她的妈妈很快就要带着刚出生的弟弟回家了。', 'a01':'她喜欢小婴孩，而她的妈妈很快就要带着刚出生的弟弟回家了。', 'a02':'她喜欢小婴孩，而她的妈妈很快就要带着刚出生的弟弟回家了。'};
 let s0Seen = {}, s0Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1089,7 +1089,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第二幕：天使和耶稣 ================= */
-const s1M = {'a10':'天使告诉她，她将会生一个特别的儿子──主基督。。', 'a11':'天使告诉她，她将会生一个特别的儿子──主基督。。', 'a12':'马利亚思绪万千。。'};
+const s1M = {'a10':'天使告诉她，她将会生一个特别的儿子──主基督。', 'a11':'天使告诉她，她将会生一个特别的儿子──主基督。', 'a12':'马利亚思绪万千。'};
 let s1Seen = {}, s1Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1106,7 +1106,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第三幕：约瑟和马利亚 ================= */
-const s2M = {'a20':'也就是说，约瑟必须要带着马利亚回到伯利恒去。。', 'a21':'也就是说，约瑟必须要带着马利亚回到伯利恒去。。', 'a22':'这一切都是上帝安排的。。'};
+const s2M = {'a20':'也就是说，约瑟必须要带着马利亚回到伯利恒去。', 'a21':'也就是说，约瑟必须要带着马利亚回到伯利恒去。', 'a22':'这一切都是上帝安排的。'};
 let s2Seen = {}, s2Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1123,7 +1123,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第四幕：约瑟和马利亚 ================= */
-const s3M = {'a30':'但是连每个屋顶和有棚顶的走廊都挤满了疲惫的旅人，约瑟开始灰心了。。', 'a31':'马利亚也已经体力不支了。。'};
+const s3M = {'a30':'但是连每个屋顶和有棚顶的走廊都挤满了疲惫的旅人，约瑟开始灰心了。', 'a31':'马利亚也已经体力不支了。'};
 let s3Seen = {}, s3Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1140,7 +1140,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第五幕：约瑟和马利亚 ================= */
-const s4M = {'a40':'”约瑟回答道。。', 'a41':'于是他带着马利亚走进了马厩。。', 'a42':'好在地上还有些干草，铺开躺下还算干净。。'};
+const s4M = {'a40':'”约瑟回答道。', 'a41':'于是他带着马利亚走进了马厩。', 'a42':'好在地上还有些干草，铺开躺下还算干净。'};
 let s4Seen = {}, s4Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1157,7 +1157,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第六幕：母亲和家 ================= */
-const s5M = {'a50':'祂的母亲用从家里带来的软布，仔细地将他包裹起来。。', 'a51':'祂的母亲用从家里带来的软布，仔细地将他包裹起来。。', 'a52':'她抱起耶稣，将祂放在约瑟用干草铺好的马槽里。。'};
+const s5M = {'a50':'祂的母亲用从家里带来的软布，仔细地将他包裹起来。', 'a51':'祂的母亲用从家里带来的软布，仔细地将他包裹起来。', 'a52':'她抱起耶稣，将祂放在约瑟用干草铺好的马槽里。'};
 let s5Seen = {}, s5Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;

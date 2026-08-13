@@ -423,7 +423,7 @@ body.mobile .talk{font-size:18px;}
       <div id="verseLine" style="margin-top:8px; font-size:26px;"></div>
       <div class="word-chips" id="verseChips"></div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
-        <button class="speakbtn" data-speak="我要把甘心祭献给你。耶和华啊，我要称赞你的名；这名本为美好。。我要把甘心，祭献给你。，耶和华啊，我要称赞你，的名，这名本为美，好。" onclick="speakThis(this)">🔊 跟著念</button>
+        <button class="speakbtn" data-speak="我要把甘心祭献给你。耶和华啊，我要称赞你的名；这名本为美好。我要把甘心，祭献给你。，耶和华啊，我要称赞你，的名，这名本为美，好。" onclick="speakThis(this)">🔊 跟著念</button>
         <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px;" onclick="verseReset()">🔄 再来一次</button>
         <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px; background:linear-gradient(135deg,#3ec6b0,#2aa89a);" onclick="addStar(1); go(3);">✅ 我背好了！</button>
       </div>
@@ -701,7 +701,7 @@ body.mobile .talk{font-size:18px;}
         </div>        <div class="card" style="flex:1; min-width:260px; text-align:left;">
           <div style="font-size:38px; text-align:center;">💝</div>
           <div style="font-weight:900; color:#2ecc71; font-size:19px; margin:6px 0;">本周信息</div>
-          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「子里的东西已经够多了。”」。我们要每天敬拜伟大的上帝。。</div>
+          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「众多的捐献」。我们要每天敬拜伟大的上帝。</div>
         </div>
       </div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
@@ -717,7 +717,7 @@ body.mobile .talk{font-size:18px;}
       <h2 class="title" style="font-size:34px;">🙏 一起祷告</h2>
       <div class="card" style="max-width:820px; width:100%; position:relative; padding:14px 20px;">
         <div style="font-size:52px; line-height:1;" class="floaty">🌟</div>
-        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢我们以奉献来敬拜上帝。128。<br>就像「子里的东西已经够多了。”」的故事一样，<br>求祢帮助我因为爱，献上我们的奉献。。<br>奉耶稣的名祷告，阿们！</div>
+        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢我们以奉献来敬拜上帝。128。<br>就像「众多的捐献」的故事一样，<br>求祢帮助我因为爱，献上我们的奉献。<br>奉耶稣的名祷告，阿们！</div>
         <div style="display:flex; justify-content:center;">
           <button class="speakbtn" onclick="speakText(document.getElementById('prayerText').innerText.replace(/<br>/g,'。'))">🔊 跟著念</button>
         </div>
@@ -1070,7 +1070,7 @@ function versePick(btn, w){
 function verseReset(){ verseInit(); }
 
 /* ================= 第一天：光 ================= *//* ================= 第一幕：摩西和雅各 ================= */
-const s0M = {'a00':'很久以前，摩西对以色列人说，“别再带任何东西来了，我们这儿有足够的东西了。。', 'a01':'很久以前，摩西对以色列人说，“别再带任何东西来了，我们这儿有足够的东西了。。', 'a02':'”父亲把头探进了帐篷里，上气不接下气地说，“摩西有个重要的通知要宣布，所有以色列。'};
+const s0M = {'a00':'很久以前，摩西对以色列人说，“别再带任何东西来了，我们这儿有足够的东西了。', 'a01':'很久以前，摩西对以色列人说，“别再带任何东西来了，我们这儿有足够的东西了。', 'a02':'”父亲把头探进了帐篷里，上气不接下气地说，“摩西有个重要的通知要宣布，所有以色列。'};
 let s0Seen = {}, s0Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1087,7 +1087,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第二幕：摩西和上帝 ================= */
-const s1M = {'a10':'摩西站起来开始讲话。。', 'a11':'摩西宣布：“上帝给了我指示，要我们建造会幕。。', 'a12':'摩西宣布：“上帝给了我指示，要我们建造会幕。。'};
+const s1M = {'a10':'摩西站起来开始讲话。', 'a11':'摩西宣布：“上帝给了我指示，要我们建造会幕。', 'a12':'摩西宣布：“上帝给了我指示，要我们建造会幕。'};
 let s1Seen = {}, s1Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1104,7 +1104,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第三幕：摩西和石头 ================= */
-const s2M = {'a20':'”摩西继续说道：“我们还需要各种熟练的工匠。。', 'a21':'纺纱工和织布工帮我们准备材料；我们还需要会加工黄金、银器和铜器的金匠和懂得切割石。', 'a22':'纺纱工和织布工帮我们准备材料；我们还需要会加工黄金、银器和铜器的金匠和懂得切割石。'};
+const s2M = {'a20':'”摩西继续说道：“我们还需要各种熟练的工匠。', 'a21':'纺纱工和织布工帮我们准备材料；我们还需要会加工黄金、银器和铜器的金匠和懂得切割石。', 'a22':'纺纱工和织布工帮我们准备材料；我们还需要会加工黄金、银器和铜器的金匠和懂得切割石。'};
 let s2Seen = {}, s2Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1121,7 +1121,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第四幕：婴孩和摩西 ================= */
-const s3M = {'a30':'你是这最棒的纺纱工和织布工之一，我来照顾小孩，你就专心纺纱吧。。', 'a31':'”“我们有一个铜镜和一把梳子，”西便道，“摩西说他们需要铜。。', 'a32':'”“你和妈妈还有黄金首饰。。'};
+const s3M = {'a30':'你是这最棒的纺纱工和织布工之一，我来照顾小孩，你就专心纺纱吧。', 'a31':'”“我们有一个铜镜和一把梳子，”西便道，“摩西说他们需要铜。', 'a32':'”“你和妈妈还有黄金首饰。'};
 let s3Seen = {}, s3Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1138,7 +1138,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第五幕：朋友和家 ================= */
-const s4M = {'a40':'她最好的一个埃及朋友在她们分别的那个晚上给了她一对手镯。。', 'a41':'第二天，这一家人都高高兴兴地拿出自己的东西。。', 'a42':'动物皮、皂荚木、山羊毛和亚麻各堆放一起。。'};
+const s4M = {'a40':'她最好的一个埃及朋友在她们分别的那个晚上给了她一对手镯。', 'a41':'第二天，这一家人都高高兴兴地拿出自己的东西。', 'a42':'动物皮、皂荚木、山羊毛和亚麻各堆放一起。'};
 let s4Seen = {}, s4Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;

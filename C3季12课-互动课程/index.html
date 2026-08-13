@@ -423,7 +423,7 @@ body.mobile .talk{font-size:18px;}
       <div id="verseLine" style="margin-top:8px; font-size:26px;"></div>
       <div class="word-chips" id="verseChips"></div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
-        <button class="speakbtn" data-speak="……你们要饶恕人，就必蒙饶恕。。……你们要，饶恕人，就必蒙饶恕。" onclick="speakThis(this)">🔊 跟著念</button>
+        <button class="speakbtn" data-speak="……你们要饶恕人，就必蒙饶恕。……你们要，饶恕人，就必蒙饶恕。" onclick="speakThis(this)">🔊 跟著念</button>
         <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px;" onclick="verseReset()">🔄 再来一次</button>
         <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px; background:linear-gradient(135deg,#3ec6b0,#2aa89a);" onclick="addStar(1); go(3);">✅ 我背好了！</button>
       </div>
@@ -699,7 +699,7 @@ body.mobile .talk{font-size:18px;}
         </div>        <div class="card" style="flex:1; min-width:260px; text-align:left;">
           <div style="font-size:38px; text-align:center;">💝</div>
           <div style="font-weight:900; color:#2ecc71; font-size:19px; margin:6px 0;">本周信息</div>
-          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「的兄弟。」。我们要学习基督式的价值观。。</div>
+          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「最后的宽恕」。我们要学习基督式的价值观。</div>
         </div>
       </div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
@@ -715,7 +715,7 @@ body.mobile .talk{font-size:18px;}
       <h2 class="title" style="font-size:34px;">🙏 一起祷告</h2>
       <div class="card" style="max-width:820px; width:100%; position:relative; padding:14px 20px;">
         <div style="font-size:52px; line-height:1;" class="floaty">🌟</div>
-        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢上帝帮助我原谅别人。118。<br>就像「的兄弟。」的故事一样，<br>求祢帮助我原谅那些苦待他们的人。。<br>奉耶稣的名祷告，阿们！</div>
+        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢上帝帮助我原谅别人。118。<br>就像「最后的宽恕」的故事一样，<br>求祢帮助我原谅那些苦待他们的人。<br>奉耶稣的名祷告，阿们！</div>
         <div style="display:flex; justify-content:center;">
           <button class="speakbtn" onclick="speakText(document.getElementById('prayerText').innerText.replace(/<br>/g,'。'))">🔊 跟著念</button>
         </div>
@@ -1085,7 +1085,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第二幕：家和父亲 ================= */
-const s1M = {'a10':'“我们是来买粮回家给家人吃的。。', 'a11':'我们都是父亲的儿子。。', 'a12':'”但是约瑟并未死。。'};
+const s1M = {'a10':'“我们是来买粮回家给家人吃的。', 'a11':'我们都是父亲的儿子。', 'a12':'”但是约瑟并未死。'};
 let s1Seen = {}, s1Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1102,7 +1102,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第三幕：家和父亲 ================= */
-const s2M = {'a20':'”兄弟们回到家，将所发生的事情都告诉父亲。。', 'a21':'”兄弟们回到家，将所发生的事情都告诉父亲。。', 'a22':'我已经失去了约瑟，不可以再失去另一个儿子！。'};
+const s2M = {'a20':'”兄弟们回到家，将所发生的事情都告诉父亲。', 'a21':'”兄弟们回到家，将所发生的事情都告诉父亲。', 'a22':'我已经失去了约瑟，不可以再失去另一个儿子！。'};
 let s2Seen = {}, s2Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1119,7 +1119,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第四幕：父亲和孩子 ================= */
-const s3M = {'a30':'”几个月之后，兄弟们再次来到父亲跟前，恳求他：“我们已经没有食物了，再这样下去我。', 'a31':'”几个月之后，兄弟们再次来到父亲跟前，恳求他：“我们已经没有食物了，再这样下去我。', 'a32':'当约瑟看见他的兄弟便雅悯，就冲进自己的房间里大哭了一场。。'};
+const s3M = {'a30':'”几个月之后，兄弟们再次来到父亲跟前，恳求他：“我们已经没有食物了，再这样下去我。', 'a31':'”几个月之后，兄弟们再次来到父亲跟前，恳求他：“我们已经没有食物了，再这样下去我。', 'a32':'当约瑟看见他的兄弟便雅悯，就冲进自己的房间里大哭了一场。'};
 let s3Seen = {}, s3Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1136,7 +1136,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第五幕：家和约瑟 ================= */
-const s4M = {'a40':'于是，他吩咐管家说：“装满他们的袋子，将我的银杯放在便雅悯的袋子中。。', 'a41':'”管家遵照约瑟的吩咐去做。。'};
+const s4M = {'a40':'于是，他吩咐管家说：“装满他们的袋子，将我的银杯放在便雅悯的袋子中。', 'a41':'”管家遵照约瑟的吩咐去做。'};
 let s4Seen = {}, s4Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1153,7 +1153,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第六幕：约瑟 ================= */
-const s5M = {'a50':'他搜查他们的袋子并找到约瑟的杯子。。'};
+const s5M = {'a50':'他搜查他们的袋子并找到约瑟的杯子。'};
 let s5Seen = {}, s5Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1170,7 +1170,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第七幕：我们的回应 ================= */
-const s6M = {'r0':'上帝帮助我原谅别人。118。', 'r1':'存心节：……你们要饶恕人，就必蒙饶恕。。', 'r2':'原谅那些苦待他们的人。'};
+const s6M = {'r0':'上帝帮助我原谅别人。118。', 'r1':'存心节：……你们要饶恕人，就必蒙饶恕。', 'r2':'原谅那些苦待他们的人。'};
 let s6Seen = {}, s6Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;

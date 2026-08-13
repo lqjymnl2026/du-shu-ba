@@ -423,7 +423,7 @@ body.mobile .talk{font-size:18px;}
       <div id="verseLine" style="margin-top:8px; font-size:26px;"></div>
       <div class="word-chips" id="verseChips"></div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
-        <button class="speakbtn" data-speak="在至高之处荣耀归与上帝！在地上平安归与祂所喜悦的人。。在至高之处，荣耀归与上，帝，在地上平安，归与祂所喜，悦的人。" onclick="speakThis(this)">🔊 跟著念</button>
+        <button class="speakbtn" data-speak="在至高之处荣耀归与上帝！在地上平安归与祂所喜悦的人。在至高之处，荣耀归与上，帝，在地上平安，归与祂所喜，悦的人。" onclick="speakThis(this)">🔊 跟著念</button>
         <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px;" onclick="verseReset()">🔄 再来一次</button>
         <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px; background:linear-gradient(135deg,#3ec6b0,#2aa89a);" onclick="addStar(1); go(3);">✅ 我背好了！</button>
       </div>
@@ -704,7 +704,7 @@ body.mobile .talk{font-size:18px;}
         </div>        <div class="card" style="flex:1; min-width:260px; text-align:left;">
           <div style="font-size:38px; text-align:center;">💝</div>
           <div style="font-weight:900; color:#2ecc71; font-size:19px; margin:6px 0;">本周信息</div>
-          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「要把好消息只保留给自己很」。上帝的恩典给我们盼望和喜乐。。</div>
+          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「喜乐之歌」。上帝的恩典给我们盼望和喜乐。</div>
         </div>
       </div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
@@ -720,7 +720,7 @@ body.mobile .talk{font-size:18px;}
       <h2 class="title" style="font-size:34px;">🙏 一起祷告</h2>
       <div class="card" style="max-width:820px; width:100%; position:relative; padding:14px 20px;">
         <div style="font-size:52px; line-height:1;" class="floaty">🌟</div>
-        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢耶稣基督给我希望和。<br>就像「要把好消息只保留给自己很」的故事一样，<br>求祢帮助我准备和其他人分享喜乐。。<br>奉耶稣的名祷告，阿们！</div>
+        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢耶稣基督给我希望和。<br>就像「喜乐之歌」的故事一样，<br>求祢帮助我准备和其他人分享喜乐。<br>奉耶稣的名祷告，阿们！</div>
         <div style="display:flex; justify-content:center;">
           <button class="speakbtn" onclick="speakText(document.getElementById('prayerText').innerText.replace(/<br>/g,'。'))">🔊 跟著念</button>
         </div>
@@ -1073,7 +1073,7 @@ function versePick(btn, w){
 function verseReset(){ verseInit(); }
 
 /* ================= 第一天：光 ================= *//* ================= 第一幕：耶稣和婴孩 ================= */
-const s0M = {'a00':'耶稣基督摒住了呼吸，前来仔细观看。。', 'a01':'耶稣现在是个小婴孩了。。', 'a02':'喜乐一群牧羊人坐在伯利恒城外的山岗上照顾着羊群。。'};
+const s0M = {'a00':'耶稣基督摒住了呼吸，前来仔细观看。', 'a01':'耶稣现在是个小婴孩了。', 'a02':'喜乐一群牧羊人坐在伯利恒城外的山岗上照顾着羊群。'};
 let s0Seen = {}, s0Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1090,7 +1090,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第二幕：天空和光 ================= */
-const s1M = {'a10':'突然间，天上出现一道耀眼的光芒，牧羊人忙举手遮脸，后退躲闪。。', 'a11':'突然间，天上出现一道耀眼的光芒，牧羊人忙举手遮脸，后退躲闪。。', 'a12':'突然间，天上出现一道耀眼的光芒，牧羊人忙举手遮脸，后退躲闪。。'};
+const s1M = {'a10':'突然间，天上出现一道耀眼的光芒，牧羊人忙举手遮脸，后退躲闪。', 'a11':'突然间，天上出现一道耀眼的光芒，牧羊人忙举手遮脸，后退躲闪。', 'a12':'突然间，天上出现一道耀眼的光芒，牧羊人忙举手遮脸，后退躲闪。'};
 let s1Seen = {}, s1Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1124,7 +1124,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第四幕：天使和琴 ================= */
-const s3M = {'a30':'他们仍然能听到天使的歌声回荡在附近的山谷中。。', 'a31':'他们仍然能听到天使的歌声回荡在附近的山谷中。。', 'a32':'他们仍然能听到天使的歌声回荡在附近的山谷中。。'};
+const s3M = {'a30':'他们仍然能听到天使的歌声回荡在附近的山谷中。', 'a31':'他们仍然能听到天使的歌声回荡在附近的山谷中。', 'a32':'他们仍然能听到天使的歌声回荡在附近的山谷中。'};
 let s3Seen = {}, s3Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1141,7 +1141,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第五幕：婴孩和羊 ================= */
-const s4M = {'a40':'他们要前往伯利恒，亲眼看看这新生的婴儿。。', 'a41':'牧羊人匆忙下了山坡，进入城里。。', 'a42':'牧羊人匆忙下了山坡，进入城里。。'};
+const s4M = {'a40':'他们要前往伯利恒，亲眼看看这新生的婴儿。', 'a41':'牧羊人匆忙下了山坡，进入城里。', 'a42':'牧羊人匆忙下了山坡，进入城里。'};
 let s4Seen = {}, s4Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1158,7 +1158,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第六幕：婴孩和马利亚 ================= */
-const s5M = {'a50':'又看到躺卧在马槽里的婴孩，马利亚和约瑟站在一旁。。', 'a51':'又看到躺卧在马槽里的婴孩，马利亚和约瑟站在一旁。。', 'a52':'又看到躺卧在马槽里的婴孩，马利亚和约瑟站在一旁。。'};
+const s5M = {'a50':'又看到躺卧在马槽里的婴孩，马利亚和约瑟站在一旁。', 'a51':'又看到躺卧在马槽里的婴孩，马利亚和约瑟站在一旁。', 'a52':'又看到躺卧在马槽里的婴孩，马利亚和约瑟站在一旁。'};
 let s5Seen = {}, s5Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;

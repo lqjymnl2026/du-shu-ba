@@ -423,7 +423,7 @@ body.mobile .talk{font-size:18px;}
       <div id="verseLine" style="margin-top:8px; font-size:26px;"></div>
       <div class="word-chips" id="verseChips"></div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
-        <button class="speakbtn" data-speak="因为人子是安息日的主。。因为人，子是安，息日的，主。" onclick="speakThis(this)">🔊 跟著念</button>
+        <button class="speakbtn" data-speak="因为人子是安息日的主。因为人，子是安，息日的，主。" onclick="speakThis(this)">🔊 跟著念</button>
         <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px;" onclick="verseReset()">🔄 再来一次</button>
         <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px; background:linear-gradient(135deg,#3ec6b0,#2aa89a);" onclick="addStar(1); go(3);">✅ 我背好了！</button>
       </div>
@@ -703,7 +703,7 @@ body.mobile .talk{font-size:18px;}
         </div>        <div class="card" style="flex:1; min-width:260px; text-align:left;">
           <div style="font-size:38px; text-align:center;">💝</div>
           <div style="font-weight:900; color:#2ecc71; font-size:19px; margin:6px 0;">本周信息</div>
-          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「及待了。」。耶稣和饥饿的门徒从一块麦地经过，门徒掐麦穗来充。</div>
+          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「与上帝有约」。耶稣和饥饿的门徒从一块麦地经过，门徒掐麦穗来充。</div>
         </div>
       </div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
@@ -719,7 +719,7 @@ body.mobile .talk{font-size:18px;}
       <h2 class="title" style="font-size:34px;">🙏 一起祷告</h2>
       <div class="card" style="max-width:820px; width:100%; position:relative; padding:14px 20px;">
         <div style="font-size:52px; line-height:1;" class="floaty">🌟</div>
-        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢安息日是我们更深认识主爱的一天。<br>就像「及待了。」的故事一样，<br>求祢帮助我快乐地享受上帝在大自然、圣经、安息日学课和教会中给我。<br>奉耶稣的名祷告，阿们！</div>
+        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢安息日是我们更深认识主爱的一天。<br>就像「与上帝有约」的故事一样，<br>求祢帮助我快乐地享受上帝在大自然、圣经、安息日学课和教会中给我。<br>奉耶稣的名祷告，阿们！</div>
         <div style="display:flex; justify-content:center;">
           <button class="speakbtn" onclick="speakText(document.getElementById('prayerText').innerText.replace(/<br>/g,'。'))">🔊 跟著念</button>
         </div>
@@ -1072,7 +1072,7 @@ function versePick(btn, w){
 function verseReset(){ verseInit(); }
 
 /* ================= 第一天：光 ================= *//* ================= 第一幕：风和葡萄 ================= */
-const s0M = {'a00':'从前有个风俗是，人经过别人田地时若感到饥饿，身上又没有食物，他们可以随便吃田里的。', 'a01':'他们可以吃葡萄园的葡萄，也可以摘一些麦穗，吃其中的麦粒。。', 'a02':'他们可以吃葡萄园的葡萄，也可以摘一些麦穗，吃其中的麦粒。。'};
+const s0M = {'a00':'从前有个风俗是，人经过别人田地时若感到饥饿，身上又没有食物，他们可以随便吃田里的。', 'a01':'他们可以吃葡萄园的葡萄，也可以摘一些麦穗，吃其中的麦粒。', 'a02':'他们可以吃葡萄园的葡萄，也可以摘一些麦穗，吃其中的麦粒。'};
 let s0Seen = {}, s0Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1106,7 +1106,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第三幕：大卫和圣殿 ================= */
-const s2M = {'a20':'祂说：“你记得大卫吗？。', 'a21':'有一次他和他的跟随者很饥饿，所以就吃了圣殿中唯有祭司才可以吃的饼。。', 'a22':'有一次他和他的跟随者很饥饿，所以就吃了圣殿中唯有祭司才可以吃的饼。。'};
+const s2M = {'a20':'祂说：“你记得大卫吗？。', 'a21':'有一次他和他的跟随者很饥饿，所以就吃了圣殿中唯有祭司才可以吃的饼。', 'a22':'有一次他和他的跟随者很饥饿，所以就吃了圣殿中唯有祭司才可以吃的饼。'};
 let s2Seen = {}, s2Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1123,7 +1123,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第四幕：耶稣和圣殿 ================= */
-const s3M = {'a30':'”又一个安息日，耶稣在会堂里看见一个手臂残废的人。。', 'a31':'”又一个安息日，耶稣在会堂里看见一个手臂残废的人。。', 'a32':'耶稣问了另一个问题来促使他们思考：“如果你有羊掉进洞里，你会拉它上来吗？。'};
+const s3M = {'a30':'”又一个安息日，耶稣在会堂里看见一个手臂残废的人。', 'a31':'”又一个安息日，耶稣在会堂里看见一个手臂残废的人。', 'a32':'耶稣问了另一个问题来促使他们思考：“如果你有羊掉进洞里，你会拉它上来吗？。'};
 let s3Seen = {}, s3Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1140,7 +1140,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第五幕：耶稣和孩子 ================= */
-const s4M = {'a40':'”然后耶稣对手臂残废的人说：“伸出手来！。', 'a41':'有些孩子觉得安息日是一个凡事不准的日子。。', 'a42':'安息日给我们更多时间去做特别的事，就是做一些能教导我们认识上帝的爱的事。。'};
+const s4M = {'a40':'”然后耶稣对手臂残废的人说：“伸出手来！。', 'a41':'有些孩子觉得安息日是一个凡事不准的日子。', 'a42':'安息日给我们更多时间去做特别的事，就是做一些能教导我们认识上帝的爱的事。'};
 let s4Seen = {}, s4Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1157,7 +1157,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第六幕：上帝和花 ================= */
-const s5M = {'a50':'上帝设立安息日，是为使我们可以多花时间与衪在一起，学习更多关于衪奇妙的爱。。', 'a51':'上帝设立安息日，是为使我们可以多花时间与衪在一起，学习更多关于衪奇妙的爱。。'};
+const s5M = {'a50':'上帝设立安息日，是为使我们可以多花时间与衪在一起，学习更多关于衪奇妙的爱。', 'a51':'上帝设立安息日，是为使我们可以多花时间与衪在一起，学习更多关于衪奇妙的爱。'};
 let s5Seen = {}, s5Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1174,7 +1174,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第七幕：我们的回应 ================= */
-const s6M = {'r0':'安息日是我们更深认识主爱的一天。', 'r1':'存心节：因为人子是安息日的主。。', 'r2':'快乐地享受上帝在大自然、圣经、安息日学课和教会中给我们的爱。'};
+const s6M = {'r0':'安息日是我们更深认识主爱的一天。', 'r1':'存心节：因为人子是安息日的主。', 'r2':'快乐地享受上帝在大自然、圣经、安息日学课和教会中给我们的爱。'};
 let s6Seen = {}, s6Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;

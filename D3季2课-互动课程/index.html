@@ -384,7 +384,7 @@ body.mobile .talk{font-size:18px;}
       <div class="kicker">D3季 · 互动课程</div>
       <div class="emoji-xl floaty" style="margin-bottom:6px;">🤝</div>
       <h1 class="title">第二课 · 约西亚行善</h1>
-      <div class="sub">上帝爱我们。。</div>
+      <div class="sub">上帝爱我们。</div>
       <div style="margin-top:10px;"><span class="chip">📖 经文：参本课</span><span class="chip">💜 信息：上帝爱我们。</span><span class="chip">⭐ 存心节：约西亚……他实行耶和华眼中看为正</span></div>
       <button class="bigbtn" onclick="go(1)">🚀 开始上课</button>
       <div class="note">🎧 点「🔊」可以开关朗读声音（请在浏览器允许语音）</div>
@@ -410,7 +410,7 @@ body.mobile .talk{font-size:18px;}
           <div style="font-size:16px; color:var(--ink2);">#2ecc71</div>
         </div>
       </div>
-      <button class="speakbtn" data-speak="这一课，我们要晓得：上帝爱我们。。" onclick="speakThis(this)">🔊 听听这一课</button>
+      <button class="speakbtn" data-speak="这一课，我们要晓得：上帝爱我们。" onclick="speakThis(this)">🔊 听听这一课</button>
       <div style="margin-top:14px;"><span class="pill">💜 信息：上帝爱我们。</span></div>
     </div>
   </section>
@@ -702,7 +702,7 @@ body.mobile .talk{font-size:18px;}
         </div>        <div class="card" style="flex:1; min-width:260px; text-align:left;">
           <div style="font-size:38px; text-align:center;">💝</div>
           <div style="font-weight:900; color:#2ecc71; font-size:19px; margin:6px 0;">本周信息</div>
-          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「你的朋友要你做你认为不」。。</div>
+          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「约西亚行善」。</div>
         </div>
       </div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
@@ -718,7 +718,7 @@ body.mobile .talk{font-size:18px;}
       <h2 class="title" style="font-size:34px;">🙏 一起祷告</h2>
       <div class="card" style="max-width:820px; width:100%; position:relative; padding:14px 20px;">
         <div style="font-size:52px; line-height:1;" class="floaty">🌟</div>
-        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢。<br>就像「你的朋友要你做你认为不」的故事一样，<br>求祢帮助我做一个好孩子。<br>奉耶稣的名祷告，阿们！</div>
+        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢。<br>就像「约西亚行善」的故事一样，<br>求祢帮助我做一个好孩子。<br>奉耶稣的名祷告，阿们！</div>
         <div style="display:flex; justify-content:center;">
           <button class="speakbtn" onclick="speakText(document.getElementById('prayerText').innerText.replace(/<br>/g,'。'))">🔊 跟著念</button>
         </div>
@@ -1071,7 +1071,7 @@ function versePick(btn, w){
 function verseReset(){ verseInit(); }
 
 /* ================= 第一天：光 ================= *//* ================= 第一幕：朋友和家 ================= */
-const s0M = {'a00':'你的朋友要你做你认为不对的事情，拒绝是容易的吗？。', 'a01':'约西亚就是处在一群做坏事的人中间，但他学会了说“不”，因此改变了整个国家。。', 'a02':'约约西亚八岁继承了王位。。'};
+const s0M = {'a00':'你的朋友要你做你认为不对的事情，拒绝是容易的吗？。', 'a01':'约西亚就是处在一群做坏事的人中间，但他学会了说“不”，因此改变了整个国家。', 'a02':'约约西亚八岁继承了王位。'};
 let s0Seen = {}, s0Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1088,7 +1088,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第二幕：上帝和父亲 ================= */
-const s1M = {'a10':'因为没有这书，百姓就不知道按上帝的旨意而生活。。', 'a11':'约西亚的父亲──亚们王22岁登基，但他仍效法其父的做法。。', 'a12':'约西亚的父亲──亚们王22岁登基，但他仍效法其父的做法。。'};
+const s1M = {'a10':'因为没有这书，百姓就不知道按上帝的旨意而生活。', 'a11':'约西亚的父亲──亚们王22岁登基，但他仍效法其父的做法。', 'a12':'约西亚的父亲──亚们王22岁登基，但他仍效法其父的做法。'};
 let s1Seen = {}, s1Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1105,7 +1105,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第三幕：上帝和火 ================= */
-const s2M = {'a20':'8约西亚献身侍奉上帝，祈求祂透过自己来使百姓更深地认识祂。。', 'a21':'他开始明白，必须去除一切偶像和拜假神的祭坛。。', 'a22':'约西亚王26岁的时候，明白自己的志向：洁净并修缮圣殿，便吩咐书记沙番，把指令带给。'};
+const s2M = {'a20':'8约西亚献身侍奉上帝，祈求祂透过自己来使百姓更深地认识祂。', 'a21':'他开始明白，必须去除一切偶像和拜假神的祭坛。', 'a22':'约西亚王26岁的时候，明白自己的志向：洁净并修缮圣殿，便吩咐书记沙番，把指令带给。'};
 let s2Seen = {}, s2Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1122,7 +1122,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第四幕：家和国王 ================= */
-const s3M = {'a30':'”沙番立即去见希勒家，把王的指令确切传达。。', 'a31':'”沙番立即去见希勒家，把王的指令确切传达。。', 'a32':'希勒家在圣殿四周查看的时候，突然，大叫起来：“快看，我发现了什么！。'};
+const s3M = {'a30':'”沙番立即去见希勒家，把王的指令确切传达。', 'a31':'”沙番立即去见希勒家，把王的指令确切传达。', 'a32':'希勒家在圣殿四周查看的时候，突然，大叫起来：“快看，我发现了什么！。'};
 let s3Seen = {}, s3Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1156,7 +1156,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第六幕：家 ================= */
-const s5M = {'a50':'”希勒家回答说：“请把书交给他，他一定会非常高兴。。'};
+const s5M = {'a50':'”希勒家回答说：“请把书交给他，他一定会非常高兴。'};
 let s5Seen = {}, s5Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;

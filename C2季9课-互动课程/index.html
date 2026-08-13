@@ -423,7 +423,7 @@ body.mobile .talk{font-size:18px;}
       <div id="verseLine" style="margin-top:8px; font-size:26px;"></div>
       <div class="word-chips" id="verseChips"></div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
-        <button class="speakbtn" data-speak="这是我的爱子，我所喜悦的。。这是我的爱，子，我所喜悦的。" onclick="speakThis(this)">🔊 跟著念</button>
+        <button class="speakbtn" data-speak="这是我的爱子，我所喜悦的。这是我的爱，子，我所喜悦的。" onclick="speakThis(this)">🔊 跟著念</button>
         <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px;" onclick="verseReset()">🔄 再来一次</button>
         <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px; background:linear-gradient(135deg,#3ec6b0,#2aa89a);" onclick="addStar(1); go(3);">✅ 我背好了！</button>
       </div>
@@ -703,7 +703,7 @@ body.mobile .talk{font-size:18px;}
         </div>        <div class="card" style="flex:1; min-width:260px; text-align:left;">
           <div style="font-size:38px; text-align:center;">💝</div>
           <div style="font-weight:900; color:#2ecc71; font-size:19px; margin:6px 0;">本周信息</div>
-          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「经。」。我们是上帝家中的成员。。</div>
+          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「正确的选择」。我们是上帝家中的成员。</div>
         </div>
       </div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
@@ -719,7 +719,7 @@ body.mobile .talk{font-size:18px;}
       <h2 class="title" style="font-size:34px;">🙏 一起祷告</h2>
       <div class="card" style="max-width:820px; width:100%; position:relative; padding:14px 20px;">
         <div style="font-size:52px; line-height:1;" class="floaty">🌟</div>
-        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢当我决定受洗时，就是向世人表明我是上帝家。<br>就像「经。」的故事一样，<br>求祢帮助我希望得到帮助预备受洗。。<br>奉耶稣的名祷告，阿们！</div>
+        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢当我决定受洗时，就是向世人表明我是上帝家。<br>就像「正确的选择」的故事一样，<br>求祢帮助我希望得到帮助预备受洗。<br>奉耶稣的名祷告，阿们！</div>
         <div style="display:flex; justify-content:center;">
           <button class="speakbtn" onclick="speakText(document.getElementById('prayerText').innerText.replace(/<br>/g,'。'))">🔊 跟著念</button>
         </div>
@@ -1072,7 +1072,7 @@ function versePick(btn, w){
 function verseReset(){ verseInit(); }
 
 /* ================= 第一天：光 ================= *//* ================= 第一幕：上帝和家 ================= */
-const s0M = {'a00':'很久以前，一些人也选择通过受洗来向人宣讲有关上帝家庭的信息。。', 'a01':'很久以前，一些人也选择通过受洗来向人宣讲有关上帝家庭的信息。。', 'a02':'炎热的太阳照着河面闪闪发光。。'};
+const s0M = {'a00':'很久以前，一些人也选择通过受洗来向人宣讲有关上帝家庭的信息。', 'a01':'很久以前，一些人也选择通过受洗来向人宣讲有关上帝家庭的信息。', 'a02':'炎热的太阳照着河面闪闪发光。'};
 let s0Seen = {}, s0Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1089,7 +1089,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第二幕：先知和上帝 ================= */
-const s1M = {'a10':'”很多人去听约翰讲道。。', 'a11':'当他们愿意向上帝敞开心门，约翰便为他们施洗。。', 'a12':'今天，当约翰看见耶稣正向河边走来时，他感到非常惊讶又欢喜。。'};
+const s1M = {'a10':'”很多人去听约翰讲道。', 'a11':'当他们愿意向上帝敞开心门，约翰便为他们施洗。', 'a12':'今天，当约翰看见耶稣正向河边走来时，他感到非常惊讶又欢喜。'};
 let s1Seen = {}, s1Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1106,7 +1106,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第三幕：耶稣和先知 ================= */
-const s2M = {'a20':'”耶稣柔声说96道。。', 'a21':'约翰感到十分惊讶，不知道该说什么。。'};
+const s2M = {'a20':'”耶稣柔声说96道。', 'a21':'约翰感到十分惊讶，不知道该说什么。'};
 let s2Seen = {}, s2Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1123,7 +1123,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第四幕：先知和耶稣 ================= */
-const s3M = {'a30':'“约翰，请为我施洗，就像你为他人做的一样。。', 'a31':'”耶稣慢慢走进水里。。', 'a32':'”耶稣慢慢走进水里。。'};
+const s3M = {'a30':'“约翰，请为我施洗，就像你为他人做的一样。', 'a31':'”耶稣慢慢走进水里。', 'a32':'”耶稣慢慢走进水里。'};
 let s3Seen = {}, s3Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1157,7 +1157,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第六幕：耶稣和树 ================= */
-const s5M = {'a50':'当耶稣受洗时，祂并没有任何罪需要被去除。。', 'a51':'祂只是为我们树立一个良好的榜样。。', 'a52':'每一天你可以花一点时间来更多的了解耶稣。。'};
+const s5M = {'a50':'当耶稣受洗时，祂并没有任何罪需要被去除。', 'a51':'祂只是为我们树立一个良好的榜样。', 'a52':'每一天你可以花一点时间来更多的了解耶稣。'};
 let s5Seen = {}, s5Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1174,7 +1174,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第七幕：我们的回应 ================= */
-const s6M = {'r0':'当我决定受洗时，就是向世人表明我是上帝家。', 'r1':'存心节：这是我的爱子，我所喜悦的。。', 'r2':'希望得到帮助预备受洗。'};
+const s6M = {'r0':'当我决定受洗时，就是向世人表明我是上帝家。', 'r1':'存心节：这是我的爱子，我所喜悦的。', 'r2':'希望得到帮助预备受洗。'};
 let s6Seen = {}, s6Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;

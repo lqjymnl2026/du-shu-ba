@@ -410,7 +410,7 @@ body.mobile .talk{font-size:18px;}
           <div style="font-size:16px; color:var(--ink2);">#2ecc71</div>
         </div>
       </div>
-      <button class="speakbtn" data-speak="这一课，我们要晓得：上帝派领袖来帮助我们为祂成就大事。。以色列人准备要进入迦南地了，但约旦河在他们面前拦住了去路，由于正值泛滥的季节，无法渡河。上帝让约书亚" onclick="speakThis(this)">🔊 听听这一课</button>
+      <button class="speakbtn" data-speak="这一课，我们要晓得：上帝派领袖来帮助我们为祂成就大事。以色列人准备要进入迦南地了，但约旦河在他们面前拦住了去路，由于正值泛滥的季节，无法渡河。上帝让约书亚" onclick="speakThis(this)">🔊 听听这一课</button>
       <div style="margin-top:14px;"><span class="pill">💜 信息：上帝派领袖来帮助我们为祂成就大事。</span></div>
     </div>
   </section>
@@ -423,7 +423,7 @@ body.mobile .talk{font-size:18px;}
       <div id="verseLine" style="margin-top:8px; font-size:26px;"></div>
       <div class="word-chips" id="verseChips"></div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
-        <button class="speakbtn" data-speak="耶和华必在你们中间行奇事。。耶和华必在，你们中间行，奇事。" onclick="speakThis(this)">🔊 跟著念</button>
+        <button class="speakbtn" data-speak="耶和华必在你们中间行奇事。耶和华必在，你们中间行，奇事。" onclick="speakThis(this)">🔊 跟著念</button>
         <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px;" onclick="verseReset()">🔄 再来一次</button>
         <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px; background:linear-gradient(135deg,#3ec6b0,#2aa89a);" onclick="addStar(1); go(3);">✅ 我背好了！</button>
       </div>
@@ -699,11 +699,11 @@ body.mobile .talk{font-size:18px;}
         </div>        <div class="card" style="flex:1; min-width:260px; text-align:left;">
           <div style="font-size:38px; text-align:center;">🙏</div>
           <div style="font-weight:900; color:#ff8c42; font-size:19px; margin:6px 0;">常常祷告</div>
-          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">常常与孩子一起祷告。这一课的信息是：上帝派领袖来帮助我们为祂成就大事。。帮助孩子把故事里的教训用在生活中。</div>
+          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">常常与孩子一起祷告。这一课的信息是：上帝派领袖来帮助我们为祂成就大事。帮助孩子把故事里的教训用在生活中。</div>
         </div>        <div class="card" style="flex:1; min-width:260px; text-align:left;">
           <div style="font-size:38px; text-align:center;">💝</div>
           <div style="font-weight:900; color:#2ecc71; font-size:19px; margin:6px 0;">本周信息</div>
-          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「有些紧张呢？」。我们彼此鼓励跟随耶稣。。</div>
+          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「过约但河」。我们彼此鼓励跟随耶稣。</div>
         </div>
       </div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
@@ -719,7 +719,7 @@ body.mobile .talk{font-size:18px;}
       <h2 class="title" style="font-size:34px;">🙏 一起祷告</h2>
       <div class="card" style="max-width:820px; width:100%; position:relative; padding:14px 20px;">
         <div style="font-size:52px; line-height:1;" class="floaty">🌟</div>
-        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢上帝派领袖来帮助我们为祂成就大事。。<br>就像「有些紧张呢？」的故事一样，<br>求祢帮助我和上帝赐下的领袖们合作。。<br>奉耶稣的名祷告，阿们！</div>
+        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢上帝派领袖来帮助我们为祂成就大事。<br>就像「过约但河」的故事一样，<br>求祢帮助我和上帝赐下的领袖们合作。<br>奉耶稣的名祷告，阿们！</div>
         <div style="display:flex; justify-content:center;">
           <button class="speakbtn" onclick="speakText(document.getElementById('prayerText').innerText.replace(/<br>/g,'。'))">🔊 跟著念</button>
         </div>
@@ -1072,7 +1072,7 @@ function versePick(btn, w){
 function verseReset(){ verseInit(); }
 
 /* ================= 第一天：光 ================= *//* ================= 第一幕：上帝和雅各 ================= */
-const s0M = {'a00':'上帝已经为以色列人行了许多奇事。。', 'a01':'上帝已经为以色列人行了许多奇事。。', 'a02':'他听过几百遍关于上帝分开红海，带领以色列人逃离埃及的故事。。'};
+const s0M = {'a00':'上帝已经为以色列人行了许多奇事。', 'a01':'上帝已经为以色列人行了许多奇事。', 'a02':'他听过几百遍关于上帝分开红海，带领以色列人逃离埃及的故事。'};
 let s0Seen = {}, s0Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1089,7 +1089,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第二幕：上帝和雅各 ================= */
-const s1M = {'a10':'上帝仍然会为以色列人行奇事吗？。', 'a11':'上帝仍然会为以色列人行奇事吗？。', 'a12':'赫伯起床走到帐篷外面。。'};
+const s1M = {'a10':'上帝仍然会为以色列人行奇事吗？。', 'a11':'上帝仍然会为以色列人行奇事吗？。', 'a12':'赫伯起床走到帐篷外面。'};
 let s1Seen = {}, s1Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1106,7 +1106,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第三幕：雅各和父亲 ================= */
-const s2M = {'a20':'以色列人已经在此扎营三天了。。', 'a21':'他的思绪被父亲急切的呼唤声打断，“约书亚下达指示了，快来。。', 'a22':'“约柜要在你们前头过去，下到约旦河中。。'};
+const s2M = {'a20':'以色列人已经在此扎营三天了。', 'a21':'他的思绪被父亲急切的呼唤声打断，“约书亚下达指示了，快来。', 'a22':'“约柜要在你们前头过去，下到约旦河中。'};
 let s2Seen = {}, s2Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1123,7 +1123,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第四幕：帐篷和河 ================= */
-const s3M = {'a30':'现在就收起帐篷准备过河。。', 'a31':'现在就收起帐篷准备过河。。', 'a32':'”“我们没有时间犹豫了，”赫伯的父亲阳光透过帐说。。'};
+const s3M = {'a30':'现在就收起帐篷准备过河。', 'a31':'现在就收起帐篷准备过河。', 'a32':'”“我们没有时间犹豫了，”赫伯的父亲阳光透过帐说。'};
 let s3Seen = {}, s3Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1140,7 +1140,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第五幕：水和河 ================= */
-const s4M = {'a40':'他们的脚刚刚入水，水就停住了，完全停住了，正如约书亚所说的那样，立起成垒。。', 'a41':'不过几秒钟，河流就消失在转弯处。。', 'a42':'祭司们走到河中央，以色列人的欢呼声响彻云霄。。'};
+const s4M = {'a40':'他们的脚刚刚入水，水就停住了，完全停住了，正如约书亚所说的那样，立起成垒。', 'a41':'不过几秒钟，河流就消失在转弯处。', 'a42':'祭司们走到河中央，以色列人的欢呼声响彻云霄。'};
 let s4Seen = {}, s4Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1157,7 +1157,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第六幕：雅各和河 ================= */
-const s5M = {'a50':'当最后一名以色列人踏上应许之地，祭司们才开始过河。。', 'a51':'当最后一名以色列人踏上应许之地，祭司们才开始过河。。'};
+const s5M = {'a50':'当最后一名以色列人踏上应许之地，祭司们才开始过河。', 'a51':'当最后一名以色列人踏上应许之地，祭司们才开始过河。'};
 let s5Seen = {}, s5Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1174,7 +1174,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第七幕：我们的回应 ================= */
-const s6M = {'r0':'上帝派领袖来帮助我们为祂成就大事。。', 'r1':'存心节：耶和华必在你们中间行奇事。。', 'r2':'和上帝赐下的领袖们合作。'};
+const s6M = {'r0':'上帝派领袖来帮助我们为祂成就大事。', 'r1':'存心节：耶和华必在你们中间行奇事。', 'r2':'和上帝赐下的领袖们合作。'};
 let s6Seen = {}, s6Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;

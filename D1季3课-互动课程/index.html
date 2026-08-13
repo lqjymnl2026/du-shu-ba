@@ -703,7 +703,7 @@ body.mobile .talk{font-size:18px;}
         </div>        <div class="card" style="flex:1; min-width:260px; text-align:left;">
           <div style="font-size:38px; text-align:center;">💝</div>
           <div style="font-weight:900; color:#2ecc71; font-size:19px; margin:6px 0;">本周信息</div>
-          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「这样的事！」。耶稣呼召我们服侍他人。。</div>
+          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「朋友设法相助」。耶稣呼召我们服侍他人。</div>
         </div>
       </div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
@@ -719,7 +719,7 @@ body.mobile .talk{font-size:18px;}
       <h2 class="title" style="font-size:34px;">🙏 一起祷告</h2>
       <div class="card" style="max-width:820px; width:100%; position:relative; padding:14px 20px;">
         <div style="font-size:52px; line-height:1;" class="floaty">🌟</div>
-        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢我将他人带领到耶稣面前就是服侍耶稣。<br>就像「这样的事！」的故事一样，<br>求祢帮助我通过分享时间和金钱，就可以引领他人来到耶稣面前。。<br>奉耶稣的名祷告，阿们！</div>
+        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢我将他人带领到耶稣面前就是服侍耶稣。<br>就像「朋友设法相助」的故事一样，<br>求祢帮助我通过分享时间和金钱，就可以引领他人来到耶稣面前。<br>奉耶稣的名祷告，阿们！</div>
         <div style="display:flex; justify-content:center;">
           <button class="speakbtn" onclick="speakText(document.getElementById('prayerText').innerText.replace(/<br>/g,'。'))">🔊 跟著念</button>
         </div>
@@ -1072,7 +1072,7 @@ function versePick(btn, w){
 function verseReset(){ verseInit(); }
 
 /* ================= 第一天：光 ================= *//* ================= 第一幕：耶稣和家 ================= */
-const s0M = {'a00':'”一大群人正匆匆的赶往耶稣正在医治和教导人的那间屋子。。', 'a01':'”一大群人正匆匆的赶往耶稣正在医治和教导人的那间屋子。。', 'a02':'城里有一个快要病死的人。。'};
+const s0M = {'a00':'”一大群人正匆匆的赶往耶稣正在医治和教导人的那间屋子。', 'a01':'”一大群人正匆匆的赶往耶稣正在医治和教导人的那间屋子。', 'a02':'城里有一个快要病死的人。'};
 let s0Seen = {}, s0Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1089,7 +1089,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第二幕：耶稣和朋友 ================= */
-const s1M = {'a10':'但愿他能够遇见耶稣！。', 'a11':'这个瘫子在有一件事上是幸运的，他有四位好朋友，愿意带他到耶稣那里。。', 'a12':'他们每人拿起褥子的一只角，抬着瘫子到耶稣那里去。。'};
+const s1M = {'a10':'但愿他能够遇见耶稣！。', 'a11':'这个瘫子在有一件事上是幸运的，他有四位好朋友，愿意带他到耶稣那里。', 'a12':'他们每人拿起褥子的一只角，抬着瘫子到耶稣那里去。'};
 let s1Seen = {}, s1Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1106,7 +1106,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第三幕：耶稣和朋友 ================= */
-const s2M = {'a20':'那病人担心不能见着耶稣。。', 'a21':'他和朋友36们该怎么办呢？。'};
+const s2M = {'a20':'那病人担心不能见着耶稣。', 'a21':'他和朋友36们该怎么办呢？。'};
 let s2Seen = {}, s2Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1123,7 +1123,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第四幕：朋友和耶稣 ================= */
-const s3M = {'a30':'他们在屋顶开了一个大洞，大得足以让他们的瘫子朋友连同他的褥子穿过。。', 'a31':'然后，他们用绳子将躺卧在褥子上的瘫子往下坠，刚好落在耶稣面前！。', 'a32':'耶稣的目光很友善。。'};
+const s3M = {'a30':'他们在屋顶开了一个大洞，大得足以让他们的瘫子朋友连同他的褥子穿过。', 'a31':'然后，他们用绳子将躺卧在褥子上的瘫子往下坠，刚好落在耶稣面前！。', 'a32':'耶稣的目光很友善。'};
 let s3Seen = {}, s3Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1157,7 +1157,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第六幕：家和上帝 ================= */
-const s5M = {'a50':'他站起来，拿起褥子，走出房子，回家去了。。', 'a51':'每个人都惊讶不已，归荣耀与上帝，说：“我们从未见过像这样的事！。', 'a52':'”那四位朋友都很高兴他们把朋友带到了耶稣面前。。'};
+const s5M = {'a50':'他站起来，拿起褥子，走出房子，回家去了。', 'a51':'每个人都惊讶不已，归荣耀与上帝，说：“我们从未见过像这样的事！。', 'a52':'”那四位朋友都很高兴他们把朋友带到了耶稣面前。'};
 let s5Seen = {}, s5Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;

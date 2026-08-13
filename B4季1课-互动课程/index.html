@@ -423,7 +423,7 @@ body.mobile .talk{font-size:18px;}
       <div id="verseLine" style="margin-top:8px; font-size:26px;"></div>
       <div class="word-chips" id="verseChips"></div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
-        <button class="speakbtn" data-speak="要彼此劝勉。。要彼此，劝勉。" onclick="speakThis(this)">🔊 跟著念</button>
+        <button class="speakbtn" data-speak="要彼此劝勉。要彼此，劝勉。" onclick="speakThis(this)">🔊 跟著念</button>
         <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px;" onclick="verseReset()">🔄 再来一次</button>
         <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px; background:linear-gradient(135deg,#3ec6b0,#2aa89a);" onclick="addStar(1); go(3);">✅ 我背好了！</button>
       </div>
@@ -704,7 +704,7 @@ body.mobile .talk{font-size:18px;}
         </div>        <div class="card" style="flex:1; min-width:260px; text-align:left;">
           <div style="font-size:38px; text-align:center;">💝</div>
           <div style="font-weight:900; color:#2ecc71; font-size:19px; margin:6px 0;">本周信息</div>
-          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「地之前去探查那里的情况。」。我们彼此鼓励跟随耶稣。。</div>
+          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「巨人与蚱蜢」。我们彼此鼓励跟随耶稣。</div>
         </div>
       </div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
@@ -720,7 +720,7 @@ body.mobile .talk{font-size:18px;}
       <h2 class="title" style="font-size:34px;">🙏 一起祷告</h2>
       <div class="card" style="max-width:820px; width:100%; position:relative; padding:14px 20px;">
         <div style="font-size:52px; line-height:1;" class="floaty">🌟</div>
-        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢我们彼此鼓励跟随主。8。<br>就像「地之前去探查那里的情况。」的故事一样，<br>求祢帮助我寻找各种方式与人分享盼望和鼓励。。<br>奉耶稣的名祷告，阿们！</div>
+        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢我们彼此鼓励跟随主。8。<br>就像「巨人与蚱蜢」的故事一样，<br>求祢帮助我寻找各种方式与人分享盼望和鼓励。<br>奉耶稣的名祷告，阿们！</div>
         <div style="display:flex; justify-content:center;">
           <button class="speakbtn" onclick="speakText(document.getElementById('prayerText').innerText.replace(/<br>/g,'。'))">🔊 跟著念</button>
         </div>
@@ -1073,7 +1073,7 @@ function versePick(btn, w){
 function verseReset(){ verseInit(); }
 
 /* ================= 第一天：光 ================= *//* ================= 第一幕：家和上帝 ================= */
-const s0M = {'a00':'你有没有在野外露营或搬家的经历？。', 'a01':'上帝给以色列人这样一个机会，让他们在进入迦南地之前去探查那里的情况。。', 'a02':'上帝给以色列人这样一个机会，让他们在进入迦南地之前去探查那里的情况。。'};
+const s0M = {'a00':'你有没有在野外露营或搬家的经历？。', 'a01':'上帝给以色列人这样一个机会，让他们在进入迦南地之前去探查那里的情况。', 'a02':'上帝给以色列人这样一个机会，让他们在进入迦南地之前去探查那里的情况。'};
 let s0Seen = {}, s0Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1090,7 +1090,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第二幕：雅各和家 ================= */
-const s1M = {'a10':'以色列人非常激动，他们急忙出来迎接这些探子，要听他们汇报那片土地的情况。。', 'a11':'迦勒来自犹大支派，他又高又壮，也是探子之一，现在他已经等不及要向大家汇报了。。', 'a12':'“那地方果然是奶与蜜之地，”他们向大16家汇报说。。'};
+const s1M = {'a10':'以色列人非常激动，他们急忙出来迎接这些探子，要听他们汇报那片土地的情况。', 'a11':'迦勒来自犹大支派，他又高又壮，也是探子之一，现在他已经等不及要向大家汇报了。', 'a12':'“那地方果然是奶与蜜之地，”他们向大16家汇报说。'};
 let s1Seen = {}, s1Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1107,7 +1107,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第三幕：雅各和城 ================= */
-const s2M = {'a20':'以色列人非常激动，这些正是他们希望听到的。。', 'a21':'“但是，”探子们接着说，“住在那里的人非常强壮，所住的城又大又坚固。。', 'a22':'”他也和他们一同去了那里，他看过并且知道上帝会将那片土地赐给他们。。'};
+const s2M = {'a20':'以色列人非常激动，这些正是他们希望听到的。', 'a21':'“但是，”探子们接着说，“住在那里的人非常强壮，所住的城又大又坚固。', 'a22':'”他也和他们一同去了那里，他看过并且知道上帝会将那片土地赐给他们。'};
 let s2Seen = {}, s2Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1124,7 +1124,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第四幕：旷野和上帝 ================= */
-const s3M = {'a30':'“我们还不如早死在埃及地或是这旷野中！。', 'a31':'”民众哭号着，“为什么上帝要带我们来这里？。', 'a32':'我们会被敌人杀掉，我们的妻子和孩子也会被他们劫去。。'};
+const s3M = {'a30':'“我们还不如早死在埃及地或是这旷野中！。', 'a31':'”民众哭号着，“为什么上帝要带我们来这里？。', 'a32':'我们会被敌人杀掉，我们的妻子和孩子也会被他们劫去。'};
 let s3Seen = {}, s3Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1141,7 +1141,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第五幕：上帝和葡萄 ================= */
-const s4M = {'a40':'上帝与我们同在，别怕他们。。', 'a41':'一串葡萄都需要两个人来抬呢！。', 'a42':'的确，那里的人很强壮，城墙也很坚固。。'};
+const s4M = {'a40':'上帝与我们同在，别怕他们。', 'a41':'一串葡萄都需要两个人来抬呢！。', 'a42':'的确，那里的人很强壮，城墙也很坚固。'};
 let s4Seen = {}, s4Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1175,7 +1175,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第七幕：我们的回应 ================= */
-const s6M = {'r0':'我们彼此鼓励跟随主。8。', 'r1':'存心节：要彼此劝勉。。', 'r2':'寻找各种方式与人分享盼望和鼓励。'};
+const s6M = {'r0':'我们彼此鼓励跟随主。8。', 'r1':'存心节：要彼此劝勉。', 'r2':'寻找各种方式与人分享盼望和鼓励。'};
 let s6Seen = {}, s6Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;

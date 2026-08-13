@@ -423,7 +423,7 @@ body.mobile .talk{font-size:18px;}
       <div id="verseLine" style="margin-top:8px; font-size:26px;"></div>
       <div class="word-chips" id="verseChips"></div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
-        <button class="speakbtn" data-speak="这耶稣，你们见祂怎样往天上去，祂还要怎样来。。这耶稣，你们见祂怎，样往天上去，祂还要怎样，来。" onclick="speakThis(this)">🔊 跟著念</button>
+        <button class="speakbtn" data-speak="这耶稣，你们见祂怎样往天上去，祂还要怎样来。这耶稣，你们见祂怎，样往天上去，祂还要怎样，来。" onclick="speakThis(this)">🔊 跟著念</button>
         <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px;" onclick="verseReset()">🔄 再来一次</button>
         <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px; background:linear-gradient(135deg,#3ec6b0,#2aa89a);" onclick="addStar(1); go(3);">✅ 我背好了！</button>
       </div>
@@ -700,7 +700,7 @@ body.mobile .talk{font-size:18px;}
         </div>        <div class="card" style="flex:1; min-width:260px; text-align:left;">
           <div style="font-size:38px; text-align:center;">💝</div>
           <div style="font-weight:900; color:#2ecc71; font-size:19px; margin:6px 0;">本周信息</div>
-          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「事中也发生了类似的故事。」。我们要牢记耶稣为我们做了什么。。</div>
+          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「主要驾云再来」。我们要牢记耶稣为我们做了什么。</div>
         </div>
       </div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
@@ -716,7 +716,7 @@ body.mobile .talk{font-size:18px;}
       <h2 class="title" style="font-size:34px;">🙏 一起祷告</h2>
       <div class="card" style="max-width:820px; width:100%; position:relative; padding:14px 20px;">
         <div style="font-size:52px; line-height:1;" class="floaty">🌟</div>
-        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢当耶稣再来时，我们要与祂在一起。<br>就像「事中也发生了类似的故事。」的故事一样，<br>求祢帮助我盼望耶稣的再来，并祈求主帮助我们准备好自己。。<br>奉耶稣的名祷告，阿们！</div>
+        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢当耶稣再来时，我们要与祂在一起。<br>就像「主要驾云再来」的故事一样，<br>求祢帮助我盼望耶稣的再来，并祈求主帮助我们准备好自己。<br>奉耶稣的名祷告，阿们！</div>
         <div style="display:flex; justify-content:center;">
           <button class="speakbtn" onclick="speakText(document.getElementById('prayerText').innerText.replace(/<br>/g,'。'))">🔊 跟著念</button>
         </div>
@@ -1069,7 +1069,7 @@ function versePick(btn, w){
 function verseReset(){ verseInit(); }
 
 /* ================= 第一天：光 ================= *//* ================= 第一幕：耶稣和门徒 ================= */
-const s0M = {'a00':'耶稣被钉和复活后，与门徒共同度过了40天时间。。', 'a01':'耶稣被钉和复活后，与门徒共同度过了40天时间。。'};
+const s0M = {'a00':'耶稣被钉和复活后，与门徒共同度过了40天时间。', 'a01':'耶稣被钉和复活后，与门徒共同度过了40天时间。'};
 let s0Seen = {}, s0Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1103,7 +1103,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第三幕：国王和耶稣 ================= */
-const s2M = {'a20':'祂来不是为要来做世上的王，而是要成为人们生命中的王。。', 'a21':'耶稣温柔地告诉他们圣灵会与他们同在，他们要把祂的主题信息传到世界各地，每一个人也。', 'a22':'祂穿过树梢，直升到天上。。'};
+const s2M = {'a20':'祂来不是为要来做世上的王，而是要成为人们生命中的王。', 'a21':'耶稣温柔地告诉他们圣灵会与他们同在，他们要把祂的主题信息传到世界各地，每一个人也。', 'a22':'祂穿过树梢，直升到天上。'};
 let s2Seen = {}, s2Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1120,7 +1120,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第四幕：天空和天使 ================= */
-const s3M = {'a30':'正当他们定睛望着天空时，有两个穿着白衣的人出现在他们身边。。', 'a31':'这两位天使要帮助惊讶的门徒们明白所发生的事，天使说：“你们为什么站在这里望着天空。', 'a32':'这两位天使要帮助惊讶的门徒们明白所发生的事，天使说：“你们为什么站在这里望着天空。'};
+const s3M = {'a30':'正当他们定睛望着天空时，有两个穿着白衣的人出现在他们身边。', 'a31':'这两位天使要帮助惊讶的门徒们明白所发生的事，天使说：“你们为什么站在这里望着天空。', 'a32':'这两位天使要帮助惊讶的门徒们明白所发生的事，天使说：“你们为什么站在这里望着天空。'};
 let s3Seen = {}, s3Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1137,7 +1137,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第五幕：耶稣和门徒 ================= */
-const s4M = {'a40':'（3）耶稣还要再来接我们到天国与祂一起生活。。', 'a41':'门徒们很想念耶稣，他们期待祂的再来，那么你呢？。'};
+const s4M = {'a40':'（3）耶稣还要再来接我们到天国与祂一起生活。', 'a41':'门徒们很想念耶稣，他们期待祂的再来，那么你呢？。'};
 let s4Seen = {}, s4Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1154,7 +1154,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第六幕：耶稣 ================= */
-const s5M = {'a50':'当耶稣再来时，我们要与祂在一起。。'};
+const s5M = {'a50':'当耶稣再来时，我们要与祂在一起。'};
 let s5Seen = {}, s5Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1171,7 +1171,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第七幕：我们的回应 ================= */
-const s6M = {'r0':'当耶稣再来时，我们要与祂在一起。', 'r1':'存心节：这耶稣，你们见祂怎样往天上去，祂还要怎样来。。', 'r2':'盼望耶稣的再来，并祈求主帮助我们准备好自己。'};
+const s6M = {'r0':'当耶稣再来时，我们要与祂在一起。', 'r1':'存心节：这耶稣，你们见祂怎样往天上去，祂还要怎样来。', 'r2':'盼望耶稣的再来，并祈求主帮助我们准备好自己。'};
 let s6Seen = {}, s6Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;

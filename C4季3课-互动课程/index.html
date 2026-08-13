@@ -423,7 +423,7 @@ body.mobile .talk{font-size:18px;}
       <div id="verseLine" style="margin-top:8px; font-size:26px;"></div>
       <div class="word-chips" id="verseChips"></div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
-        <button class="speakbtn" data-speak="甘心侍奉，好像服侍主，不像服侍人。。甘心侍奉，好像服侍主，不像服侍人。" onclick="speakThis(this)">🔊 跟著念</button>
+        <button class="speakbtn" data-speak="甘心侍奉，好像服侍主，不像服侍人。甘心侍奉，好像服侍主，不像服侍人。" onclick="speakThis(this)">🔊 跟著念</button>
         <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px;" onclick="verseReset()">🔄 再来一次</button>
         <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px; background:linear-gradient(135deg,#3ec6b0,#2aa89a);" onclick="addStar(1); go(3);">✅ 我背好了！</button>
       </div>
@@ -696,7 +696,7 @@ body.mobile .talk{font-size:18px;}
         </div>        <div class="card" style="flex:1; min-width:260px; text-align:left;">
           <div style="font-size:38px; text-align:center;">💝</div>
           <div style="font-weight:900; color:#2ecc71; font-size:19px; margin:6px 0;">本周信息</div>
-          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「铺床及整理房间，你会感觉」。我们的侍奉始于家中。。</div>
+          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「逃跑者的回归」。我们的侍奉始于家中。</div>
         </div>
       </div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
@@ -712,7 +712,7 @@ body.mobile .talk{font-size:18px;}
       <h2 class="title" style="font-size:34px;">🙏 一起祷告</h2>
       <div class="card" style="max-width:820px; width:100%; position:relative; padding:14px 20px;">
         <div style="font-size:52px; line-height:1;" class="floaty">🌟</div>
-        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢我可以在家中服侍耶稣28。<br>就像「铺床及整理房间，你会感觉」的故事一样，<br>求祢帮助我寻找在家中服侍其他人的方法。。<br>奉耶稣的名祷告，阿们！</div>
+        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢我可以在家中服侍耶稣28。<br>就像「逃跑者的回归」的故事一样，<br>求祢帮助我寻找在家中服侍其他人的方法。<br>奉耶稣的名祷告，阿们！</div>
         <div style="display:flex; justify-content:center;">
           <button class="speakbtn" onclick="speakText(document.getElementById('prayerText').innerText.replace(/<br>/g,'。'))">🔊 跟著念</button>
         </div>
@@ -1065,7 +1065,7 @@ function versePick(btn, w){
 function verseReset(){ verseInit(); }
 
 /* ================= 第一天：光 ================= *//* ================= 第一幕：保罗和家 ================= */
-const s0M = {'a00':'很多年前一位年轻人是一位奴仆，但他很不开心所以逃跑了，然后他遇上了保罗。。', 'a01':'“拿着它，阿尼西母，”他说，“这就是我答应你写给你主人腓利门的信，你一回家就交给。'};
+const s0M = {'a00':'很多年前一位年轻人是一位奴仆，但他很不开心所以逃跑了，然后他遇上了保罗。', 'a01':'“拿着它，阿尼西母，”他说，“这就是我答应你写给你主人腓利门的信，你一回家就交给。'};
 let s0Seen = {}, s0Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1099,7 +1099,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第三幕：保罗和水 ================= */
-const s2M = {'a20':'”阿尼西母把手臂绕在保罗肩膀上，然后放开保罗，把信放进他的背袋中。。', 'a21':'他低下头，悄悄擦掉泪水，希望没有人看见。。', 'a22':'事实上他欠我他的生命，因为是我把耶稣介绍给他的。。'};
+const s2M = {'a20':'”阿尼西母把手臂绕在保罗肩膀上，然后放开保罗，把信放进他的背袋中。', 'a21':'他低下头，悄悄擦掉泪水，希望没有人看见。', 'a22':'事实上他欠我他的生命，因为是我把耶稣介绍给他的。'};
 let s2Seen = {}, s2Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1133,7 +1133,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第五幕：保罗和上帝 ================= */
-const s4M = {'a40':'”保罗轻拍阿尼西母的肩头作最后送行。。', 'a41':'“告诉腓利门给我准备一个房间，”他在年轻人身后喊道，“我相信上帝会回应他的祈祷。'};
+const s4M = {'a40':'”保罗轻拍阿尼西母的肩头作最后送行。', 'a41':'“告诉腓利门给我准备一个房间，”他在年轻人身后喊道，“我相信上帝会回应他的祈祷。'};
 let s4Seen = {}, s4Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1167,7 +1167,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第七幕：我们的回应 ================= */
-const s6M = {'r0':'我可以在家中服侍耶稣28。', 'r1':'存心节：甘心侍奉，好像服侍主，不像服侍人。。', 'r2':'寻找在家中服侍其他人的方法。'};
+const s6M = {'r0':'我可以在家中服侍耶稣28。', 'r1':'存心节：甘心侍奉，好像服侍主，不像服侍人。', 'r2':'寻找在家中服侍其他人的方法。'};
 let s6Seen = {}, s6Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;

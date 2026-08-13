@@ -423,7 +423,7 @@ body.mobile .talk{font-size:18px;}
       <div id="verseLine" style="margin-top:8px; font-size:26px;"></div>
       <div class="word-chips" id="verseChips"></div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
-        <button class="speakbtn" data-speak="上帝就照着自己的形像造人，乃是照着祂的形像造男造女。。上帝就照着，自己的形像，造人，乃是照着祂，的形像造男，造女。" onclick="speakThis(this)">🔊 跟著念</button>
+        <button class="speakbtn" data-speak="上帝就照着自己的形像造人，乃是照着祂的形像造男造女。上帝就照着，自己的形像，造人，乃是照着祂，的形像造男，造女。" onclick="speakThis(this)">🔊 跟著念</button>
         <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px;" onclick="verseReset()">🔄 再来一次</button>
         <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px; background:linear-gradient(135deg,#3ec6b0,#2aa89a);" onclick="addStar(1); go(3);">✅ 我背好了！</button>
       </div>
@@ -692,7 +692,7 @@ body.mobile .talk{font-size:18px;}
         </div>        <div class="card" style="flex:1; min-width:260px; text-align:left;">
           <div style="font-size:38px; text-align:center;">💝</div>
           <div style="font-weight:900; color:#2ecc71; font-size:19px; margin:6px 0;">本周信息</div>
-          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「访时，你会做些什么事情？」。上帝一直爱着我们，在我们出生前就已经爱我们了。。</div>
+          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「按上帝的形像」。上帝一直爱着我们，在我们出生前就已经爱我们了。</div>
         </div>
       </div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
@@ -708,7 +708,7 @@ body.mobile .talk{font-size:18px;}
       <h2 class="title" style="font-size:34px;">🙏 一起祷告</h2>
       <div class="card" style="max-width:820px; width:100%; position:relative; padding:14px 20px;">
         <div style="font-size:52px; line-height:1;" class="floaty">🌟</div>
-        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢上帝以爱环绕我们。18。<br>就像「访时，你会做些什么事情？」的故事一样，<br>求祢帮助我为上帝每天赐下祂的恩典而感谢祂。。<br>奉耶稣的名祷告，阿们！</div>
+        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢上帝以爱环绕我们。18。<br>就像「按上帝的形像」的故事一样，<br>求祢帮助我为上帝每天赐下祂的恩典而感谢祂。<br>奉耶稣的名祷告，阿们！</div>
         <div style="display:flex; justify-content:center;">
           <button class="speakbtn" onclick="speakText(document.getElementById('prayerText').innerText.replace(/<br>/g,'。'))">🔊 跟著念</button>
         </div>
@@ -1095,7 +1095,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第三幕：上帝 ================= */
-const s2M = {'a20':'”上帝创造的所有东西都是美好的。。'};
+const s2M = {'a20':'”上帝创造的所有东西都是美好的。'};
 let s2Seen = {}, s2Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1129,7 +1129,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第五幕：上帝 ================= */
-const s4M = {'a40':'祂把我们放在这个世界中，让我们享用祂所创造的美好，我们应当为此向上帝感恩。。'};
+const s4M = {'a40':'祂把我们放在这个世界中，让我们享用祂所创造的美好，我们应当为此向上帝感恩。'};
 let s4Seen = {}, s4Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1146,7 +1146,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第六幕：上帝 ================= */
-const s5M = {'a50':'上帝以爱环绕我们。。'};
+const s5M = {'a50':'上帝以爱环绕我们。'};
 let s5Seen = {}, s5Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1392,8 +1392,10 @@ document.addEventListener('click', e=>{
 const SONGS = [
   {name:'所有美好光明的事', lines:[['唱呀唱，所有美好光明的事！', '拍拍手'], ['我们一起唱！', '左右摇一摇'], ['赞美上帝真美好！', '举起双手'], ['哈利路亚！', '转个圈圈']]},
   {name:'你能想像吗？', lines:[['唱呀唱，你能想像吗？！', '拍拍手'], ['我们一起唱！', '左右摇一摇'], ['赞美上帝真美好！', '举起双手'], ['哈利路亚！', '转个圈圈']]},
-  {name:'祂是我的一切', lines:[['唱呀唱，祂是我的一切！', '拍拍手'], ['我们一起唱！', '左右摇一摇'], ['赞美上帝真美好！', '举起双手'], ['哈利路亚！', '转个圈圈']]},
-  {name:'歌颂赞美主', lines:[['唱呀唱，歌颂赞美主！', '拍拍手'], ['我们一起唱！', '左右摇一摇'], ['赞美上帝真美好！', '举起双手'], ['哈利路亚！', '转个圈圈']]}
+  {name:'存心节之歌', lines:[['「上帝就照着自己的形像造人，乃是照着祂」', '手放胸前'], ['这是上帝的话语！', '举起双手'], ['我要记住在心里！', '手放胸前']]},
+  {name:'信息之歌', lines:[['上帝以爱环绕我们。18', '踏步走'], ['这是今天的道理！', '手放胸前'], ['我也要这样行！', '比一个爱心']]},
+  {name:'访时，你会做些什么事情？的故事', lines:[['我们来听访时，你会做些什么事情？，', '手放耳朵旁'], ['上帝的爱在其中！', '举起双手'], ['让我们一起歌唱！', '拍拍手']]},
+  {name:'赞美真美好', lines:[['赞美真美好，真美好！', '举起双手'], ['唱歌跳舞赞美主！', '转个圈圈'], ['哈利路亚！哈利路亚！', '拍拍手']]}
 ];
 let songIdx = 0, songTimer = null;
 function songRender(){
@@ -1436,9 +1438,11 @@ function speakSong(){
 
 /* ================= 动手做做看 ================= */
 const CRAFTS = [
-  {ico:'🎨', nm:'画一画这一课', wk:'第一周', desc:'把这一课的故事画下来！'},
-  {ico:'✂️', nm:'故事小书', wk:'第二周', desc:'做一本这一课的故事小书！'},
-  {ico:'⭐', nm:'存心节星星', wk:'第三周', desc:'做一颗星星，写上存心节！'}
+  {ico:'🎨', nm:'画一画这一课', wk:'第1周', desc:'把这一课的故事画下来！'},
+  {ico:'✂️', nm:'故事小书', wk:'第2周', desc:'做一本这一课的故事小书！'},
+  {ico:'⭐', nm:'存心节星星', wk:'第3周', desc:'做一颗星星，写上存心节！'},
+  {ico:'💌', nm:'爱心卡', wk:'第4周', desc:'做一张爱心卡，把这一课的祝福送给家人！'},
+  {ico:'🚩', nm:'赞美旗', wk:'第5周', desc:'做一面赞美旗，唱赞美歌时挥一挥！'}
 ];
 function craftRender(){
   const g = document.getElementById('craftGrid');
@@ -1504,9 +1508,7 @@ function printCert(){
   <p>亲爱的 <b style="font-size:26px;">${name}</b>，<br>恭喜你完成了第二课「按上帝的形像」的互动课程，<br>并获得了 <b>${stars}</b> 颗星星！</p>
   <div class="row"><div><p style="text-align:left;">存心节：<br><b style="color:#ff8c42; font-size:22px;">「上帝所造的每一样都是好的。」</b><br>（创世记 1:31）</p></div><div class="seal">完成<br>二<br>💜</div></div>
   <p>上帝创造我们的世界，因为祂爱我们。💜</p></div>
-  <script>window.print();<\/script>
-
-</body></html>`);
+  <script>window.print();<\/script></body></html>`);
   w.document.close();
 }
 
@@ -1894,32 +1896,6 @@ function previewVoiceCloud(code){
 /* init */
 go(0);
 loadProgress();
-</script>
-
-<script>
-(function(){
-  if(document.getElementById('lessonNav')) return;
-  var m = decodeURIComponent(location.pathname).match(/([A-D]\d)季(\d+)课-互动课程\/index\.html/);
-  if(!m) return;
-  var yq = m[1], n = parseInt(m[2],10);
-  var d = document.createElement('div');
-  d.id = 'lessonNav';
-  d.style.cssText = 'position:fixed;top:62px;left:12px;z-index:900;display:flex;gap:6px;background:rgba(255,255,255,.95);padding:6px 10px;border-radius:22px;box-shadow:0 4px 14px rgba(0,0,0,.18);font-weight:800;font-size:14px;';
-  function mk(t, url, dis){
-    var a = document.createElement('a');
-    a.textContent = t; a.href = url;
-    a.style.cssText = 'text-decoration:none;color:#7a5cc4;padding:5px 10px;border-radius:16px;background:#efe9ff;display:inline-block;';
-    if(dis){ a.style.opacity = .4; a.style.pointerEvents = 'none'; }
-    return a;
-  }
-  var home = document.createElement('a');
-  home.textContent = '📋 课程表'; home.href = '../index.html';
-  home.style.cssText = 'text-decoration:none;color:#fff;padding:5px 10px;border-radius:16px;background:linear-gradient(135deg,#ff8c42,#ff5d73);';
-  d.appendChild(mk('⬅️', '../'+yq+'季'+(n-1)+'课-互动课程/index.html', n<=1));
-  d.appendChild(home);
-  d.appendChild(mk('➡️', '../'+yq+'季'+(n+1)+'课-互动课程/index.html', n>=13));
-  document.body.appendChild(d);
-})();
 </script>
 </body>
 </html>

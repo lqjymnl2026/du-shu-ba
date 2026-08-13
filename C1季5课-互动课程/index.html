@@ -704,7 +704,7 @@ body.mobile .talk{font-size:18px;}
         </div>        <div class="card" style="flex:1; min-width:260px; text-align:left;">
           <div style="font-size:38px; text-align:center;">💝</div>
           <div style="font-weight:900; color:#2ecc71; font-size:19px; margin:6px 0;">本周信息</div>
-          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「《先祖与先知》28章」。上帝向我们彰显自己。。</div>
+          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「摔碎的石板」。上帝向我们彰显自己。</div>
         </div>
       </div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
@@ -720,7 +720,7 @@ body.mobile .talk{font-size:18px;}
       <h2 class="title" style="font-size:34px;">🙏 一起祷告</h2>
       <div class="card" style="max-width:820px; width:100%; position:relative; padding:14px 20px;">
         <div style="font-size:52px; line-height:1;" class="floaty">🌟</div>
-        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢上帝随时饶恕我们。48。<br>就像「《先祖与先知》28章」的故事一样，<br>求祢帮助我接受并拥有上帝的宽恕。。<br>奉耶稣的名祷告，阿们！</div>
+        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢上帝随时饶恕我们。48。<br>就像「摔碎的石板」的故事一样，<br>求祢帮助我接受并拥有上帝的宽恕。<br>奉耶稣的名祷告，阿们！</div>
         <div style="display:flex; justify-content:center;">
           <button class="speakbtn" onclick="speakText(document.getElementById('prayerText').innerText.replace(/<br>/g,'。'))">🔊 跟著念</button>
         </div>
@@ -1107,7 +1107,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第三幕：家和牛 ================= */
-const s2M = {'a20':'”亚伦知道他们所要求的是不应当的，但他惧怕他们，只好回答说：“回家叫所有人把耳朵。', 'a21':'”亚伦把所有的金环烧熔了，铸造了一只金牛犊。。', 'a22':'以色列人十分高兴，要大肆庆祝。。'};
+const s2M = {'a20':'”亚伦知道他们所要求的是不应当的，但他惧怕他们，只好回答说：“回家叫所有人把耳朵。', 'a21':'”亚伦把所有的金环烧熔了，铸造了一只金牛犊。', 'a22':'以色列人十分高兴，要大肆庆祝。'};
 let s2Seen = {}, s2Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1124,7 +1124,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第四幕：雅各和书卷 ================= */
-const s3M = {'a30':'他知道自己和以色列人都犯了第二条诫命。。', 'a31':'他知道自己和以色列人都犯了第二条诫命。。', 'a32':'无论如何，他仍然尝试制止以色列全然背弃上帝。。'};
+const s3M = {'a30':'他知道自己和以色列人都犯了第二条诫命。', 'a31':'他知道自己和以色列人都犯了第二条诫命。', 'a32':'无论如何，他仍然尝试制止以色列全然背弃上帝。'};
 let s3Seen = {}, s3Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1141,7 +1141,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第五幕：上帝和摩西 ================= */
-const s4M = {'a40':'亚伦曾说要向耶和华上帝守节，但百姓只是向他们的偶像献祭。。', 'a41':'摩西仍在山上与上帝谈话。。', 'a42':'摩西仍在山上与上帝谈话。。'};
+const s4M = {'a40':'亚伦曾说要向耶和华上帝守节，但百姓只是向他们的偶像献祭。', 'a41':'摩西仍在山上与上帝谈话。', 'a42':'摩西仍在山上与上帝谈话。'};
 let s4Seen = {}, s4Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1158,7 +1158,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第六幕：摩西和山 ================= */
-const s5M = {'a50':'摩西和约书亚都听见山下传来的大呼声。。', 'a51':'摩西和约书亚都听见山下传来的大呼声。。', 'a52':'约书亚便问：“营里好像有打仗的声音，难道有敌人来攻击以色列人吗？。'};
+const s5M = {'a50':'摩西和约书亚都听见山下传来的大呼声。', 'a51':'摩西和约书亚都听见山下传来的大呼声。', 'a52':'约书亚便问：“营里好像有打仗的声音，难道有敌人来攻击以色列人吗？。'};
 let s5Seen = {}, s5Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;

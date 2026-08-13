@@ -423,7 +423,7 @@ body.mobile .talk{font-size:18px;}
       <div id="verseLine" style="margin-top:8px; font-size:26px;"></div>
       <div class="word-chips" id="verseChips"></div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
-        <button class="speakbtn" data-speak="他是我所拣选的器皿。。他是我，所拣选，的器皿。" onclick="speakThis(this)">🔊 跟著念</button>
+        <button class="speakbtn" data-speak="他是我所拣选的器皿。他是我，所拣选，的器皿。" onclick="speakThis(this)">🔊 跟著念</button>
         <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px;" onclick="verseReset()">🔄 再来一次</button>
         <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px; background:linear-gradient(135deg,#3ec6b0,#2aa89a);" onclick="addStar(1); go(3);">✅ 我背好了！</button>
       </div>
@@ -703,7 +703,7 @@ body.mobile .talk{font-size:18px;}
         </div>        <div class="card" style="flex:1; min-width:260px; text-align:left;">
           <div style="font-size:38px; text-align:center;">💝</div>
           <div style="font-weight:900; color:#2ecc71; font-size:19px; margin:6px 0;">本周信息</div>
-          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「地在他的脑海里浮现。」。上帝永远不会停止爱我们。。</div>
+          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「现在我可以看见了！」。上帝永远不会停止爱我们。</div>
         </div>
       </div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
@@ -719,7 +719,7 @@ body.mobile .talk{font-size:18px;}
       <h2 class="title" style="font-size:34px;">🙏 一起祷告</h2>
       <div class="card" style="max-width:820px; width:100%; position:relative; padding:14px 20px;">
         <div style="font-size:52px; line-height:1;" class="floaty">🌟</div>
-        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢上帝的爱改变人心。68。<br>就像「地在他的脑海里浮现。」的故事一样，<br>求祢帮助我祈求上帝改变我们的心，使我们爱主爱人。。<br>奉耶稣的名祷告，阿们！</div>
+        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢上帝的爱改变人心。68。<br>就像「现在我可以看见了！」的故事一样，<br>求祢帮助我祈求上帝改变我们的心，使我们爱主爱人。<br>奉耶稣的名祷告，阿们！</div>
         <div style="display:flex; justify-content:center;">
           <button class="speakbtn" onclick="speakText(document.getElementById('prayerText').innerText.replace(/<br>/g,'。'))">🔊 跟著念</button>
         </div>
@@ -1072,7 +1072,7 @@ function versePick(btn, w){
 function verseReset(){ verseInit(); }
 
 /* ================= 第一天：光 ================= *//* ================= 第一幕：保罗和家 ================= */
-const s0M = {'a00':'扫罗三天里什么都看不到，继续读下面的故事，看看第三天后发生了什么事情。。', 'a01':'扫罗静静地呆在犹大的房子里，看上去一点也不像一天前那个令人惧怕、威严、专制的扫罗。', 'a02':'毫无疑问，他祈求上帝的宽恕！。'};
+const s0M = {'a00':'扫罗三天里什么都看不到，继续读下面的故事，看看第三天后发生了什么事情。', 'a01':'扫罗静静地呆在犹大的房子里，看上去一点也不像一天前那个令人惧怕、威严、专制的扫罗。', 'a02':'毫无疑问，他祈求上帝的宽恕！。'};
 let s0Seen = {}, s0Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1089,7 +1089,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第二幕：上帝和耶稣 ================= */
-const s1M = {'a10':'然而，他也一再称颂感谢上帝对他的拯救。。', 'a11':'在大马士革的路上亲眼见到耶稣的记忆仍然震撼着他，那一幕一次又一次地在他的脑海里浮。', 'a12':'在大马士革的路上亲眼见到耶稣的记忆仍然震撼着他，那一幕一次又一次地在他的脑海里浮。'};
+const s1M = {'a10':'然而，他也一再称颂感谢上帝对他的拯救。', 'a11':'在大马士革的路上亲眼见到耶稣的记忆仍然震撼着他，那一幕一次又一次地在他的脑海里浮。', 'a12':'在大马士革的路上亲眼见到耶稣的记忆仍然震撼着他，那一幕一次又一次地在他的脑海里浮。'};
 let s1Seen = {}, s1Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1106,7 +1106,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第三幕：保罗和城 ================= */
-const s2M = {'a20':'扫罗已经来了，这个可怕的、追捕基督徒的猎人。。', 'a21':'据说他就住在犹大的房子里，又有传言说他不知何故眼睛瞎了，被人带进城内，像一个无助。', 'a22':'扫罗遇见主三天后，跟从耶稣76说：“起来！。'};
+const s2M = {'a20':'扫罗已经来了，这个可怕的、追捕基督徒的猎人。', 'a21':'据说他就住在犹大的房子里，又有传言说他不知何故眼睛瞎了，被人带进城内，像一个无助。', 'a22':'扫罗遇见主三天后，跟从耶稣76说：“起来！。'};
 let s2Seen = {}, s2Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1123,7 +1123,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第四幕：保罗和城 ================= */
-const s3M = {'a30':'扫罗的眼睛瞎了，现在正看见一个异象，异象中有个名叫亚拿尼亚的人进来按手在他身上。', 'a31':'”亚拿尼亚很紧张，回答说：“主啊，许多人告诉我，说这人在耶路撒冷大大迫害你的圣徒。', 'a32':'他是我所拣选的器皿，要在外邦人和君王，并以色列人面前宣扬我的名。。'};
+const s3M = {'a30':'扫罗的眼睛瞎了，现在正看见一个异象，异象中有个名叫亚拿尼亚的人进来按手在他身上。', 'a31':'”亚拿尼亚很紧张，回答说：“主啊，许多人告诉我，说这人在耶路撒冷大大迫害你的圣徒。', 'a32':'他是我所拣选的器皿，要在外邦人和君王，并以色列人面前宣扬我的名。'};
 let s3Seen = {}, s3Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1157,7 +1157,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第六幕：上帝和保罗 ================= */
-const s5M = {'a50':'是的，上帝呼召了扫罗，祂也呼召了亚拿尼亚，他们都把余生奉献给了主。。', 'a51':'是的，上帝呼召了扫罗，祂也呼召了亚拿尼亚，他们都把余生奉献给了主。。'};
+const s5M = {'a50':'是的，上帝呼召了扫罗，祂也呼召了亚拿尼亚，他们都把余生奉献给了主。', 'a51':'是的，上帝呼召了扫罗，祂也呼召了亚拿尼亚，他们都把余生奉献给了主。'};
 let s5Seen = {}, s5Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1174,7 +1174,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第七幕：我们的回应 ================= */
-const s6M = {'r0':'上帝的爱改变人心。68。', 'r1':'存心节：他是我所拣选的器皿。。', 'r2':'祈求上帝改变我们的心，使我们爱主爱人。'};
+const s6M = {'r0':'上帝的爱改变人心。68。', 'r1':'存心节：他是我所拣选的器皿。', 'r2':'祈求上帝改变我们的心，使我们爱主爱人。'};
 let s6Seen = {}, s6Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;

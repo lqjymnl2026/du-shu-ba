@@ -384,7 +384,7 @@ body.mobile .talk{font-size:18px;}
       <div class="kicker">D3季 · 互动课程</div>
       <div class="emoji-xl floaty" style="margin-bottom:6px;">📜</div>
       <h1 class="title">第十课 · 祈祷时分</h1>
-      <div class="sub">上帝爱我们。。</div>
+      <div class="sub">上帝爱我们。</div>
       <div style="margin-top:10px;"><span class="chip">📖 经文：参本课</span><span class="chip">💜 信息：上帝爱我们。</span><span class="chip">⭐ 存心节：耶稣却退到旷野去祷告</span></div>
       <button class="bigbtn" onclick="go(1)">🚀 开始上课</button>
       <div class="note">🎧 点「🔊」可以开关朗读声音（请在浏览器允许语音）</div>
@@ -410,7 +410,7 @@ body.mobile .talk{font-size:18px;}
           <div style="font-size:16px; color:var(--ink2);">#2ecc71</div>
         </div>
       </div>
-      <button class="speakbtn" data-speak="这一课，我们要晓得：上帝爱我们。。" onclick="speakThis(this)">🔊 听听这一课</button>
+      <button class="speakbtn" data-speak="这一课，我们要晓得：上帝爱我们。" onclick="speakThis(this)">🔊 听听这一课</button>
       <div style="margin-top:14px;"><span class="pill">💜 信息：上帝爱我们。</span></div>
     </div>
   </section>
@@ -700,7 +700,7 @@ body.mobile .talk{font-size:18px;}
         </div>        <div class="card" style="flex:1; min-width:260px; text-align:left;">
           <div style="font-size:38px; text-align:center;">💝</div>
           <div style="font-weight:900; color:#2ecc71; font-size:19px; margin:6px 0;">本周信息</div>
-          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「《历代愿望》第27章」。。</div>
+          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「祈祷时分」。</div>
         </div>
       </div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
@@ -716,7 +716,7 @@ body.mobile .talk{font-size:18px;}
       <h2 class="title" style="font-size:34px;">🙏 一起祷告</h2>
       <div class="card" style="max-width:820px; width:100%; position:relative; padding:14px 20px;">
         <div style="font-size:52px; line-height:1;" class="floaty">🌟</div>
-        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢。<br>就像「《历代愿望》第27章」的故事一样，<br>求祢帮助我做一个好孩子。<br>奉耶稣的名祷告，阿们！</div>
+        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢。<br>就像「祈祷时分」的故事一样，<br>求祢帮助我做一个好孩子。<br>奉耶稣的名祷告，阿们！</div>
         <div style="display:flex; justify-content:center;">
           <button class="speakbtn" onclick="speakText(document.getElementById('prayerText').innerText.replace(/<br>/g,'。'))">🔊 跟著念</button>
         </div>
@@ -1069,7 +1069,7 @@ function versePick(btn, w){
 function verseReset(){ verseInit(); }
 
 /* ================= 第一天：光 ================= *//* ================= 第一幕：先知和风 ================= */
-const s0M = {'a00':'起初他们的心中都燃起希望，但又想到自打从先知以利沙之后，就没有人能治好麻风病了。。', 'a01':'起初他们的心中都燃起希望，但又想到自打从先知以利沙之后，就没有人能治好麻风病了。。', 'a02':'很多麻风病人都放弃了，除了有一位认为，只要能见到耶稣，他就一定能得医治。。'};
+const s0M = {'a00':'起初他们的心中都燃起希望，但又想到自打从先知以利沙之后，就没有人能治好麻风病了。', 'a01':'起初他们的心中都燃起希望，但又想到自打从先知以利沙之后，就没有人能治好麻风病了。', 'a02':'很多麻风病人都放弃了，除了有一位认为，只要能见到耶稣，他就一定能得医治。'};
 let s0Seen = {}, s0Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1086,7 +1086,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第二幕：山和耶稣 ================= */
-const s1M = {'a10':'他在没有人走过的山间小径跋涉，最后，终于看见耶稣在湖边教导群众。。', 'a11':'他在没有人走过的山间小径跋涉，最后，终于看见耶稣在湖边教导群众。。'};
+const s1M = {'a10':'他在没有人走过的山间小径跋涉，最后，终于看见耶稣在湖边教导群众。', 'a11':'他在没有人走过的山间小径跋涉，最后，终于看见耶稣在湖边教导群众。'};
 let s1Seen = {}, s1Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1103,7 +1103,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第三幕：耶稣和风 ================= */
-const s2M = {'a20':'当人们看见他时，有人急忙避开，有人大声斥喝，试图阻止他接近耶稣。。', 'a21':'无论如何，这个麻风病人都不放弃。。'};
+const s2M = {'a20':'当人们看见他时，有人急忙避开，有人大声斥喝，试图阻止他接近耶稣。', 'a21':'无论如何，这个麻风病人都不放弃。'};
 let s2Seen = {}, s2Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1120,7 +1120,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第四幕：耶稣和风 ================= */
-const s3M = {'a30':'”耶稣说道，就摸了这个人，“你痊愈吧！。', 'a31':'麻风病人愣住了。。'};
+const s3M = {'a30':'”耶稣说道，就摸了这个人，“你痊愈吧！。', 'a31':'麻风病人愣住了。'};
 let s3Seen = {}, s3Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1137,7 +1137,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第五幕：上帝和风 ================= */
-const s4M = {'a40':'他看着自己的手臂，白我在日常安静的祷告时间里敬拜上帝斑一下子不见了，全身的疼痛也。', 'a41':'他看着自己的手臂，白我在日常安静的祷告时间里敬拜上帝斑一下子不见了，全身的疼痛也。', 'a42':'”耶稣说，“只是不要告诉别人，我对你所做的。。'};
+const s4M = {'a40':'他看着自己的手臂，白我在日常安静的祷告时间里敬拜上帝斑一下子不见了，全身的疼痛也。', 'a41':'他看着自己的手臂，白我在日常安静的祷告时间里敬拜上帝斑一下子不见了，全身的疼痛也。', 'a42':'”耶稣说，“只是不要告诉别人，我对你所做的。'};
 let s4Seen = {}, s4Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1154,7 +1154,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第六幕：耶稣和上帝 ================= */
-const s5M = {'a50':'”这个人就按照耶稣说的去做，只有一件事除外。。', 'a51':'耶稣需要时间与上帝交通，祂常离开一阵子，以以向天父。'};
+const s5M = {'a50':'”这个人就按照耶稣说的去做，只有一件事除外。', 'a51':'耶稣需要时间与上帝交通，祂常离开一阵子，以以向天父。'};
 let s5Seen = {}, s5Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;

@@ -423,7 +423,7 @@ body.mobile .talk{font-size:18px;}
       <div id="verseLine" style="margin-top:8px; font-size:26px;"></div>
       <div class="word-chips" id="verseChips"></div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
-        <button class="speakbtn" data-speak="你的罪孽便除掉，你的罪恶就赦免了。。你的罪孽便，除掉，你的罪恶就，赦免了。" onclick="speakThis(this)">🔊 跟著念</button>
+        <button class="speakbtn" data-speak="你的罪孽便除掉，你的罪恶就赦免了。你的罪孽便，除掉，你的罪恶就，赦免了。" onclick="speakThis(this)">🔊 跟著念</button>
         <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px;" onclick="verseReset()">🔄 再来一次</button>
         <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px; background:linear-gradient(135deg,#3ec6b0,#2aa89a);" onclick="addStar(1); go(3);">✅ 我背好了！</button>
       </div>
@@ -704,7 +704,7 @@ body.mobile .talk{font-size:18px;}
         </div>        <div class="card" style="flex:1; min-width:260px; text-align:left;">
           <div style="font-size:38px; text-align:center;">💝</div>
           <div style="font-weight:900; color:#2ecc71; font-size:19px; margin:6px 0;">本周信息</div>
-          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「根本不想讲的事呢？以赛亚」。上帝的应许必会实现。。</div>
+          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「饶恕之火」。上帝的应许必会实现。</div>
         </div>
       </div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
@@ -720,7 +720,7 @@ body.mobile .talk{font-size:18px;}
       <h2 class="title" style="font-size:34px;">🙏 一起祷告</h2>
       <div class="card" style="max-width:820px; width:100%; position:relative; padding:14px 20px;">
         <div style="font-size:52px; line-height:1;" class="floaty">🌟</div>
-        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢上帝的恩典赦免我的罪48。<br>就像「根本不想讲的事呢？以赛亚」的故事一样，<br>求祢帮助我寻求上帝的饶恕。。<br>奉耶稣的名祷告，阿们！</div>
+        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢上帝的恩典赦免我的罪48。<br>就像「饶恕之火」的故事一样，<br>求祢帮助我寻求上帝的饶恕。<br>奉耶稣的名祷告，阿们！</div>
         <div style="display:flex; justify-content:center;">
           <button class="speakbtn" onclick="speakText(document.getElementById('prayerText').innerText.replace(/<br>/g,'。'))">🔊 跟著念</button>
         </div>
@@ -1073,7 +1073,7 @@ function versePick(btn, w){
 function verseReset(){ verseInit(); }
 
 /* ================= 第一天：光 ================= *//* ================= 第一幕：先知和上帝 ================= */
-const s0M = {'a00':'以赛亚认为自己还不够好，不能成为上帝的使者，但上帝以一个不寻常的方法鼓励他。。', 'a01':'以赛亚认为自己还不够好，不能成为上帝的使者，但上帝以一个不寻常的方法鼓励他。。', 'a02':'有一天以赛亚来到圣殿，突然间，他好像站在天堂一个耀眼的宝座前，他仔细一看，原来是。'};
+const s0M = {'a00':'以赛亚认为自己还不够好，不能成为上帝的使者，但上帝以一个不寻常的方法鼓励他。', 'a01':'以赛亚认为自己还不够好，不能成为上帝的使者，但上帝以一个不寻常的方法鼓励他。', 'a02':'有一天以赛亚来到圣殿，突然间，他好像站在天堂一个耀眼的宝座前，他仔细一看，原来是。'};
 let s0Seen = {}, s0Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1107,7 +1107,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第三幕：火和先知 ================= */
-const s2M = {'a20':'很快地，祭坛的烟充满了整个房间，但以赛亚并不感到危险，而是感到神圣。。', 'a21':'很快地，祭坛的烟充满了整个房间，但以赛亚并不感到危险，而是感到神圣。。', 'a22':'上帝存在于这56些烟中，使以赛亚感到温暖。。'};
+const s2M = {'a20':'很快地，祭坛的烟充满了整个房间，但以赛亚并不感到危险，而是感到神圣。', 'a21':'很快地，祭坛的烟充满了整个房间，但以赛亚并不感到危险，而是感到神圣。', 'a22':'上帝存在于这56些烟中，使以赛亚感到温暖。'};
 let s2Seen = {}, s2Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1141,7 +1141,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第五幕：天使和上帝 ================= */
-const s4M = {'a40':'炭并没有灼伤以赛亚，天使温柔地说：“看哪，这炭沾了你的嘴，你的罪孽便除掉。。', 'a41':'在他能够向上帝感谢这个祝福前，上帝像一个慈父关心孩子般地对以赛亚说：“我可以差遣。', 'a42':'在他能够向上帝感谢这个祝福前，上帝像一个慈父关心孩子般地对以赛亚说：“我可以差遣。'};
+const s4M = {'a40':'炭并没有灼伤以赛亚，天使温柔地说：“看哪，这炭沾了你的嘴，你的罪孽便除掉。', 'a41':'在他能够向上帝感谢这个祝福前，上帝像一个慈父关心孩子般地对以赛亚说：“我可以差遣。', 'a42':'在他能够向上帝感谢这个祝福前，上帝像一个慈父关心孩子般地对以赛亚说：“我可以差遣。'};
 let s4Seen = {}, s4Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1158,7 +1158,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第六幕：先知和上帝 ================= */
-const s5M = {'a50':'这就是开始，在往后的六十年，甚至更，多的日子，以赛亚向上帝的子民宣扬祂的信息。。', 'a51':'这就是开始，在往后的六十年，甚至更，多的日子，以赛亚向上帝的子民宣扬祂的信息。。', 'a52':'上帝像从前那样爱以赛亚，我们称之为恩典。。'};
+const s5M = {'a50':'这就是开始，在往后的六十年，甚至更，多的日子，以赛亚向上帝的子民宣扬祂的信息。', 'a51':'这就是开始，在往后的六十年，甚至更，多的日子，以赛亚向上帝的子民宣扬祂的信息。', 'a52':'上帝像从前那样爱以赛亚，我们称之为恩典。'};
 let s5Seen = {}, s5Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1175,7 +1175,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第七幕：我们的回应 ================= */
-const s6M = {'r0':'上帝的恩典赦免我的罪48。', 'r1':'存心节：你的罪孽便除掉，你的罪恶就赦免了。。', 'r2':'寻求上帝的饶恕。'};
+const s6M = {'r0':'上帝的恩典赦免我的罪48。', 'r1':'存心节：你的罪孽便除掉，你的罪恶就赦免了。', 'r2':'寻求上帝的饶恕。'};
 let s6Seen = {}, s6Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;

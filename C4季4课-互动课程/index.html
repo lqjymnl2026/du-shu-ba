@@ -423,7 +423,7 @@ body.mobile .talk{font-size:18px;}
       <div id="verseLine" style="margin-top:8px; font-size:26px;"></div>
       <div class="word-chips" id="verseChips"></div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
-        <button class="speakbtn" data-speak="因为神并非不公义，竟忘记你们所作的工和你们为他名所显的爱心，就是先前伺候圣徒，如今还是伺候。。因为神并非，不公义，竟忘记你们，所作的工和，你们为他名，所显的爱心，就是先前伺，候圣徒，如今还是伺，候。" onclick="speakThis(this)">🔊 跟著念</button>
+        <button class="speakbtn" data-speak="因为神并非不公义，竟忘记你们所作的工和你们为他名所显的爱心，就是先前伺候圣徒，如今还是伺候。因为神并非，不公义，竟忘记你们，所作的工和，你们为他名，所显的爱心，就是先前伺，候圣徒，如今还是伺，候。" onclick="speakThis(this)">🔊 跟著念</button>
         <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px;" onclick="verseReset()">🔄 再来一次</button>
         <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px; background:linear-gradient(135deg,#3ec6b0,#2aa89a);" onclick="addStar(1); go(3);">✅ 我背好了！</button>
       </div>
@@ -700,7 +700,7 @@ body.mobile .talk{font-size:18px;}
         </div>        <div class="card" style="flex:1; min-width:260px; text-align:left;">
           <div style="font-size:38px; text-align:center;">💝</div>
           <div style="font-weight:900; color:#2ecc71; font-size:19px; margin:6px 0;">本周信息</div>
-          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「吗？也许是去探望亲人，或」。我们的侍奉始于家中。。</div>
+          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「请把外套带给我」。我们的侍奉始于家中。</div>
         </div>
       </div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
@@ -716,7 +716,7 @@ body.mobile .talk{font-size:18px;}
       <h2 class="title" style="font-size:34px;">🙏 一起祷告</h2>
       <div class="card" style="max-width:820px; width:100%; position:relative; padding:14px 20px;">
         <div style="font-size:52px; line-height:1;" class="floaty">🌟</div>
-        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢当我帮助别人时，是在侍奉上帝。<br>就像「吗？也许是去探望亲人，或」的故事一样，<br>求祢帮助我寻找方法去帮助并鼓励传道人，以及侍奉上帝的人。。<br>奉耶稣的名祷告，阿们！</div>
+        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢当我帮助别人时，是在侍奉上帝。<br>就像「请把外套带给我」的故事一样，<br>求祢帮助我寻找方法去帮助并鼓励传道人，以及侍奉上帝的人。<br>奉耶稣的名祷告，阿们！</div>
         <div style="display:flex; justify-content:center;">
           <button class="speakbtn" onclick="speakText(document.getElementById('prayerText').innerText.replace(/<br>/g,'。'))">🔊 跟著念</button>
         </div>
@@ -1086,7 +1086,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第二幕：家和保罗 ================= */
-const s1M = {'a10':'如果收到家中的信你会有何感受？。', 'a11':'保罗知道离乡别井的感受。。', 'a12':'保罗知道离乡别井的感受。。'};
+const s1M = {'a10':'如果收到家中的信你会有何感受？。', 'a11':'保罗知道离乡别井的感受。', 'a12':'保罗知道离乡别井的感受。'};
 let s1Seen = {}, s1Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1120,7 +1120,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第四幕：保罗和耶稣 ================= */
-const s3M = {'a30':'现在这个年轻的提摩太经常与保罗同行、四处传道，并鼓励基督徒。。', 'a31':'现在这个年轻的提摩太经常与保罗同行、四处传道，并鼓励基督徒。。', 'a32':'保罗拿起一张羊皮纸及一支笔，经过深思，他开始写给提摩太最后的一封信。。'};
+const s3M = {'a30':'现在这个年轻的提摩太经常与保罗同行、四处传道，并鼓励基督徒。', 'a31':'现在这个年轻的提摩太经常与保罗同行、四处传道，并鼓励基督徒。', 'a32':'保罗拿起一张羊皮纸及一支笔，经过深思，他开始写给提摩太最后的一封信。'};
 let s3Seen = {}, s3Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1154,7 +1154,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第六幕：保罗和朋友 ================= */
-const s5M = {'a50':'保罗非常孤单，他感到所有在亚洲的人都已经离弃他。。', 'a51':'保罗提到一个朋友曾找遍罗马监狱去探望他，他请提摩太代他向一些帮助过他的人问安。。'};
+const s5M = {'a50':'保罗非常孤单，他感到所有在亚洲的人都已经离弃他。', 'a51':'保罗提到一个朋友曾找遍罗马监狱去探望他，他请提摩太代他向一些帮助过他的人问安。'};
 let s5Seen = {}, s5Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;

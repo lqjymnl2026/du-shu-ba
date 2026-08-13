@@ -384,7 +384,7 @@ body.mobile .talk{font-size:18px;}
       <div class="kicker">B2季 · 互动课程</div>
       <div class="emoji-xl floaty" style="margin-bottom:6px;">👩</div>
       <h1 class="title">第十二课 · 上帝的微小声音</h1>
-      <div class="sub">我们要倾听上帝的微小声音。。</div>
+      <div class="sub">我们要倾听上帝的微小声音。</div>
       <div style="margin-top:10px;"><span class="chip">📖 经文：王上19:1-18</span><span class="chip">💜 信息：我们要倾听上帝的微小声音。</span><span class="chip">⭐ 存心节：你必听见后边有声音说：‘这是正路</span></div>
       <button class="bigbtn" onclick="go(1)">🚀 开始上课</button>
       <div class="note">🎧 点「🔊」可以开关朗读声音（请在浏览器允许语音）</div>
@@ -410,7 +410,7 @@ body.mobile .talk{font-size:18px;}
           <div style="font-size:16px; color:var(--ink2);">#2ecc71</div>
         </div>
       </div>
-      <button class="speakbtn" data-speak="这一课，我们要晓得：我们要倾听上帝的微小声音。。" onclick="speakThis(this)">🔊 听听这一课</button>
+      <button class="speakbtn" data-speak="这一课，我们要晓得：我们要倾听上帝的微小声音。" onclick="speakThis(this)">🔊 听听这一课</button>
       <div style="margin-top:14px;"><span class="pill">💜 信息：我们要倾听上帝的微小声音。</span></div>
     </div>
   </section>
@@ -698,11 +698,11 @@ body.mobile .talk{font-size:18px;}
         </div>        <div class="card" style="flex:1; min-width:260px; text-align:left;">
           <div style="font-size:38px; text-align:center;">🙏</div>
           <div style="font-weight:900; color:#ff8c42; font-size:19px; margin:6px 0;">常常祷告</div>
-          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">常常与孩子一起祷告。这一课的信息是：我们要倾听上帝的微小声音。。帮助孩子把故事里的教训用在生活中。</div>
+          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">常常与孩子一起祷告。这一课的信息是：我们要倾听上帝的微小声音。帮助孩子把故事里的教训用在生活中。</div>
         </div>        <div class="card" style="flex:1; min-width:260px; text-align:left;">
           <div style="font-size:38px; text-align:center;">💝</div>
           <div style="font-weight:900; color:#2ecc71; font-size:19px; margin:6px 0;">本周信息</div>
-          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「参考资料」。。</div>
+          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「上帝的微小声音」。</div>
         </div>
       </div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
@@ -718,7 +718,7 @@ body.mobile .talk{font-size:18px;}
       <h2 class="title" style="font-size:34px;">🙏 一起祷告</h2>
       <div class="card" style="max-width:820px; width:100%; position:relative; padding:14px 20px;">
         <div style="font-size:52px; line-height:1;" class="floaty">🌟</div>
-        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢我们要倾听上帝的微小声音。。<br>就像「参考资料」的故事一样，<br>求祢帮助我求耶稣帮助他们留意上帝的微小声音。。<br>奉耶稣的名祷告，阿们！</div>
+        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢我们要倾听上帝的微小声音。<br>就像「上帝的微小声音」的故事一样，<br>求祢帮助我求耶稣帮助他们留意上帝的微小声音。<br>奉耶稣的名祷告，阿们！</div>
         <div style="display:flex; justify-content:center;">
           <button class="speakbtn" onclick="speakText(document.getElementById('prayerText').innerText.replace(/<br>/g,'。'))">🔊 跟著念</button>
         </div>
@@ -1071,7 +1071,7 @@ function versePick(btn, w){
 function verseReset(){ verseInit(); }
 
 /* ================= 第一天：光 ================= *//* ================= 第一幕：母亲和上帝 ================= */
-const s0M = {'a00':'这时妈妈走进来，她温柔细小的声音，令小莲感到很平静安详。。', 'a01':'很久以前上帝的先知以利亚也曾惊慌恐惧，但上帝以温柔慈爱的声音跟他说话。。', 'a02':'很久以前上帝的先知以利亚也曾惊慌恐惧，但上帝以温柔慈爱的声音跟他说话。。'};
+const s0M = {'a00':'这时妈妈走进来，她温柔细小的声音，令小莲感到很平静安详。', 'a01':'很久以前上帝的先知以利亚也曾惊慌恐惧，但上帝以温柔慈爱的声音跟他说话。', 'a02':'很久以前上帝的先知以利亚也曾惊慌恐惧，但上帝以温柔慈爱的声音跟他说话。'};
 let s0Seen = {}, s0Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1088,7 +1088,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第二幕：山和上帝 ================= */
-const s1M = {'a10':'最后，他到了何烈山，上帝的圣山，在那儿躲藏在一个洞穴里。。', 'a11':'最后，他到了何烈山，上帝的圣山，在那儿躲藏在一个洞穴里。。', 'a12':'你可以从以利亚回答上帝的话语里，看得出他为自己感到难过。。'};
+const s1M = {'a10':'最后，他到了何烈山，上帝的圣山，在那儿躲藏在一个洞穴里。', 'a11':'最后，他到了何烈山，上帝的圣山，在那儿躲藏在一个洞穴里。', 'a12':'你可以从以利亚回答上帝的话语里，看得出他为自己感到难过。'};
 let s1Seen = {}, s1Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1105,7 +1105,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第三幕：先知和上帝 ================= */
-const s2M = {'a20':'”以利亚告诉上帝：“我这么努力为你工作，但你看我现在多疲倦灰心。。', 'a21':'”以利亚告诉上帝：“我这么努力为你工作，但你看我现在多疲倦灰心。。', 'a22':'”“去站在山上，在我面前，因为耶和华要从这里经过。。'};
+const s2M = {'a20':'”以利亚告诉上帝：“我这么努力为你工作，但你看我现在多疲倦灰心。', 'a21':'”以利亚告诉上帝：“我这么努力为你工作，但你看我现在多疲倦灰心。', 'a22':'”“去站在山上，在我面前，因为耶和华要从这里经过。'};
 let s2Seen = {}, s2Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1122,7 +1122,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第四幕：上帝和风 ================= */
-const s3M = {'a30':'上帝不在强风之中。。', 'a31':'上帝不在强风之中。。', 'a32':'风后，有地震，地动山摇。。'};
+const s3M = {'a30':'上帝不在强风之中。', 'a31':'上帝不在强风之中。', 'a32':'风后，有地震，地动山摇。'};
 let s3Seen = {}, s3Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1139,7 +1139,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第五幕：先知和上帝 ================= */
-const s4M = {'a40':'就在这温柔微小的声音里，以利亚认出是上帝的声音。。', 'a41':'就在这温柔微小的声音里，以利亚认出是上帝的声音。。'};
+const s4M = {'a40':'就在这温柔微小的声音里，以利亚认出是上帝的声音。', 'a41':'就在这温柔微小的声音里，以利亚认出是上帝的声音。'};
 let s4Seen = {}, s4Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1156,7 +1156,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第六幕：上帝和先知 ================= */
-const s5M = {'a50':'上帝爱以利亚，在他自责的时候，上帝还是用温柔的声音来鼓励这个身心疲累的先知。。', 'a51':'上帝爱以利亚，在他自责的时候，上帝还是用温柔的声音来鼓励这个身心疲累的先知。。'};
+const s5M = {'a50':'上帝爱以利亚，在他自责的时候，上帝还是用温柔的声音来鼓励这个身心疲累的先知。', 'a51':'上帝爱以利亚，在他自责的时候，上帝还是用温柔的声音来鼓励这个身心疲累的先知。'};
 let s5Seen = {}, s5Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1173,7 +1173,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第七幕：我们的回应 ================= */
-const s6M = {'r0':'我们要倾听上帝的微小声音。。', 'r1':'存心节：你必听见后边有声音说：‘这是正路，要行在其间。’。', 'r2':'求耶稣帮助他们留意上帝的微小声音。'};
+const s6M = {'r0':'我们要倾听上帝的微小声音。', 'r1':'存心节：你必听见后边有声音说：‘这是正路，要行在其间。’。', 'r2':'求耶稣帮助他们留意上帝的微小声音。'};
 let s6Seen = {}, s6Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;

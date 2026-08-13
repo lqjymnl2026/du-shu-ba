@@ -384,7 +384,7 @@ body.mobile .talk{font-size:18px;}
       <div class="kicker">B2季 · 互动课程</div>
       <div class="emoji-xl floaty" style="margin-bottom:6px;">🤝</div>
       <h1 class="title">第二课 · 葡萄园发工资的一刻</h1>
-      <div class="sub">我们以仁慈和公平对待别人。。</div>
+      <div class="sub">我们以仁慈和公平对待别人。</div>
       <div style="margin-top:10px;"><span class="chip">📖 经文：太20:1-16</span><span class="chip">💜 信息：我们以仁慈和公平对待别人。</span><span class="chip">⭐ 存心节：上帝是不偏待人。</span></div>
       <button class="bigbtn" onclick="go(1)">🚀 开始上课</button>
       <div class="note">🎧 点「🔊」可以开关朗读声音（请在浏览器允许语音）</div>
@@ -410,7 +410,7 @@ body.mobile .talk{font-size:18px;}
           <div style="font-size:16px; color:var(--ink2);">#2ecc71</div>
         </div>
       </div>
-      <button class="speakbtn" data-speak="这一课，我们要晓得：我们以仁慈和公平对待别人。。" onclick="speakThis(this)">🔊 听听这一课</button>
+      <button class="speakbtn" data-speak="这一课，我们要晓得：我们以仁慈和公平对待别人。" onclick="speakThis(this)">🔊 听听这一课</button>
       <div style="margin-top:14px;"><span class="pill">💜 信息：我们以仁慈和公平对待别人。</span></div>
     </div>
   </section>
@@ -423,7 +423,7 @@ body.mobile .talk{font-size:18px;}
       <div id="verseLine" style="margin-top:8px; font-size:26px;"></div>
       <div class="word-chips" id="verseChips"></div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
-        <button class="speakbtn" data-speak="上帝是不偏待人。。上帝是，不偏待，人。" onclick="speakThis(this)">🔊 跟著念</button>
+        <button class="speakbtn" data-speak="上帝是不偏待人。上帝是，不偏待，人。" onclick="speakThis(this)">🔊 跟著念</button>
         <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px;" onclick="verseReset()">🔄 再来一次</button>
         <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px; background:linear-gradient(135deg,#3ec6b0,#2aa89a);" onclick="addStar(1); go(3);">✅ 我背好了！</button>
       </div>
@@ -694,11 +694,11 @@ body.mobile .talk{font-size:18px;}
         </div>        <div class="card" style="flex:1; min-width:260px; text-align:left;">
           <div style="font-size:38px; text-align:center;">🙏</div>
           <div style="font-weight:900; color:#ff8c42; font-size:19px; margin:6px 0;">常常祷告</div>
-          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">常常与孩子一起祷告。这一课的信息是：我们以仁慈和公平对待别人。。帮助孩子把故事里的教训用在生活中。</div>
+          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">常常与孩子一起祷告。这一课的信息是：我们以仁慈和公平对待别人。帮助孩子把故事里的教训用在生活中。</div>
         </div>        <div class="card" style="flex:1; min-width:260px; text-align:left;">
           <div style="font-size:38px; text-align:center;">💝</div>
           <div style="font-weight:900; color:#2ecc71; font-size:19px; margin:6px 0;">本周信息</div>
-          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「参考资料」。。</div>
+          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「葡萄园发工资的一刻」。</div>
         </div>
       </div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
@@ -714,7 +714,7 @@ body.mobile .talk{font-size:18px;}
       <h2 class="title" style="font-size:34px;">🙏 一起祷告</h2>
       <div class="card" style="max-width:820px; width:100%; position:relative; padding:14px 20px;">
         <div style="font-size:52px; line-height:1;" class="floaty">🌟</div>
-        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢我们以仁慈和公平对待别人。。<br>就像「参考资料」的故事一样，<br>求祢帮助我以上帝对待我们的方式去待别人。。<br>奉耶稣的名祷告，阿们！</div>
+        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢我们以仁慈和公平对待别人。<br>就像「葡萄园发工资的一刻」的故事一样，<br>求祢帮助我以上帝对待我们的方式去待别人。<br>奉耶稣的名祷告，阿们！</div>
         <div style="display:flex; justify-content:center;">
           <button class="speakbtn" onclick="speakText(document.getElementById('prayerText').innerText.replace(/<br>/g,'。'))">🔊 跟著念</button>
         </div>
@@ -1067,7 +1067,7 @@ function versePick(btn, w){
 function verseReset(){ verseInit(); }
 
 /* ================= 第一天：光 ================= *//* ================= 第一幕：朋友和山 ================= */
-const s0M = {'a00':'一小时后，他的朋友山姆走过来，说要帮助他。。', 'a01':'一小时后，他的朋友山姆走过来，说要帮助他。。', 'a02':'两人开开心心地一起清理树叶。。'};
+const s0M = {'a00':'一小时后，他的朋友山姆走过来，说要帮助他。', 'a01':'一小时后，他的朋友山姆走过来，说要帮助他。', 'a02':'两人开开心心地一起清理树叶。'};
 let s0Seen = {}, s0Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1084,7 +1084,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第二幕：葡萄和耶稣 ================= */
-const s1M = {'a10':'“天国就好像一个园主拥有一大片葡萄园。。', 'a11':'”在耶稣的年代，人们早上六点就会聚集到市场。。'};
+const s1M = {'a10':'“天国就好像一个园主拥有一大片葡萄园。', 'a11':'”在耶稣的年代，人们早上六点就会聚集到市场。'};
 let s1Seen = {}, s1Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1101,7 +1101,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第三幕：家 ================= */
-const s2M = {'a20':'到晚上六点，园主吩咐他的管家发放工26学生本资给工人。。'};
+const s2M = {'a20':'到晚上六点，园主吩咐他的管家发放工26学生本资给工人。'};
 let s2Seen = {}, s2Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1135,7 +1135,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第五幕：耶稣和上帝 ================= */
-const s4M = {'a40':'”然后，耶稣说：“那在后的将要在前，在前的将要在后了。。', 'a41':'但耶稣要指出的重点是，上帝不会照我们应得的来对待我们。。', 'a42':'祂的恩典拯救了我们每个人，包括那些最后一分钟才接受祂，也包括那些一早便接受祂的人。'};
+const s4M = {'a40':'”然后，耶稣说：“那在后的将要在前，在前的将要在后了。', 'a41':'但耶稣要指出的重点是，上帝不会照我们应得的来对待我们。', 'a42':'祂的恩典拯救了我们每个人，包括那些最后一分钟才接受祂，也包括那些一早便接受祂的人。'};
 let s4Seen = {}, s4Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1152,7 +1152,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第六幕：上帝和家 ================= */
-const s5M = {'a50':'上帝原本不必拯救我们任何人，但祂这样做了是因为爱我们。。', 'a51':'你对待上帝家里的人，是否也像上帝待你一样？。'};
+const s5M = {'a50':'上帝原本不必拯救我们任何人，但祂这样做了是因为爱我们。', 'a51':'你对待上帝家里的人，是否也像上帝待你一样？。'};
 let s5Seen = {}, s5Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1169,7 +1169,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第七幕：我们的回应 ================= */
-const s6M = {'r0':'我们以仁慈和公平对待别人。。', 'r1':'存心节：上帝是不偏待人。。', 'r2':'以上帝对待我们的方式去待别人。'};
+const s6M = {'r0':'我们以仁慈和公平对待别人。', 'r1':'存心节：上帝是不偏待人。', 'r2':'以上帝对待我们的方式去待别人。'};
 let s6Seen = {}, s6Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;

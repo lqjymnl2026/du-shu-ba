@@ -423,7 +423,7 @@ body.mobile .talk{font-size:18px;}
       <div id="verseLine" style="margin-top:8px; font-size:26px;"></div>
       <div class="word-chips" id="verseChips"></div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
-        <button class="speakbtn" data-speak="耶和华的使者，在敬畏祂的人四围安营搭救他们。。耶和华的使，者，在敬畏祂的，人四围安营，搭救他们。" onclick="speakThis(this)">🔊 跟著念</button>
+        <button class="speakbtn" data-speak="耶和华的使者，在敬畏祂的人四围安营搭救他们。耶和华的使，者，在敬畏祂的，人四围安营，搭救他们。" onclick="speakThis(this)">🔊 跟著念</button>
         <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px;" onclick="verseReset()">🔄 再来一次</button>
         <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px; background:linear-gradient(135deg,#3ec6b0,#2aa89a);" onclick="addStar(1); go(3);">✅ 我背好了！</button>
       </div>
@@ -703,7 +703,7 @@ body.mobile .talk{font-size:18px;}
         </div>        <div class="card" style="flex:1; min-width:260px; text-align:left;">
           <div style="font-size:38px; text-align:center;">💝</div>
           <div style="font-weight:900; color:#2ecc71; font-size:19px; margin:6px 0;">本周信息</div>
-          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「你记得非常害怕某个人或某」。上帝替我们做那些我们无法为自己做的事。。</div>
+          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「比眼所能见的更多」。上帝替我们做那些我们无法为自己做的事。</div>
         </div>
       </div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
@@ -719,7 +719,7 @@ body.mobile .talk{font-size:18px;}
       <h2 class="title" style="font-size:34px;">🙏 一起祷告</h2>
       <div class="card" style="max-width:820px; width:100%; position:relative; padding:14px 20px;">
         <div style="font-size:52px; line-height:1;" class="floaty">🌟</div>
-        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢上帝帮助患难中的我。78。<br>就像「你记得非常害怕某个人或某」的故事一样，<br>求祢帮助我无论发生什么事情，都会完全地相信上帝。。<br>奉耶稣的名祷告，阿们！</div>
+        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢上帝帮助患难中的我。78。<br>就像「比眼所能见的更多」的故事一样，<br>求祢帮助我无论发生什么事情，都会完全地相信上帝。<br>奉耶稣的名祷告，阿们！</div>
         <div style="display:flex; justify-content:center;">
           <button class="speakbtn" onclick="speakText(document.getElementById('prayerText').innerText.replace(/<br>/g,'。'))">🔊 跟著念</button>
         </div>
@@ -1072,7 +1072,7 @@ function versePick(btn, w){
 function verseReset(){ verseInit(); }
 
 /* ================= 第一天：光 ================= *//* ================= 第一幕：上帝和国王 ================= */
-const s0M = {'a00':'上帝帮助了以色列军。。', 'a01':'无论何时亚兰王计划攻击以色列，上帝都会告诉以利沙。。', 'a02':'无论何时亚兰王计划攻击以色列，上帝都会告诉以利沙。。'};
+const s0M = {'a00':'上帝帮助了以色列军。', 'a01':'无论何时亚兰王计划攻击以色列，上帝都会告诉以利沙。', 'a02':'无论何时亚兰王计划攻击以色列，上帝都会告诉以利沙。'};
 let s0Seen = {}, s0Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1089,7 +1089,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第二幕：先知和国王 ================= */
-const s1M = {'a10':'他说：“我们都不是间谍，但是以利沙，那位先知，他知道我们所做的每一件事。。', 'a11':'”亚兰王怒吼道。。'};
+const s1M = {'a10':'他说：“我们都不是间谍，但是以利沙，那位先知，他知道我们所做的每一件事。', 'a11':'”亚兰王怒吼道。'};
 let s1Seen = {}, s1Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1106,7 +1106,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第三幕：先知和国王 ================= */
-const s2M = {'a20':'”他吩咐骁勇善战的人去捉拿那位孤身作战的先知。。', 'a21':'亚兰王确信如果他的军队能成功俘虏以利沙，他们将击败以色列。。', 'a22':'亚兰王确信如果他的军队能成功俘虏以利沙，他们将击败以色列。。'};
+const s2M = {'a20':'”他吩咐骁勇善战的人去捉拿那位孤身作战的先知。', 'a21':'亚兰王确信如果他的军队能成功俘虏以利沙，他们将击败以色列。', 'a22':'亚兰王确信如果他的军队能成功俘虏以利沙，他们将击败以色列。'};
 let s2Seen = {}, s2Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1123,7 +1123,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第四幕：上帝和先知 ================= */
-const s3M = {'a30':'”他十分害怕，忘记了上帝是站在哪一边的。。', 'a31':'但以利沙没有忘记。。', 'a32':'当仆人再举目观看的时候，他看到另一支军队，布满了多坍的群山，它的战车闪耀着像火焰。'};
+const s3M = {'a30':'”他十分害怕，忘记了上帝是站在哪一边的。', 'a31':'但以利沙没有忘记。', 'a32':'当仆人再举目观看的时候，他看到另一支军队，布满了多坍的群山，它的战车闪耀着像火焰。'};
 let s3Seen = {}, s3Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1140,7 +1140,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第五幕：先知和城 ================= */
-const s4M = {'a40':'以利沙出了城，径直走向瞎眼的将军，“这不是你们要走的路，跟着我走，我将领你到那个。', 'a41':'以利沙出了城，径直走向瞎眼的将军，“这不是你们要走的路，跟着我走，我将领你到那个。', 'a42':'”以利沙将这支瞎子军队领到以色列王那里。。'};
+const s4M = {'a40':'以利沙出了城，径直走向瞎眼的将军，“这不是你们要走的路，跟着我走，我将领你到那个。', 'a41':'以利沙出了城，径直走向瞎眼的将军，“这不是你们要走的路，跟着我走，我将领你到那个。', 'a42':'”以利沙将这支瞎子军队领到以色列王那里。'};
 let s4Seen = {}, s4Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1157,7 +1157,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第六幕：家和国王 ================= */
-const s5M = {'a50':'“给他们吃的，打发他们回家。。', 'a51':'”以色列王就照他的话做了。。', 'a52':'上帝借着将敌人变成瞎子、丰富的食物和恩典，征服了他们。。'};
+const s5M = {'a50':'“给他们吃的，打发他们回家。', 'a51':'”以色列王就照他的话做了。', 'a52':'上帝借着将敌人变成瞎子、丰富的食物和恩典，征服了他们。'};
 let s5Seen = {}, s5Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1174,7 +1174,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第七幕：我们的回应 ================= */
-const s6M = {'r0':'上帝帮助患难中的我。78。', 'r1':'存心节：耶和华的使者，在敬畏祂的人四围安营搭救他们。。', 'r2':'无论发生什么事情，都会完全地相信上帝。'};
+const s6M = {'r0':'上帝帮助患难中的我。78。', 'r1':'存心节：耶和华的使者，在敬畏祂的人四围安营搭救他们。', 'r2':'无论发生什么事情，都会完全地相信上帝。'};
 let s6Seen = {}, s6Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;

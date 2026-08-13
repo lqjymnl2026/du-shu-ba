@@ -423,7 +423,7 @@ body.mobile .talk{font-size:18px;}
       <div id="verseLine" style="margin-top:8px; font-size:26px;"></div>
       <div class="word-chips" id="verseChips"></div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
-        <button class="speakbtn" data-speak="我们的主，我们的上帝，你是配得荣耀、尊贵、权柄的；因为你创造了万物，并且万物是因你的旨意被创造而有的。。我们的主，我们的上帝，你是配得荣，耀，尊贵，权柄的，因为你创造，了万物，并且万物是，因你的旨意，被创造而有，的。" onclick="speakThis(this)">🔊 跟著念</button>
+        <button class="speakbtn" data-speak="我们的主，我们的上帝，你是配得荣耀、尊贵、权柄的；因为你创造了万物，并且万物是因你的旨意被创造而有的。我们的主，我们的上帝，你是配得荣，耀，尊贵，权柄的，因为你创造，了万物，并且万物是，因你的旨意，被创造而有，的。" onclick="speakThis(this)">🔊 跟著念</button>
         <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px;" onclick="verseReset()">🔄 再来一次</button>
         <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px; background:linear-gradient(135deg,#3ec6b0,#2aa89a);" onclick="addStar(1); go(3);">✅ 我背好了！</button>
       </div>
@@ -704,7 +704,7 @@ body.mobile .talk{font-size:18px;}
         </div>        <div class="card" style="flex:1; min-width:260px; text-align:left;">
           <div style="font-size:38px; text-align:center;">💝</div>
           <div style="font-weight:900; color:#2ecc71; font-size:19px; margin:6px 0;">本周信息</div>
-          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「的新房间吗？」。我们要每天敬拜伟大的上帝。。</div>
+          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「上帝是第一位！」。我们要每天敬拜伟大的上帝。</div>
         </div>
       </div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
@@ -720,7 +720,7 @@ body.mobile .talk{font-size:18px;}
       <h2 class="title" style="font-size:34px;">🙏 一起祷告</h2>
       <div class="card" style="max-width:820px; width:100%; position:relative; padding:14px 20px;">
         <div style="font-size:52px; line-height:1;" class="floaty">🌟</div>
-        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢上帝配得我们敬拜。88。<br>就像「的新房间吗？」的故事一样，<br>求祢帮助我把上帝放在生命中的第一位。。<br>奉耶稣的名祷告，阿们！</div>
+        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢上帝配得我们敬拜。88。<br>就像「上帝是第一位！」的故事一样，<br>求祢帮助我把上帝放在生命中的第一位。<br>奉耶稣的名祷告，阿们！</div>
         <div style="display:flex; justify-content:center;">
           <button class="speakbtn" onclick="speakText(document.getElementById('prayerText').innerText.replace(/<br>/g,'。'))">🔊 跟著念</button>
         </div>
@@ -1090,7 +1090,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第二幕：风和帐篷 ================= */
-const s1M = {'a10':'清晨的微风吹抚着他的衣袍，他没有留意这些，他目不转晴地注视着帐篷──以色列子民住。', 'a11':'清晨的微风吹抚着他的衣袍，他没有留意这些，他目不转晴地注视着帐篷──以色列子民住。', 'a12':'四十年了，上帝一直在引导摩西带领这些人，经历了许多艰险。。'};
+const s1M = {'a10':'清晨的微风吹抚着他的衣袍，他没有留意这些，他目不转晴地注视着帐篷──以色列子民住。', 'a11':'清晨的微风吹抚着他的衣袍，他没有留意这些，他目不转晴地注视着帐篷──以色列子民住。', 'a12':'四十年了，上帝一直在引导摩西带领这些人，经历了许多艰险。'};
 let s1Seen = {}, s1Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1107,7 +1107,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第三幕：摩西和上帝 ================= */
-const s2M = {'a20':'摩西先是祈求上帝：“哦，我全能的上帝……求你容我过去看那边的美地。。', 'a21':'摩西先是祈求上帝：“哦，我全能的上帝……求你容我过去看那边的美地。。', 'a22':'上帝说：“你且上毗斯迦山顶去，举目观望，因为你必不能过这约旦河。。'};
+const s2M = {'a20':'摩西先是祈求上帝：“哦，我全能的上帝……求你容我过去看那边的美地。', 'a21':'摩西先是祈求上帝：“哦，我全能的上帝……求你容我过去看那边的美地。', 'a22':'上帝说：“你且上毗斯迦山顶去，举目观望，因为你必不能过这约旦河。'};
 let s2Seen = {}, s2Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1124,7 +1124,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第四幕：摩西和号角 ================= */
-const s3M = {'a30':'摩西摆了摆身子，嘴角露出一丝微笑。。', 'a31':'摩西摆了摆身子，嘴角露出一丝微笑。。', 'a32':'然后上帝满怀怜爱，悄悄告诉摩西应该做的事情。。'};
+const s3M = {'a30':'摩西摆了摆身子，嘴角露出一丝微笑。', 'a31':'摩西摆了摆身子，嘴角露出一丝微笑。', 'a32':'然后上帝满怀怜爱，悄悄告诉摩西应该做的事情。'};
 let s3Seen = {}, s3Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1141,7 +1141,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第五幕：摩西和上帝 ================= */
-const s4M = {'a40':'摩西知道上帝已经为他们预备了建造完好的城。。', 'a41':'摩西知道上帝已经为他们预备了建造完好的城。。', 'a42':'摩西知道上帝已经为他们预备了建造完好的城。。'};
+const s4M = {'a40':'摩西知道上帝已经为他们预备了建造完好的城。', 'a41':'摩西知道上帝已经为他们预备了建造完好的城。', 'a42':'摩西知道上帝已经为他们预备了建造完好的城。'};
 let s4Seen = {}, s4Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1158,7 +1158,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第六幕：摩西和石头 ================= */
-const s5M = {'a50':'”摩摩西后悔击打西想大声地对他们说，只要他们能记住上了石头，因为帝。。', 'a51':'”摩摩西后悔击打西想大声地对他们说，只要他们能记住上了石头，因为帝。。', 'a52':'他们只有这么做，才会记住上帝，孩子上帝叫他对着们也能从小认识上帝。。'};
+const s5M = {'a50':'”摩摩西后悔击打西想大声地对他们说，只要他们能记住上了石头，因为帝。', 'a51':'”摩摩西后悔击打西想大声地对他们说，只要他们能记住上了石头，因为帝。', 'a52':'他们只有这么做，才会记住上帝，孩子上帝叫他对着们也能从小认识上帝。'};
 let s5Seen = {}, s5Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;

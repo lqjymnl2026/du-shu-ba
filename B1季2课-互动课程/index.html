@@ -702,7 +702,7 @@ body.mobile .talk{font-size:18px;}
         </div>        <div class="card" style="flex:1; min-width:260px; text-align:left;">
           <div style="font-size:38px; text-align:center;">💝</div>
           <div style="font-weight:900; color:#2ecc71; font-size:19px; margin:6px 0;">本周信息</div>
-          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「什么？”」。。</div>
+          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「漫漫长途」。</div>
         </div>
       </div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
@@ -718,7 +718,7 @@ body.mobile .talk{font-size:18px;}
       <h2 class="title" style="font-size:34px;">🙏 一起祷告</h2>
       <div class="card" style="max-width:820px; width:100%; position:relative; padding:14px 20px;">
         <div style="font-size:52px; line-height:1;" class="floaty">🌟</div>
-        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢当上帝呼召我们的时候，我们应当听从。尘弥漫的路上，白。<br>就像「什么？”」的故事一样，<br>求祢帮助我做一个好孩子。<br>奉耶稣的名祷告，阿们！</div>
+        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢当上帝呼召我们的时候，我们应当听从。尘弥漫的路上，白。<br>就像「漫漫长途」的故事一样，<br>求祢帮助我做一个好孩子。<br>奉耶稣的名祷告，阿们！</div>
         <div style="display:flex; justify-content:center;">
           <button class="speakbtn" onclick="speakText(document.getElementById('prayerText').innerText.replace(/<br>/g,'。'))">🔊 跟著念</button>
         </div>
@@ -1071,7 +1071,7 @@ function versePick(btn, w){
 function verseReset(){ verseInit(); }
 
 /* ================= 第一天：光 ================= *//* ================= 第一幕：上帝和亚伯拉罕 ================= */
-const s0M = {'a00':'有一天，上帝对亚伯拉罕说：“亚伯拉罕，你离开吾珥的时候到了。。', 'a01':'有一天，上帝对亚伯拉罕说：“亚伯拉罕，你离开吾珥的时候到了。。', 'a02':'你必须离开所有的朋友，前往我指引你的地方去。。'};
+const s0M = {'a00':'有一天，上帝对亚伯拉罕说：“亚伯拉罕，你离开吾珥的时候到了。', 'a01':'有一天，上帝对亚伯拉罕说：“亚伯拉罕，你离开吾珥的时候到了。', 'a02':'你必须离开所有的朋友，前往我指引你的地方去。'};
 let s0Seen = {}, s0Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1088,7 +1088,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第二幕：家和上帝 ================= */
-const s1M = {'a10':'上8帝为什么要他离开家乡，前往别处去生活呢？。', 'a11':'上帝继续说：“亚伯拉罕，我将赐福予你，赐给你儿子、孙子，以及曾孙。。', 'a12':'上帝继续说：“亚伯拉罕，我将赐福予你，赐给你儿子、孙子，以及曾孙。。'};
+const s1M = {'a10':'上8帝为什么要他离开家乡，前往别处去生活呢？。', 'a11':'上帝继续说：“亚伯拉罕，我将赐福予你，赐给你儿子、孙子，以及曾孙。', 'a12':'上帝继续说：“亚伯拉罕，我将赐福予你，赐给你儿子、孙子，以及曾孙。'};
 let s1Seen = {}, s1Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1105,7 +1105,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第三幕：亚伯拉罕和撒拉 ================= */
-const s2M = {'a20':'”这下子，亚伯拉罕一定更惊呀了，因为他和妻子撒莱连一个孩子都没有。。', 'a21':'”这下子，亚伯拉罕一定更惊呀了，因为他和妻子撒莱连一个孩子都没有。。', 'a22':'”这下子，亚伯拉罕一定更惊呀了，因为他和妻子撒莱连一个孩子都没有。。'};
+const s2M = {'a20':'”这下子，亚伯拉罕一定更惊呀了，因为他和妻子撒莱连一个孩子都没有。', 'a21':'”这下子，亚伯拉罕一定更惊呀了，因为他和妻子撒莱连一个孩子都没有。', 'a22':'”这下子，亚伯拉罕一定更惊呀了，因为他和妻子撒莱连一个孩子都没有。'};
 let s2Seen = {}, s2Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1122,7 +1122,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第四幕：亚伯拉罕和撒拉 ================= */
-const s3M = {'a30':'然而，亚伯拉罕和撒莱选择遵从上帝的话。。', 'a31':'然而，亚伯拉罕和撒莱选择遵从上帝的话。。', 'a32':'然而，亚伯拉罕和撒莱选择遵从上帝的话。。'};
+const s3M = {'a30':'然而，亚伯拉罕和撒莱选择遵从上帝的话。', 'a31':'然而，亚伯拉罕和撒莱选择遵从上帝的话。', 'a32':'然而，亚伯拉罕和撒莱选择遵从上帝的话。'};
 let s3Seen = {}, s3Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1139,7 +1139,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第五幕：亚伯拉罕和家 ================= */
-const s4M = {'a40':'亚伯拉罕召集所有要跟他们一起走的人。。', 'a41':'他的侄儿罗得加入了他们，所有在亚伯拉罕家中工作的人，以及蒙亚伯拉罕教导敬拜上帝的。', 'a42':'他的侄儿罗得加入了他们，所有在亚伯拉罕家中工作的人，以及蒙亚伯拉罕教导敬拜上帝的。'};
+const s4M = {'a40':'亚伯拉罕召集所有要跟他们一起走的人。', 'a41':'他的侄儿罗得加入了他们，所有在亚伯拉罕家中工作的人，以及蒙亚伯拉罕教导敬拜上帝的。', 'a42':'他的侄儿罗得加入了他们，所有在亚伯拉罕家中工作的人，以及蒙亚伯拉罕教导敬拜上帝的。'};
 let s4Seen = {}, s4Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;

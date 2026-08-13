@@ -423,7 +423,7 @@ body.mobile .talk{font-size:18px;}
       <div id="verseLine" style="margin-top:8px; font-size:26px;"></div>
       <div class="word-chips" id="verseChips"></div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
-        <button class="speakbtn" data-speak="以诺与上帝同行，上帝将他取去，他就不在世了。。以诺与上帝，同行，上帝将他取，去，他就不在世，了。" onclick="speakThis(this)">🔊 跟著念</button>
+        <button class="speakbtn" data-speak="以诺与上帝同行，上帝将他取去，他就不在世了。以诺与上帝，同行，上帝将他取，去，他就不在世，了。" onclick="speakThis(this)">🔊 跟著念</button>
         <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px;" onclick="verseReset()">🔄 再来一次</button>
         <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px; background:linear-gradient(135deg,#3ec6b0,#2aa89a);" onclick="addStar(1); go(3);">✅ 我背好了！</button>
       </div>
@@ -694,7 +694,7 @@ body.mobile .talk{font-size:18px;}
         </div>        <div class="card" style="flex:1; min-width:260px; text-align:left;">
           <div style="font-size:38px; text-align:center;">💝</div>
           <div style="font-weight:900; color:#2ecc71; font-size:19px; margin:6px 0;">本周信息</div>
-          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「是上帝最好的朋友之一。」。我们感谢上帝与我们同在。。</div>
+          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「与上帝一同回家」。我们感谢上帝与我们同在。</div>
         </div>
       </div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
@@ -710,7 +710,7 @@ body.mobile .talk{font-size:18px;}
       <h2 class="title" style="font-size:34px;">🙏 一起祷告</h2>
       <div class="card" style="max-width:820px; width:100%; position:relative; padding:14px 20px;">
         <div style="font-size:52px; line-height:1;" class="floaty">🌟</div>
-        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢我们每天亲近上帝，。<br>就像「是上帝最好的朋友之一。」的故事一样，<br>求祢帮助我赞美上帝每天与我们同在。。<br>奉耶稣的名祷告，阿们！</div>
+        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢我们每天亲近上帝，。<br>就像「与上帝一同回家」的故事一样，<br>求祢帮助我赞美上帝每天与我们同在。<br>奉耶稣的名祷告，阿们！</div>
         <div style="display:flex; justify-content:center;">
           <button class="speakbtn" onclick="speakText(document.getElementById('prayerText').innerText.replace(/<br>/g,'。'))">🔊 跟著念</button>
         </div>
@@ -1063,7 +1063,7 @@ function versePick(btn, w){
 function verseReset(){ verseInit(); }
 
 /* ================= 第一天：光 ================= *//* ================= 第一幕：上帝 ================= */
-const s0M = {'a00':'尽管以诺忙于四处奔走讲道，但他总会留出时间与上帝交96通并敬拜祂。。'};
+const s0M = {'a00':'尽管以诺忙于四处奔走讲道，但他总会留出时间与上帝交96通并敬拜祂。'};
 let s0Seen = {}, s0Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1080,7 +1080,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第二幕：上帝和朋友 ================= */
-const s1M = {'a10':'他与上帝一起的时间越多，就越像上帝，脸上充满了欢乐。。', 'a11':'我们知道当一个人在最好的朋友家中停留了很多时间，邻居就会认为他是居住在那儿人。。', 'a12':'我们知道当一个人在最好的朋友家中停留了很多时间，邻居就会认为他是居住在那儿人。。'};
+const s1M = {'a10':'他与上帝一起的时间越多，就越像上帝，脸上充满了欢乐。', 'a11':'我们知道当一个人在最好的朋友家中停留了很多时间，邻居就会认为他是居住在那儿人。', 'a12':'我们知道当一个人在最好的朋友家中停留了很多时间，邻居就会认为他是居住在那儿人。'};
 let s1Seen = {}, s1Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1097,7 +1097,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第三幕：上帝和天空 ================= */
-const s2M = {'a20':'以诺与上帝之间关系也就是这个情形。。', 'a21':'终于有一天，上帝把以诺接去和祂一起居住在天上。。'};
+const s2M = {'a20':'以诺与上帝之间关系也就是这个情形。', 'a21':'终于有一天，上帝把以诺接去和祂一起居住在天上。'};
 let s2Seen = {}, s2Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1131,7 +1131,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第五幕：上帝 ================= */
-const s4M = {'a40':'最后人们终于知道他与上帝同在，他们的信心就加赠了许多。。'};
+const s4M = {'a40':'最后人们终于知道他与上帝同在，他们的信心就加赠了许多。'};
 let s4Seen = {}, s4Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1148,7 +1148,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第六幕：上帝 ================= */
-const s5M = {'a50':'第二，他们敬拜、顺从上帝，就也可以到天国去。。'};
+const s5M = {'a50':'第二，他们敬拜、顺从上帝，就也可以到天国去。'};
 let s5Seen = {}, s5Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1165,7 +1165,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第七幕：我们的回应 ================= */
-const s6M = {'r0':'我们每天亲近上帝，。', 'r1':'存心节：以诺与上帝同行，上帝将他取去，他就不在世了。。', 'r2':'赞美上帝每天与我们同在。'};
+const s6M = {'r0':'我们每天亲近上帝，。', 'r1':'存心节：以诺与上帝同行，上帝将他取去，他就不在世了。', 'r2':'赞美上帝每天与我们同在。'};
 let s6Seen = {}, s6Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;

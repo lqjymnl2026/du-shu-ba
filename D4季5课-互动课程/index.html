@@ -423,7 +423,7 @@ body.mobile .talk{font-size:18px;}
       <div id="verseLine" style="margin-top:8px; font-size:26px;"></div>
       <div class="word-chips" id="verseChips"></div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
-        <button class="speakbtn" data-speak="我拣选了忠信的道，将你的典章摆在我面前。。我拣选了忠，信的道，将你的典章，摆在我面前。" onclick="speakThis(this)">🔊 跟著念</button>
+        <button class="speakbtn" data-speak="我拣选了忠信的道，将你的典章摆在我面前。我拣选了忠，信的道，将你的典章，摆在我面前。" onclick="speakThis(this)">🔊 跟著念</button>
         <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px;" onclick="verseReset()">🔄 再来一次</button>
         <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px; background:linear-gradient(135deg,#3ec6b0,#2aa89a);" onclick="addStar(1); go(3);">✅ 我背好了！</button>
       </div>
@@ -702,7 +702,7 @@ body.mobile .talk{font-size:18px;}
         </div>        <div class="card" style="flex:1; min-width:260px; text-align:left;">
           <div style="font-size:38px; text-align:center;">💝</div>
           <div style="font-weight:900; color:#2ecc71; font-size:19px; margin:6px 0;">本周信息</div>
-          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「你什么都不能带，会是怎样」。无论身在何处，我们都服侍上帝。。</div>
+          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「被俘」。无论身在何处，我们都服侍上帝。</div>
         </div>
       </div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
@@ -718,7 +718,7 @@ body.mobile .talk{font-size:18px;}
       <h2 class="title" style="font-size:34px;">🙏 一起祷告</h2>
       <div class="card" style="max-width:820px; width:100%; position:relative; padding:14px 20px;">
         <div style="font-size:52px; line-height:1;" class="floaty">🌟</div>
-        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢我帮助朋友做正确的选。<br>就像「你什么都不能带，会是怎样」的故事一样，<br>求祢帮助我鼓励我们的朋友选择上帝的道。。<br>奉耶稣的名祷告，阿们！</div>
+        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢我帮助朋友做正确的选。<br>就像「被俘」的故事一样，<br>求祢帮助我鼓励我们的朋友选择上帝的道。<br>奉耶稣的名祷告，阿们！</div>
         <div style="display:flex; justify-content:center;">
           <button class="speakbtn" onclick="speakText(document.getElementById('prayerText').innerText.replace(/<br>/g,'。'))">🔊 跟著念</button>
         </div>
@@ -1088,7 +1088,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第二幕：上帝和敌人 ================= */
-const s1M = {'a10':'他们也敬拜上帝，把上帝放在他们生活中的首位。。', 'a11':'他很快就击败了希伯来人的军队，进入耶路撒冷城，俘虏了国王约雅敬。。', 'a12':'他很快就击败了希伯来人的军队，进入耶路撒冷城，俘虏了国王约雅敬。。'};
+const s1M = {'a10':'他们也敬拜上帝，把上帝放在他们生活中的首位。', 'a11':'他很快就击败了希伯来人的军队，进入耶路撒冷城，俘虏了国王约雅敬。', 'a12':'他很快就击败了希伯来人的军队，进入耶路撒冷城，俘虏了国王约雅敬。'};
 let s1Seen = {}, s1Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1105,7 +1105,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第三幕：国王和城 ================= */
-const s2M = {'a20':'除了掠夺财物以外，尼布甲尼撒王还带了一万名俘虏回巴比伦。。', 'a21':'除了掠夺财物以外，尼布甲尼撒王还带了一万名俘虏回巴比伦。。', 'a22':'但以理和他的三个朋友就在那些俘虏之中，他们被强迫离家去一个陌生的地方。。'};
+const s2M = {'a20':'除了掠夺财物以外，尼布甲尼撒王还带了一万名俘虏回巴比伦。', 'a21':'除了掠夺财物以外，尼布甲尼撒王还带了一万名俘虏回巴比伦。', 'a22':'但以理和他的三个朋友就在那些俘虏之中，他们被强迫离家去一个陌生的地方。'};
 let s2Seen = {}, s2Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1122,7 +1122,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第四幕：城和但以理 ================= */
-const s3M = {'a30':'到达巴比伦后，别人给他们取新的名字。。', 'a31':'称但以理为伯提沙撒，称哈拿尼雅为沙得拉，称米沙利为米煞，称亚撒利雅为亚伯尼歌；所。', 'a32':'尼布甲尼撒王希望这些人很快忘记希伯来的信仰，并开始敬拜巴比伦的神。。'};
+const s3M = {'a30':'到达巴比伦后，别人给他们取新的名字。', 'a31':'称但以理为伯提沙撒，称哈拿尼雅为沙得拉，称米沙利为米煞，称亚撒利雅为亚伯尼歌；所。', 'a32':'尼布甲尼撒王希望这些人很快忘记希伯来的信仰，并开始敬拜巴比伦的神。'};
 let s3Seen = {}, s3Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1156,7 +1156,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第六幕：朋友 ================= */
-const s5M = {'a50':'我帮助朋友做正确的选。。'};
+const s5M = {'a50':'我帮助朋友做正确的选。'};
 let s5Seen = {}, s5Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1173,7 +1173,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第七幕：我们的回应 ================= */
-const s6M = {'r0':'我帮助朋友做正确的选。', 'r1':'存心节：我拣选了忠信的道，将你的典章摆在我面前。。', 'r2':'鼓励我们的朋友选择上帝的道。'};
+const s6M = {'r0':'我帮助朋友做正确的选。', 'r1':'存心节：我拣选了忠信的道，将你的典章摆在我面前。', 'r2':'鼓励我们的朋友选择上帝的道。'};
 let s6Seen = {}, s6Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;

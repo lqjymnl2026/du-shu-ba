@@ -384,7 +384,7 @@ body.mobile .talk{font-size:18px;}
       <div class="kicker">D3季 · 互动课程</div>
       <div class="emoji-xl floaty" style="margin-bottom:6px;">👑</div>
       <h1 class="title">第五课 · 一次不寻常的竞赛</h1>
-      <div class="sub">上帝爱我们。。</div>
+      <div class="sub">上帝爱我们。</div>
       <div style="margin-top:10px;"><span class="chip">📖 经文：参本课</span><span class="chip">💜 信息：上帝爱我们。</span><span class="chip">⭐ 存心节：</span></div>
       <button class="bigbtn" onclick="go(1)">🚀 开始上课</button>
       <div class="note">🎧 点「🔊」可以开关朗读声音（请在浏览器允许语音）</div>
@@ -410,7 +410,7 @@ body.mobile .talk{font-size:18px;}
           <div style="font-size:16px; color:var(--ink2);">#2ecc71</div>
         </div>
       </div>
-      <button class="speakbtn" data-speak="这一课，我们要晓得：上帝爱我们。。" onclick="speakThis(this)">🔊 听听这一课</button>
+      <button class="speakbtn" data-speak="这一课，我们要晓得：上帝爱我们。" onclick="speakThis(this)">🔊 听听这一课</button>
       <div style="margin-top:14px;"><span class="pill">💜 信息：上帝爱我们。</span></div>
     </div>
   </section>
@@ -694,7 +694,7 @@ body.mobile .talk{font-size:18px;}
         </div>        <div class="card" style="flex:1; min-width:260px; text-align:left;">
           <div style="font-size:38px; text-align:center;">💝</div>
           <div style="font-weight:900; color:#2ecc71; font-size:19px; margin:6px 0;">本周信息</div>
-          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「吗？今天的故事是关于一次」。。</div>
+          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「一次不寻常的竞赛」。</div>
         </div>
       </div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
@@ -710,7 +710,7 @@ body.mobile .talk{font-size:18px;}
       <h2 class="title" style="font-size:34px;">🙏 一起祷告</h2>
       <div class="card" style="max-width:820px; width:100%; position:relative; padding:14px 20px;">
         <div style="font-size:52px; line-height:1;" class="floaty">🌟</div>
-        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢。<br>就像「吗？今天的故事是关于一次」的故事一样，<br>求祢帮助我做一个好孩子。<br>奉耶稣的名祷告，阿们！</div>
+        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢。<br>就像「一次不寻常的竞赛」的故事一样，<br>求祢帮助我做一个好孩子。<br>奉耶稣的名祷告，阿们！</div>
         <div style="display:flex; justify-content:center;">
           <button class="speakbtn" onclick="speakText(document.getElementById('prayerText').innerText.replace(/<br>/g,'。'))">🔊 跟著念</button>
         </div>
@@ -1063,7 +1063,7 @@ function versePick(btn, w){
 function verseReset(){ verseInit(); }
 
 /* ================= 第一天：光 ================= *//* ================= 第一幕：王后 ================= */
-const s0M = {'a00':'有一天，希该面带微笑来到以斯帖那里。。'};
+const s0M = {'a00':'有一天，希该面带微笑来到以斯帖那里。'};
 let s0Seen = {}, s0Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1080,7 +1080,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第二幕：国王 ================= */
-const s1M = {'a10':'”他喊道，“王要见你。。'};
+const s1M = {'a10':'”他喊道，“王要见你。'};
 let s1Seen = {}, s1Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1097,7 +1097,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第三幕：王后 ================= */
-const s2M = {'a20':'”以斯帖问。。'};
+const s2M = {'a20':'”以斯帖问。'};
 let s2Seen = {}, s2Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1131,7 +1131,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第五幕：王后和家 ================= */
-const s4M = {'a40':'“我太紧张了，”以斯帖激动地说，“我甚至无法思考了。。', 'a41':'”希该说的对，大家都喜欢以斯帖，特别是王，他喜爱以斯帖胜过以前见过的所有年轻女子。', 'a42':'”希该说的对，大家都喜欢以斯帖，特别是王，他喜爱以斯帖胜过以前见过的所有年轻女子。'};
+const s4M = {'a40':'“我太紧张了，”以斯帖激动地说，“我甚至无法思考了。', 'a41':'”希该说的对，大家都喜欢以斯帖，特别是王，他喜爱以斯帖胜过以前见过的所有年轻女子。', 'a42':'”希该说的对，大家都喜欢以斯帖，特别是王，他喜爱以斯帖胜过以前见过的所有年轻女子。'};
 let s4Seen = {}, s4Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1148,7 +1148,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第六幕：国王和王后 ================= */
-const s5M = {'a50':'因此他就选她做王后。。', 'a51':'因此他就选她做王后。。'};
+const s5M = {'a50':'因此他就选她做王后。', 'a51':'因此他就选她做王后。'};
 let s5Seen = {}, s5Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;

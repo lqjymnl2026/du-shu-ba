@@ -423,7 +423,7 @@ body.mobile .talk{font-size:18px;}
       <div id="verseLine" style="margin-top:8px; font-size:26px;"></div>
       <div class="word-chips" id="verseChips"></div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
-        <button class="speakbtn" data-speak="天使又指示我在城内街道当中一道生命水的河，明亮如水晶，从上帝和羔羊的宝座流出来。。天使又指示，我在城内街，道当中一道，生命水的河，明亮如水晶，从上帝和羔，羊的宝座流，出来。" onclick="speakThis(this)">🔊 跟著念</button>
+        <button class="speakbtn" data-speak="天使又指示我在城内街道当中一道生命水的河，明亮如水晶，从上帝和羔羊的宝座流出来。天使又指示，我在城内街，道当中一道，生命水的河，明亮如水晶，从上帝和羔，羊的宝座流，出来。" onclick="speakThis(this)">🔊 跟著念</button>
         <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px;" onclick="verseReset()">🔄 再来一次</button>
         <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px; background:linear-gradient(135deg,#3ec6b0,#2aa89a);" onclick="addStar(1); go(3);">✅ 我背好了！</button>
       </div>
@@ -702,7 +702,7 @@ body.mobile .talk{font-size:18px;}
         </div>        <div class="card" style="flex:1; min-width:260px; text-align:left;">
           <div style="font-size:38px; text-align:center;">💝</div>
           <div style="font-weight:900; color:#2ecc71; font-size:19px; margin:6px 0;">本周信息</div>
-          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「命。」。耶稣将永远与我们同在。。</div>
+          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「游泳、登高、飞翔！」。耶稣将永远与我们同在。</div>
         </div>
       </div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
@@ -718,7 +718,7 @@ body.mobile .talk{font-size:18px;}
       <h2 class="title" style="font-size:34px;">🙏 一起祷告</h2>
       <div class="card" style="max-width:820px; width:100%; position:relative; padding:14px 20px;">
         <div style="font-size:52px; line-height:1;" class="floaty">🌟</div>
-        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢上帝已为我们预备了奇妙的事。<br>就像「命。」的故事一样，<br>求祢帮助我感谢上帝为我们预备了天家。。<br>奉耶稣的名祷告，阿们！</div>
+        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢上帝已为我们预备了奇妙的事。<br>就像「游泳、登高、飞翔！」的故事一样，<br>求祢帮助我感谢上帝为我们预备了天家。<br>奉耶稣的名祷告，阿们！</div>
         <div style="display:flex; justify-content:center;">
           <button class="speakbtn" onclick="speakText(document.getElementById('prayerText').innerText.replace(/<br>/g,'。'))">🔊 跟著念</button>
         </div>
@@ -1071,7 +1071,7 @@ function versePick(btn, w){
 function verseReset(){ verseInit(); }
 
 /* ================= 第一天：光 ================= *//* ================= 第一幕：上帝和光 ================= */
-const s0M = {'a00':'上帝已为我们谈，我们可以随时拜访他们，因预备了为那里没有夜晚。。', 'a01':'没有夜晚的意奇妙的事物，思是没有黑暗，来自上帝面容的供我们享用亮光把一切都照亮了。', 'a02':'要灯和蜡烛，甚至不需要日光！。'};
+const s0M = {'a00':'上帝已为我们谈，我们可以随时拜访他们，因预备了为那里没有夜晚。', 'a01':'没有夜晚的意奇妙的事物，思是没有黑暗，来自上帝面容的供我们享用亮光把一切都照亮了。', 'a02':'要灯和蜡烛，甚至不需要日光！。'};
 let s0Seen = {}, s0Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1088,7 +1088,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第二幕：花和耶稣 ================= */
-const s1M = {'a10':'我们永远都不会疲倦我们将不必休126我们将会花一些时间学习新的事物。。', 'a11':'耶稣和天使将要教导我们。。', 'a12':'耶稣和天使将要教导我们。。'};
+const s1M = {'a10':'我们永远都不会疲倦我们将不必休126我们将会花一些时间学习新的事物。', 'a11':'耶稣和天使将要教导我们。', 'a12':'耶稣和天使将要教导我们。'};
 let s1Seen = {}, s1Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1105,7 +1105,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第三幕：海和山 ================= */
-const s2M = {'a20':'我们可以做任何想做的事情——可以游到最深的海底，爬上最高的山峰，飞到天国的最高处。', 'a21':'我们可以做任何想做的事情——可以游到最深的海底，爬上最高的山峰，飞到天国的最高处。', 'a22':'我们可以瞬间飞到太阳系中的其他星球，或者更远的地方，拜访住在那里的人们。。'};
+const s2M = {'a20':'我们可以做任何想做的事情——可以游到最深的海底，爬上最高的山峰，飞到天国的最高处。', 'a21':'我们可以做任何想做的事情——可以游到最深的海底，爬上最高的山峰，飞到天国的最高处。', 'a22':'我们可以瞬间飞到太阳系中的其他星球，或者更远的地方，拜访住在那里的人们。'};
 let s2Seen = {}, s2Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1122,7 +1122,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第四幕：花和旷野 ================= */
-const s3M = {'a30':'我们会享受无刺玫瑰的绚丽芬芳，走过开满美丽鲜花和明亮溪流的旷野。。', 'a31':'我们会享受无刺玫瑰的绚丽芬芳，走过开满美丽鲜花和明亮溪流的旷野。。', 'a32':'我们将穿过没有危险动物的森林，鲜花永不再凋谢，树叶也不再枯萎。。'};
+const s3M = {'a30':'我们会享受无刺玫瑰的绚丽芬芳，走过开满美丽鲜花和明亮溪流的旷野。', 'a31':'我们会享受无刺玫瑰的绚丽芬芳，走过开满美丽鲜花和明亮溪流的旷野。', 'a32':'我们将穿过没有危险动物的森林，鲜花永不再凋谢，树叶也不再枯萎。'};
 let s3Seen = {}, s3Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1156,7 +1156,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第六幕：上帝 ================= */
-const s5M = {'a50':'上帝已为我们预备了奇妙的事。。'};
+const s5M = {'a50':'上帝已为我们预备了奇妙的事。'};
 let s5Seen = {}, s5Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;

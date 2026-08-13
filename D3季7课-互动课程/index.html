@@ -384,7 +384,7 @@ body.mobile .talk{font-size:18px;}
       <div class="kicker">D3季 · 互动课程</div>
       <div class="emoji-xl floaty" style="margin-bottom:6px;">🏛️</div>
       <h1 class="title">第七课 · 以斯帖之宴</h1>
-      <div class="sub">上帝爱我们。。</div>
+      <div class="sub">上帝爱我们。</div>
       <div style="margin-top:10px;"><span class="chip">📖 经文：参本课</span><span class="chip">💜 信息：上帝爱我们。</span><span class="chip">⭐ 存心节：在你一切所行的事上都要认定祂，祂</span></div>
       <button class="bigbtn" onclick="go(1)">🚀 开始上课</button>
       <div class="note">🎧 点「🔊」可以开关朗读声音（请在浏览器允许语音）</div>
@@ -410,7 +410,7 @@ body.mobile .talk{font-size:18px;}
           <div style="font-size:16px; color:var(--ink2);">#2ecc71</div>
         </div>
       </div>
-      <button class="speakbtn" data-speak="这一课，我们要晓得：上帝爱我们。。" onclick="speakThis(this)">🔊 听听这一课</button>
+      <button class="speakbtn" data-speak="这一课，我们要晓得：上帝爱我们。" onclick="speakThis(this)">🔊 听听这一课</button>
       <div style="margin-top:14px;"><span class="pill">💜 信息：上帝爱我们。</span></div>
     </div>
   </section>
@@ -701,7 +701,7 @@ body.mobile .talk{font-size:18px;}
         </div>        <div class="card" style="flex:1; min-width:260px; text-align:left;">
           <div style="font-size:38px; text-align:center;">💝</div>
           <div style="font-weight:900; color:#2ecc71; font-size:19px; margin:6px 0;">本周信息</div>
-          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「席吗？以斯帖就曾为王和哈」。。</div>
+          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「以斯帖之宴」。</div>
         </div>
       </div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
@@ -717,7 +717,7 @@ body.mobile .talk{font-size:18px;}
       <h2 class="title" style="font-size:34px;">🙏 一起祷告</h2>
       <div class="card" style="max-width:820px; width:100%; position:relative; padding:14px 20px;">
         <div style="font-size:52px; line-height:1;" class="floaty">🌟</div>
-        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢。<br>就像「席吗？以斯帖就曾为王和哈」的故事一样，<br>求祢帮助我做一个好孩子。<br>奉耶稣的名祷告，阿们！</div>
+        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢。<br>就像「以斯帖之宴」的故事一样，<br>求祢帮助我做一个好孩子。<br>奉耶稣的名祷告，阿们！</div>
         <div style="display:flex; justify-content:center;">
           <button class="speakbtn" onclick="speakText(document.getElementById('prayerText').innerText.replace(/<br>/g,'。'))">🔊 跟著念</button>
         </div>
@@ -1070,7 +1070,7 @@ function versePick(btn, w){
 function verseReset(){ verseInit(); }
 
 /* ================= 第一天：光 ================= *//* ================= 第一幕：国王和圣殿 ================= */
-const s0M = {'a00':'经过三天三夜不吃不喝的禁食之后，以斯帖穿上她最漂亮的服装去见王。。', 'a01':'她走向宝殿的门，静静的站在那里，薛西斯王看见她时，微笑着伸出他的金杖。。', 'a02':'王问：“王后以斯帖，要我为你做什么？。'};
+const s0M = {'a00':'经过三天三夜不吃不喝的禁食之后，以斯帖穿上她最漂亮的服装去见王。', 'a01':'她走向宝殿的门，静静的站在那里，薛西斯王看见她时，微笑着伸出他的金杖。', 'a02':'王问：“王后以斯帖，要我为你做什么？。'};
 let s0Seen = {}, s0Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1104,7 +1104,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第三幕：家和朋友 ================= */
-const s2M = {'a20':'哈曼到家后，在家人和朋友吹嘘炫耀：“我有十个儿子，我有钱有势。。', 'a21':'哈曼到家后，在家人和朋友吹嘘炫耀：“我有十个儿子，我有钱有势。。', 'a22':'王宠爱我，赐我权位。。'};
+const s2M = {'a20':'哈曼到家后，在家人和朋友吹嘘炫耀：“我有十个儿子，我有钱有势。', 'a21':'哈曼到家后，在家人和朋友吹嘘炫耀：“我有十个儿子，我有钱有势。', 'a22':'王宠爱我，赐我权位。'};
 let s2Seen = {}, s2Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1121,7 +1121,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第四幕：国王和上帝 ================= */
-const s3M = {'a30':'他总是坐在王的门口，对我很不敬。。', 'a31':'”他靠着上帝的帮助，我有力量行正确的事叫嚷着。。'};
+const s3M = {'a30':'他总是坐在王的门口，对我很不敬。', 'a31':'”他靠着上帝的帮助，我有力量行正确的事叫嚷着。'};
 let s3Seen = {}, s3Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1138,7 +1138,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第五幕：国王 ================= */
-const s4M = {'a40':'”王问他的仆人。。'};
+const s4M = {'a40':'”王问他的仆人。'};
 let s4Seen = {}, s4Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1155,7 +1155,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第六幕：国王和家 ================= */
-const s5M = {'a50':'“我赞成，哈曼，”薛西斯王回答道，“照你说的立刻向末底改去行，缺一不可。。', 'a51':'到家后他告诉朋友和家人今天所发生的事。。', 'a52':'到家后他告诉朋友和家人今天所发生的事。。'};
+const s5M = {'a50':'“我赞成，哈曼，”薛西斯王回答道，“照你说的立刻向末底改去行，缺一不可。', 'a51':'到家后他告诉朋友和家人今天所发生的事。', 'a52':'到家后他告诉朋友和家人今天所发生的事。'};
 let s5Seen = {}, s5Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;

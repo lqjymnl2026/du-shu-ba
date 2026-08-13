@@ -410,7 +410,7 @@ body.mobile .talk{font-size:18px;}
           <div style="font-size:16px; color:var(--ink2);">#2ecc71</div>
         </div>
       </div>
-      <button class="speakbtn" data-speak="这一课，我们要晓得：我要跟从耶稣并向他人分享祂的福音。。耶稣在革尼撒勒湖边（加利利海）讲道。岸边拥挤不堪，祂只好上了彼得的渔船，继续教训众人。讲完以后，耶稣" onclick="speakThis(this)">🔊 听听这一课</button>
+      <button class="speakbtn" data-speak="这一课，我们要晓得：我要跟从耶稣并向他人分享祂的福音。耶稣在革尼撒勒湖边（加利利海）讲道。岸边拥挤不堪，祂只好上了彼得的渔船，继续教训众人。讲完以后，耶稣" onclick="speakThis(this)">🔊 听听这一课</button>
       <div style="margin-top:14px;"><span class="pill">💜 信息：我要跟从耶稣并向他人分享祂的福音。</span></div>
     </div>
   </section>
@@ -700,11 +700,11 @@ body.mobile .talk{font-size:18px;}
         </div>        <div class="card" style="flex:1; min-width:260px; text-align:left;">
           <div style="font-size:38px; text-align:center;">🙏</div>
           <div style="font-weight:900; color:#ff8c42; font-size:19px; margin:6px 0;">常常祷告</div>
-          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">常常与孩子一起祷告。这一课的信息是：我要跟从耶稣并向他人分享祂的福音。。帮助孩子把故事里的教训用在生活中。</div>
+          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">常常与孩子一起祷告。这一课的信息是：我要跟从耶稣并向他人分享祂的福音。帮助孩子把故事里的教训用在生活中。</div>
         </div>        <div class="card" style="flex:1; min-width:260px; text-align:left;">
           <div style="font-size:38px; text-align:center;">💝</div>
           <div style="font-weight:900; color:#2ecc71; font-size:19px; margin:6px 0;">本周信息</div>
-          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「一种新的捕鱼方法。」。耶稣教导我们如何去服侍。。</div>
+          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「去捕鱼」。耶稣教导我们如何去服侍。</div>
         </div>
       </div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
@@ -720,7 +720,7 @@ body.mobile .talk{font-size:18px;}
       <h2 class="title" style="font-size:34px;">🙏 一起祷告</h2>
       <div class="card" style="max-width:820px; width:100%; position:relative; padding:14px 20px;">
         <div style="font-size:52px; line-height:1;" class="floaty">🌟</div>
-        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢我要跟从耶稣并向他人分享祂的福音。。<br>就像「一种新的捕鱼方法。」的故事一样，<br>求祢帮助我祈求耶稣帮助他们去侍奉祂，并能与别人分享祂。。<br>奉耶稣的名祷告，阿们！</div>
+        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢我要跟从耶稣并向他人分享祂的福音。<br>就像「去捕鱼」的故事一样，<br>求祢帮助我祈求耶稣帮助他们去侍奉祂，并能与别人分享祂。<br>奉耶稣的名祷告，阿们！</div>
         <div style="display:flex; justify-content:center;">
           <button class="speakbtn" onclick="speakText(document.getElementById('prayerText').innerText.replace(/<br>/g,'。'))">🔊 跟著念</button>
         </div>
@@ -1073,7 +1073,7 @@ function versePick(btn, w){
 function verseReset(){ verseInit(); }
 
 /* ================= 第一天：光 ================= *//* ================= 第一幕：鱼和太阳 ================= */
-const s0M = {'a00':'很久以前，有四个人学习到一种新的捕鱼方法。。', 'a01':'太阳缓缓地爬上加利利湖东边的山头。。', 'a02':'太阳缓缓地爬上加利利湖东边的山头。。'};
+const s0M = {'a00':'很久以前，有四个人学习到一种新的捕鱼方法。', 'a01':'太阳缓缓地爬上加利利湖东边的山头。', 'a02':'太阳缓缓地爬上加利利湖东边的山头。'};
 let s0Seen = {}, s0Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1090,7 +1090,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第二幕：船和耶稣 ================= */
-const s1M = {'a10':'祂坐在船上继续向岸边的人群讲道。。', 'a11':'耶稣告诉他们，凡相信祂的，就可进入上帝的国。。', 'a12':'耶稣告诉他们，凡相信祂的，就可进入上帝的国。。'};
+const s1M = {'a10':'祂坐在船上继续向岸边的人群讲道。', 'a11':'耶稣告诉他们，凡相信祂的，就可进入上帝的国。', 'a12':'耶稣告诉他们，凡相信祂的，就可进入上帝的国。'};
 let s1Seen = {}, s1Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1107,7 +1107,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第三幕：鱼和水 ================= */
-const s2M = {'a20':'因为鱼儿都躲到深水区水凉的地方去了。。', 'a21':'因为鱼儿都躲到深水区水凉的地方去了。。', 'a22':'”彼得说。。'};
+const s2M = {'a20':'因为鱼儿都躲到深水区水凉的地方去了。', 'a21':'因为鱼儿都躲到深水区水凉的地方去了。', 'a22':'”彼得说。'};
 let s2Seen = {}, s2Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1124,7 +1124,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第四幕：彼得和朋友 ================= */
-const s3M = {'a30':'”彼得向他的朋友雅各和约翰求助，他们正在附近的船上。。', 'a31':'”彼得向他的朋友雅各和约翰求助，他们正在附近的船上。。', 'a32':'”彼得向他的朋友雅各和约翰求助，他们正在附近的船上。。'};
+const s3M = {'a30':'”彼得向他的朋友雅各和约翰求助，他们正在附近的船上。', 'a31':'”彼得向他的朋友雅各和约翰求助，他们正在附近的船上。', 'a32':'”彼得向他的朋友雅各和约翰求助，他们正在附近的船上。'};
 let s3Seen = {}, s3Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1141,7 +1141,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第五幕：耶稣和船 ================= */
-const s4M = {'a40':'”耶稣的意思是他们将带领人认识祂。。', 'a41':'这四个渔夫看了看他们的船。。', 'a42':'他们从没有一次性捕到这么多的鱼。。'};
+const s4M = {'a40':'”耶稣的意思是他们将带领人认识祂。', 'a41':'这四个渔夫看了看他们的船。', 'a42':'他们从没有一次性捕到这么多的鱼。'};
 let s4Seen = {}, s4Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1158,7 +1158,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第六幕：耶稣和雅各 ================= */
-const s5M = {'a50':'他决定要跟从耶稣。。', 'a51':'安得烈、雅各和约翰也是这样。。', 'a52':'安得烈、雅各和约翰也是这样。。'};
+const s5M = {'a50':'他决定要跟从耶稣。', 'a51':'安得烈、雅各和约翰也是这样。', 'a52':'安得烈、雅各和约翰也是这样。'};
 let s5Seen = {}, s5Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1175,7 +1175,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第七幕：我们的回应 ================= */
-const s6M = {'r0':'我要跟从耶稣并向他人分享祂的福音。。', 'r1':'存心节：耶稣对他们说：‘来跟从我，我要叫你们得人如得鱼一。', 'r2':'祈求耶稣帮助他们去侍奉祂，并能与别人分享祂。'};
+const s6M = {'r0':'我要跟从耶稣并向他人分享祂的福音。', 'r1':'存心节：耶稣对他们说：‘来跟从我，我要叫你们得人如得鱼一。', 'r2':'祈求耶稣帮助他们去侍奉祂，并能与别人分享祂。'};
 let s6Seen = {}, s6Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;

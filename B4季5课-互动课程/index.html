@@ -410,7 +410,7 @@ body.mobile .talk{font-size:18px;}
           <div style="font-size:16px; color:var(--ink2);">#2ecc71</div>
         </div>
       </div>
-      <button class="speakbtn" data-speak="这一课，我们要晓得：无论在哪里，我们都可以服侍上帝。。耶稣的父母每年都要上耶路撒冷过逾越节，只能把耶稣留在家中。但是到耶稣12岁那年，他便和父母一同去过逾" onclick="speakThis(this)">🔊 听听这一课</button>
+      <button class="speakbtn" data-speak="这一课，我们要晓得：无论在哪里，我们都可以服侍上帝。耶稣的父母每年都要上耶路撒冷过逾越节，只能把耶稣留在家中。但是到耶稣12岁那年，他便和父母一同去过逾" onclick="speakThis(this)">🔊 听听这一课</button>
       <div style="margin-top:14px;"><span class="pill">💜 信息：无论在哪里，我们都可以服侍上帝。</span></div>
     </div>
   </section>
@@ -700,11 +700,11 @@ body.mobile .talk{font-size:18px;}
         </div>        <div class="card" style="flex:1; min-width:260px; text-align:left;">
           <div style="font-size:38px; text-align:center;">🙏</div>
           <div style="font-weight:900; color:#ff8c42; font-size:19px; margin:6px 0;">常常祷告</div>
-          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">常常与孩子一起祷告。这一课的信息是：无论在哪里，我们都可以服侍上帝。。帮助孩子把故事里的教训用在生活中。</div>
+          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">常常与孩子一起祷告。这一课的信息是：无论在哪里，我们都可以服侍上帝。帮助孩子把故事里的教训用在生活中。</div>
         </div>        <div class="card" style="flex:1; min-width:260px; text-align:left;">
           <div style="font-size:38px; text-align:center;">💝</div>
           <div style="font-weight:900; color:#2ecc71; font-size:19px; margin:6px 0;">本周信息</div>
-          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「个故事：」。无论在哪里，我们都可以服侍上帝。。</div>
+          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「失去和获得」。无论在哪里，我们都可以服侍上帝。</div>
         </div>
       </div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
@@ -720,7 +720,7 @@ body.mobile .talk{font-size:18px;}
       <h2 class="title" style="font-size:34px;">🙏 一起祷告</h2>
       <div class="card" style="max-width:820px; width:100%; position:relative; padding:14px 20px;">
         <div style="font-size:52px; line-height:1;" class="floaty">🌟</div>
-        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢无论在哪里，我们都可以服侍上帝。。<br>就像「个故事：」的故事一样，<br>求祢帮助我尽力服侍他们的家人。。<br>奉耶稣的名祷告，阿们！</div>
+        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢无论在哪里，我们都可以服侍上帝。<br>就像「失去和获得」的故事一样，<br>求祢帮助我尽力服侍他们的家人。<br>奉耶稣的名祷告，阿们！</div>
         <div style="display:flex; justify-content:center;">
           <button class="speakbtn" onclick="speakText(document.getElementById('prayerText').innerText.replace(/<br>/g,'。'))">🔊 跟著念</button>
         </div>
@@ -1073,7 +1073,7 @@ function versePick(btn, w){
 function verseReset(){ verseInit(); }
 
 /* ================= 第一天：光 ================= *//* ================= 第一幕：婴孩和耶稣 ================= */
-const s0M = {'a00':'如果以上问题你都可以做出肯定回答，那么请认真读以下这个故事：小耶稣很开心！。', 'a01':'如果以上问题你都可以做出肯定回答，那么请认真读以下这个故事：小耶稣很开心！。', 'a02':'祂要去耶路撒冷过逾越节了。。'};
+const s0M = {'a00':'如果以上问题你都可以做出肯定回答，那么请认真读以下这个故事：小耶稣很开心！。', 'a01':'如果以上问题你都可以做出肯定回答，那么请认真读以下这个故事：小耶稣很开心！。', 'a02':'祂要去耶路撒冷过逾越节了。'};
 let s0Seen = {}, s0Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1090,7 +1090,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第二幕：耶稣和朋友 ================= */
-const s1M = {'a10':'耶稣和表兄弟们以及隔壁的朋友们，沿着尘土飞扬的小路一路蹦蹦跳跳，欢声笑语。。', 'a11':'耶稣和表兄弟们以及隔壁的朋友们，沿着尘土飞扬的小路一路蹦蹦跳跳，欢声笑语。。', 'a12':'大家都要去耶路撒冷过逾越节。。'};
+const s1M = {'a10':'耶稣和表兄弟们以及隔壁的朋友们，沿着尘土飞扬的小路一路蹦蹦跳跳，欢声笑语。', 'a11':'耶稣和表兄弟们以及隔壁的朋友们，沿着尘土飞扬的小路一路蹦蹦跳跳，欢声笑语。', 'a12':'大家都要去耶路撒冷过逾越节。'};
 let s1Seen = {}, s1Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1107,7 +1107,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第三幕：圣殿和耶稣 ================= */
-const s2M = {'a20':'这就是那座久闻大名的圣殿了！。', 'a21':'耶稣已经等不及要进去探察了。。', 'a22':'当马利亚和约瑟带着耶稣来到圣殿时，耶56稣看到祭司们正在为人献赎罪祭。。'};
+const s2M = {'a20':'这就是那座久闻大名的圣殿了！。', 'a21':'耶稣已经等不及要进去探察了。', 'a22':'当马利亚和约瑟带着耶稣来到圣殿时，耶56稣看到祭司们正在为人献赎罪祭。'};
 let s2Seen = {}, s2Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1124,7 +1124,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第四幕：朋友和耶稣 ================= */
-const s3M = {'a30':'他们在路上与朋友、熟人一起快乐地边走边谈，根本没有注意到耶稣不在他们身边。。', 'a31':'他们在路上与朋友、熟人一起快乐地边走边谈，根本没有注意到耶稣不在他们身边。。', 'a32':'路上满是同乡的人群，马利亚同妇女们走在一起，约瑟和男人们走在后面的队伍里。。'};
+const s3M = {'a30':'他们在路上与朋友、熟人一起快乐地边走边谈，根本没有注意到耶稣不在他们身边。', 'a31':'他们在路上与朋友、熟人一起快乐地边走边谈，根本没有注意到耶稣不在他们身边。', 'a32':'路上满是同乡的人群，马利亚同妇女们走在一起，约瑟和男人们走在后面的队伍里。'};
 let s3Seen = {}, s3Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1141,7 +1141,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第五幕：马利亚和约瑟 ================= */
-const s4M = {'a40':'第二天一早，马利亚和约瑟便回到耶路撒冷，到处寻找他们的孩子。。', 'a41':'第二天一早，马利亚和约瑟便回到耶路撒冷，到处寻找他们的孩子。。', 'a42':'第二天一早，马利亚和约瑟便回到耶路撒冷，到处寻找他们的孩子。。'};
+const s4M = {'a40':'第二天一早，马利亚和约瑟便回到耶路撒冷，到处寻找他们的孩子。', 'a41':'第二天一早，马利亚和约瑟便回到耶路撒冷，到处寻找他们的孩子。', 'a42':'第二天一早，马利亚和约瑟便回到耶路撒冷，到处寻找他们的孩子。'};
 let s4Seen = {}, s4Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1175,7 +1175,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第七幕：我们的回应 ================= */
-const s6M = {'r0':'无论在哪里，我们都可以服侍上帝。。', 'r1':'存心节：尽心尽性事奉他。', 'r2':'尽力服侍他们的家人。'};
+const s6M = {'r0':'无论在哪里，我们都可以服侍上帝。', 'r1':'存心节：尽心尽性事奉他。', 'r2':'尽力服侍他们的家人。'};
 let s6Seen = {}, s6Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;

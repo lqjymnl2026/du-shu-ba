@@ -410,7 +410,7 @@ body.mobile .talk{font-size:18px;}
           <div style="font-size:16px; color:var(--ink2);">#2ecc71</div>
         </div>
       </div>
-      <button class="speakbtn" data-speak="这一课，我们要晓得：我与全球教会大家庭一同敬拜上帝。。圣殿建好之后，所罗门王把它献给上帝。约柜被抬到圣殿里，各国的人都来一同敬拜上帝。一朵表示上帝临格的云" onclick="speakThis(this)">🔊 听听这一课</button>
+      <button class="speakbtn" data-speak="这一课，我们要晓得：我与全球教会大家庭一同敬拜上帝。圣殿建好之后，所罗门王把它献给上帝。约柜被抬到圣殿里，各国的人都来一同敬拜上帝。一朵表示上帝临格的云" onclick="speakThis(this)">🔊 听听这一课</button>
       <div style="margin-top:14px;"><span class="pill">💜 信息：我与全球教会大家庭一同敬拜上帝。</span></div>
     </div>
   </section>
@@ -700,11 +700,11 @@ body.mobile .talk{font-size:18px;}
         </div>        <div class="card" style="flex:1; min-width:260px; text-align:left;">
           <div style="font-size:38px; text-align:center;">🙏</div>
           <div style="font-weight:900; color:#ff8c42; font-size:19px; margin:6px 0;">常常祷告</div>
-          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">常常与孩子一起祷告。这一课的信息是：我与全球教会大家庭一同敬拜上帝。。帮助孩子把故事里的教训用在生活中。</div>
+          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">常常与孩子一起祷告。这一课的信息是：我与全球教会大家庭一同敬拜上帝。帮助孩子把故事里的教训用在生活中。</div>
         </div>        <div class="card" style="flex:1; min-width:260px; text-align:left;">
           <div style="font-size:38px; text-align:center;">💝</div>
           <div style="font-weight:900; color:#2ecc71; font-size:19px; margin:6px 0;">本周信息</div>
-          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「色列人邀请了一位非常」。我们藉着敬拜来回应上帝的美善。。</div>
+          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「众人敬拜之所」。我们藉着敬拜来回应上帝的美善。</div>
         </div>
       </div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
@@ -720,7 +720,7 @@ body.mobile .talk{font-size:18px;}
       <h2 class="title" style="font-size:34px;">🙏 一起祷告</h2>
       <div class="card" style="max-width:820px; width:100%; position:relative; padding:14px 20px;">
         <div style="font-size:52px; line-height:1;" class="floaty">🌟</div>
-        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢我与全球教会大家庭一同敬拜上帝。。<br>就像「色列人邀请了一位非常」的故事一样，<br>求祢帮助我感谢上帝让我们能成为祂的教会大家庭中的成员。。<br>奉耶稣的名祷告，阿们！</div>
+        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢我与全球教会大家庭一同敬拜上帝。<br>就像「众人敬拜之所」的故事一样，<br>求祢帮助我感谢上帝让我们能成为祂的教会大家庭中的成员。<br>奉耶稣的名祷告，阿们！</div>
         <div style="display:flex; justify-content:center;">
           <button class="speakbtn" onclick="speakText(document.getElementById('prayerText').innerText.replace(/<br>/g,'。'))">🔊 跟著念</button>
         </div>
@@ -1090,7 +1090,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第二幕：圣殿和上帝 ================= */
-const s1M = {'a10':'现在是时候把圣殿奉献给上帝了。。', 'a11':'现在是时候把圣殿奉献给上帝了。。', 'a12':'所罗门王邀请以色列所有支派的领袖和各个家庭来到耶路撒冷。。'};
+const s1M = {'a10':'现在是时候把圣殿奉献给上帝了。', 'a11':'现在是时候把圣殿奉献给上帝了。', 'a12':'所罗门王邀请以色列所有支派的领袖和各个家庭来到耶路撒冷。'};
 let s1Seen = {}, s1Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1107,7 +1107,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第三幕：天使和火 ================= */
-const s2M = {'a20':'他们小心翼翼的把约柜安放在两个镶金的天使雕像的翅膀下。。', 'a21':'负责奏乐的利未人全都站在祭坛旁边弹奏乐器──竖琴、弦乐和摇鼓。。', 'a22':'负责奏乐的利未人全都站在祭坛旁边弹奏乐器──竖琴、弦乐和摇鼓。。'};
+const s2M = {'a20':'他们小心翼翼的把约柜安放在两个镶金的天使雕像的翅膀下。', 'a21':'负责奏乐的利未人全都站在祭坛旁边弹奏乐器──竖琴、弦乐和摇鼓。', 'a22':'负责奏乐的利未人全都站在祭坛旁边弹奏乐器──竖琴、弦乐和摇鼓。'};
 let s2Seen = {}, s2Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1124,7 +1124,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第四幕：天空和圣殿 ================= */
-const s3M = {'a30':'这云彩是如此可畏，甚至连祭96司也无法继续供职。。', 'a31':'他们要离开圣殿，因为耶和华的荣光充满了圣殿！。', 'a32':'他们要离开圣殿，因为耶和华的荣光充满了圣殿！。'};
+const s3M = {'a30':'这云彩是如此可畏，甚至连祭96司也无法继续供职。', 'a31':'他们要离开圣殿，因为耶和华的荣光充满了圣殿！。', 'a32':'他们要离开圣殿，因为耶和华的荣光充满了圣殿！。'};
 let s3Seen = {}, s3Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1141,7 +1141,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第五幕：圣殿和敌人 ================= */
-const s4M = {'a40':'求你垂听我为这殿所献上的祈祷。。', 'a41':'”“你的民若得罪你而被仇敌打败，后来又归向你，呼求你的名，在这殿向你祈祷，求你在。', 'a42':'”“你的民若得罪你而被仇敌打败，后来又归向你，呼求你的名，在这殿向你祈祷，求你在。'};
+const s4M = {'a40':'求你垂听我为这殿所献上的祈祷。', 'a41':'”“你的民若得罪你而被仇敌打败，后来又归向你，呼求你的名，在这殿向你祈祷，求你在。', 'a42':'”“你的民若得罪你而被仇敌打败，后来又归向你，呼求你的名，在这殿向你祈祷，求你在。'};
 let s4Seen = {}, s4Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1158,7 +1158,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第六幕：所罗门和雅各 ================= */
-const s5M = {'a50':'所罗门和以色列人共度持续了十四天的庆典。。', 'a51':'所罗门和以色列人共度持续了十四天的庆典。。', 'a52':'这次奉献圣殿的仪式令他们毕生难忘。。'};
+const s5M = {'a50':'所罗门和以色列人共度持续了十四天的庆典。', 'a51':'所罗门和以色列人共度持续了十四天的庆典。', 'a52':'这次奉献圣殿的仪式令他们毕生难忘。'};
 let s5Seen = {}, s5Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1175,7 +1175,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第七幕：我们的回应 ================= */
-const s6M = {'r0':'我与全球教会大家庭一同敬拜上帝。。', 'r1':'存心节：万民都要来，在你面前敬拜……。', 'r2':'感谢上帝让我们能成为祂的教会大家庭中的成员。'};
+const s6M = {'r0':'我与全球教会大家庭一同敬拜上帝。', 'r1':'存心节：万民都要来，在你面前敬拜……。', 'r2':'感谢上帝让我们能成为祂的教会大家庭中的成员。'};
 let s6Seen = {}, s6Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;

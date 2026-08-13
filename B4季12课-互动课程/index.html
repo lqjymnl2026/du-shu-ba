@@ -423,7 +423,7 @@ body.mobile .talk{font-size:18px;}
       <div id="verseLine" style="margin-top:8px; font-size:26px;"></div>
       <div class="word-chips" id="verseChips"></div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
-        <button class="speakbtn" data-speak="不要惧怕，我报给你们大喜的信息，是关乎万民的。因今天在大卫的城里为你们生了救主，就是主基督。。不要惧怕，我报给你们，大喜的信息，是关乎万民，的。因今天，在大卫的城，里为你们生，了救主，就是主基督。" onclick="speakThis(this)">🔊 跟著念</button>
+        <button class="speakbtn" data-speak="不要惧怕，我报给你们大喜的信息，是关乎万民的。因今天在大卫的城里为你们生了救主，就是主基督。不要惧怕，我报给你们，大喜的信息，是关乎万民，的。因今天，在大卫的城，里为你们生，了救主，就是主基督。" onclick="speakThis(this)">🔊 跟著念</button>
         <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px;" onclick="verseReset()">🔄 再来一次</button>
         <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px; background:linear-gradient(135deg,#3ec6b0,#2aa89a);" onclick="addStar(1); go(3);">✅ 我背好了！</button>
       </div>
@@ -703,7 +703,7 @@ body.mobile .talk{font-size:18px;}
         </div>        <div class="card" style="flex:1; min-width:260px; text-align:left;">
           <div style="font-size:38px; text-align:center;">💝</div>
           <div style="font-weight:900; color:#2ecc71; font-size:19px; margin:6px 0;">本周信息</div>
-          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「你有没有曾经」。上帝是我们最好的朋友。。</div>
+          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「天使歌唱之夜」。上帝是我们最好的朋友。</div>
         </div>
       </div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
@@ -719,7 +719,7 @@ body.mobile .talk{font-size:18px;}
       <h2 class="title" style="font-size:34px;">🙏 一起祷告</h2>
       <div class="card" style="max-width:820px; width:100%; position:relative; padding:14px 20px;">
         <div style="font-size:52px; line-height:1;" class="floaty">🌟</div>
-        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢耶稣带给我们喜乐。118。<br>就像「你有没有曾经」的故事一样，<br>求祢帮助我快乐地接受耶稣进入他们的人生。。<br>奉耶稣的名祷告，阿们！</div>
+        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢耶稣带给我们喜乐。118。<br>就像「天使歌唱之夜」的故事一样，<br>求祢帮助我快乐地接受耶稣进入他们的人生。<br>奉耶稣的名祷告，阿们！</div>
         <div style="display:flex; justify-content:center;">
           <button class="speakbtn" onclick="speakText(document.getElementById('prayerText').innerText.replace(/<br>/g,'。'))">🔊 跟著念</button>
         </div>
@@ -1072,7 +1072,7 @@ function versePick(btn, w){
 function verseReset(){ verseInit(); }
 
 /* ================= 第一天：光 ================= *//* ================= 第一幕：羊和草 ================= */
-const s0M = {'a00':'许多许多年以前，一些牧羊人也曾渴望着一件事情。。', 'a01':'许多牧羊人围坐在弥漫着清香的草场上。。'};
+const s0M = {'a00':'许多许多年以前，一些牧羊人也曾渴望着一件事情。', 'a01':'许多牧羊人围坐在弥漫着清香的草场上。'};
 let s0Seen = {}, s0Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1089,7 +1089,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第二幕：天空和星星 ================= */
-const s1M = {'a10':'一轮苍白的月牙是天空中唯一的照明物体。。', 'a11':'星星在这个格外宁静的夜里，闪烁着独特的光芒。。', 'a12':'星星在这个格外宁静的夜里，闪烁着独特的光芒。。'};
+const s1M = {'a10':'一轮苍白的月牙是天空中唯一的照明物体。', 'a11':'星星在这个格外宁静的夜里，闪烁着独特的光芒。', 'a12':'星星在这个格外宁静的夜里，闪烁着独特的光芒。'};
 let s1Seen = {}, s1Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1106,7 +1106,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第三幕：羊和光 ================= */
-const s2M = {'a20':'牧羊人被耀眼的光照得睁不开眼，都吓呆了。。', 'a21':'牧羊人被耀眼的光照得睁不开眼，都吓呆了。。', 'a22':'难道他是天使？。'};
+const s2M = {'a20':'牧羊人被耀眼的光照得睁不开眼，都吓呆了。', 'a21':'牧羊人被耀眼的光照得睁不开眼，都吓呆了。', 'a22':'难道他是天使？。'};
 let s2Seen = {}, s2Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1157,7 +1157,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第六幕：羊和山 ================= */
-const s5M = {'a50':'”一个牧羊人抓着另一个牧羊人的手，从山上下来向伯利恒城跑去。。', 'a51':'”一个牧羊人抓着另一个牧羊人的手，从山上下来向伯利恒城跑去。。', 'a52':'”一个牧羊人抓着另一个牧羊人的手，从山上下来向伯利恒城跑去。。'};
+const s5M = {'a50':'”一个牧羊人抓着另一个牧羊人的手，从山上下来向伯利恒城跑去。', 'a51':'”一个牧羊人抓着另一个牧羊人的手，从山上下来向伯利恒城跑去。', 'a52':'”一个牧羊人抓着另一个牧羊人的手，从山上下来向伯利恒城跑去。'};
 let s5Seen = {}, s5Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;

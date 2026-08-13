@@ -384,7 +384,7 @@ body.mobile .talk{font-size:18px;}
       <div class="kicker">C3季 · 互动课程</div>
       <div class="emoji-xl floaty" style="margin-bottom:6px;">✝️</div>
       <h1 class="title">第四课 · 吃得饱饱的</h1>
-      <div class="sub">上帝爱我们。。</div>
+      <div class="sub">上帝爱我们。</div>
       <div style="margin-top:10px;"><span class="chip">📖 经文：参本课</span><span class="chip">💜 信息：上帝爱我们。</span><span class="chip">⭐ 存心节：</span></div>
       <button class="bigbtn" onclick="go(1)">🚀 开始上课</button>
       <div class="note">🎧 点「🔊」可以开关朗读声音（请在浏览器允许语音）</div>
@@ -410,7 +410,7 @@ body.mobile .talk{font-size:18px;}
           <div style="font-size:16px; color:var(--ink2);">#2ecc71</div>
         </div>
       </div>
-      <button class="speakbtn" data-speak="这一课，我们要晓得：上帝爱我们。。" onclick="speakThis(this)">🔊 听听这一课</button>
+      <button class="speakbtn" data-speak="这一课，我们要晓得：上帝爱我们。" onclick="speakThis(this)">🔊 听听这一课</button>
       <div style="margin-top:14px;"><span class="pill">💜 信息：上帝爱我们。</span></div>
     </div>
   </section>
@@ -698,7 +698,7 @@ body.mobile .talk{font-size:18px;}
         </div>        <div class="card" style="flex:1; min-width:260px; text-align:left;">
           <div style="font-size:38px; text-align:center;">💝</div>
           <div style="font-weight:900; color:#2ecc71; font-size:19px; margin:6px 0;">本周信息</div>
-          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「么事。」。。</div>
+          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「吃得饱饱的」。</div>
         </div>
       </div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
@@ -714,7 +714,7 @@ body.mobile .talk{font-size:18px;}
       <h2 class="title" style="font-size:34px;">🙏 一起祷告</h2>
       <div class="card" style="max-width:820px; width:100%; position:relative; padding:14px 20px;">
         <div style="font-size:52px; line-height:1;" class="floaty">🌟</div>
-        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢。<br>就像「么事。」的故事一样，<br>求祢帮助我做一个好孩子。<br>奉耶稣的名祷告，阿们！</div>
+        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢。<br>就像「吃得饱饱的」的故事一样，<br>求祢帮助我做一个好孩子。<br>奉耶稣的名祷告，阿们！</div>
         <div style="display:flex; justify-content:center;">
           <button class="speakbtn" onclick="speakText(document.getElementById('prayerText').innerText.replace(/<br>/g,'。'))">🔊 跟著念</button>
         </div>
@@ -1084,7 +1084,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第二幕：耶稣和孩子 ================= */
-const s1M = {'a10':'耶稣用一个小朋友的午餐行了一个大神迹。。', 'a11':'耶稣用一个小朋友的午餐行了一个大神迹。。', 'a12':'耶稣用一个小朋友的午餐行了一个大神迹。。'};
+const s1M = {'a10':'耶稣用一个小朋友的午餐行了一个大神迹。', 'a11':'耶稣用一个小朋友的午餐行了一个大神迹。', 'a12':'耶稣用一个小朋友的午餐行了一个大神迹。'};
 let s1Seen = {}, s1Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1101,7 +1101,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第三幕：耶稣和上帝 ================= */
-const s2M = {'a20':'耶稣用了很长的时间教导他们，与他们分享上帝的爱。。', 'a21':'耶稣用了很长的时间教导他们，与他们分享上帝的爱。。'};
+const s2M = {'a20':'耶稣用了很长的时间教导他们，与他们分享上帝的爱。', 'a21':'耶稣用了很长的时间教导他们，与他们分享上帝的爱。'};
 let s2Seen = {}, s2Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1118,7 +1118,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第四幕：门徒和耶稣 ================= */
-const s3M = {'a30':'门徒也是又累又饿，就对耶稣说：“夫子，请叫他们回家吧。。', 'a31':'门徒也是又累又饿，就对耶稣说：“夫子，请叫他们回家吧。。', 'a32':'门徒也是又累又饿，就对耶稣说：“夫子，请叫他们回家吧。。'};
+const s3M = {'a30':'门徒也是又累又饿，就对耶稣说：“夫子，请叫他们回家吧。', 'a31':'门徒也是又累又饿，就对耶稣说：“夫子，请叫他们回家吧。', 'a32':'门徒也是又累又饿，就对耶稣说：“夫子，请叫他们回家吧。'};
 let s3Seen = {}, s3Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1135,7 +1135,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第五幕：耶稣和门徒 ================= */
-const s4M = {'a40':'耶稣就回应说：“你们给他们食物吃吧。。', 'a41':'”门徒看着那一大群多到数不清的人。。', 'a42':'“给他们每个人买食物，至少要花八个月的工钱！。'};
+const s4M = {'a40':'耶稣就回应说：“你们给他们食物吃吧。', 'a41':'”门徒看着那一大群多到数不清的人。', 'a42':'“给他们每个人买食物，至少要花八个月的工钱！。'};
 let s4Seen = {}, s4Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1152,7 +1152,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第六幕：耶稣 ================= */
-const s5M = {'a50':'其实耶稣并不是想叫他们去买食物。。'};
+const s5M = {'a50':'其实耶稣并不是想叫他们去买食物。'};
 let s5Seen = {}, s5Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;

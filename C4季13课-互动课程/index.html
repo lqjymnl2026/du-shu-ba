@@ -423,7 +423,7 @@ body.mobile .talk{font-size:18px;}
       <div id="verseLine" style="margin-top:8px; font-size:26px;"></div>
       <div class="word-chips" id="verseChips"></div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
-        <button class="speakbtn" data-speak="既然看见，就把天使论这孩子的话传开了。。既然看见，就把天使论，这孩子的话，传开了。" onclick="speakThis(this)">🔊 跟著念</button>
+        <button class="speakbtn" data-speak="既然看见，就把天使论这孩子的话传开了。既然看见，就把天使论，这孩子的话，传开了。" onclick="speakThis(this)">🔊 跟著念</button>
         <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px;" onclick="verseReset()">🔄 再来一次</button>
         <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px; background:linear-gradient(135deg,#3ec6b0,#2aa89a);" onclick="addStar(1); go(3);">✅ 我背好了！</button>
       </div>
@@ -704,7 +704,7 @@ body.mobile .talk{font-size:18px;}
         </div>        <div class="card" style="flex:1; min-width:260px; text-align:left;">
           <div style="font-size:38px; text-align:center;">💝</div>
           <div style="font-weight:900; color:#2ecc71; font-size:19px; margin:6px 0;">本周信息</div>
-          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「你，实在等不及了！”」。敬拜就是分享我们对耶稣的爱。。</div>
+          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「撒播喜乐」。敬拜就是分享我们对耶稣的爱。</div>
         </div>
       </div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
@@ -720,7 +720,7 @@ body.mobile .talk{font-size:18px;}
       <h2 class="title" style="font-size:34px;">🙏 一起祷告</h2>
       <div class="card" style="max-width:820px; width:100%; position:relative; padding:14px 20px;">
         <div style="font-size:52px; line-height:1;" class="floaty">🌟</div>
-        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢当我喜乐地把耶稣的事告诉别人时，是在敬拜祂。<br>就像「你，实在等不及了！”」的故事一样，<br>求祢帮助我告诉别人关于耶稣的诞生，以及这对我们的意义。。<br>奉耶稣的名祷告，阿们！</div>
+        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢当我喜乐地把耶稣的事告诉别人时，是在敬拜祂。<br>就像「撒播喜乐」的故事一样，<br>求祢帮助我告诉别人关于耶稣的诞生，以及这对我们的意义。<br>奉耶稣的名祷告，阿们！</div>
         <div style="display:flex; justify-content:center;">
           <button class="speakbtn" onclick="speakText(document.getElementById('prayerText').innerText.replace(/<br>/g,'。'))">🔊 跟著念</button>
         </div>
@@ -1073,7 +1073,7 @@ function versePick(btn, w){
 function verseReset(){ verseInit(); }
 
 /* ================= 第一天：光 ================= *//* ================= 第一幕：父亲和书卷 ================= */
-const s0M = {'a00':'当你父亲打电话告诉我‘你有一个新孙女’时，我真的非常兴奋。。', 'a01':'”在我们的圣经故事中，有些人迫不及待要看另一位新生儿，一起来看看到底发生了什么事。', 'a02':'天使明亮的诗班消失了，旷野又恢复了黑暗，牧羊人仍与羊群在一起。。'};
+const s0M = {'a00':'当你父亲打电话告诉我‘你有一个新孙女’时，我真的非常兴奋。', 'a01':'”在我们的圣经故事中，有些人迫不及待要看另一位新生儿，一起来看看到底发生了什么事。', 'a02':'天使明亮的诗班消失了，旷野又恢复了黑暗，牧羊人仍与羊群在一起。'};
 let s0Seen = {}, s0Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1090,7 +1090,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第二幕：天使和婴孩 ================= */
-const s1M = {'a10':'天使叫他们去找那婴孩，他们必须立刻出发！。', 'a11':'天使叫他们去找那婴孩，他们必须立刻出发！。', 'a12':'牧羊人赶到伯利恒。。'};
+const s1M = {'a10':'天使叫他们去找那婴孩，他们必须立刻出发！。', 'a11':'天使叫他们去找那婴孩，他们必须立刻出发！。', 'a12':'牧羊人赶到伯利恒。'};
 let s1Seen = {}, s1Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1107,7 +1107,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第三幕：天使和草 ================= */
-const s2M = {'a20':'他们看136见一个就像天使所说：用布包着、躺在马槽干草上的婴儿！。', 'a21':'他们看136见一个就像天使所说：用布包着、躺在马槽干草上的婴儿！。', 'a22':'他们解释了自己为什么会在那里，并告诉马利亚和约瑟那个令人兴奋的故事。。'};
+const s2M = {'a20':'他们看136见一个就像天使所说：用布包着、躺在马槽干草上的婴儿！。', 'a21':'他们看136见一个就像天使所说：用布包着、躺在马槽干草上的婴儿！。', 'a22':'他们解释了自己为什么会在那里，并告诉马利亚和约瑟那个令人兴奋的故事。'};
 let s2Seen = {}, s2Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1124,7 +1124,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第四幕：上帝和羊 ================= */
-const s3M = {'a30':'也因上帝藉着牧羊人的话来鼓励她，使她更爱上帝。。', 'a31':'也因上帝藉着牧羊人的话来鼓励她，使她更爱上帝。。', 'a32':'牧羊人的故事一定使约瑟更相信上帝的话。。'};
+const s3M = {'a30':'也因上帝藉着牧羊人的话来鼓励她，使她更爱上帝。', 'a31':'也因上帝藉着牧羊人的话来鼓励她，使她更爱上帝。', 'a32':'牧羊人的故事一定使约瑟更相信上帝的话。'};
 let s3Seen = {}, s3Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1141,7 +1141,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第五幕：书卷和羊 ================= */
-const s4M = {'a40':'圣经说牧羊人“把话传开”。。', 'a41':'圣经说牧羊人“把话传开”。。', 'a42':'他们告诉遇见的每一个人，他们看见了上帝的儿子！。'};
+const s4M = {'a40':'圣经说牧羊人“把话传开”。', 'a41':'圣经说牧羊人“把话传开”。', 'a42':'他们告诉遇见的每一个人，他们看见了上帝的儿子！。'};
 let s4Seen = {}, s4Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1158,7 +1158,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第六幕：马利亚和孩子 ================= */
-const s5M = {'a50':'“马利亚却把这一切的事存在心里，反复思想。。', 'a51':'他们应如何养育这个孩子──上帝的儿子呢？。', 'a52':'他们应如何养育这个孩子──上帝的儿子呢？。'};
+const s5M = {'a50':'“马利亚却把这一切的事存在心里，反复思想。', 'a51':'他们应如何养育这个孩子──上帝的儿子呢？。', 'a52':'他们应如何养育这个孩子──上帝的儿子呢？。'};
 let s5Seen = {}, s5Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1175,7 +1175,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第七幕：我们的回应 ================= */
-const s6M = {'r0':'当我喜乐地把耶稣的事告诉别人时，是在敬拜祂。', 'r1':'存心节：既然看见，就把天使论这孩子的话传开了。。', 'r2':'告诉别人关于耶稣的诞生，以及这对我们的意义。'};
+const s6M = {'r0':'当我喜乐地把耶稣的事告诉别人时，是在敬拜祂。', 'r1':'存心节：既然看见，就把天使论这孩子的话传开了。', 'r2':'告诉别人关于耶稣的诞生，以及这对我们的意义。'};
 let s6Seen = {}, s6Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;

@@ -423,7 +423,7 @@ body.mobile .talk{font-size:18px;}
       <div id="verseLine" style="margin-top:8px; font-size:26px;"></div>
       <div class="word-chips" id="verseChips"></div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
-        <button class="speakbtn" data-speak="我的上帝必照祂荣耀的丰富，在基督耶稣里使你们一切所需用的都充足。。我的上帝必，照祂荣耀的，丰富，在基督耶稣，里使你们一，切所需用的，都充足。" onclick="speakThis(this)">🔊 跟著念</button>
+        <button class="speakbtn" data-speak="我的上帝必照祂荣耀的丰富，在基督耶稣里使你们一切所需用的都充足。我的上帝必，照祂荣耀的，丰富，在基督耶稣，里使你们一，切所需用的，都充足。" onclick="speakThis(this)">🔊 跟著念</button>
         <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px;" onclick="verseReset()">🔄 再来一次</button>
         <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px; background:linear-gradient(135deg,#3ec6b0,#2aa89a);" onclick="addStar(1); go(3);">✅ 我背好了！</button>
       </div>
@@ -704,7 +704,7 @@ body.mobile .talk{font-size:18px;}
         </div>        <div class="card" style="flex:1; min-width:260px; text-align:left;">
           <div style="font-size:38px; text-align:center;">💝</div>
           <div style="font-weight:900; color:#2ecc71; font-size:19px; margin:6px 0;">本周信息</div>
-          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「有没有经历过漫长的旅行？」。上帝的恩典给我们盼望和喜乐。。</div>
+          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「漫长的旅途」。上帝的恩典给我们盼望和喜乐。</div>
         </div>
       </div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
@@ -720,7 +720,7 @@ body.mobile .talk{font-size:18px;}
       <h2 class="title" style="font-size:34px;">🙏 一起祷告</h2>
       <div class="card" style="max-width:820px; width:100%; position:relative; padding:14px 20px;">
         <div style="font-size:52px; line-height:1;" class="floaty">🌟</div>
-        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢上帝必引导我，正如祂引领博士。<br>就像「有没有经历过漫长的旅行？」的故事一样，<br>求祢帮助我盼望上帝给我们今时和来生所祝福的希望和喜乐。。<br>奉耶稣的名祷告，阿们！</div>
+        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢上帝必引导我，正如祂引领博士。<br>就像「漫长的旅途」的故事一样，<br>求祢帮助我盼望上帝给我们今时和来生所祝福的希望和喜乐。<br>奉耶稣的名祷告，阿们！</div>
         <div style="display:flex; justify-content:center;">
           <button class="speakbtn" onclick="speakText(document.getElementById('prayerText').innerText.replace(/<br>/g,'。'))">🔊 跟著念</button>
         </div>
@@ -1073,7 +1073,7 @@ function versePick(btn, w){
 function verseReset(){ verseInit(); }
 
 /* ================= 第一天：光 ================= *//* ================= 第一幕：上帝和耶稣 ================= */
-const s0M = {'a00':'上帝必引导他们都是博学的人，被称为东方我，正如祂引博士，因为他们仔细研究很多事领。', 'a01':'上帝必引导他们都是博学的人，被称为东方我，正如祂引博士，因为他们仔细研究很多事领。', 'a02':'的父母所以，那道光亮和明亮的星星引起了他们的兴趣。。'};
+const s0M = {'a00':'上帝必引导他们都是博学的人，被称为东方我，正如祂引博士，因为他们仔细研究很多事领。', 'a01':'上帝必引导他们都是博学的人，被称为东方我，正如祂引博士，因为他们仔细研究很多事领。', 'a02':'的父母所以，那道光亮和明亮的星星引起了他们的兴趣。'};
 let s0Seen = {}, s0Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1090,7 +1090,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第二幕：家和国王 ================= */
-const s1M = {'a10':'在他们的国家，按习俗要给王子、国王和其他重要人物献礼。。', 'a11':'在他们的国家，按习俗要给王子、国王和其他重要人物献礼。。', 'a12':'所以，这些博士就带了黄金、乳香、没药等贵重的礼物，要献给这应许的救主。。'};
+const s1M = {'a10':'在他们的国家，按习俗要给王子、国王和其他重要人物献礼。', 'a11':'在他们的国家，按习俗要给王子、国王和其他重要人物献礼。', 'a12':'所以，这些博士就带了黄金、乳香、没药等贵重的礼物，要献给这应许的救主。'};
 let s1Seen = {}, s1Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1124,7 +1124,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第四幕：婴孩和国王 ================= */
-const s3M = {'a30':'“当你们找到这婴儿，”他说，“立刻回来向我汇报，好让我也去敬拜祂。。', 'a31':'”其实，希律在撒谎，他不希望犹太人的王出现，他心里谋算要杀死耶稣。。', 'a32':'”其实，希律在撒谎，他不希望犹太人的王出现，他心里谋算要杀死耶稣。。'};
+const s3M = {'a30':'“当你们找到这婴儿，”他说，“立刻回来向我汇报，好让我也去敬拜祂。', 'a31':'”其实，希律在撒谎，他不希望犹太人的王出现，他心里谋算要杀死耶稣。', 'a32':'”其实，希律在撒谎，他不希望犹太人的王出现，他心里谋算要杀死耶稣。'};
 let s3Seen = {}, s3Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1141,7 +1141,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第五幕：耶稣和礼物 ================= */
-const s4M = {'a40':'因此，他们跪下来拜耶稣，并献上礼物。。', 'a41':'因此，他们跪下来拜耶稣，并献上礼物。。', 'a42':'在另一个梦里，上帝告诉博士：“不可回去见希律，沿着另一条路回去吧。。'};
+const s4M = {'a40':'因此，他们跪下来拜耶稣，并献上礼物。', 'a41':'因此，他们跪下来拜耶稣，并献上礼物。', 'a42':'在另一个梦里，上帝告诉博士：“不可回去见希律，沿着另一条路回去吧。'};
 let s4Seen = {}, s4Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1158,7 +1158,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第六幕：家和上帝 ================= */
-const s5M = {'a50':'一家三口连夜离开，直到希律死时，他们还住在埃及。。', 'a51':'后来，上帝差遣天使告诉约瑟，可以平安回家了。。', 'a52':'后来，上帝差遣天使告诉约瑟，可以平安回家了。。'};
+const s5M = {'a50':'一家三口连夜离开，直到希律死时，他们还住在埃及。', 'a51':'后来，上帝差遣天使告诉约瑟，可以平安回家了。', 'a52':'后来，上帝差遣天使告诉约瑟，可以平安回家了。'};
 let s5Seen = {}, s5Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;

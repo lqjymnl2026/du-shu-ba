@@ -423,7 +423,7 @@ body.mobile .talk{font-size:18px;}
       <div id="verseLine" style="margin-top:8px; font-size:26px;"></div>
       <div class="word-chips" id="verseChips"></div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
-        <button class="speakbtn" data-speak="上帝要擦去他们一切的眼泪；不再有死亡，也不再有悲哀、哭号、疼痛，因为以前的事都过去了。。上帝要擦去，他们一切的，眼泪，不再有死亡，也不再有悲，哀，哭号，疼痛，因为以前的，事都过去了。" onclick="speakThis(this)">🔊 跟著念</button>
+        <button class="speakbtn" data-speak="上帝要擦去他们一切的眼泪；不再有死亡，也不再有悲哀、哭号、疼痛，因为以前的事都过去了。上帝要擦去，他们一切的，眼泪，不再有死亡，也不再有悲，哀，哭号，疼痛，因为以前的，事都过去了。" onclick="speakThis(this)">🔊 跟著念</button>
         <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px;" onclick="verseReset()">🔄 再来一次</button>
         <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px; background:linear-gradient(135deg,#3ec6b0,#2aa89a);" onclick="addStar(1); go(3);">✅ 我背好了！</button>
       </div>
@@ -702,7 +702,7 @@ body.mobile .talk{font-size:18px;}
         </div>        <div class="card" style="flex:1; min-width:260px; text-align:left;">
           <div style="font-size:38px; text-align:center;">💝</div>
           <div style="font-weight:900; color:#2ecc71; font-size:19px; margin:6px 0;">本周信息</div>
-          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「的人到达天国时，它」。耶稣将永远与我们同在。。</div>
+          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「一个大家庭的团聚」。耶稣将永远与我们同在。</div>
         </div>
       </div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
@@ -718,7 +718,7 @@ body.mobile .talk{font-size:18px;}
       <h2 class="title" style="font-size:34px;">🙏 一起祷告</h2>
       <div class="card" style="max-width:820px; width:100%; position:relative; padding:14px 20px;">
         <div style="font-size:52px; line-height:1;" class="floaty">🌟</div>
-        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢耶稣希望我们与祂一起永远生活在一个快。<br>就像「的人到达天国时，它」的故事一样，<br>求祢帮助我感谢耶稣应许为我们预备天家。。<br>奉耶稣的名祷告，阿们！</div>
+        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢耶稣希望我们与祂一起永远生活在一个快。<br>就像「一个大家庭的团聚」的故事一样，<br>求祢帮助我感谢耶稣应许为我们预备天家。<br>奉耶稣的名祷告，阿们！</div>
         <div style="display:flex; justify-content:center;">
           <button class="speakbtn" onclick="speakText(document.getElementById('prayerText').innerText.replace(/<br>/g,'。'))">🔊 跟著念</button>
         </div>
@@ -1071,7 +1071,7 @@ function versePick(btn, w){
 function verseReset(){ verseInit(); }
 
 /* ================= 第一天：光 ================= *//* ================= 第一幕：耶稣 ================= */
-const s0M = {'a00':'”快乐安宁的地耶稣坐在祂的宝座上，微笑着面方。。'};
+const s0M = {'a00':'”快乐安宁的地耶稣坐在祂的宝座上，微笑着面方。'};
 let s0Seen = {}, s0Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1122,7 +1122,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第四幕：山和羊 ================= */
-const s3M = {'a30':'山羊和虎豹、牛犊和马，狮子和熊同眠。。', 'a31':'山羊和虎豹、牛犊和马，狮子和熊同眠。。', 'a32':'山羊和虎豹、牛犊和马，狮子和熊同眠。。'};
+const s3M = {'a30':'山羊和虎豹、牛犊和马，狮子和熊同眠。', 'a31':'山羊和虎豹、牛犊和马，狮子和熊同眠。', 'a32':'山羊和虎豹、牛犊和马，狮子和熊同眠。'};
 let s3Seen = {}, s3Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;

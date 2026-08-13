@@ -703,7 +703,7 @@ body.mobile .talk{font-size:18px;}
         </div>        <div class="card" style="flex:1; min-width:260px; text-align:left;">
           <div style="font-size:38px; text-align:center;">💝</div>
           <div style="font-weight:900; color:#2ecc71; font-size:19px; margin:6px 0;">本周信息</div>
-          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「依然不改变对上帝的敬拜。」。学习为何我们要敬拜上帝。。</div>
+          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「一条新律例」。学习为何我们要敬拜上帝。</div>
         </div>
       </div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
@@ -719,7 +719,7 @@ body.mobile .talk{font-size:18px;}
       <h2 class="title" style="font-size:34px;">🙏 一起祷告</h2>
       <div class="card" style="max-width:820px; width:100%; position:relative; padding:14px 20px;">
         <div style="font-size:52px; line-height:1;" class="floaty">🌟</div>
-        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢当我敬拜上帝，别人就因此看到祂的慈爱和能。<br>就像「依然不改变对上帝的敬拜。」的故事一样，<br>求祢帮助我无论在哪都要敬拜赞美上帝。。<br>奉耶稣的名祷告，阿们！</div>
+        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢当我敬拜上帝，别人就因此看到祂的慈爱和能。<br>就像「一条新律例」的故事一样，<br>求祢帮助我无论在哪都要敬拜赞美上帝。<br>奉耶稣的名祷告，阿们！</div>
         <div style="display:flex; justify-content:center;">
           <button class="speakbtn" onclick="speakText(document.getElementById('prayerText').innerText.replace(/<br>/g,'。'))">🔊 跟著念</button>
         </div>
@@ -1072,7 +1072,7 @@ function versePick(btn, w){
 function verseReset(){ verseInit(); }
 
 /* ================= 第一天：光 ================= *//* ================= 第一幕：上帝和但以理 ================= */
-const s0M = {'a00':'人们会在不同的地方祷告和敬拜上帝。。', 'a01':'但以理在敌人能够看见他的地方祷告，即使身在危险中，他依然不改变对上帝的敬拜。。', 'a02':'但以理在敌人能够看见他的地方祷告，即使身在危险中，他依然不改变对上帝的敬拜。。'};
+const s0M = {'a00':'人们会在不同的地方祷告和敬拜上帝。', 'a01':'但以理在敌人能够看见他的地方祷告，即使身在危险中，他依然不改变对上帝的敬拜。', 'a02':'但以理在敌人能够看见他的地方祷告，即使身在危险中，他依然不改变对上帝的敬拜。'};
 let s0Seen = {}, s0Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1089,7 +1089,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第二幕：狮子和但以理 ================= */
-const s1M = {'a10':'那些狮子应该把他撕成了碎片才对。。', 'a11':'”士兵们对但以理被扔入狮子坑一整夜后仍能存活议论纷纷。。', 'a12':'大利乌王说：“哦，但以理，我很高兴你平安无事。。'};
+const s1M = {'a10':'那些狮子应该把他撕成了碎片才对。', 'a11':'”士兵们对但以理被扔入狮子坑一整夜后仍能存活议论纷纷。', 'a12':'大利乌王说：“哦，但以理，我很高兴你平安无事。'};
 let s1Seen = {}, s1Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1106,7 +1106,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第三幕：上帝和圣殿 ================= */
-const s2M = {'a20':'你的上帝因你的信靠而拯救了你。。', 'a21':'我现在就回到宫殿立即颁布一条新命令，你的上帝是独一的真神！。', 'a22':'回到宫殿，国王写下新的法令。。'};
+const s2M = {'a20':'你的上帝因你的信靠而拯救了你。', 'a21':'我现在就回到宫殿立即颁布一条新命令，你的上帝是独一的真神！。', 'a22':'回到宫殿，国王写下新的法令。'};
 let s2Seen = {}, s2Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1123,7 +1123,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第四幕：但以理和上帝 ================= */
-const s3M = {'a30':'每一个人，不论男女老少，都要敬拜但以理的上帝。。', 'a31':'每一个人，不论男女老少，都要敬拜但以理的上帝。。', 'a32':'天上的上帝从狮子的口中拯救了但以理。。'};
+const s3M = {'a30':'每一个人，不论男女老少，都要敬拜但以理的上帝。', 'a31':'每一个人，不论男女老少，都要敬拜但以理的上帝。', 'a32':'天上的上帝从狮子的口中拯救了但以理。'};
 let s3Seen = {}, s3Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1140,7 +1140,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第五幕：但以理和上帝 ================= */
-const s4M = {'a40':'由于但以理对上帝的忠诚，国王也因此认识了上帝的能力。。', 'a41':'由于但以理对上帝的忠诚，国王也因此认识了上帝的能力。。', 'a42':'由于但以理对上帝的忠诚，国王也因此认识了上帝的能力。。'};
+const s4M = {'a40':'由于但以理对上帝的忠诚，国王也因此认识了上帝的能力。', 'a41':'由于但以理对上帝的忠诚，国王也因此认识了上帝的能力。', 'a42':'由于但以理对上帝的忠诚，国王也因此认识了上帝的能力。'};
 let s4Seen = {}, s4Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;

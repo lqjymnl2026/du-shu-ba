@@ -423,7 +423,7 @@ body.mobile .talk{font-size:18px;}
       <div id="verseLine" style="margin-top:8px; font-size:26px;"></div>
       <div class="word-chips" id="verseChips"></div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
-        <button class="speakbtn" data-speak="万军之耶和华啊，你的居所何等可爱。。万军之耶和，华啊，你的居所何，等可爱。" onclick="speakThis(this)">🔊 跟著念</button>
+        <button class="speakbtn" data-speak="万军之耶和华啊，你的居所何等可爱。万军之耶和，华啊，你的居所何，等可爱。" onclick="speakThis(this)">🔊 跟著念</button>
         <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px;" onclick="verseReset()">🔄 再来一次</button>
         <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px; background:linear-gradient(135deg,#3ec6b0,#2aa89a);" onclick="addStar(1); go(3);">✅ 我背好了！</button>
       </div>
@@ -704,7 +704,7 @@ body.mobile .talk{font-size:18px;}
         </div>        <div class="card" style="flex:1; min-width:260px; text-align:left;">
           <div style="font-size:38px; text-align:center;">💝</div>
           <div style="font-weight:900; color:#2ecc71; font-size:19px; margin:6px 0;">本周信息</div>
-          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「了！”当大臣来到时，他如」。我们藉着敬拜来回应上帝的美善。。</div>
+          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「上帝美丽的家」。我们藉着敬拜来回应上帝的美善。</div>
         </div>
       </div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
@@ -720,7 +720,7 @@ body.mobile .talk{font-size:18px;}
       <h2 class="title" style="font-size:34px;">🙏 一起祷告</h2>
       <div class="card" style="max-width:820px; width:100%; position:relative; padding:14px 20px;">
         <div style="font-size:52px; line-height:1;" class="floaty">🌟</div>
-        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢我在上帝的家（教会）举止恭敬，。<br>就像「了！”当大臣来到时，他如」的故事一样，<br>求祢帮助我在上帝的家中举止恭敬。。<br>奉耶稣的名祷告，阿们！</div>
+        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢我在上帝的家（教会）举止恭敬，。<br>就像「上帝美丽的家」的故事一样，<br>求祢帮助我在上帝的家中举止恭敬。<br>奉耶稣的名祷告，阿们！</div>
         <div style="display:flex; justify-content:center;">
           <button class="speakbtn" onclick="speakText(document.getElementById('prayerText').innerText.replace(/<br>/g,'。'))">🔊 跟著念</button>
         </div>
@@ -1107,7 +1107,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第三幕：父亲和大卫 ================= */
-const s2M = {'a20':'“你是我父亲大卫的好朋友。。', 'a21':'“你是我父亲大卫的好朋友。。', 'a22':'“你是我父亲大卫的好朋友。。'};
+const s2M = {'a20':'“你是我父亲大卫的好朋友。', 'a21':'“你是我父亲大卫的好朋友。', 'a22':'“你是我父亲大卫的好朋友。'};
 let s2Seen = {}, s2Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1141,7 +1141,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第五幕：家和树 ================= */
-const s4M = {'a40':'艺术家用橄榄树雕刻了两个天使并贴上金子。。', 'a41':'艺术家用橄榄树雕刻了两个天使并贴上金子。。', 'a42':'艺术家用橄榄树雕刻了两个天使并贴上金子。。'};
+const s4M = {'a40':'艺术家用橄榄树雕刻了两个天使并贴上金子。', 'a41':'艺术家用橄榄树雕刻了两个天使并贴上金子。', 'a42':'艺术家用橄榄树雕刻了两个天使并贴上金子。'};
 let s4Seen = {}, s4Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1158,7 +1158,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第六幕：上帝和所罗门 ================= */
-const s5M = {'a50':'建造和小心保护教会建筑物都是敬拜上帝的表现，就像所罗门王建造圣殿时一样。。', 'a51':'建造和小心保护教会建筑物都是敬拜上帝的表现，就像所罗门王建造圣殿时一样。。', 'a52':'建造和小心保护教会建筑物都是敬拜上帝的表现，就像所罗门王建造圣殿时一样。。'};
+const s5M = {'a50':'建造和小心保护教会建筑物都是敬拜上帝的表现，就像所罗门王建造圣殿时一样。', 'a51':'建造和小心保护教会建筑物都是敬拜上帝的表现，就像所罗门王建造圣殿时一样。', 'a52':'建造和小心保护教会建筑物都是敬拜上帝的表现，就像所罗门王建造圣殿时一样。'};
 let s5Seen = {}, s5Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1175,7 +1175,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第七幕：我们的回应 ================= */
-const s6M = {'r0':'我在上帝的家（教会）举止恭敬，。', 'r1':'存心节：万军之耶和华啊，你的居所何等可爱。。', 'r2':'在上帝的家中举止恭敬。'};
+const s6M = {'r0':'我在上帝的家（教会）举止恭敬，。', 'r1':'存心节：万军之耶和华啊，你的居所何等可爱。', 'r2':'在上帝的家中举止恭敬。'};
 let s6Seen = {}, s6Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;

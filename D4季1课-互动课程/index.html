@@ -423,7 +423,7 @@ body.mobile .talk{font-size:18px;}
       <div id="verseLine" style="margin-top:8px; font-size:26px;"></div>
       <div class="word-chips" id="verseChips"></div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
-        <button class="speakbtn" data-speak="务要尊敬众人，亲爱教中的弟兄，敬畏上帝，尊敬君王。。务要尊敬众，人，亲爱教中的，弟兄，敬畏上帝，尊敬君王。" onclick="speakThis(this)">🔊 跟著念</button>
+        <button class="speakbtn" data-speak="务要尊敬众人，亲爱教中的弟兄，敬畏上帝，尊敬君王。务要尊敬众，人，亲爱教中的，弟兄，敬畏上帝，尊敬君王。" onclick="speakThis(this)">🔊 跟著念</button>
         <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px;" onclick="verseReset()">🔄 再来一次</button>
         <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px; background:linear-gradient(135deg,#3ec6b0,#2aa89a);" onclick="addStar(1); go(3);">✅ 我背好了！</button>
       </div>
@@ -702,7 +702,7 @@ body.mobile .talk{font-size:18px;}
         </div>        <div class="card" style="flex:1; min-width:260px; text-align:left;">
           <div style="font-size:38px; text-align:center;">💝</div>
           <div style="font-weight:900; color:#2ecc71; font-size:19px; margin:6px 0;">本周信息</div>
-          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「吗？你的父母让你做家务」。我们学习生活中重要的事。。</div>
+          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「女性领袖」。我们学习生活中重要的事。</div>
         </div>
       </div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
@@ -718,7 +718,7 @@ body.mobile .talk{font-size:18px;}
       <h2 class="title" style="font-size:34px;">🙏 一起祷告</h2>
       <div class="card" style="max-width:820px; width:100%; position:relative; padding:14px 20px;">
         <div style="font-size:52px; line-height:1;" class="floaty">🌟</div>
-        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢我们尊重上帝授权的。<br>就像「吗？你的父母让你做家务」的故事一样，<br>求祢帮助我信任那些上帝安排在他们生活中的人。。<br>奉耶稣的名祷告，阿们！</div>
+        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢我们尊重上帝授权的。<br>就像「女性领袖」的故事一样，<br>求祢帮助我信任那些上帝安排在他们生活中的人。<br>奉耶稣的名祷告，阿们！</div>
         <div style="display:flex; justify-content:center;">
           <button class="speakbtn" onclick="speakText(document.getElementById('prayerText').innerText.replace(/<br>/g,'。'))">🔊 跟著念</button>
         </div>
@@ -1071,7 +1071,7 @@ function versePick(btn, w){
 function verseReset(){ verseInit(); }
 
 /* ================= 第一天：光 ================= *//* ================= 第一幕：上帝和树 ================= */
-const s0M = {'a00':'我们要处没有礼堂，而是坐在室外的棕尊重上帝榈树下。。', 'a01':'我们要处没有礼堂，而是坐在室外的棕尊重上帝榈树下。。'};
+const s0M = {'a00':'我们要处没有礼堂，而是坐在室外的棕尊重上帝榈树下。', 'a01':'我们要处没有礼堂，而是坐在室外的棕尊重上帝榈树下。'};
 let s0Seen = {}, s0Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1088,7 +1088,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第二幕：敌人和城 ================= */
-const s1M = {'a10':'他知道西西拉的军队非常残忍，因为他们攻打过他的城。。', 'a11':'他知道西西拉的军队非常残忍，因为他们攻打过他的城。。', 'a12':'但是巴拉服从了底波拉，知道是上帝通过她传达信息。。'};
+const s1M = {'a10':'他知道西西拉的军队非常残忍，因为他们攻打过他的城。', 'a11':'他知道西西拉的军队非常残忍，因为他们攻打过他的城。', 'a12':'但是巴拉服从了底波拉，知道是上帝通过她传达信息。'};
 let s1Seen = {}, s1Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1105,7 +1105,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第三幕：上帝和雅各 ================= */
-const s2M = {'a20':'底波拉同意，上帝又差她将第二个信息给巴拉。。', 'a21':'”底波拉、巴拉和一千名以色列人很少参与战斗。。', 'a22':'西西拉和他的士兵丟弃铁车开始逃跑，巴拉和他的士兵抓住时机消灭了西西拉的军队。。'};
+const s2M = {'a20':'底波拉同意，上帝又差她将第二个信息给巴拉。', 'a21':'”底波拉、巴拉和一千名以色列人很少参与战斗。', 'a22':'西西拉和他的士兵丟弃铁车开始逃跑，巴拉和他的士兵抓住时机消灭了西西拉的军队。'};
 let s2Seen = {}, s2Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1122,7 +1122,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第四幕：帐篷和朋友 ================= */
-const s3M = {'a30':'西西拉一直逃到雅亿的帐篷里。。', 'a31':'雅亿的丈夫是西西拉的一个朋友，西西拉以为在这里一定会安全。。', 'a32':'西西拉让雅亿准备些吃有一天上的，并找个地方供他休息藏身。。'};
+const s3M = {'a30':'西西拉一直逃到雅亿的帐篷里。', 'a31':'雅亿的丈夫是西西拉的一个朋友，西西拉以为在这里一定会安全。', 'a32':'西西拉让雅亿准备些吃有一天上的，并找个地方供他休息藏身。'};
 let s3Seen = {}, s3Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1139,7 +1139,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第五幕：上帝和书卷 ================= */
-const s4M = {'a40':'们从奴役中解上帝让各种人在教会中担任领放。。', 'a41':'圣经说，在天示，她把上帝国里“小孩子要牵引他们”。。', 'a42':'圣经说，在天示，她把上帝国里“小孩子要牵引他们”。。'};
+const s4M = {'a40':'们从奴役中解上帝让各种人在教会中担任领放。', 'a41':'圣经说，在天示，她把上帝国里“小孩子要牵引他们”。', 'a42':'圣经说，在天示，她把上帝国里“小孩子要牵引他们”。'};
 let s4Seen = {}, s4Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1156,7 +1156,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第六幕：上帝和山 ================= */
-const s5M = {'a50':'我们需要听从上帝挑选的领“上帝命袖，以便得到上帝为我们预备的福令你带领一千分。。', 'a51':'当上帝让我们做事情时，我们人去他泊山，做好听从的准备。。'};
+const s5M = {'a50':'我们需要听从上帝挑选的领“上帝命袖，以便得到上帝为我们预备的福令你带领一千分。', 'a51':'当上帝让我们做事情时，我们人去他泊山，做好听从的准备。'};
 let s5Seen = {}, s5Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;

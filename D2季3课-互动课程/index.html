@@ -423,7 +423,7 @@ body.mobile .talk{font-size:18px;}
       <div id="verseLine" style="margin-top:8px; font-size:26px;"></div>
       <div class="word-chips" id="verseChips"></div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
-        <button class="speakbtn" data-speak="我真看出上帝是不偏待人。原来，各国中那敬畏主、行义的人都为主所悦纳。。我真看出上，帝是不偏待，人。原来，各国中那敬，畏主，行义的人都，为主所悦纳。" onclick="speakThis(this)">🔊 跟著念</button>
+        <button class="speakbtn" data-speak="我真看出上帝是不偏待人。原来，各国中那敬畏主、行义的人都为主所悦纳。我真看出上，帝是不偏待，人。原来，各国中那敬，畏主，行义的人都，为主所悦纳。" onclick="speakThis(this)">🔊 跟著念</button>
         <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px;" onclick="verseReset()">🔄 再来一次</button>
         <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px; background:linear-gradient(135deg,#3ec6b0,#2aa89a);" onclick="addStar(1); go(3);">✅ 我背好了！</button>
       </div>
@@ -703,7 +703,7 @@ body.mobile .talk{font-size:18px;}
         </div>        <div class="card" style="flex:1; min-width:260px; text-align:left;">
           <div style="font-size:38px; text-align:center;">💝</div>
           <div style="font-weight:900; color:#2ecc71; font-size:19px; margin:6px 0;">本周信息</div>
-          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「思考。彼得做了一个」。我们生活在上帝的家庭中。。</div>
+          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「欢迎回到家中」。我们生活在上帝的家庭中。</div>
         </div>
       </div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
@@ -719,7 +719,7 @@ body.mobile .talk{font-size:18px;}
       <h2 class="title" style="font-size:34px;">🙏 一起祷告</h2>
       <div class="card" style="max-width:820px; width:100%; position:relative; padding:14px 20px;">
         <div style="font-size:52px; line-height:1;" class="floaty">🌟</div>
-        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢借着与人分享上帝的爱，邀请他们加入。<br>就像「思考。彼得做了一个」的故事一样，<br>求祢帮助我积极和他人分享上帝的爱。。<br>奉耶稣的名祷告，阿们！</div>
+        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢借着与人分享上帝的爱，邀请他们加入。<br>就像「欢迎回到家中」的故事一样，<br>求祢帮助我积极和他人分享上帝的爱。<br>奉耶稣的名祷告，阿们！</div>
         <div style="display:flex; justify-content:center;">
           <button class="speakbtn" onclick="speakText(document.getElementById('prayerText').innerText.replace(/<br>/g,'。'))">🔊 跟著念</button>
         </div>
@@ -1072,7 +1072,7 @@ function versePick(btn, w){
 function verseReset(){ verseInit(); }
 
 /* ================= 第一天：光 ================= *//* ================= 第一幕：上帝和彼得 ================= */
-const s0M = {'a00':'上帝的爱，哥尼流立刻叫了两个仆人和邀请人加入一个士兵来，派他们去找彼得。。', 'a01':'上帝的爱，哥尼流立刻叫了两个仆人和邀请人加入一个士兵来，派他们去找彼得。。', 'a02':'上帝的家中。。'};
+const s0M = {'a00':'上帝的爱，哥尼流立刻叫了两个仆人和邀请人加入一个士兵来，派他们去找彼得。', 'a01':'上帝的爱，哥尼流立刻叫了两个仆人和邀请人加入一个士兵来，派他们去找彼得。', 'a02':'上帝的家中。'};
 let s0Seen = {}, s0Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1089,7 +1089,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第二幕：天使和彼得 ================= */
-const s1M = {'a10':'忽然他见到一个天使站在面前，天使摊开一块布，里面装着各种动物。。', 'a11':'天使说道：“吃吧，彼得。。'};
+const s1M = {'a10':'忽然他见到一个天使站在面前，天使摊开一块布，里面装着各种动物。', 'a11':'天使说道：“吃吧，彼得。'};
 let s1Seen = {}, s1Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1106,7 +1106,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第三幕：彼得和天使 ================= */
-const s2M = {'a20':'”彼得说。。', 'a21':'令彼得惊讶的是，天使清清楚楚地对他连说了三遍下面的话：“上帝所洁净的，你不可当做。', 'a22':'令彼得惊讶的是，天使清清楚楚地对他连说了三遍下面的话：“上帝所洁净的，你不可当做。'};
+const s2M = {'a20':'”彼得说。', 'a21':'令彼得惊讶的是，天使清清楚楚地对他连说了三遍下面的话：“上帝所洁净的，你不可当做。', 'a22':'令彼得惊讶的是，天使清清楚楚地对他连说了三遍下面的话：“上帝所洁净的，你不可当做。'};
 let s2Seen = {}, s2Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1123,7 +1123,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第四幕：彼得和天使 ================= */
-const s3M = {'a30':'“这里有个叫彼得的人吗？。', 'a31':'在屋顶，天使对彼得说：“楼下三个人来找你，和他们同去，上帝差你去教导他们。。', 'a32':'在屋顶，天使对彼得说：“楼下三个人来找你，和他们同去，上帝差你去教导他们。。'};
+const s3M = {'a30':'“这里有个叫彼得的人吗？。', 'a31':'在屋顶，天使对彼得说：“楼下三个人来找你，和他们同去，上帝差你去教导他们。', 'a32':'在屋顶，天使对彼得说：“楼下三个人来找你，和他们同去，上帝差你去教导他们。'};
 let s3Seen = {}, s3Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1140,7 +1140,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第五幕：彼得和耶稣 ================= */
-const s4M = {'a40':'彼得知道他应该向世人宣讲耶稣的福音，即使是对来自外邦国家的人。。', 'a41':'彼得知道他应该向世人宣讲耶稣的福音，即使是对来自外邦国家的人。。', 'a42':'彼得知道他应该向世人宣讲耶稣的福音，即使是对来自外邦国家的人。。'};
+const s4M = {'a40':'彼得知道他应该向世人宣讲耶稣的福音，即使是对来自外邦国家的人。', 'a41':'彼得知道他应该向世人宣讲耶稣的福音，即使是对来自外邦国家的人。', 'a42':'彼得知道他应该向世人宣讲耶稣的福音，即使是对来自外邦国家的人。'};
 let s4Seen = {}, s4Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1157,7 +1157,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第六幕：朋友和彼得 ================= */
-const s5M = {'a50':'哥尼流和他的朋友、亲人们正在等候彼得。。', 'a51':'哥尼流和他的朋友、亲人们正在等候彼得。。', 'a52':'他们毫不怀疑是上帝差遣彼得来教导他们关于耶稣的道理。。'};
+const s5M = {'a50':'哥尼流和他的朋友、亲人们正在等候彼得。', 'a51':'哥尼流和他的朋友、亲人们正在等候彼得。', 'a52':'他们毫不怀疑是上帝差遣彼得来教导他们关于耶稣的道理。'};
 let s5Seen = {}, s5Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;

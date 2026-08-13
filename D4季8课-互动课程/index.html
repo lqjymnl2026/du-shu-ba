@@ -423,7 +423,7 @@ body.mobile .talk{font-size:18px;}
       <div id="verseLine" style="margin-top:8px; font-size:26px;"></div>
       <div class="word-chips" id="verseChips"></div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
-        <button class="speakbtn" data-speak="你们的言语要常常带着和气，好像用盐调和，就可知道该怎样回答各人。。你们的言语，要常常带着，和气，好像用盐调，和，就可知道该，怎样回答各，人。" onclick="speakThis(this)">🔊 跟著念</button>
+        <button class="speakbtn" data-speak="你们的言语要常常带着和气，好像用盐调和，就可知道该怎样回答各人。你们的言语，要常常带着，和气，好像用盐调，和，就可知道该，怎样回答各，人。" onclick="speakThis(this)">🔊 跟著念</button>
         <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px;" onclick="verseReset()">🔄 再来一次</button>
         <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px; background:linear-gradient(135deg,#3ec6b0,#2aa89a);" onclick="addStar(1); go(3);">✅ 我背好了！</button>
       </div>
@@ -701,7 +701,7 @@ body.mobile .talk{font-size:18px;}
         </div>        <div class="card" style="flex:1; min-width:260px; text-align:left;">
           <div style="font-size:38px; text-align:center;">💝</div>
           <div style="font-weight:900; color:#2ecc71; font-size:19px; margin:6px 0;">本周信息</div>
-          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「你愿不愿意和牛一起住在野」。无论身在何处，我们都服侍上帝。。</div>
+          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「放逐野地」。无论身在何处，我们都服侍上帝。</div>
         </div>
       </div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
@@ -717,7 +717,7 @@ body.mobile .talk{font-size:18px;}
       <h2 class="title" style="font-size:34px;">🙏 一起祷告</h2>
       <div class="card" style="max-width:820px; width:100%; position:relative; padding:14px 20px;">
         <div style="font-size:52px; line-height:1;" class="floaty">🌟</div>
-        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢无论身在何处，我都能。<br>就像「你愿不愿意和牛一起住在野」的故事一样，<br>求祢帮助我处于挑战的情况下，也要选择侍奉上帝。<br>奉耶稣的名祷告，阿们！</div>
+        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢无论身在何处，我都能。<br>就像「放逐野地」的故事一样，<br>求祢帮助我处于挑战的情况下，也要选择侍奉上帝。<br>奉耶稣的名祷告，阿们！</div>
         <div style="display:flex; justify-content:center;">
           <button class="speakbtn" onclick="speakText(document.getElementById('prayerText').innerText.replace(/<br>/g,'。'))">🔊 跟著念</button>
         </div>
@@ -1087,7 +1087,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第二幕：但以理和国王 ================= */
-const s1M = {'a10':'”但以理听完，显得很担心。。', 'a11':'只是，这对国王而言并不是好消息，他可能会因此发怒。。'};
+const s1M = {'a10':'”但以理听完，显得很担心。', 'a11':'只是，这对国王而言并不是好消息，他可能会因此发怒。'};
 let s1Seen = {}, s1Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1104,7 +1104,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第三幕：但以理和上帝 ================= */
-const s2M = {'a20':'但以理知道上帝要他说实话，就告诉尼布甲尼撒，这个梦是上帝对他的警告。。', 'a21':'但以理知道上帝要他说实话，就告诉尼布甲尼撒，这个梦是上帝对他的警告。。', 'a22':'但以理解释，尼布甲尼撒就是那棵树，他变得很强大，有大力统治很多地方。。'};
+const s2M = {'a20':'但以理知道上帝要他说实话，就告诉尼布甲尼撒，这个梦是上帝对他的警告。', 'a21':'但以理知道上帝要他说实话，就告诉尼布甲尼撒，这个梦是上帝对他的警告。', 'a22':'但以理解释，尼布甲尼撒就是那棵树，他变得很强大，有大力统治很多地方。'};
 let s2Seen = {}, s2Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1138,7 +1138,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第五幕：国王和上帝 ================= */
-const s4M = {'a40':'他的大臣和贵族们迎接他重新成为国王。。', 'a41':'毕生遵守上帝的道。。', 'a42':'对但以理而言，将上帝的信息转达给尼布甲尼撒非常困难。。'};
+const s4M = {'a40':'他的大臣和贵族们迎接他重新成为国王。', 'a41':'毕生遵守上帝的道。', 'a42':'对但以理而言，将上帝的信息转达给尼布甲尼撒非常困难。'};
 let s4Seen = {}, s4Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1155,7 +1155,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第六幕：上帝 ================= */
-const s5M = {'a50':'但上帝与他同在。。'};
+const s5M = {'a50':'但上帝与他同在。'};
 let s5Seen = {}, s5Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;

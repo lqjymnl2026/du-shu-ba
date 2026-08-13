@@ -423,7 +423,7 @@ body.mobile .talk{font-size:18px;}
       <div id="verseLine" style="margin-top:8px; font-size:26px;"></div>
       <div class="word-chips" id="verseChips"></div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
-        <button class="speakbtn" data-speak="因我上帝施恩的手帮助我。。因我上帝施，恩的手帮助，我。" onclick="speakThis(this)">🔊 跟著念</button>
+        <button class="speakbtn" data-speak="因我上帝施恩的手帮助我。因我上帝施，恩的手帮助，我。" onclick="speakThis(this)">🔊 跟著念</button>
         <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px;" onclick="verseReset()">🔄 再来一次</button>
         <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px; background:linear-gradient(135deg,#3ec6b0,#2aa89a);" onclick="addStar(1); go(3);">✅ 我背好了！</button>
       </div>
@@ -704,7 +704,7 @@ body.mobile .talk{font-size:18px;}
         </div>        <div class="card" style="flex:1; min-width:260px; text-align:left;">
           <div style="font-size:38px; text-align:center;">💝</div>
           <div style="font-weight:900; color:#2ecc71; font-size:19px; margin:6px 0;">本周信息</div>
-          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「人捐钱呢？”。」。上帝的应许必会实现。。</div>
+          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「尼希米──上帝的建筑师」。上帝的应许必会实现。</div>
         </div>
       </div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
@@ -720,7 +720,7 @@ body.mobile .talk{font-size:18px;}
       <h2 class="title" style="font-size:34px;">🙏 一起祷告</h2>
       <div class="card" style="max-width:820px; width:100%; position:relative; padding:14px 20px;">
         <div style="font-size:52px; line-height:1;" class="floaty">🌟</div>
-        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢上帝赐我恩典与力量，完成祂的旨意。<br>就像「人捐钱呢？”。」的故事一样，<br>求祢帮助我奉献自己，并藉上帝的能力去遵行祂的旨意。。<br>奉耶稣的名祷告，阿们！</div>
+        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢上帝赐我恩典与力量，完成祂的旨意。<br>就像「尼希米──上帝的建筑师」的故事一样，<br>求祢帮助我奉献自己，并藉上帝的能力去遵行祂的旨意。<br>奉耶稣的名祷告，阿们！</div>
         <div style="display:flex; justify-content:center;">
           <button class="speakbtn" onclick="speakText(document.getElementById('prayerText').innerText.replace(/<br>/g,'。'))">🔊 跟著念</button>
         </div>
@@ -1073,7 +1073,7 @@ function versePick(btn, w){
 function verseReset(){ verseInit(); }
 
 /* ================= 第一天：光 ================= *//* ================= 第一幕：父亲和家 ================= */
-const s0M = {'a00':'爸爸解释说：“因为我们的教会大家庭不断发展，原本的教堂已经不够用了，所以我们需要。', 'a01':'爸爸解释说：“因为我们的教会大家庭不断发展，原本的教堂已经不够用了，所以我们需要。', 'a02':'这提醒我关于尼希米重建耶路撒冷城墙的故事。。'};
+const s0M = {'a00':'爸爸解释说：“因为我们的教会大家庭不断发展，原本的教堂已经不够用了，所以我们需要。', 'a01':'爸爸解释说：“因为我们的教会大家庭不断发展，原本的教堂已经不够用了，所以我们需要。', 'a02':'这提醒我关于尼希米重建耶路撒冷城墙的故事。'};
 let s0Seen = {}, s0Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1090,7 +1090,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第二幕：敌人和上帝 ================= */
-const s1M = {'a10':'敌人们可以直接走进来攻击上帝的子民。。', 'a11':'敌人们可以直接走进来攻击上帝的子民。。', 'a12':'”尼希米垂下头、跌坐在椅上。。'};
+const s1M = {'a10':'敌人们可以直接走进来攻击上帝的子民。', 'a11':'敌人们可以直接走进来攻击上帝的子民。', 'a12':'”尼希米垂下头、跌坐在椅上。'};
 let s1Seen = {}, s1Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1107,7 +1107,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第三幕：尼希米和国王 ================= */
-const s2M = {'a20':'”一天晚上，尼希米和往常一样带着酒到王的晚宴上。。', 'a21':'”一天晚上，尼希米和往常一样带着酒到王的晚宴上。。', 'a22':'我感到悲伤，是因为我听到坏消息，我的家乡变成一片废墟，城墙被毁掉了。。'};
+const s2M = {'a20':'”一天晚上，尼希米和往常一样带着酒到王的晚宴上。', 'a21':'”一天晚上，尼希米和往常一样带着酒到王的晚宴上。', 'a22':'我感到悲伤，是因为我听到坏消息，我的家乡变成一片废墟，城墙被毁掉了。'};
 let s2Seen = {}, s2Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1124,7 +1124,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第四幕：尼希米和国王 ================= */
-const s3M = {'a30':'尼希米迅速作了默祷，然后他回答王：“请派我回家乡犹大，重建这个被破坏的城巿。。', 'a31':'尼希米迅速作了默祷，然后他回答王：“请派我回家乡犹大，重建这个被破坏的城巿。。', 'a32':'尼希米迅速作了默祷，然后他回答王：“请派我回家乡犹大，重建这个被破坏的城巿。。'};
+const s3M = {'a30':'尼希米迅速作了默祷，然后他回答王：“请派我回家乡犹大，重建这个被破坏的城巿。', 'a31':'尼希米迅速作了默祷，然后他回答王：“请派我回家乡犹大，重建这个被破坏的城巿。', 'a32':'尼希米迅速作了默祷，然后他回答王：“请派我回家乡犹大，重建这个被破坏的城巿。'};
 let s3Seen = {}, s3Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1141,7 +1141,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第五幕：城和尼希米 ================= */
-const s4M = {'a40':'他发现他不能骑进某一些城门，因为都被塌下的城墙阻塞了。。', 'a41':'尼希米与城内的领袖谈话，他告诉他们告诉他们上帝如何帮助他，说：“一起来建造耶路撒。', 'a42':'尼希米与城内的领袖谈话，他告诉他们告诉他们上帝如何帮助他，说：“一起来建造耶路撒。'};
+const s4M = {'a40':'他发现他不能骑进某一些城门，因为都被塌下的城墙阻塞了。', 'a41':'尼希米与城内的领袖谈话，他告诉他们告诉他们上帝如何帮助他，说：“一起来建造耶路撒。', 'a42':'尼希米与城内的领袖谈话，他告诉他们告诉他们上帝如何帮助他，说：“一起来建造耶路撒。'};
 let s4Seen = {}, s4Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1158,7 +1158,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第六幕：尼希米和刀剑 ================= */
-const s5M = {'a50':'尼希米告诉他们拿起剑、矛及弓箭，一只手保护城墙，一只手继续工作。。', 'a51':'尼希米告诉他们拿起剑、矛及弓箭，一只手保护城墙，一只手继续工作。。', 'a52':'尼希米告诉他们拿起剑、矛及弓箭，一只手保护城墙，一只手继续工作。。'};
+const s5M = {'a50':'尼希米告诉他们拿起剑、矛及弓箭，一只手保护城墙，一只手继续工作。', 'a51':'尼希米告诉他们拿起剑、矛及弓箭，一只手保护城墙，一只手继续工作。', 'a52':'尼希米告诉他们拿起剑、矛及弓箭，一只手保护城墙，一只手继续工作。'};
 let s5Seen = {}, s5Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1175,7 +1175,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第七幕：我们的回应 ================= */
-const s6M = {'r0':'上帝赐我恩典与力量，完成祂的旨意。', 'r1':'存心节：因我上帝施恩的手帮助我。。', 'r2':'奉献自己，并藉上帝的能力去遵行祂的旨意。'};
+const s6M = {'r0':'上帝赐我恩典与力量，完成祂的旨意。', 'r1':'存心节：因我上帝施恩的手帮助我。', 'r2':'奉献自己，并藉上帝的能力去遵行祂的旨意。'};
 let s6Seen = {}, s6Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;

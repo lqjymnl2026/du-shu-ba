@@ -700,7 +700,7 @@ body.mobile .talk{font-size:18px;}
         </div>        <div class="card" style="flex:1; min-width:260px; text-align:left;">
           <div style="font-size:38px; text-align:center;">💝</div>
           <div style="font-weight:900; color:#2ecc71; font-size:19px; margin:6px 0;">本周信息</div>
-          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「情发生的经过是这样的：」。。</div>
+          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「和散那！」。</div>
         </div>
       </div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
@@ -716,7 +716,7 @@ body.mobile .talk{font-size:18px;}
       <h2 class="title" style="font-size:34px;">🙏 一起祷告</h2>
       <div class="card" style="max-width:820px; width:100%; position:relative; padding:14px 20px;">
         <div style="font-size:52px; line-height:1;" class="floaty">🌟</div>
-        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢当我赞美上帝时，就是在敬拜祂。和散那就是对上帝的赞美。<br>就像「情发生的经过是这样的：」的故事一样，<br>求祢帮助我做一个好孩子。<br>奉耶稣的名祷告，阿们！</div>
+        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢当我赞美上帝时，就是在敬拜祂。和散那就是对上帝的赞美。<br>就像「和散那！」的故事一样，<br>求祢帮助我做一个好孩子。<br>奉耶稣的名祷告，阿们！</div>
         <div style="display:flex; justify-content:center;">
           <button class="speakbtn" onclick="speakText(document.getElementById('prayerText').innerText.replace(/<br>/g,'。'))">🔊 跟著念</button>
         </div>
@@ -1069,7 +1069,7 @@ function versePick(btn, w){
 function verseReset(){ verseInit(); }
 
 /* ================= 第一天：光 ================= *//* ================= 第一幕：书卷和耶稣 ================= */
-const s0M = {'a00':'在今天的圣经故事中，耶稣准备好进入耶路撒冷。。', 'a01':'在今天的圣经故事中，耶稣准备好进入耶路撒冷。。', 'a02':'在今天的圣经故事中，耶稣准备好进入耶路撒冷。。'};
+const s0M = {'a00':'在今天的圣经故事中，耶稣准备好进入耶路撒冷。', 'a01':'在今天的圣经故事中，耶稣准备好进入耶路撒冷。', 'a02':'在今天的圣经故事中，耶稣准备好进入耶路撒冷。'};
 let s0Seen = {}, s0Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1103,7 +1103,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第三幕：门徒和耶稣 ================= */
-const s2M = {'a20':'’门徒照着耶稣所说的回答，那些人就让他们把驴牵走了。。', 'a21':'’门徒照着耶稣所说的回答，那些人就让他们把驴牵走了。。', 'a22':'“耶稣是按着犹太惯例中帝王入城的仪式进城的”（《历代愿望》第502页）祂所乘坐的。'};
+const s2M = {'a20':'’门徒照着耶稣所说的回答，那些人就让他们把驴牵走了。', 'a21':'’门徒照着耶稣所说的回答，那些人就让他们把驴牵走了。', 'a22':'“耶稣是按着犹太惯例中帝王入城的仪式进城的”（《历代愿望》第502页）祂所乘坐的。'};
 let s2Seen = {}, s2Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1120,7 +1120,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第四幕：先知和城 ================= */
-const s3M = {'a30':'多年前，撒迦利亚先知曾经写道，弥赛亚将会向耶路撒冷的人民显现，并且祂会骑着一匹驴。', 'a31':'多年前，撒迦利亚先知曾经写道，弥赛亚将会向耶路撒冷的人民显现，并且祂会骑着一匹驴。', 'a32':'当耶稣骑上驴驹时，门徒和所有的人就高声发出胜利的欢呼。。'};
+const s3M = {'a30':'多年前，撒迦利亚先知曾经写道，弥赛亚将会向耶路撒冷的人民显现，并且祂会骑着一匹驴。', 'a31':'多年前，撒迦利亚先知曾经写道，弥赛亚将会向耶路撒冷的人民显现，并且祂会骑着一匹驴。', 'a32':'当耶稣骑上驴驹时，门徒和所有的人就高声发出胜利的欢呼。'};
 let s3Seen = {}, s3Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1137,7 +1137,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第五幕：耶稣和朋友 ================= */
-const s4M = {'a40':'你们还记得拉撒路，那位耶稣使他死而复生的朋友吗？。', 'a41':'你们还记得拉撒路，那位耶稣使他死而复生的朋友吗？。', 'a42':'拉撒路拉过驴驹的缰绳，牵着它通过耶路撒冷的街道。。'};
+const s4M = {'a40':'你们还记得拉撒路，那位耶稣使他死而复生的朋友吗？。', 'a41':'你们还记得拉撒路，那位耶稣使他死而复生的朋友吗？。', 'a42':'拉撒路拉过驴驹的缰绳，牵着它通过耶路撒冷的街道。'};
 let s4Seen = {}, s4Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;

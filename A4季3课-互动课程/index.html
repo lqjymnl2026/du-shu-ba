@@ -410,7 +410,7 @@ body.mobile .talk{font-size:18px;}
           <div style="font-size:16px; color:var(--ink2);">#2ecc71</div>
         </div>
       </div>
-      <button class="speakbtn" data-speak="这一课，我们要晓得：爱的服侍只问付出，不求回报。。上帝指示雅各离开拉班回家乡去，雅各便悄悄离开了拉班。拉班非常生气，随即起身追赶雅各。两人为分离的条件" onclick="speakThis(this)">🔊 听听这一课</button>
+      <button class="speakbtn" data-speak="这一课，我们要晓得：爱的服侍只问付出，不求回报。上帝指示雅各离开拉班回家乡去，雅各便悄悄离开了拉班。拉班非常生气，随即起身追赶雅各。两人为分离的条件" onclick="speakThis(this)">🔊 听听这一课</button>
       <div style="margin-top:14px;"><span class="pill">💜 信息：爱的服侍只问付出，不求回报。</span></div>
     </div>
   </section>
@@ -423,7 +423,7 @@ body.mobile .talk{font-size:18px;}
       <div id="verseLine" style="margin-top:8px; font-size:26px;"></div>
       <div class="word-chips" id="verseChips"></div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
-        <button class="speakbtn" data-speak="无论做什么，都要从心里做。。无论做什么，都要从心里，做。" onclick="speakThis(this)">🔊 跟著念</button>
+        <button class="speakbtn" data-speak="无论做什么，都要从心里做。无论做什么，都要从心里，做。" onclick="speakThis(this)">🔊 跟著念</button>
         <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px;" onclick="verseReset()">🔄 再来一次</button>
         <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px; background:linear-gradient(135deg,#3ec6b0,#2aa89a);" onclick="addStar(1); go(3);">✅ 我背好了！</button>
       </div>
@@ -699,11 +699,11 @@ body.mobile .talk{font-size:18px;}
         </div>        <div class="card" style="flex:1; min-width:260px; text-align:left;">
           <div style="font-size:38px; text-align:center;">🙏</div>
           <div style="font-weight:900; color:#ff8c42; font-size:19px; margin:6px 0;">常常祷告</div>
-          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">常常与孩子一起祷告。这一课的信息是：爱的服侍只问付出，不求回报。。帮助孩子把故事里的教训用在生活中。</div>
+          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">常常与孩子一起祷告。这一课的信息是：爱的服侍只问付出，不求回报。帮助孩子把故事里的教训用在生活中。</div>
         </div>        <div class="card" style="flex:1; min-width:260px; text-align:left;">
           <div style="font-size:38px; text-align:center;">💝</div>
           <div style="font-weight:900; color:#2ecc71; font-size:19px; margin:6px 0;">本周信息</div>
-          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「章，169-171页」。在家庭中学习如何服侍他人。。</div>
+          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「再次逃离」。在家庭中学习如何服侍他人。</div>
         </div>
       </div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
@@ -719,7 +719,7 @@ body.mobile .talk{font-size:18px;}
       <h2 class="title" style="font-size:34px;">🙏 一起祷告</h2>
       <div class="card" style="max-width:820px; width:100%; position:relative; padding:14px 20px;">
         <div style="font-size:52px; line-height:1;" class="floaty">🌟</div>
-        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢爱的服侍只问付出，不求回报。。<br>就像「章，169-171页」的故事一样，<br>求祢帮助我承担责任做好工作。。<br>奉耶稣的名祷告，阿们！</div>
+        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢爱的服侍只问付出，不求回报。<br>就像「再次逃离」的故事一样，<br>求祢帮助我承担责任做好工作。<br>奉耶稣的名祷告，阿们！</div>
         <div style="display:flex; justify-content:center;">
           <button class="speakbtn" onclick="speakText(document.getElementById('prayerText').innerText.replace(/<br>/g,'。'))">🔊 跟著念</button>
         </div>
@@ -1072,7 +1072,7 @@ function versePick(btn, w){
 function verseReset(){ verseInit(); }
 
 /* ================= 第一天：光 ================= *//* ================= 第一幕：家和雅各 ================= */
-const s0M = {'a00':'你曾经与家人一起在饭店用过餐吗？。', 'a01':'自从雅各离家之后，已经过了二十年。。'};
+const s0M = {'a00':'你曾经与家人一起在饭店用过餐吗？。', 'a01':'自从雅各离家之后，已经过了二十年。'};
 let s0Seen = {}, s0Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1089,7 +1089,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第二幕：雅各和约瑟 ================= */
-const s1M = {'a10':'这时雅各已经有了十个儿子和至少一个女儿。。', 'a11':'约瑟出生之后，雅各曾经请求拉班让他和他的全家返回迦南，但是拉班却叫雅各不要走。。', 'a12':'约瑟出生之后，雅各曾经请求拉班让他和他的全家返回迦南，但是拉班却叫雅各不要走。。'};
+const s1M = {'a10':'这时雅各已经有了十个儿子和至少一个女儿。', 'a11':'约瑟出生之后，雅各曾经请求拉班让他和他的全家返回迦南，但是拉班却叫雅各不要走。', 'a12':'约瑟出生之后，雅各曾经请求拉班让他和他的全家返回迦南，但是拉班却叫雅各不要走。'};
 let s1Seen = {}, s1Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1106,7 +1106,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第三幕：雅各和羊 ================= */
-const s2M = {'a20':'不久，雅各也听到他们的议论，知道他们认为他的羊群应当属于他们。。', 'a21':'不久，雅各也听到他们的议论，知道他们认为他的羊群应当属于他们。。', 'a22':'所以当上帝对雅各说“回到你的父家”36时，雅各知道离开的时候到了。。'};
+const s2M = {'a20':'不久，雅各也听到他们的议论，知道他们认为他的羊群应当属于他们。', 'a21':'不久，雅各也听到他们的议论，知道他们认为他的羊群应当属于他们。', 'a22':'所以当上帝对雅各说“回到你的父家”36时，雅各知道离开的时候到了。'};
 let s2Seen = {}, s2Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1123,7 +1123,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第四幕：上帝和雅各 ================= */
-const s3M = {'a30':'那天夜里，上帝在梦中吩咐拉班不可说话刁难雅各。。', 'a31':'那天夜里，上帝在梦中吩咐拉班不可说话刁难雅各。。', 'a32':'雅各已经看到拉班的人马了，随着他们渐渐逼近，雅各担心地紧锁眉头。。'};
+const s3M = {'a30':'那天夜里，上帝在梦中吩咐拉班不可说话刁难雅各。', 'a31':'那天夜里，上帝在梦中吩咐拉班不可说话刁难雅各。', 'a32':'雅各已经看到拉班的人马了，随着他们渐渐逼近，雅各担心地紧锁眉头。'};
 let s3Seen = {}, s3Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1157,7 +1157,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第六幕：石头和雅各 ================= */
-const s5M = {'a50':'我不会越过这堆石头加害于你，你也不能越过它来伤害我。。', 'a51':'”雅各重复了这个承诺：“我不伤害你，你也不伤害我。。', 'a52':'”于是两人便和家人们一起。'};
+const s5M = {'a50':'我不会越过这堆石头加害于你，你也不能越过它来伤害我。', 'a51':'”雅各重复了这个承诺：“我不伤害你，你也不伤害我。', 'a52':'”于是两人便和家人们一起。'};
 let s5Seen = {}, s5Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1174,7 +1174,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第七幕：我们的回应 ================= */
-const s6M = {'r0':'爱的服侍只问付出，不求回报。。', 'r1':'存心节：无论做什么，都要从心里做。。', 'r2':'承担责任做好工作。'};
+const s6M = {'r0':'爱的服侍只问付出，不求回报。', 'r1':'存心节：无论做什么，都要从心里做。', 'r2':'承担责任做好工作。'};
 let s6Seen = {}, s6Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;

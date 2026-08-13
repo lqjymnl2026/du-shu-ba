@@ -423,7 +423,7 @@ body.mobile .talk{font-size:18px;}
       <div id="verseLine" style="margin-top:8px; font-size:26px;"></div>
       <div class="word-chips" id="verseChips"></div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
-        <button class="speakbtn" data-speak="……为所信的福音齐心努力。。……为所信，的福音齐心，努力。" onclick="speakThis(this)">🔊 跟著念</button>
+        <button class="speakbtn" data-speak="……为所信的福音齐心努力。……为所信，的福音齐心，努力。" onclick="speakThis(this)">🔊 跟著念</button>
         <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px;" onclick="verseReset()">🔄 再来一次</button>
         <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px; background:linear-gradient(135deg,#3ec6b0,#2aa89a);" onclick="addStar(1); go(3);">✅ 我背好了！</button>
       </div>
@@ -704,7 +704,7 @@ body.mobile .talk{font-size:18px;}
         </div>        <div class="card" style="flex:1; min-width:260px; text-align:left;">
           <div style="font-size:38px; text-align:center;">💝</div>
           <div style="font-weight:900; color:#2ecc71; font-size:19px; margin:6px 0;">本周信息</div>
-          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「种，它们都要进方舟。」。齐心作工表明我们彼此相亲相爱。。</div>
+          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「水上动物园」。齐心作工表明我们彼此相亲相爱。</div>
         </div>
       </div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
@@ -720,7 +720,7 @@ body.mobile .talk{font-size:18px;}
       <h2 class="title" style="font-size:34px;">🙏 一起祷告</h2>
       <div class="card" style="max-width:820px; width:100%; position:relative; padding:14px 20px;">
         <div style="font-size:52px; line-height:1;" class="floaty">🌟</div>
-        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢上帝的儿女齐心作工。68。<br>就像「种，它们都要进方舟。」的故事一样，<br>求祢帮助我在家中、学校、教会里表现出合作的精神。。<br>奉耶稣的名祷告，阿们！</div>
+        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢上帝的儿女齐心作工。68。<br>就像「水上动物园」的故事一样，<br>求祢帮助我在家中、学校、教会里表现出合作的精神。<br>奉耶稣的名祷告，阿们！</div>
         <div style="display:flex; justify-content:center;">
           <button class="speakbtn" onclick="speakText(document.getElementById('prayerText').innerText.replace(/<br>/g,'。'))">🔊 跟著念</button>
         </div>
@@ -1090,7 +1090,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第二幕：鸟和蛇 ================= */
-const s1M = {'a10':'各种飞鸟、昆虫、蛇、蜘蛛等等，上帝要为每一类动物留种，它们都要进方舟。。', 'a11':'各种飞鸟、昆虫、蛇、蜘蛛等等，上帝要为每一类动物留种，它们都要进方舟。。', 'a12':'各种飞鸟、昆虫、蛇、蜘蛛等等，上帝要为每一类动物留种，它们都要进方舟。。'};
+const s1M = {'a10':'各种飞鸟、昆虫、蛇、蜘蛛等等，上帝要为每一类动物留种，它们都要进方舟。', 'a11':'各种飞鸟、昆虫、蛇、蜘蛛等等，上帝要为每一类动物留种，它们都要进方舟。', 'a12':'各种飞鸟、昆虫、蛇、蜘蛛等等，上帝要为每一类动物留种，它们都要进方舟。'};
 let s1Seen = {}, s1Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1107,7 +1107,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第三幕：上帝和船 ================= */
-const s2M = {'a20':'果然，时间一到，正如上帝所说的，动物们从森林里出来，往方舟的方向走去：有的扭动笨。', 'a21':'果然，时间一到，正如上帝所说的，动物们从森林里出来，往方舟的方向走去：有的扭动笨。', 'a22':'然后，挪亚和他的家人引领动物们到各自的棲身之所。。'};
+const s2M = {'a20':'果然，时间一到，正如上帝所说的，动物们从森林里出来，往方舟的方向走去：有的扭动笨。', 'a21':'果然，时间一到，正如上帝所说的，动物们从森林里出来，往方舟的方向走去：有的扭动笨。', 'a22':'然后，挪亚和他的家人引领动物们到各自的棲身之所。'};
 let s2Seen = {}, s2Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1124,7 +1124,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第四幕：船和挪亚 ================= */
-const s3M = {'a30':'当动物进入方舟后，挪亚便当起了动物管理员主管。。', 'a31':'当动物进入方舟后，挪亚便当起了动物管理员主管。。', 'a32':'在以后的几个月里，他和家人要担负起照顾这里所有动物的责任了，这真是一件不简单的工。'};
+const s3M = {'a30':'当动物进入方舟后，挪亚便当起了动物管理员主管。', 'a31':'当动物进入方舟后，挪亚便当起了动物管理员主管。', 'a32':'在以后的几个月里，他和家人要担负起照顾这里所有动物的责任了，这真是一件不简单的工。'};
 let s3Seen = {}, s3Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1141,7 +1141,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第五幕：花和家 ================= */
-const s4M = {'a40':'他们需要花好长的时间来细心照料这些动物。。', 'a41':'全家需要齐心协力，照顾好这个水上之家和上帝托付给他们的动物。。', 'a42':'全家需要齐心协力，照顾好这个水上之家和上帝托付给他们的动物。。'};
+const s4M = {'a40':'他们需要花好长的时间来细心照料这些动物。', 'a41':'全家需要齐心协力，照顾好这个水上之家和上帝托付给他们的动物。', 'a42':'全家需要齐心协力，照顾好这个水上之家和上帝托付给他们的动物。'};
 let s4Seen = {}, s4Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1175,7 +1175,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第七幕：我们的回应 ================= */
-const s6M = {'r0':'上帝的儿女齐心作工。68。', 'r1':'存心节：……为所信的福音齐心努力。。', 'r2':'在家中、学校、教会里表现出合作的精神。'};
+const s6M = {'r0':'上帝的儿女齐心作工。68。', 'r1':'存心节：……为所信的福音齐心努力。', 'r2':'在家中、学校、教会里表现出合作的精神。'};
 let s6Seen = {}, s6Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;

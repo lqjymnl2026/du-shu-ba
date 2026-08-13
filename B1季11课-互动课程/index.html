@@ -696,7 +696,7 @@ body.mobile .talk{font-size:18px;}
         </div>        <div class="card" style="flex:1; min-width:260px; text-align:left;">
           <div style="font-size:38px; text-align:center;">💝</div>
           <div style="font-weight:900; color:#2ecc71; font-size:19px; margin:6px 0;">本周信息</div>
-          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「一种传染病的人的故事。」。。</div>
+          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「其他九个人在哪里？」。</div>
         </div>
       </div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
@@ -712,7 +712,7 @@ body.mobile .talk{font-size:18px;}
       <h2 class="title" style="font-size:34px;">🙏 一起祷告</h2>
       <div class="card" style="max-width:820px; width:100%; position:relative; padding:14px 20px;">
         <div style="font-size:52px; line-height:1;" class="floaty">🌟</div>
-        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢当我们感谢上帝时，就是在敬拜祂。的古老法律，痊愈的麻。<br>就像「一种传染病的人的故事。」的故事一样，<br>求祢帮助我做一个好孩子。<br>奉耶稣的名祷告，阿们！</div>
+        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢当我们感谢上帝时，就是在敬拜祂。的古老法律，痊愈的麻。<br>就像「其他九个人在哪里？」的故事一样，<br>求祢帮助我做一个好孩子。<br>奉耶稣的名祷告，阿们！</div>
         <div style="display:flex; justify-content:center;">
           <button class="speakbtn" onclick="speakText(document.getElementById('prayerText').innerText.replace(/<br>/g,'。'))">🔊 跟著念</button>
         </div>
@@ -1065,7 +1065,7 @@ function versePick(btn, w){
 function verseReset(){ verseInit(); }
 
 /* ================= 第一天：光 ================= *//* ================= 第一幕：家和孩子 ================= */
-const s0M = {'a00':'如果有，你大概有很长一段时间必须留在家里，不能上学。。', 'a01':'如果你上学，别的小朋友可能会被你传染。。', 'a02':'如果你上学，别的小朋友可能会被你传染。。'};
+const s0M = {'a00':'如果有，你大概有很长一段时间必须留在家里，不能上学。', 'a01':'如果你上学，别的小朋友可能会被你传染。', 'a02':'如果你上学，别的小朋友可能会被你传染。'};
 let s0Seen = {}, s0Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1082,7 +1082,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第二幕：耶稣和门徒 ================= */
-const s1M = {'a10':'一天，正当耶稣与祂的门徒走近一个村庄，突然听见有一群人在远处向祂呼求。。', 'a11':'一天，正当耶稣与祂的门徒走近一个村庄，突然听见有一群人在远处向祂呼求。。'};
+const s1M = {'a10':'一天，正当耶稣与祂的门徒走近一个村庄，突然听见有一群人在远处向祂呼求。', 'a11':'一天，正当耶稣与祂的门徒走近一个村庄，突然听见有一群人在远处向祂呼求。'};
 let s1Seen = {}, s1Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1116,7 +1116,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第四幕：家 ================= */
-const s3M = {'a30':'没有人愿意靠近麻疯病人，因为大家都怕被传染麻疯病。。'};
+const s3M = {'a30':'没有人愿意靠近麻疯病人，因为大家都怕被传染麻疯病。'};
 let s3Seen = {}, s3Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1133,7 +1133,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第五幕：耶稣 ================= */
-const s4M = {'a40':'这十个麻疯病人悲惨的景象，触动了耶稣慈爱的心。。'};
+const s4M = {'a40':'这十个麻疯病人悲惨的景象，触动了耶稣慈爱的心。'};
 let s4Seen = {}, s4Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;

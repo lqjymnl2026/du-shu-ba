@@ -423,7 +423,7 @@ body.mobile .talk{font-size:18px;}
       <div id="verseLine" style="margin-top:8px; font-size:26px;"></div>
       <div class="word-chips" id="verseChips"></div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
-        <button class="speakbtn" data-speak="因为上帝恩待我，使我充足。。因为上帝恩，待我，使我充足。" onclick="speakThis(this)">🔊 跟著念</button>
+        <button class="speakbtn" data-speak="因为上帝恩待我，使我充足。因为上帝恩，待我，使我充足。" onclick="speakThis(this)">🔊 跟著念</button>
         <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px;" onclick="verseReset()">🔄 再来一次</button>
         <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px; background:linear-gradient(135deg,#3ec6b0,#2aa89a);" onclick="addStar(1); go(3);">✅ 我背好了！</button>
       </div>
@@ -704,7 +704,7 @@ body.mobile .talk{font-size:18px;}
         </div>        <div class="card" style="flex:1; min-width:260px; text-align:left;">
           <div style="font-size:38px; text-align:center;">💝</div>
           <div style="font-weight:900; color:#2ecc71; font-size:19px; margin:6px 0;">本周信息</div>
-          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「自的祝福。」。在家庭中学习如何服侍他人。。</div>
+          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「终于回家了」。在家庭中学习如何服侍他人。</div>
         </div>
       </div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
@@ -720,7 +720,7 @@ body.mobile .talk{font-size:18px;}
       <h2 class="title" style="font-size:34px;">🙏 一起祷告</h2>
       <div class="card" style="max-width:820px; width:100%; position:relative; padding:14px 20px;">
         <div style="font-size:52px; line-height:1;" class="floaty">🌟</div>
-        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢当我们与他人分享上帝的祝福时，就是。<br>就像「自的祝福。」的故事一样，<br>求祢帮助我在生活中尊重他人并供应他们的需要。。<br>奉耶稣的名祷告，阿们！</div>
+        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢当我们与他人分享上帝的祝福时，就是。<br>就像「终于回家了」的故事一样，<br>求祢帮助我在生活中尊重他人并供应他们的需要。<br>奉耶稣的名祷告，阿们！</div>
         <div style="display:flex; justify-content:center;">
           <button class="speakbtn" onclick="speakText(document.getElementById('prayerText').innerText.replace(/<br>/g,'。'))">🔊 跟著念</button>
         </div>
@@ -1073,7 +1073,7 @@ function versePick(btn, w){
 function verseReset(){ verseInit(); }
 
 /* ================= 第一天：光 ================= *//* ================= 第一幕：雅各和上帝 ================= */
-const s0M = {'a00':'雅各和以扫最终学会分享各自的祝福。。', 'a01':'雅各遵照上帝的指示踏上了归乡的旅程，但他还是有些不安。。', 'a02':'他想起自己曾如何欺骗以扫出卖长子名份，又欺瞒父亲给他祝福。。'};
+const s0M = {'a00':'雅各和以扫最终学会分享各自的祝福。', 'a01':'雅各遵照上帝的指示踏上了归乡的旅程，但他还是有些不安。', 'a02':'他想起自己曾如何欺骗以扫出卖长子名份，又欺瞒父亲给他祝福。'};
 let s0Seen = {}, s0Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1090,7 +1090,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第二幕：上帝和天使 ================= */
-const s1M = {'a10':'上帝就与他同在。。', 'a11':'当他们行进的时候，两营的天使前后护卫着雅各和他的家人。。', 'a12':'当他们行进的时候，两营的天使前后护卫着雅各和他的家人。。'};
+const s1M = {'a10':'上帝就与他同在。', 'a11':'当他们行进的时候，两营的天使前后护卫着雅各和他的家人。', 'a12':'当他们行进的时候，两营的天使前后护卫着雅各和他的家人。'};
 let s1Seen = {}, s1Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1107,7 +1107,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第三幕：雅各和上帝 ================= */
-const s2M = {'a20':'于是雅各又一次向上帝求助，祈求祂持守祂的应许。。', 'a21':'于是雅各又一次向上帝求助，祈求祂持守祂的应许。。', 'a22':'接着，雅各捎信给以扫，说他正在回家的途中，同时献上许多牲畜作为礼物，并嘱咐信使：。'};
+const s2M = {'a20':'于是雅各又一次向上帝求助，祈求祂持守祂的应许。', 'a21':'于是雅各又一次向上帝求助，祈求祂持守祂的应许。', 'a22':'接着，雅各捎信给以扫，说他正在回家的途中，同时献上许多牲畜作为礼物，并嘱咐信使：。'};
 let s2Seen = {}, s2Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1124,7 +1124,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第四幕：雅各和天使 ================= */
-const s3M = {'a30':'“当雅各与天使较力的时候，另有一位天使奉差遣到以扫那里去。。', 'a31':'“当雅各与天使较力的时候，另有一位天使奉差遣到以扫那里去。。', 'a32':'以扫在梦中看见他兄弟……又看到上帝的军兵四围环绕着他。。'};
+const s3M = {'a30':'“当雅各与天使较力的时候，另有一位天使奉差遣到以扫那里去。', 'a31':'“当雅各与天使较力的时候，另有一位天使奉差遣到以扫那里去。', 'a32':'以扫在梦中看见他兄弟……又看到上帝的军兵四围环绕着他。'};
 let s3Seen = {}, s3Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1141,7 +1141,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第五幕：雅各和上帝 ================= */
-const s4M = {'a40':'”雅各告诉他：“这是上帝赐给我的家人，容我向你介绍。。', 'a41':'”雅各告诉他：“这是上帝赐给我的家人，容我向你介绍。。', 'a42':'”雅各告诉他：“这是上帝赐给我的家人，容我向你介绍。。'};
+const s4M = {'a40':'”雅各告诉他：“这是上帝赐给我的家人，容我向你介绍。', 'a41':'”雅各告诉他：“这是上帝赐给我的家人，容我向你介绍。', 'a42':'”雅各告诉他：“这是上帝赐给我的家人，容我向你介绍。'};
 let s4Seen = {}, s4Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1158,7 +1158,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第六幕：礼物和雅各 ================= */
-const s5M = {'a50':'”最后以扫接受了礼物，他对雅各说：“让我们动身吧，我与你们一起走。。', 'a51':'”最后以扫接受了礼物，他对雅各说：“让我们动身吧，我与你们一起走。。', 'a52':'但是我们确实需要慢慢地走，因为孩子们都年幼娇弱。。'};
+const s5M = {'a50':'”最后以扫接受了礼物，他对雅各说：“让我们动身吧，我与你们一起走。', 'a51':'”最后以扫接受了礼物，他对雅各说：“让我们动身吧，我与你们一起走。', 'a52':'但是我们确实需要慢慢地走，因为孩子们都年幼娇弱。'};
 let s5Seen = {}, s5Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1175,7 +1175,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第七幕：我们的回应 ================= */
-const s6M = {'r0':'当我们与他人分享上帝的祝福时，就是。', 'r1':'存心节：因为上帝恩待我，使我充足。。', 'r2':'在生活中尊重他人并供应他们的需要。'};
+const s6M = {'r0':'当我们与他人分享上帝的祝福时，就是。', 'r1':'存心节：因为上帝恩待我，使我充足。', 'r2':'在生活中尊重他人并供应他们的需要。'};
 let s6Seen = {}, s6Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;

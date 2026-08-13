@@ -423,7 +423,7 @@ body.mobile .talk{font-size:18px;}
       <div id="verseLine" style="margin-top:8px; font-size:26px;"></div>
       <div class="word-chips" id="verseChips"></div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
-        <button class="speakbtn" data-speak="人子来，为要寻找、拯救失丧的人。。人子来，为要寻找，拯救失丧的，人。" onclick="speakThis(this)">🔊 跟著念</button>
+        <button class="speakbtn" data-speak="人子来，为要寻找、拯救失丧的人。人子来，为要寻找，拯救失丧的，人。" onclick="speakThis(this)">🔊 跟著念</button>
         <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px;" onclick="verseReset()">🔄 再来一次</button>
         <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px; background:linear-gradient(135deg,#3ec6b0,#2aa89a);" onclick="addStar(1); go(3);">✅ 我背好了！</button>
       </div>
@@ -704,7 +704,7 @@ body.mobile .talk{font-size:18px;}
         </div>        <div class="card" style="flex:1; min-width:260px; text-align:left;">
           <div style="font-size:38px; text-align:center;">💝</div>
           <div style="font-weight:900; color:#2ecc71; font-size:19px; margin:6px 0;">本周信息</div>
-          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「的……」。无论我在哪里，上帝的爱都会寻找我。。</div>
+          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「不容失去的珍宝」。无论我在哪里，上帝的爱都会寻找我。</div>
         </div>
       </div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
@@ -720,7 +720,7 @@ body.mobile .talk{font-size:18px;}
       <h2 class="title" style="font-size:34px;">🙏 一起祷告</h2>
       <div class="card" style="max-width:820px; width:100%; position:relative; padding:14px 20px;">
         <div style="font-size:52px; line-height:1;" class="floaty">🌟</div>
-        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢耶稣来寻找我，因我是祂眼中的珍宝。<br>就像「的……」的故事一样，<br>求祢帮助我接受耶稣的爱，并与他人分享这份爱。。<br>奉耶稣的名祷告，阿们！</div>
+        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢耶稣来寻找我，因我是祂眼中的珍宝。<br>就像「不容失去的珍宝」的故事一样，<br>求祢帮助我接受耶稣的爱，并与他人分享这份爱。<br>奉耶稣的名祷告，阿们！</div>
         <div style="display:flex; justify-content:center;">
           <button class="speakbtn" onclick="speakText(document.getElementById('prayerText').innerText.replace(/<br>/g,'。'))">🔊 跟著念</button>
         </div>
@@ -1073,7 +1073,7 @@ function versePick(btn, w){
 function verseReset(){ verseInit(); }
 
 /* ================= 第一天：光 ================= *//* ================= 第一幕：光和耶稣 ================= */
-const s0M = {'a00':'故事是这样的……早晨，暖洋洋的阳光照在那些忙碌妇女的后背，她们正在分享各自的故事。', 'a01':'“你有没有听过耶稣讲述的故事？。', 'a02':'“我想明天带我的孩子到衪那里听祂的话语。。'};
+const s0M = {'a00':'故事是这样的……早晨，暖洋洋的阳光照在那些忙碌妇女的后背，她们正在分享各自的故事。', 'a01':'“你有没有听过耶稣讲述的故事？。', 'a02':'“我想明天带我的孩子到衪那里听祂的话语。'};
 let s0Seen = {}, s0Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1090,7 +1090,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第二幕：耶稣和孩子 ================= */
-const s1M = {'a10':'很快一些妇人都计划明天到耶稣那里去。。', 'a11':'次日早上，一班快乐的儿童在他们母亲的身边跳来跳去。。', 'a12':'次日早上，一班快乐的儿童在他们母亲的身边跳来跳去。。'};
+const s1M = {'a10':'很快一些妇人都计划明天到耶稣那里去。', 'a11':'次日早上，一班快乐的儿童在他们母亲的身边跳来跳去。', 'a12':'次日早上，一班快乐的儿童在他们母亲的身边跳来跳去。'};
 let s1Seen = {}, s1Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1107,7 +1107,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第三幕：家和礼物 ================= */
-const s2M = {'a20':'嫁妆是在结婚前，丈夫送给新娘家人的礼物。。', 'a21':'嫁妆是在结婚前，丈夫送给新娘家人的礼物。。', 'a22':'耶稣继续讲衪的故事：“一天，妇人丢失了其中一个银币。。'};
+const s2M = {'a20':'嫁妆是在结婚前，丈夫送给新娘家人的礼物。', 'a21':'嫁妆是在结婚前，丈夫送给新娘家人的礼物。', 'a22':'耶稣继续讲衪的故事：“一天，妇人丢失了其中一个银币。'};
 let s2Seen = {}, s2Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1124,7 +1124,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第四幕：朋友和灯 ================= */
-const s3M = {'a30':'她的朋友和邻居又会说什么？。', 'a31':'”“妇人点着灯，开始打扫屋子，”耶稣说，“她到处寻找那枚失去的银币。。', 'a32':'”“妇人点着灯，开始打扫屋子，”耶稣说，“她到处寻找那枚失去的银币。。'};
+const s3M = {'a30':'她的朋友和邻居又会说什么？。', 'a31':'”“妇人点着灯，开始打扫屋子，”耶稣说，“她到处寻找那枚失去的银币。', 'a32':'”“妇人点着灯，开始打扫屋子，”耶稣说，“她到处寻找那枚失去的银币。'};
 let s3Seen = {}, s3Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1141,7 +1141,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第五幕：水和光 ================= */
-const s4M = {'a40':'在桌子上，在桌子下，在大水瓶旁边──她找啊找。。', 'a41':'’她叫喊着，立即拿起那光滑的银币。。', 'a42':'她冲出屋子，跑到朋友和邻居那里。。'};
+const s4M = {'a40':'在桌子上，在桌子下，在大水瓶旁边──她找啊找。', 'a41':'’她叫喊着，立即拿起那光滑的银币。', 'a42':'她冲出屋子，跑到朋友和邻居那里。'};
 let s4Seen = {}, s4Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1158,7 +1158,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第六幕：耶稣和婴孩 ================= */
-const s5M = {'a50':'耶稣与他们一起笑，并拥抱着一个小孩坐在衪的膝上。。', 'a51':'耶稣与他们一起笑，并拥抱着一个小孩坐在衪的膝上。。', 'a52':'他的眼睛闪耀着光芒说：“当上帝找回另一个迷失的人时，天上的使者也是这样的欢喜。。'};
+const s5M = {'a50':'耶稣与他们一起笑，并拥抱着一个小孩坐在衪的膝上。', 'a51':'耶稣与他们一起笑，并拥抱着一个小孩坐在衪的膝上。', 'a52':'他的眼睛闪耀着光芒说：“当上帝找回另一个迷失的人时，天上的使者也是这样的欢喜。'};
 let s5Seen = {}, s5Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1175,7 +1175,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第七幕：我们的回应 ================= */
-const s6M = {'r0':'耶稣来寻找我，因我是祂眼中的珍宝。', 'r1':'存心节：人子来，为要寻找、拯救失丧的人。。', 'r2':'接受耶稣的爱，并与他人分享这份爱。'};
+const s6M = {'r0':'耶稣来寻找我，因我是祂眼中的珍宝。', 'r1':'存心节：人子来，为要寻找、拯救失丧的人。', 'r2':'接受耶稣的爱，并与他人分享这份爱。'};
 let s6Seen = {}, s6Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;

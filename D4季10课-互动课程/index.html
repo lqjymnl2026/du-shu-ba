@@ -423,7 +423,7 @@ body.mobile .talk{font-size:18px;}
       <div id="verseLine" style="margin-top:8px; font-size:26px;"></div>
       <div class="word-chips" id="verseChips"></div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
-        <button class="speakbtn" data-speak="那有权能的，为我成就了大事；祂的名为圣。。那有权能的，为我成就了，大事，祂的名为圣。" onclick="speakThis(this)">🔊 跟著念</button>
+        <button class="speakbtn" data-speak="那有权能的，为我成就了大事；祂的名为圣。那有权能的，为我成就了，大事，祂的名为圣。" onclick="speakThis(this)">🔊 跟著念</button>
         <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px;" onclick="verseReset()">🔄 再来一次</button>
         <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px; background:linear-gradient(135deg,#3ec6b0,#2aa89a);" onclick="addStar(1); go(3);">✅ 我背好了！</button>
       </div>
@@ -702,7 +702,7 @@ body.mobile .talk{font-size:18px;}
         </div>        <div class="card" style="flex:1; min-width:260px; text-align:left;">
           <div style="font-size:38px; text-align:center;">💝</div>
           <div style="font-weight:900; color:#2ecc71; font-size:19px; margin:6px 0;">本周信息</div>
-          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「的承诺？你知道后感受如」。上帝的恩典给我们盼望和喜乐。</div>
+          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「应许的婴孩」。上帝的恩典给我们盼望和喜乐。</div>
         </div>
       </div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
@@ -718,7 +718,7 @@ body.mobile .talk{font-size:18px;}
       <h2 class="title" style="font-size:34px;">🙏 一起祷告</h2>
       <div class="card" style="max-width:820px; width:100%; position:relative; padding:14px 20px;">
         <div style="font-size:52px; line-height:1;" class="floaty">🌟</div>
-        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢上帝赐下爱的礼物，。<br>就像「的承诺？你知道后感受如」的故事一样，<br>求祢帮助我庆祝上帝给我们的应许。。<br>奉耶稣的名祷告，阿们！</div>
+        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢上帝赐下爱的礼物，。<br>就像「应许的婴孩」的故事一样，<br>求祢帮助我庆祝上帝给我们的应许。<br>奉耶稣的名祷告，阿们！</div>
         <div style="display:flex; justify-content:center;">
           <button class="speakbtn" onclick="speakText(document.getElementById('prayerText').innerText.replace(/<br>/g,'。'))">🔊 跟著念</button>
         </div>
@@ -1071,7 +1071,7 @@ function versePick(btn, w){
 function verseReset(){ verseInit(); }
 
 /* ================= 第一天：光 ================= *//* ================= 第一幕：上帝和礼物 ================= */
-const s0M = {'a00':'上帝赐下就被圣灵充满，他将带领人们改变爱的礼物，生命，预备迎接主。。', 'a01':'上帝赐下就被圣灵充满，他将带领人们改变爱的礼物，生命，预备迎接主。。', 'a02':'”天使回答：“我是站在上帝面前的加百列，奉差而来，将好消息报告给你。。'};
+const s0M = {'a00':'上帝赐下就被圣灵充满，他将带领人们改变爱的礼物，生命，预备迎接主。', 'a01':'上帝赐下就被圣灵充满，他将带领人们改变爱的礼物，生命，预备迎接主。', 'a02':'”天使回答：“我是站在上帝面前的加百列，奉差而来，将好消息报告给你。'};
 let s0Seen = {}, s0Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1088,7 +1088,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第二幕：天使 ================= */
-const s1M = {'a10':'”说完，天使就不见了。。'};
+const s1M = {'a10':'”说完，天使就不见了。'};
 let s1Seen = {}, s1Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1105,7 +1105,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第三幕：天使和上帝 ================= */
-const s2M = {'a20':'106天使见了撒迦利亚之后，一切正如上帝所应许的，以利沙伯怀孕了。。', 'a21':'106天使见了撒迦利亚之后，一切正如上帝所应许的，以利沙伯怀孕了。。', 'a22':'106天使见了撒迦利亚之后，一切正如上帝所应许的，以利沙伯怀孕了。。'};
+const s2M = {'a20':'106天使见了撒迦利亚之后，一切正如上帝所应许的，以利沙伯怀孕了。', 'a21':'106天使见了撒迦利亚之后，一切正如上帝所应许的，以利沙伯怀孕了。', 'a22':'106天使见了撒迦利亚之后，一切正如上帝所应许的，以利沙伯怀孕了。'};
 let s2Seen = {}, s2Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1122,7 +1122,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第四幕：马利亚和天使 ================= */
-const s3M = {'a30':'马利亚感到惊慌，迷惑地看着天使，思量这问安的意思。。', 'a31':'马利亚感到惊慌，迷惑地看着天使，思量这问安的意思。。', 'a32':'你在上帝面前已经蒙恩了，将要怀孕生子，给祂取名为耶稣。。'};
+const s3M = {'a30':'马利亚感到惊慌，迷惑地看着天使，思量这问安的意思。', 'a31':'马利亚感到惊慌，迷惑地看着天使，思量这问安的意思。', 'a32':'你在上帝面前已经蒙恩了，将要怀孕生子，给祂取名为耶稣。'};
 let s3Seen = {}, s3Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1139,7 +1139,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第五幕：天使和先知 ================= */
-const s4M = {'a40':'”加百列说，“你的亲戚以利沙伯也要生一个男婴。。', 'a41':'”加百列说，“你的亲戚以利沙伯也要生一个男婴。。', 'a42':'对上帝而言，没有不可能的事。。'};
+const s4M = {'a40':'”加百列说，“你的亲戚以利沙伯也要生一个男婴。', 'a41':'”加百列说，“你的亲戚以利沙伯也要生一个男婴。', 'a42':'对上帝而言，没有不可能的事。'};
 let s4Seen = {}, s4Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1156,7 +1156,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第六幕：礼物和上帝 ================= */
-const s5M = {'a50':'这就是恩典──上帝给我们一个应许看似不可能发生。。', 'a51':'这就是恩典──上帝给我们一个应许看似不可能发生。。', 'a52':'上帝应许，将祂的儿子──耶稣再次蒙差遣到地上，我们能和祂一起生活到永远。。'};
+const s5M = {'a50':'这就是恩典──上帝给我们一个应许看似不可能发生。', 'a51':'这就是恩典──上帝给我们一个应许看似不可能发生。', 'a52':'上帝应许，将祂的儿子──耶稣再次蒙差遣到地上，我们能和祂一起生活到永远。'};
 let s5Seen = {}, s5Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1173,7 +1173,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第七幕：我们的回应 ================= */
-const s6M = {'r0':'上帝赐下爱的礼物，。', 'r1':'存心节：那有权能的，为我成就了大事；祂的名为圣。。', 'r2':'庆祝上帝给我们的应许。'};
+const s6M = {'r0':'上帝赐下爱的礼物，。', 'r1':'存心节：那有权能的，为我成就了大事；祂的名为圣。', 'r2':'庆祝上帝给我们的应许。'};
 let s6Seen = {}, s6Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;

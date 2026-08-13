@@ -423,7 +423,7 @@ body.mobile .talk{font-size:18px;}
       <div id="verseLine" style="margin-top:8px; font-size:26px;"></div>
       <div class="word-chips" id="verseChips"></div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
-        <button class="speakbtn" data-speak="耶和华对我说：你不要说我是年幼的，因为我差遣你到谁那里去，你都要去；我吩咐你说什么话，你都要说。。耶和华对我，说，你不要说我，是年幼的，因为我差遣，你到谁那里，去，你都要去，我吩咐你说，什么话，你都要说。" onclick="speakThis(this)">🔊 跟著念</button>
+        <button class="speakbtn" data-speak="耶和华对我说：你不要说我是年幼的，因为我差遣你到谁那里去，你都要去；我吩咐你说什么话，你都要说。耶和华对我，说，你不要说我，是年幼的，因为我差遣，你到谁那里，去，你都要去，我吩咐你说，什么话，你都要说。" onclick="speakThis(this)">🔊 跟著念</button>
         <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px;" onclick="verseReset()">🔄 再来一次</button>
         <button class="bigbtn" style="margin-top:0; font-size:19px; padding:12px 26px; background:linear-gradient(135deg,#3ec6b0,#2aa89a);" onclick="addStar(1); go(3);">✅ 我背好了！</button>
       </div>
@@ -702,7 +702,7 @@ body.mobile .talk{font-size:18px;}
         </div>        <div class="card" style="flex:1; min-width:260px; text-align:left;">
           <div style="font-size:38px; text-align:center;">💝</div>
           <div style="font-weight:900; color:#2ecc71; font-size:19px; margin:6px 0;">本周信息</div>
-          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「呢？这些文字或许很难看」。无论身在何处，我们都服侍上帝。。</div>
+          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「墙上的手迹」。无论身在何处，我们都服侍上帝。</div>
         </div>
       </div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
@@ -718,7 +718,7 @@ body.mobile .talk{font-size:18px;}
       <h2 class="title" style="font-size:34px;">🙏 一起祷告</h2>
       <div class="card" style="max-width:820px; width:100%; position:relative; padding:14px 20px;">
         <div style="font-size:52px; line-height:1;" class="floaty">🌟</div>
-        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢我帮助他人明白上帝的话。<br>就像「呢？这些文字或许很难看」的故事一样，<br>求祢帮助我聆听上帝想让我们做的事，并用爱心去完成。。<br>奉耶稣的名祷告，阿们！</div>
+        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢我帮助他人明白上帝的话。<br>就像「墙上的手迹」的故事一样，<br>求祢帮助我聆听上帝想让我们做的事，并用爱心去完成。<br>奉耶稣的名祷告，阿们！</div>
         <div style="display:flex; justify-content:center;">
           <button class="speakbtn" onclick="speakText(document.getElementById('prayerText').innerText.replace(/<br>/g,'。'))">🔊 跟著念</button>
         </div>
@@ -1071,7 +1071,7 @@ function versePick(btn, w){
 function verseReset(){ verseInit(); }
 
 /* ================= 第一天：光 ================= *//* ================= 第一幕：上帝和书卷 ================= */
-const s0M = {'a00':'宴会的原意应该白上帝是敬神，人们却只顾自己享乐。。', 'a01':'的话语，就是真神上帝看到了这一切，非服侍祂常失望，祂爱伯沙撒，希望他改变做法。。'};
+const s0M = {'a00':'宴会的原意应该白上帝是敬神，人们却只顾自己享乐。', 'a01':'的话语，就是真神上帝看到了这一切，非服侍祂常失望，祂爱伯沙撒，希望他改变做法。'};
 let s0Seen = {}, s0Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1122,7 +1122,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第四幕：母亲和但以理 ================= */
-const s3M = {'a30':'后来，伯沙撒的母亲想起但以理。。', 'a31':'后来，伯沙撒的母亲想起但以理。。', 'a32':'”她说，“但以理曾为尼布甲尼撒王解过梦，还有谁比他更能担此重任？。'};
+const s3M = {'a30':'后来，伯沙撒的母亲想起但以理。', 'a31':'后来，伯沙撒的母亲想起但以理。', 'a32':'”她说，“但以理曾为尼布甲尼撒王解过梦，还有谁比他更能担此重任？。'};
 let s3Seen = {}, s3Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1139,7 +1139,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第五幕：但以理和书卷 ================= */
-const s4M = {'a40':'但以理解释这则坏消息时，话语里还带有敬意。。', 'a41':'但以理解释这则坏消息时，话语里还带有敬意。。', 'a42':'“你太骄傲了，”但以理告诉伯沙撒，“你亵渎了上帝，所以祂给了你这信息。。'};
+const s4M = {'a40':'但以理解释这则坏消息时，话语里还带有敬意。', 'a41':'但以理解释这则坏消息时，话语里还带有敬意。', 'a42':'“你太骄傲了，”但以理告诉伯沙撒，“你亵渎了上帝，所以祂给了你这信息。'};
 let s4Seen = {}, s4Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1156,7 +1156,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第六幕：敌人和城 ================= */
-const s5M = {'a50':'波斯军队攻入巴比伦，占领了整个巴比伦城，而伯沙撒也当天晚上被杀了。。', 'a51':'波斯军队攻入巴比伦，占领了整个巴比伦城，而伯沙撒也当天晚上被杀了。。', 'a52':'你能否告诉国家领导人，上帝对他感到非常生气？。'};
+const s5M = {'a50':'波斯军队攻入巴比伦，占领了整个巴比伦城，而伯沙撒也当天晚上被杀了。', 'a51':'波斯军队攻入巴比伦，占领了整个巴比伦城，而伯沙撒也当天晚上被杀了。', 'a52':'你能否告诉国家领导人，上帝对他感到非常生气？。'};
 let s5Seen = {}, s5Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
