@@ -361,6 +361,15 @@ body.mobile .talk{font-size:18px;}
 .vrow .vpreview{margin-left:auto; border:none; border-radius:12px; padding:6px 12px; font-size:13px; font-weight:800; background:#efe9ff; color:var(--purple); cursor:pointer;}
 .vrow .vpreview:hover{background:var(--purple); color:#fff;}
 .voice-note{font-size:13px; color:#8a7fb0; font-weight:700; line-height:1.7;}
+
+/* ===== 文字排版左对齐（正文更易读） ===== */
+.content > .sub{width:100%; max-width:920px; text-align:left; margin-left:auto; margin-right:auto;}
+.scene-txt{text-align:left; line-height:1.85; padding:12px 18px 10px;}
+.talk{text-align:left;}
+#prayerText{text-align:left;}
+.q-q{text-align:left;}
+.q-opt{text-align:left;}
+
 </style>
 </head>
 <body>
@@ -1389,14 +1398,14 @@ document.addEventListener('click', e=>{
   }
 });
 /* ================= 唱游时间 ================= */
-const SONGS = [
-  {name:'所有美好光明的事', lines:[['唱呀唱，所有美好光明的事！', '拍拍手'], ['我们一起唱！', '左右摇一摇'], ['赞美上帝真美好！', '举起双手'], ['哈利路亚！', '转个圈圈']]},
-  {name:'你能想像吗？', lines:[['唱呀唱，你能想像吗？！', '拍拍手'], ['我们一起唱！', '左右摇一摇'], ['赞美上帝真美好！', '举起双手'], ['哈利路亚！', '转个圈圈']]},
-  {name:'存心节之歌', lines:[['「上帝就照着自己的形像造人，乃是照着祂」', '手放胸前'], ['这是上帝的话语！', '举起双手'], ['我要记住在心里！', '手放胸前']]},
-  {name:'信息之歌', lines:[['上帝以爱环绕我们。18', '踏步走'], ['这是今天的道理！', '手放胸前'], ['我也要这样行！', '比一个爱心']]},
-  {name:'访时，你会做些什么事情？的故事', lines:[['我们来听访时，你会做些什么事情？，', '手放耳朵旁'], ['上帝的爱在其中！', '举起双手'], ['让我们一起歌唱！', '拍拍手']]},
-  {name:'赞美真美好', lines:[['赞美真美好，真美好！', '举起双手'], ['唱歌跳舞赞美主！', '转个圈圈'], ['哈利路亚！哈利路亚！', '拍拍手']]}
-];
+const SONGS = [[
+{name:'所有美好光明的事', lines:[['唱呀唱，所有美好光明的事！', '拍拍手'], ['我们一起唱！', '左右摇一摇'], ['赞美上帝真美好！', '举起双手'], ['哈利路亚！', '转个圈圈']]},
+{name:'你能想像吗？', lines:[['唱呀唱，你能想像吗？！', '拍拍手'], ['我们一起唱！', '左右摇一摇'], ['赞美上帝真美好！', '举起双手'], ['哈利路亚！', '转个圈圈']]},
+{name:'存心节之歌', lines:[['「上帝就照着自己的形像造人，乃是照着祂」','手放胸前'],['这是上帝的话语！','举起双手'],['我要记住在心里！','手放胸前']]},
+{name:'信息之歌', lines:[['上帝以爱环绕我们。18','踏步走'],['这是今天的道理！','手放胸前'],['我也要这样行！','比一个爱心']]},
+{name:'按上帝的形像的故事', lines:[['我们来听按上帝的形像，','手放耳朵旁'],['上帝的爱在其中！','举起双手'],['让我们一起歌唱！','拍拍手']]},
+{name:'赞美真美好', lines:[['赞美真美好，真美好！','举起双手'],['唱歌跳舞赞美主！','转个圈圈'],['哈利路亚！哈利路亚！','拍拍手']]}
+]];
 let songIdx = 0, songTimer = null;
 function songRender(){
   const tabs = document.getElementById('songTabs');
@@ -1437,13 +1446,13 @@ function speakSong(){
 }
 
 /* ================= 动手做做看 ================= */
-const CRAFTS = [
-  {ico:'🎨', nm:'画一画这一课', wk:'第1周', desc:'把这一课的故事画下来！'},
-  {ico:'✂️', nm:'故事小书', wk:'第2周', desc:'做一本这一课的故事小书！'},
-  {ico:'⭐', nm:'存心节星星', wk:'第3周', desc:'做一颗星星，写上存心节！'},
-  {ico:'💌', nm:'爱心卡', wk:'第4周', desc:'做一张爱心卡，把这一课的祝福送给家人！'},
-  {ico:'🚩', nm:'赞美旗', wk:'第5周', desc:'做一面赞美旗，唱赞美歌时挥一挥！'}
-];
+const CRAFTS = [[
+{ico:'🎨', nm:'画一画这一课', wk:'第1周', desc:'把这一课的故事画下来！'},
+{ico:'✂️', nm:'故事小书', wk:'第2周', desc:'做一本这一课的故事小书！'},
+{ico:'⭐', nm:'存心节星星', wk:'第3周', desc:'做一颗星星，写上存心节！'},
+{ico:'💌', nm:'爱心卡', wk:'第4周', desc:'做一张爱心卡，把这一课的祝福送给家人！'},
+{ico:'🚩', nm:'赞美旗', wk:'第5周', desc:'做一面赞美旗，唱赞美歌时挥一挥！'}
+]];
 function craftRender(){
   const g = document.getElementById('craftGrid');
   if(g.dataset.done) return; g.dataset.done = '1';

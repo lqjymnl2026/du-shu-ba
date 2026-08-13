@@ -361,6 +361,15 @@ body.mobile .talk{font-size:18px;}
 .vrow .vpreview{margin-left:auto; border:none; border-radius:12px; padding:6px 12px; font-size:13px; font-weight:800; background:#efe9ff; color:var(--purple); cursor:pointer;}
 .vrow .vpreview:hover{background:var(--purple); color:#fff;}
 .voice-note{font-size:13px; color:#8a7fb0; font-weight:700; line-height:1.7;}
+
+/* ===== 文字排版左对齐（正文更易读） ===== */
+.content > .sub{width:100%; max-width:920px; text-align:left; margin-left:auto; margin-right:auto;}
+.scene-txt{text-align:left; line-height:1.85; padding:12px 18px 10px;}
+.talk{text-align:left;}
+#prayerText{text-align:left;}
+.q-q{text-align:left;}
+.q-opt{text-align:left;}
+
 </style>
 </head>
 <body>
@@ -1407,12 +1416,14 @@ document.addEventListener('click', e=>{
   }
 });
 /* ================= 唱游时间 ================= */
-const SONGS = [
-  {name:'上帝造我们的手', lines:[['唱呀唱，上帝造我们的手！', '拍拍手'], ['我们一起唱！', '左右摇一摇'], ['赞美上帝真美好！', '举起双手'], ['哈利路亚！', '转个圈圈']]},
-  {name:'十二位门徒', lines:[['唱呀唱，十二位门徒！', '拍拍手'], ['我们一起唱！', '左右摇一摇'], ['赞美上帝真美好！', '举起双手'], ['哈利路亚！', '转个圈圈']]},
-  {name:'学习耶稣', lines:[['唱呀唱，学习耶稣！', '拍拍手'], ['我们一起唱！', '左右摇一摇'], ['赞美上帝真美好！', '举起双手'], ['哈利路亚！', '转个圈圈']]},
-  {name:'把你的心给耶稣', lines:[['唱呀唱，把你的心给耶稣！', '拍拍手'], ['我们一起唱！', '左右摇一摇'], ['赞美上帝真美好！', '举起双手'], ['哈利路亚！', '转个圈圈']]}
-];
+const SONGS = [[
+{name:'上帝造我们的手', lines:[['唱呀唱，上帝造我们的手！', '拍拍手'], ['我们一起唱！', '左右摇一摇'], ['赞美上帝真美好！', '举起双手'], ['哈利路亚！', '转个圈圈']]},
+{name:'十二位门徒', lines:[['唱呀唱，十二位门徒！', '拍拍手'], ['我们一起唱！', '左右摇一摇'], ['赞美上帝真美好！', '举起双手'], ['哈利路亚！', '转个圈圈']]},
+{name:'存心节之歌', lines:[['「耶稣第二次又对他说：‘……你爱我吗？」','手放胸前'],['这是上帝的话语！','举起双手'],['我要记住在心里！','手放胸前']]},
+{name:'信息之歌', lines:[['上帝爱我们。','踏步走'],['这是今天的道理！','手放胸前'],['我也要这样行！','比一个爱心']]},
+{name:'你爱我吗？的故事', lines:[['我们来听你爱我吗？，','手放耳朵旁'],['上帝的爱在其中！','举起双手'],['让我们一起歌唱！','拍拍手']]},
+{name:'赞美真美好', lines:[['赞美真美好，真美好！','举起双手'],['唱歌跳舞赞美主！','转个圈圈'],['哈利路亚！哈利路亚！','拍拍手']]}
+]];
 let songIdx = 0, songTimer = null;
 function songRender(){
   const tabs = document.getElementById('songTabs');
@@ -1453,11 +1464,13 @@ function speakSong(){
 }
 
 /* ================= 动手做做看 ================= */
-const CRAFTS = [
-  {ico:'🎨', nm:'画一画这一课', wk:'第一周', desc:'把这一课的故事画下来！'},
-  {ico:'✂️', nm:'故事小书', wk:'第二周', desc:'做一本这一课的故事小书！'},
-  {ico:'⭐', nm:'存心节星星', wk:'第三周', desc:'做一颗星星，写上存心节！'}
-];
+const CRAFTS = [[
+{ico:'🎨', nm:'画一画这一课', wk:'第1周', desc:'把这一课的故事画下来！'},
+{ico:'✂️', nm:'故事小书', wk:'第2周', desc:'做一本这一课的故事小书！'},
+{ico:'⭐', nm:'存心节星星', wk:'第3周', desc:'做一颗星星，写上存心节！'},
+{ico:'💌', nm:'爱心卡', wk:'第4周', desc:'做一张爱心卡，把这一课的祝福送给家人！'},
+{ico:'🚩', nm:'赞美旗', wk:'第5周', desc:'做一面赞美旗，唱赞美歌时挥一挥！'}
+]];
 function craftRender(){
   const g = document.getElementById('craftGrid');
   if(g.dataset.done) return; g.dataset.done = '1';
@@ -1522,9 +1535,7 @@ function printCert(){
   <p>亲爱的 <b style="font-size:26px;">${name}</b>，<br>恭喜你完成了第五课「你爱我吗？」的互动课程，<br>并获得了 <b>${stars}</b> 颗星星！</p>
   <div class="row"><div><p style="text-align:left;">存心节：<br><b style="color:#ff8c42; font-size:22px;">「上帝所造的每一样都是好的。」</b><br>（创世记 1:31）</p></div><div class="seal">完成<br>五<br>💜</div></div>
   <p>上帝创造我们的世界，因为祂爱我们。💜</p></div>
-  <script>window.print();<\/script>
-
-</body></html>`);
+  <script>window.print();<\/script></body></html>`);
   w.document.close();
 }
 
@@ -1662,18 +1673,24 @@ document.getElementById('albumBtn').onclick = openAlbum;
 
 
 const COURSE_ID = 'a2m5';
-const AI_KB = [
-  {keys:['要说出一种动物所吃食物的名称容易吗今天的圣经故事是关于耶稣和彼得耶稣吩咐彼得要喂养和照顾祂的羊谁是主耶稣的羊呢', '孩子', '书卷', '彼得', '要说出一种动物所吃食物的名称容易吗', '今天的圣经故事是关于耶稣和彼得', '耶稣吩咐彼得要喂养和照顾祂的羊'], a:'让孩子有足够的时间思考'},
-  {keys:['耶稣吩咐彼得做什么', '彼得'], a:'你喂养我的小羊'},
-  {keys:['故事', '讲了什么', '主要内容', '这个故事', '在讲'], a:'这一课讲的是：耶稣再次向一些门徒显现。这些门徒整夜在湖里捕鱼，却没有任何收获。于是耶稣为他们行了一次神迹，使网里满了鱼儿。接着祂为他们预备早饭。耶稣三次问彼得：你爱我吗。彼得每次都承认爱耶稣，他以为耶稣不相信他，因为他曾经三次否认主。彼得每一次回答之后，……。上帝爱我们。'},
-  {keys:['主角', '人物', '故事里', '里面'], a:'这个故事里有：彼得、门徒、鱼。上帝爱我们。'},
-  {keys:['信息', '这一课', '告诉我们', '道理', '学习', '明白', '主题', '重点'], a:'上帝爱我们。'},
-  {keys:['存心节', '金句', '经文', '背诵', '记忆'], a:'「耶稣第二次又对他说：‘……你爱我吗？……你牧养我的羊。’」（约21:16）'},
-  {keys:['上帝', '耶稣'], a:'上帝爱我们。上帝爱我们！'},
-  {keys:['你好', '哈喽', '你是谁', 'hello'], a:'你好呀！我是你的小帮手，今天我们一起认识「你爱我吗？」的故事！'},
-  {keys:['为什么', '结局', '后来', '然后', '结果', '最后'], a:'上帝爱我们。上帝爱我们！'}
-];
-const AI_SUGGEST = ['要说出一种动物所吃食物的名称容易吗？今天的圣经故事是关于耶稣和彼得。耶稣吩咐彼得要喂养和照顾祂的羊。谁是主耶稣的羊呢？','耶稣吩咐彼得做什么？','这个故事讲了什么？','存心节是什么？','信息是什么？','你好！'];
+const AI_KB = [[
+{keys:['要说出一种动物所吃食物的名称容易吗今天的圣经故事是关于耶稣和彼得耶稣吩咐彼得要喂养和照顾祂的羊谁是主耶稣的羊呢','孩子','书卷','彼得','要说出一种动物所吃食物的名称容易吗','今天的圣经故事是关于耶稣和彼得','耶稣吩咐彼得要喂养和照顾祂的羊'], a:'答对了！让孩子有足够的时间思考'},
+{keys:['耶稣吩咐彼得做什么','彼得'], a:'答对了！你喂养我的小羊'},
+{keys:['故事里说：「”＿＿＿＿就是这样一连三次问彼得同一个问题」横线里应该填什么','彼得','就是这样一连三次问彼得同一个问题','横线里应该填什么','故事里说'], a:'对！就是「耶稣」！你读得好仔细！'},
+{keys:['故事里说：「”耶稣就是这样一连三次问＿＿＿＿同一个问题」横线里应该填什么','彼得','耶稣就是这样一连三次问','横线里应该填什么','同一个问题'], a:'对！就是「彼得」！你读得好仔细！'},
+{keys:['故事里说：「就对其他的＿＿＿＿说：“我去捕鱼了」横线里应该填什么','门徒','横线里应该填什么','就对其他的','我去捕鱼了'], a:'对！就是「门徒」！你读得好仔细！'},
+{keys:['故事里说：「就对其他的门徒说：“我去捕＿＿＿＿了」横线里应该填什么','门徒','就对其他的门徒说','横线里应该填什么','故事里说'], a:'对！就是「鱼」！你读得好仔细！'},
+{keys:['故事里说：「虽然他已经恳求＿＿＿＿饶恕但觉得耶稣可能再也不会信任他了」横线里应该填什么','但觉得耶稣可能再也不会信任他了','横线里应该填什么','虽然他已经恳求'], a:'对！就是「上帝」！你读得好仔细！'},
+{keys:['故事里说：「有几个门徒打算跟彼得一起去捕鱼日落的时候他们便登上彼得的＿＿＿＿到湖里捕鱼去了」横线里应该填什么','门徒','彼得','有几个门徒打算跟彼得一起去捕鱼','他们便登上彼得的','横线里应该填什么'], a:'对！就是「船」！你读得好仔细！'},
+{keys:['故事','讲了什么','主要内容','这个故事','在讲'], a:'这一课讲的是：耶稣再次向一些门徒显现。这些门徒整夜在湖里捕鱼，却没有任何收获。于是耶稣为他们行了一次神迹，使网里满了鱼儿。接着祂为他们预备早饭。耶稣三次问彼得：你爱我吗。彼得每次都承认爱耶稣，他以为耶稣不相信他，因为他曾经三次否认主。彼得每一次回答之后，……。上帝爱我们。'},
+{keys:['主角','人物','故事里','里面'], a:'这个故事里有：门徒、船、羊。上帝爱我们。'},
+{keys:['信息','这一课','告诉我们','道理','学习','明白','主题','重点'], a:'上帝爱我们。'},
+{keys:['存心节','金句','经文','背诵','记忆'], a:'「耶稣第二次又对他说：‘……你爱我吗？……你牧养我」约21:16'},
+{keys:['上帝','耶稣'], a:'上帝爱我们。上帝爱我们！'},
+{keys:['你好','哈喽','你是谁','hello'], a:'你好呀！我是你的小帮手，今天我们一起认识「你爱我吗？」的故事！'},
+{keys:['为什么','结局','后来','然后','结果','最后'], a:'上帝爱我们。上帝爱我们！'}
+]];
+const AI_SUGGEST = [['要说出一种动物所吃食物的名称容易吗？今天的圣经故事是关于耶稣和彼得。耶稣吩咐彼得要喂养和照顾祂的羊。谁是主耶稣的羊呢？','耶稣吩咐彼得做什么？','故事里说：「”＿＿＿＿就是这样一连三次问彼得同一个问题。」，横线里应该填什么？','故事里说：「”耶稣就是这样一连三次问＿＿＿＿同一个问题。」，横线里应该填什么？','这个故事讲了什么？','存心节是什么？','信息是什么？','你好！']];
 const COACH_VERSE = '耶稣第二次又对他说：‘……你爱我吗？……你牧养我';
 const COACH_WORDS = ['耶稣第二次','又对他说','‘……你爱','我吗','……你牧养'];
 
@@ -1910,32 +1927,6 @@ function previewVoiceCloud(code){
 /* init */
 go(0);
 loadProgress();
-</script>
-
-<script>
-(function(){
-  if(document.getElementById('lessonNav')) return;
-  var m = decodeURIComponent(location.pathname).match(/([A-D]\d)季(\d+)课-互动课程\/index\.html/);
-  if(!m) return;
-  var yq = m[1], n = parseInt(m[2],10);
-  var d = document.createElement('div');
-  d.id = 'lessonNav';
-  d.style.cssText = 'position:fixed;top:62px;left:12px;z-index:900;display:flex;gap:6px;background:rgba(255,255,255,.95);padding:6px 10px;border-radius:22px;box-shadow:0 4px 14px rgba(0,0,0,.18);font-weight:800;font-size:14px;';
-  function mk(t, url, dis){
-    var a = document.createElement('a');
-    a.textContent = t; a.href = url;
-    a.style.cssText = 'text-decoration:none;color:#7a5cc4;padding:5px 10px;border-radius:16px;background:#efe9ff;display:inline-block;';
-    if(dis){ a.style.opacity = .4; a.style.pointerEvents = 'none'; }
-    return a;
-  }
-  var home = document.createElement('a');
-  home.textContent = '📋 课程表'; home.href = '../index.html';
-  home.style.cssText = 'text-decoration:none;color:#fff;padding:5px 10px;border-radius:16px;background:linear-gradient(135deg,#ff8c42,#ff5d73);';
-  d.appendChild(mk('⬅️', '../'+yq+'季'+(n-1)+'课-互动课程/index.html', n<=1));
-  d.appendChild(home);
-  d.appendChild(mk('➡️', '../'+yq+'季'+(n+1)+'课-互动课程/index.html', n>=13));
-  document.body.appendChild(d);
-})();
 </script>
 </body>
 </html>

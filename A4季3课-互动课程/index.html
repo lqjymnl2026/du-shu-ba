@@ -361,6 +361,15 @@ body.mobile .talk{font-size:18px;}
 .vrow .vpreview{margin-left:auto; border:none; border-radius:12px; padding:6px 12px; font-size:13px; font-weight:800; background:#efe9ff; color:var(--purple); cursor:pointer;}
 .vrow .vpreview:hover{background:var(--purple); color:#fff;}
 .voice-note{font-size:13px; color:#8a7fb0; font-weight:700; line-height:1.7;}
+
+/* ===== 文字排版左对齐（正文更易读） ===== */
+.content > .sub{width:100%; max-width:920px; text-align:left; margin-left:auto; margin-right:auto;}
+.scene-txt{text-align:left; line-height:1.85; padding:12px 18px 10px;}
+.talk{text-align:left;}
+#prayerText{text-align:left;}
+.q-q{text-align:left;}
+.q-opt{text-align:left;}
+
 </style>
 </head>
 <body>
@@ -1406,12 +1415,14 @@ document.addEventListener('click', e=>{
   }
 });
 /* ================= 唱游时间 ================= */
-const SONGS = [
-  {name:'耶稣恩友', lines:[['唱呀唱，耶稣恩友！', '拍拍手'], ['我们一起唱！', '左右摇一摇'], ['赞美上帝真美好！', '举起双手'], ['哈利路亚！', '转个圈圈']]},
-  {name:'得蒙拯救！', lines:[['唱呀唱，得蒙拯救！！', '拍拍手'], ['我们一起唱！', '左右摇一摇'], ['赞美上帝真美好！', '举起双手'], ['哈利路亚！', '转个圈圈']]},
-  {name:'先求主的国', lines:[['唱呀唱，先求主的国！', '拍拍手'], ['我们一起唱！', '左右摇一摇'], ['赞美上帝真美好！', '举起双手'], ['哈利路亚！', '转个圈圈']]},
-  {name:'我有平安如江河', lines:[['唱呀唱，我有平安如江河！', '拍拍手'], ['我们一起唱！', '左右摇一摇'], ['赞美上帝真美好！', '举起双手'], ['哈利路亚！', '转个圈圈']]}
-];
+const SONGS = [[
+{name:'耶稣恩友', lines:[['唱呀唱，耶稣恩友！', '拍拍手'], ['我们一起唱！', '左右摇一摇'], ['赞美上帝真美好！', '举起双手'], ['哈利路亚！', '转个圈圈']]},
+{name:'得蒙拯救！', lines:[['唱呀唱，得蒙拯救！！', '拍拍手'], ['我们一起唱！', '左右摇一摇'], ['赞美上帝真美好！', '举起双手'], ['哈利路亚！', '转个圈圈']]},
+{name:'存心节之歌', lines:[['「无论做什么，都要从心里做。」','手放胸前'],['这是上帝的话语！','举起双手'],['我要记住在心里！','手放胸前']]},
+{name:'信息之歌', lines:[['爱的服侍只问付出，不求回报。','踏步走'],['这是今天的道理！','手放胸前'],['我也要这样行！','比一个爱心']]},
+{name:'再次逃离的故事', lines:[['我们来听再次逃离，','手放耳朵旁'],['上帝的爱在其中！','举起双手'],['让我们一起歌唱！','拍拍手']]},
+{name:'赞美真美好', lines:[['赞美真美好，真美好！','举起双手'],['唱歌跳舞赞美主！','转个圈圈'],['哈利路亚！哈利路亚！','拍拍手']]}
+]];
 let songIdx = 0, songTimer = null;
 function songRender(){
   const tabs = document.getElementById('songTabs');
@@ -1452,9 +1463,13 @@ function speakSong(){
 }
 
 /* ================= 动手做做看 ================= */
-const CRAFTS = [
-  {ico:'📖', nm:'奖励贴', wk:'第1周', desc:'和爸爸妈妈一起完成「奖励贴」的小创作吧！'}
-];
+const CRAFTS = [[
+{ico:'📖', nm:'奖励贴', wk:'第1周', desc:'和爸爸妈妈一起完成「奖励贴」的小创作吧！'},
+{ico:'🎨', nm:'画一画这一课', wk:'第2周', desc:'把这一课的故事画下来！'},
+{ico:'✂️', nm:'故事小书', wk:'第3周', desc:'做一本这一课的故事小书！'},
+{ico:'⭐', nm:'存心节星星', wk:'第4周', desc:'做一颗星星，写上存心节！'},
+{ico:'💌', nm:'爱心卡', wk:'第5周', desc:'做一张爱心卡，把这一课的祝福送给家人！'}
+]];
 function craftRender(){
   const g = document.getElementById('craftGrid');
   if(g.dataset.done) return; g.dataset.done = '1';
@@ -1519,9 +1534,7 @@ function printCert(){
   <p>亲爱的 <b style="font-size:26px;">${name}</b>，<br>恭喜你完成了第三课「再次逃离」的互动课程，<br>并获得了 <b>${stars}</b> 颗星星！</p>
   <div class="row"><div><p style="text-align:left;">存心节：<br><b style="color:#ff8c42; font-size:22px;">「上帝所造的每一样都是好的。」</b><br>（创世记 1:31）</p></div><div class="seal">完成<br>三<br>💜</div></div>
   <p>上帝创造我们的世界，因为祂爱我们。💜</p></div>
-  <script>window.print();<\/script>
-
-</body></html>`);
+  <script>window.print();<\/script></body></html>`);
   w.document.close();
 }
 
@@ -1659,16 +1672,24 @@ document.getElementById('albumBtn').onclick = openAlbum;
 
 
 const COURSE_ID = 'a4m3';
-const AI_KB = [
-  {keys:['故事', '讲了什么', '主要内容', '这个故事', '在讲'], a:'这一课讲的是：上帝指示雅各离开拉班回家乡去，雅各便悄悄离开了拉班。拉班非常生气，随即起身追赶雅各。两人为分离的条件发生争执，拉班坚持认为雅各所有的一切原本都是属于他的。而雅各则争辩说着二十年来他一直都是拉班忠实的好雇工。他提醒拉班不要忘记，即使条件艰苦，……。爱的服侍只问付出，不求回报。'},
-  {keys:['主角', '人物', '故事里', '里面'], a:'这个故事里有：家、雅各、约瑟、羊。爱的服侍只问付出，不求回报。'},
-  {keys:['信息', '这一课', '告诉我们', '道理', '学习', '明白', '主题', '重点'], a:'爱的服侍只问付出，不求回报。'},
-  {keys:['存心节', '金句', '经文', '背诵', '记忆'], a:'「无论做什么，都要从心里做。」（西3:23）'},
-  {keys:['上帝', '耶稣'], a:'爱的服侍只问付出，不求回报。上帝爱我们！'},
-  {keys:['你好', '哈喽', '你是谁', 'hello'], a:'你好呀！我是你的小帮手，今天我们一起认识「再次逃离」的故事！'},
-  {keys:['为什么', '结局', '后来', '然后', '结果', '最后'], a:'爱的服侍只问付出，不求回报。上帝爱我们！'}
-];
-const AI_SUGGEST = ['这个故事讲了什么？','存心节是什么？','信息是什么？','你好！'];
+const AI_KB = [[
+{keys:['故事里说：「你曾经与＿＿＿＿人一起在饭店用过餐吗」横线里应该填什么','人一起在饭店用过餐吗','横线里应该填什么','故事里说'], a:'对！就是「家」！你读得好仔细！'},
+{keys:['故事里说：「自从＿＿＿＿离家之后已经过了二十年」横线里应该填什么','雅各','横线里应该填什么','已经过了二十年','故事里说'], a:'对！就是「雅各」！你读得好仔细！'},
+{keys:['故事里说：「＿＿＿＿出生之后雅各曾经请求拉班让他和他的全家返回迦南但是拉班却叫雅各不要走」横线里应该填什么','约瑟','雅各','雅各曾经请求拉班让他和他的全家返回迦南','但是拉班却叫雅各不要走','横线里应该填什么'], a:'对！就是「约瑟」！你读得好仔细！'},
+{keys:['故事里说：「“请留下吧”拉班说“我知道＿＿＿＿是因你的缘故大大赐福于我」横线里应该填什么','是因你的缘故大大赐福于我','横线里应该填什么','故事里说'], a:'对！就是「上帝」！你读得好仔细！'},
+{keys:['故事里说：「他答应将＿＿＿＿群中有斑点的以及黑色的山羊和羊羔分给雅各」横线里应该填什么','雅各','群中有斑点的以及黑色的山羊和羊羔分给雅各','横线里应该填什么','故事里说'], a:'对！就是「羊」！你读得好仔细！'},
+{keys:['故事里说：「他答应将羊群中有斑点的以及黑色的＿＿＿＿羊和羊羔分给雅各」横线里应该填什么','雅各','他答应将羊群中有斑点的以及黑色的','羊和羊羔分给雅各','横线里应该填什么'], a:'对！就是「山」！你读得好仔细！'},
+{keys:['故事里说：「雅各已经看到拉班的人马了随着他们渐渐逼近雅各担心地紧＿＿＿＿眉头」横线里应该填什么','钥匙','雅各','雅各已经看到拉班的人马了','随着他们渐渐逼近','横线里应该填什么'], a:'对！就是「钥匙」！你读得好仔细！'},
+{keys:['故事里说：「他们将许多＿＿＿＿堆起来」横线里应该填什么','石头','横线里应该填什么','他们将许多','故事里说'], a:'对！就是「石头」！你读得好仔细！'},
+{keys:['故事','讲了什么','主要内容','这个故事','在讲'], a:'这一课讲的是：上帝指示雅各离开拉班回家乡去，雅各便悄悄离开了拉班。拉班非常生气，随即起身追赶雅各。两人为分离的条件发生争执，拉班坚持认为雅各所有的一切原本都是属于他的。而雅各则争辩说着二十年来他一直都是拉班忠实的好雇工。他提醒拉班不要忘记，即使条件艰苦，……。爱的服侍只问付出，不求回报。'},
+{keys:['主角','人物','故事里','里面'], a:'这个故事里有：家、雅各、羊、风。爱的服侍只问付出，不求回报。'},
+{keys:['信息','这一课','告诉我们','道理','学习','明白','主题','重点'], a:'爱的服侍只问付出，不求回报。'},
+{keys:['存心节','金句','经文','背诵','记忆'], a:'「无论做什么，都要从心里做。」西3:23'},
+{keys:['上帝','耶稣'], a:'爱的服侍只问付出，不求回报。上帝爱我们！'},
+{keys:['你好','哈喽','你是谁','hello'], a:'你好呀！我是你的小帮手，今天我们一起认识「再次逃离」的故事！'},
+{keys:['为什么','结局','后来','然后','结果','最后'], a:'爱的服侍只问付出，不求回报。上帝爱我们！'}
+]];
+const AI_SUGGEST = [['故事里说：「你曾经与＿＿＿＿人一起在饭店用过餐吗？」，横线里应该填什么？','故事里说：「自从＿＿＿＿离家之后，已经过了二十年。」，横线里应该填什么？','故事里说：「＿＿＿＿出生之后，雅各曾经请求拉班让他和他的全家返回迦南，但是拉班却叫雅各不要走。」，横线里应该填什么？','故事里说：「“请留下吧，”拉班说，“我知道＿＿＿＿是因你的缘故大大赐福于我。」，横线里应该填什么？','这个故事讲了什么？','存心节是什么？','信息是什么？','你好！']];
 const COACH_VERSE = '无论做什么，都要从心里做。';
 const COACH_WORDS = ['无论做什么','都要从心里','做'];
 
@@ -1905,32 +1926,6 @@ function previewVoiceCloud(code){
 /* init */
 go(0);
 loadProgress();
-</script>
-
-<script>
-(function(){
-  if(document.getElementById('lessonNav')) return;
-  var m = decodeURIComponent(location.pathname).match(/([A-D]\d)季(\d+)课-互动课程\/index\.html/);
-  if(!m) return;
-  var yq = m[1], n = parseInt(m[2],10);
-  var d = document.createElement('div');
-  d.id = 'lessonNav';
-  d.style.cssText = 'position:fixed;top:62px;left:12px;z-index:900;display:flex;gap:6px;background:rgba(255,255,255,.95);padding:6px 10px;border-radius:22px;box-shadow:0 4px 14px rgba(0,0,0,.18);font-weight:800;font-size:14px;';
-  function mk(t, url, dis){
-    var a = document.createElement('a');
-    a.textContent = t; a.href = url;
-    a.style.cssText = 'text-decoration:none;color:#7a5cc4;padding:5px 10px;border-radius:16px;background:#efe9ff;display:inline-block;';
-    if(dis){ a.style.opacity = .4; a.style.pointerEvents = 'none'; }
-    return a;
-  }
-  var home = document.createElement('a');
-  home.textContent = '📋 课程表'; home.href = '../index.html';
-  home.style.cssText = 'text-decoration:none;color:#fff;padding:5px 10px;border-radius:16px;background:linear-gradient(135deg,#ff8c42,#ff5d73);';
-  d.appendChild(mk('⬅️', '../'+yq+'季'+(n-1)+'课-互动课程/index.html', n<=1));
-  d.appendChild(home);
-  d.appendChild(mk('➡️', '../'+yq+'季'+(n+1)+'课-互动课程/index.html', n>=13));
-  document.body.appendChild(d);
-})();
 </script>
 </body>
 </html>

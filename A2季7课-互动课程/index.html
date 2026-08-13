@@ -361,6 +361,15 @@ body.mobile .talk{font-size:18px;}
 .vrow .vpreview{margin-left:auto; border:none; border-radius:12px; padding:6px 12px; font-size:13px; font-weight:800; background:#efe9ff; color:var(--purple); cursor:pointer;}
 .vrow .vpreview:hover{background:var(--purple); color:#fff;}
 .voice-note{font-size:13px; color:#8a7fb0; font-weight:700; line-height:1.7;}
+
+/* ===== 文字排版左对齐（正文更易读） ===== */
+.content > .sub{width:100%; max-width:920px; text-align:left; margin-left:auto; margin-right:auto;}
+.scene-txt{text-align:left; line-height:1.85; padding:12px 18px 10px;}
+.talk{text-align:left;}
+#prayerText{text-align:left;}
+.q-q{text-align:left;}
+.q-opt{text-align:left;}
+
 </style>
 </head>
 <body>
@@ -1407,12 +1416,14 @@ document.addEventListener('click', e=>{
   }
 });
 /* ================= 唱游时间 ================= */
-const SONGS = [
-  {name:'耶稣让我们发光', lines:[['唱呀唱，耶稣让我们发光！', '拍拍手'], ['我们一起唱！', '左右摇一摇'], ['赞美上帝真美好！', '举起双手'], ['哈利路亚！', '转个圈圈']]},
-  {name:'上帝造我们的手', lines:[['唱呀唱，上帝造我们的手！', '拍拍手'], ['我们一起唱！', '左右摇一摇'], ['赞美上帝真美好！', '举起双手'], ['哈利路亚！', '转个圈圈']]},
-  {name:'我已决定跟随耶稣', lines:[['唱呀唱，我已决定跟随耶稣！', '拍拍手'], ['我们一起唱！', '左右摇一摇'], ['赞美上帝真美好！', '举起双手'], ['哈利路亚！', '转个圈圈']]},
-  {name:'快乐家庭', lines:[['唱呀唱，快乐家庭！', '拍拍手'], ['我们一起唱！', '左右摇一摇'], ['赞美上帝真美好！', '举起双手'], ['哈利路亚！', '转个圈圈']]}
-];
+const SONGS = [[
+{name:'耶稣让我们发光', lines:[['唱呀唱，耶稣让我们发光！', '拍拍手'], ['我们一起唱！', '左右摇一摇'], ['赞美上帝真美好！', '举起双手'], ['哈利路亚！', '转个圈圈']]},
+{name:'上帝造我们的手', lines:[['唱呀唱，上帝造我们的手！', '拍拍手'], ['我们一起唱！', '左右摇一摇'], ['赞美上帝真美好！', '举起双手'], ['哈利路亚！', '转个圈圈']]},
+{name:'存心节之歌', lines:[['「……为所信的福音齐心努力。」','手放胸前'],['这是上帝的话语！','举起双手'],['我要记住在心里！','手放胸前']]},
+{name:'信息之歌', lines:[['上帝的儿女齐心作工。68','踏步走'],['这是今天的道理！','手放胸前'],['我也要这样行！','比一个爱心']]},
+{name:'水上动物园的故事', lines:[['我们来听水上动物园，','手放耳朵旁'],['上帝的爱在其中！','举起双手'],['让我们一起歌唱！','拍拍手']]},
+{name:'赞美真美好', lines:[['赞美真美好，真美好！','举起双手'],['唱歌跳舞赞美主！','转个圈圈'],['哈利路亚！哈利路亚！','拍拍手']]}
+]];
 let songIdx = 0, songTimer = null;
 function songRender(){
   const tabs = document.getElementById('songTabs');
@@ -1453,10 +1464,13 @@ function speakSong(){
 }
 
 /* ================= 动手做做看 ================= */
-const CRAFTS = [
-  {ico:'📖', nm:'拼图明信片或', wk:'第1周', desc:'和爸爸妈妈一起完成「拼图明信片或」的小创作吧！'},
-  {ico:'📖', nm:'拼图作，才会做得快。）正如存', wk:'第2周', desc:'和爸爸妈妈一起完成「拼图作，才会做得快。）正如存」的小创作吧！'}
-];
+const CRAFTS = [[
+{ico:'📖', nm:'拼图明信片或', wk:'第1周', desc:'和爸爸妈妈一起完成「拼图明信片或」的小创作吧！'},
+{ico:'📖', nm:'拼图作，才会做得快。）正如存', wk:'第2周', desc:'和爸爸妈妈一起完成「拼图作，才会做得快。）正如存」的小创作吧！'},
+{ico:'🎨', nm:'画一画这一课', wk:'第3周', desc:'把这一课的故事画下来！'},
+{ico:'✂️', nm:'故事小书', wk:'第4周', desc:'做一本这一课的故事小书！'},
+{ico:'⭐', nm:'存心节星星', wk:'第5周', desc:'做一颗星星，写上存心节！'}
+]];
 function craftRender(){
   const g = document.getElementById('craftGrid');
   if(g.dataset.done) return; g.dataset.done = '1';
@@ -1521,9 +1535,7 @@ function printCert(){
   <p>亲爱的 <b style="font-size:26px;">${name}</b>，<br>恭喜你完成了第七课「水上动物园」的互动课程，<br>并获得了 <b>${stars}</b> 颗星星！</p>
   <div class="row"><div><p style="text-align:left;">存心节：<br><b style="color:#ff8c42; font-size:22px;">「上帝所造的每一样都是好的。」</b><br>（创世记 1:31）</p></div><div class="seal">完成<br>七<br>💜</div></div>
   <p>上帝创造我们的世界，因为祂爱我们。💜</p></div>
-  <script>window.print();<\/script>
-
-</body></html>`);
+  <script>window.print();<\/script></body></html>`);
   w.document.close();
 }
 
@@ -1661,18 +1673,24 @@ document.getElementById('albumBtn').onclick = openAlbum;
 
 
 const COURSE_ID = 'a2m7';
-const AI_KB = [
-  {keys:['为什么上帝让挪亚带进方舟的动物中洁净动物的数量比不洁净动物的数量多呢', '挪亚', '洁净动物的数量比不洁净动物的数量多呢', '为什么上帝让挪亚带进方舟的动物中'], a:'这样，挪亚出方舟后，有动物作祭牲，献上感恩祭；他们可以当作食物'},
-  {keys:['当我们互相帮助时我们是展现谁的爱呢', '我们是展现谁的爱呢', '当我们互相帮助时'], a:'上帝的爱'},
-  {keys:['故事', '讲了什么', '主要内容', '这个故事', '在讲'], a:'这一课讲的是：上帝指示挪亚有关动物进入方舟的事。所有凶猛、温驯的动物，飞禽，并爬在地上的昆虫中，洁净的七公七母，不洁净的一公一母，他都要带进方舟。到了日期，动物们果然一对一对都来了。挪亚和他的家人也都进了方舟，齐心协力来照顾这些动物。这是关于团契的教导当……。上帝的儿女齐心作工。68。'},
-  {keys:['主角', '人物', '故事里', '里面'], a:'这个故事里有：挪亚、家、水、鸟。上帝的儿女齐心作工。68。'},
-  {keys:['信息', '这一课', '告诉我们', '道理', '学习', '明白', '主题', '重点'], a:'上帝的儿女齐心作工。68。'},
-  {keys:['存心节', '金句', '经文', '背诵', '记忆'], a:'「……为所信的福音齐心努力。」（腓1:27）'},
-  {keys:['上帝', '耶稣'], a:'上帝的儿女齐心作工。68。上帝爱我们！'},
-  {keys:['你好', '哈喽', '你是谁', 'hello'], a:'你好呀！我是你的小帮手，今天我们一起认识「水上动物园」的故事！'},
-  {keys:['为什么', '结局', '后来', '然后', '结果', '最后'], a:'上帝的儿女齐心作工。68。上帝爱我们！'}
-];
-const AI_SUGGEST = ['为什么上帝让挪亚带进方舟的动物中，洁净动物的数量比不洁净动物的数量多呢？','当我们互相帮助时，我们是展现谁的爱呢？','这个故事讲了什么？','存心节是什么？','信息是什么？','你好！'];
+const AI_KB = [[
+{keys:['为什么上帝让挪亚带进方舟的动物中洁净动物的数量比不洁净动物的数量多呢','挪亚','洁净动物的数量比不洁净动物的数量多呢','为什么上帝让挪亚带进方舟的动物中'], a:'答对了！这样，挪亚出方舟后，有动物作祭牲，献上感恩祭'},
+{keys:['当我们互相帮助时我们是展现谁的爱呢','我们是展现谁的爱呢','当我们互相帮助时'], a:'答对了！上帝的爱'},
+{keys:['故事里说：「＿＿＿＿一家在这个水上动物园里有很多类似的工作要做」横线里应该填什么','挪亚','一家在这个水上动物园里','有很多类似的工作要做','横线里应该填什么'], a:'对！就是「挪亚」！你读得好仔细！'},
+{keys:['故事里说：「挪亚一＿＿＿＿在这个水上动物园里有很多类似的工作要做」横线里应该填什么','挪亚','有很多类似的工作要做','在这个水上动物园里','横线里应该填什么'], a:'对！就是「家」！你读得好仔细！'},
+{keys:['故事里说：「挪亚一家在这个＿＿＿＿上动物园里有很多类似的工作要做」横线里应该填什么','挪亚','有很多类似的工作要做','横线里应该填什么','挪亚一家在这个'], a:'对！就是「水」！你读得好仔细！'},
+{keys:['故事里说：「当初＿＿＿＿吩咐挪亚造方舟的时候已经把原因告诉他」横线里应该填什么','挪亚','吩咐挪亚造方舟的时候','已经把原因告诉他','横线里应该填什么'], a:'对！就是「上帝」！你读得好仔细！'},
+{keys:['故事里说：「各种飞＿＿＿＿昆虫蛇蜘蛛等等上帝要为每一类动物留种它们都要进方舟」横线里应该填什么','蜘蛛','上帝要为每一类动物留种','横线里应该填什么','它们都要进方舟'], a:'对！就是「鸟」！你读得好仔细！'},
+{keys:['故事里说：「各种飞鸟昆虫＿＿＿＿蜘蛛等等上帝要为每一类动物留种它们都要进方舟」横线里应该填什么','蜘蛛','上帝要为每一类动物留种','横线里应该填什么','它们都要进方舟'], a:'对！就是「蛇」！你读得好仔细！'},
+{keys:['故事','讲了什么','主要内容','这个故事','在讲'], a:'这一课讲的是：上帝指示挪亚有关动物进入方舟的事。所有凶猛、温驯的动物，飞禽，并爬在地上的昆虫中，洁净的七公七母，不洁净的一公一母，他都要带进方舟。到了日期，动物们果然一对一对都来了。挪亚和他的家人也都进了方舟，齐心协力来照顾这些动物。这是关于团契的教导当……。上帝的儿女齐心作工。68。'},
+{keys:['主角','人物','故事里','里面'], a:'这个故事里有：鸟、蛇、蜘蛛、船。上帝的儿女齐心作工。68。'},
+{keys:['信息','这一课','告诉我们','道理','学习','明白','主题','重点'], a:'上帝的儿女齐心作工。68。'},
+{keys:['存心节','金句','经文','背诵','记忆'], a:'「……为所信的福音齐心努力。」腓1:27'},
+{keys:['上帝','耶稣'], a:'上帝的儿女齐心作工。68。上帝爱我们！'},
+{keys:['你好','哈喽','你是谁','hello'], a:'你好呀！我是你的小帮手，今天我们一起认识「水上动物园」的故事！'},
+{keys:['为什么','结局','后来','然后','结果','最后'], a:'上帝的儿女齐心作工。68。上帝爱我们！'}
+]];
+const AI_SUGGEST = [['为什么上帝让挪亚带进方舟的动物中，洁净动物的数量比不洁净动物的数量多呢？','当我们互相帮助时，我们是展现谁的爱呢？','故事里说：「＿＿＿＿一家在这个水上动物园里，有很多类似的工作要做！」，横线里应该填什么？','故事里说：「挪亚一＿＿＿＿在这个水上动物园里，有很多类似的工作要做！」，横线里应该填什么？','这个故事讲了什么？','存心节是什么？','信息是什么？','你好！']];
 const COACH_VERSE = '……为所信的福音齐心努力。';
 const COACH_WORDS = ['……为所信','的福音齐心','努力'];
 
@@ -1909,32 +1927,6 @@ function previewVoiceCloud(code){
 /* init */
 go(0);
 loadProgress();
-</script>
-
-<script>
-(function(){
-  if(document.getElementById('lessonNav')) return;
-  var m = decodeURIComponent(location.pathname).match(/([A-D]\d)季(\d+)课-互动课程\/index\.html/);
-  if(!m) return;
-  var yq = m[1], n = parseInt(m[2],10);
-  var d = document.createElement('div');
-  d.id = 'lessonNav';
-  d.style.cssText = 'position:fixed;top:62px;left:12px;z-index:900;display:flex;gap:6px;background:rgba(255,255,255,.95);padding:6px 10px;border-radius:22px;box-shadow:0 4px 14px rgba(0,0,0,.18);font-weight:800;font-size:14px;';
-  function mk(t, url, dis){
-    var a = document.createElement('a');
-    a.textContent = t; a.href = url;
-    a.style.cssText = 'text-decoration:none;color:#7a5cc4;padding:5px 10px;border-radius:16px;background:#efe9ff;display:inline-block;';
-    if(dis){ a.style.opacity = .4; a.style.pointerEvents = 'none'; }
-    return a;
-  }
-  var home = document.createElement('a');
-  home.textContent = '📋 课程表'; home.href = '../index.html';
-  home.style.cssText = 'text-decoration:none;color:#fff;padding:5px 10px;border-radius:16px;background:linear-gradient(135deg,#ff8c42,#ff5d73);';
-  d.appendChild(mk('⬅️', '../'+yq+'季'+(n-1)+'课-互动课程/index.html', n<=1));
-  d.appendChild(home);
-  d.appendChild(mk('➡️', '../'+yq+'季'+(n+1)+'课-互动课程/index.html', n>=13));
-  document.body.appendChild(d);
-})();
 </script>
 </body>
 </html>

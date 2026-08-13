@@ -361,6 +361,15 @@ body.mobile .talk{font-size:18px;}
 .vrow .vpreview{margin-left:auto; border:none; border-radius:12px; padding:6px 12px; font-size:13px; font-weight:800; background:#efe9ff; color:var(--purple); cursor:pointer;}
 .vrow .vpreview:hover{background:var(--purple); color:#fff;}
 .voice-note{font-size:13px; color:#8a7fb0; font-weight:700; line-height:1.7;}
+
+/* ===== 文字排版左对齐（正文更易读） ===== */
+.content > .sub{width:100%; max-width:920px; text-align:left; margin-left:auto; margin-right:auto;}
+.scene-txt{text-align:left; line-height:1.85; padding:12px 18px 10px;}
+.talk{text-align:left;}
+#prayerText{text-align:left;}
+.q-q{text-align:left;}
+.q-opt{text-align:left;}
+
 </style>
 </head>
 <body>
@@ -1406,12 +1415,14 @@ document.addEventListener('click', e=>{
   }
 });
 /* ================= 唱游时间 ================= */
-const SONGS = [
-  {name:'祂有大能', lines:[['唱呀唱，祂有大能！', '拍拍手'], ['我们一起唱！', '左右摇一摇'], ['赞美上帝真美好！', '举起双手'], ['哈利路亚！', '转个圈圈']]},
-  {name:'耶稣保守承诺', lines:[['唱呀唱，耶稣保守承诺！', '拍拍手'], ['我们一起唱！', '左右摇一摇'], ['赞美上帝真美好！', '举起双手'], ['哈利路亚！', '转个圈圈']]},
-  {name:'经过那日', lines:[['唱呀唱，经过那日！', '拍拍手'], ['我们一起唱！', '左右摇一摇'], ['赞美上帝真美好！', '举起双手'], ['哈利路亚！', '转个圈圈']]},
-  {name:'祂的爱彰显于我', lines:[['唱呀唱，祂的爱彰显于我！', '拍拍手'], ['我们一起唱！', '左右摇一摇'], ['赞美上帝真美好！', '举起双手'], ['哈利路亚！', '转个圈圈']]}
-];
+const SONGS = [[
+{name:'祂有大能', lines:[['唱呀唱，祂有大能！', '拍拍手'], ['我们一起唱！', '左右摇一摇'], ['赞美上帝真美好！', '举起双手'], ['哈利路亚！', '转个圈圈']]},
+{name:'耶稣保守承诺', lines:[['唱呀唱，耶稣保守承诺！', '拍拍手'], ['我们一起唱！', '左右摇一摇'], ['赞美上帝真美好！', '举起双手'], ['哈利路亚！', '转个圈圈']]},
+{name:'存心节之歌', lines:[['「我把虹放在云彩中，这就可作我与地立约」','手放胸前'],['这是上帝的话语！','举起双手'],['我要记住在心里！','手放胸前']]},
+{name:'信息之歌', lines:[['上帝的子民因祂的眷顾而欢呼。','踏步走'],['这是今天的道理！','手放胸前'],['我也要这样行！','比一个爱心']]},
+{name:'彩虹应许的故事', lines:[['我们来听彩虹应许，','手放耳朵旁'],['上帝的爱在其中！','举起双手'],['让我们一起歌唱！','拍拍手']]},
+{name:'赞美真美好', lines:[['赞美真美好，真美好！','举起双手'],['唱歌跳舞赞美主！','转个圈圈'],['哈利路亚！哈利路亚！','拍拍手']]}
+]];
 let songIdx = 0, songTimer = null;
 function songRender(){
   const tabs = document.getElementById('songTabs');
@@ -1452,11 +1463,13 @@ function speakSong(){
 }
 
 /* ================= 动手做做看 ================= */
-const CRAFTS = [
-  {ico:'🎨', nm:'画一画这一课', wk:'第一周', desc:'把这一课的故事画下来！'},
-  {ico:'✂️', nm:'故事小书', wk:'第二周', desc:'做一本这一课的故事小书！'},
-  {ico:'⭐', nm:'存心节星星', wk:'第三周', desc:'做一颗星星，写上存心节！'}
-];
+const CRAFTS = [[
+{ico:'🎨', nm:'画一画这一课', wk:'第1周', desc:'把这一课的故事画下来！'},
+{ico:'✂️', nm:'故事小书', wk:'第2周', desc:'做一本这一课的故事小书！'},
+{ico:'⭐', nm:'存心节星星', wk:'第3周', desc:'做一颗星星，写上存心节！'},
+{ico:'💌', nm:'爱心卡', wk:'第4周', desc:'做一张爱心卡，把这一课的祝福送给家人！'},
+{ico:'🚩', nm:'赞美旗', wk:'第5周', desc:'做一面赞美旗，唱赞美歌时挥一挥！'}
+]];
 function craftRender(){
   const g = document.getElementById('craftGrid');
   if(g.dataset.done) return; g.dataset.done = '1';
@@ -1521,9 +1534,7 @@ function printCert(){
   <p>亲爱的 <b style="font-size:26px;">${name}</b>，<br>恭喜你完成了第九课「彩虹应许」的互动课程，<br>并获得了 <b>${stars}</b> 颗星星！</p>
   <div class="row"><div><p style="text-align:left;">存心节：<br><b style="color:#ff8c42; font-size:22px;">「上帝所造的每一样都是好的。」</b><br>（创世记 1:31）</p></div><div class="seal">完成<br>九<br>💜</div></div>
   <p>上帝创造我们的世界，因为祂爱我们。💜</p></div>
-  <script>window.print();<\/script>
-
-</body></html>`);
+  <script>window.print();<\/script></body></html>`);
   w.document.close();
 }
 
@@ -1661,17 +1672,24 @@ document.getElementById('albumBtn').onclick = openAlbum;
 
 
 const COURSE_ID = 'a2m9';
-const AI_KB = [
-  {keys:['你们知道谁坐在宝座上吗为什么祂的头上有彩虹呢', '彩虹', '你们知道谁坐在宝座上吗', '为什么祂的头上有彩虹呢'], a:'让人想起上帝向人类施怜悯和祂永不会用洪水毀灭全地的应许。'},
-  {keys:['故事', '讲了什么', '主要内容', '这个故事', '在讲'], a:'这一课讲的是：挪亚一家和动物出了方舟之后，挪亚便筑了一座祭坛，与家人一起敬拜上帝。上帝把彩虹安置在天上，并祝福这家人。祂也承诺不再用洪水来毀灭全地，那道彩虹就是提醒，也是上帝立约的记号。这是关于团契的教导团契就是一群有相似的背景，共同的语言，被同一个目标……。上帝的子民因祂的眷顾而欢呼。'},
-  {keys:['主角', '人物', '故事里', '里面'], a:'这个故事里有：挪亚、家、船、光。上帝的子民因祂的眷顾而欢呼。'},
-  {keys:['信息', '这一课', '告诉我们', '道理', '学习', '明白', '主题', '重点'], a:'上帝的子民因祂的眷顾而欢呼。'},
-  {keys:['存心节', '金句', '经文', '背诵', '记忆'], a:'「我把虹放在云彩中，这就可作我与地立约的记号了。」（创9:13）'},
-  {keys:['上帝', '耶稣'], a:'上帝的子民因祂的眷顾而欢呼。上帝爱我们！'},
-  {keys:['你好', '哈喽', '你是谁', 'hello'], a:'你好呀！我是你的小帮手，今天我们一起认识「彩虹应许」的故事！'},
-  {keys:['为什么', '结局', '后来', '然后', '结果', '最后'], a:'上帝的子民因祂的眷顾而欢呼。上帝爱我们！'}
-];
-const AI_SUGGEST = ['你们知道谁坐在宝座上吗？为什么祂的头上有彩虹呢？','这个故事讲了什么？','存心节是什么？','信息是什么？','你好！'];
+const AI_KB = [[
+{keys:['你们知道谁坐在宝座上吗为什么祂的头上有彩虹呢','彩虹','你们知道谁坐在宝座上吗','为什么祂的头上有彩虹呢'], a:'答对了！让人想起上帝向人类施怜悯和祂永不会用洪水毀灭'},
+{keys:['故事里说：「如果是这样的话你便能感受到当时＿＿＿＿一家走出方舟时的感受了」横线里应该填什么','挪亚','一家走出方舟时的感受了','你便能感受到当时','横线里应该填什么'], a:'对！就是「挪亚」！你读得好仔细！'},
+{keys:['故事里说：「如果是这样的话你便能感受到当时挪亚一＿＿＿＿走出方舟时的感受了」横线里应该填什么','挪亚','你便能感受到当时挪亚一','走出方舟时的感受了','横线里应该填什么'], a:'对！就是「家」！你读得好仔细！'},
+{keys:['故事里说：「如果是这样的话你便能感受到当时挪亚一家走出＿＿＿＿时的感受了」横线里应该填什么','挪亚','你便能感受到当时挪亚一家走出','横线里应该填什么','如果是这样的话'], a:'对！就是「船」！你读得好仔细！'},
+{keys:['故事里说：「他们高高兴兴地迈出方舟呼吸一口甜美新鲜的空气享受温暖的阳＿＿＿＿」横线里应该填什么','他们高高兴兴地迈出方舟呼吸一口甜美','横线里应该填什么','享受温暖的阳'], a:'对！就是「光」！你读得好仔细！'},
+{keys:['故事里说：「这时挪亚要做的第一件事情就是筑起一座坛全家来敬拜＿＿＿＿」横线里应该填什么','挪亚','就是筑起一座坛全家来敬拜','挪亚要做的第一件事情','横线里应该填什么'], a:'对！就是「上帝」！你读得好仔细！'},
+{keys:['故事里说：「＿＿＿＿出现一道色彩缤纷的彩虹这道完美七彩的圆弧一定使这个家庭看得目瞪口呆并深深地敬畏」横线里应该填什么','天空','彩虹','七彩的圆弧一定使这个家庭看得目瞪口呆并深深地敬畏','出现一道色彩缤纷的彩虹','横线里应该填什么'], a:'对！就是「天空」！你读得好仔细！'},
+{keys:['故事里说：「天空出现一道色彩缤纷的＿＿＿＿这道完美七彩的圆弧一定使这个家庭看得目瞪口呆并深深地敬畏」横线里应该填什么','彩虹','天空','七彩的圆弧一定使这个家庭看得目瞪口呆并深深地敬畏','天空出现一道色彩缤纷的','横线里应该填什么'], a:'对！就是「彩虹」！你读得好仔细！'},
+{keys:['故事','讲了什么','主要内容','这个故事','在讲'], a:'这一课讲的是：挪亚一家和动物出了方舟之后，挪亚便筑了一座祭坛，与家人一起敬拜上帝。上帝把彩虹安置在天上，并祝福这家人。祂也承诺不再用洪水来毀灭全地，那道彩虹就是提醒，也是上帝立约的记号。这是关于团契的教导团契就是一群有相似的背景，共同的语言，被同一个目标……。上帝的子民因祂的眷顾而欢呼。'},
+{keys:['主角','人物','故事里','里面'], a:'这个故事里有：挪亚、家、船、彩虹。上帝的子民因祂的眷顾而欢呼。'},
+{keys:['信息','这一课','告诉我们','道理','学习','明白','主题','重点'], a:'上帝的子民因祂的眷顾而欢呼。'},
+{keys:['存心节','金句','经文','背诵','记忆'], a:'「我把虹放在云彩中，这就可作我与地立约的记号了。」创9:13'},
+{keys:['上帝','耶稣'], a:'上帝的子民因祂的眷顾而欢呼。上帝爱我们！'},
+{keys:['你好','哈喽','你是谁','hello'], a:'你好呀！我是你的小帮手，今天我们一起认识「彩虹应许」的故事！'},
+{keys:['为什么','结局','后来','然后','结果','最后'], a:'上帝的子民因祂的眷顾而欢呼。上帝爱我们！'}
+]];
+const AI_SUGGEST = [['你们知道谁坐在宝座上吗？为什么祂的头上有彩虹呢？','故事里说：「如果是这样的话，你便能感受到当时＿＿＿＿一家走出方舟时的感受了。」，横线里应该填什么？','故事里说：「如果是这样的话，你便能感受到当时挪亚一＿＿＿＿走出方舟时的感受了。」，横线里应该填什么？','故事里说：「如果是这样的话，你便能感受到当时挪亚一家走出＿＿＿＿时的感受了。」，横线里应该填什么？','这个故事讲了什么？','存心节是什么？','信息是什么？','你好！']];
 const COACH_VERSE = '我把虹放在云彩中，这就可作我与地立约的记号了。';
 const COACH_WORDS = ['我把虹放在','云彩中','这就可作我','与地立约的','记号了'];
 
@@ -1908,32 +1926,6 @@ function previewVoiceCloud(code){
 /* init */
 go(0);
 loadProgress();
-</script>
-
-<script>
-(function(){
-  if(document.getElementById('lessonNav')) return;
-  var m = decodeURIComponent(location.pathname).match(/([A-D]\d)季(\d+)课-互动课程\/index\.html/);
-  if(!m) return;
-  var yq = m[1], n = parseInt(m[2],10);
-  var d = document.createElement('div');
-  d.id = 'lessonNav';
-  d.style.cssText = 'position:fixed;top:62px;left:12px;z-index:900;display:flex;gap:6px;background:rgba(255,255,255,.95);padding:6px 10px;border-radius:22px;box-shadow:0 4px 14px rgba(0,0,0,.18);font-weight:800;font-size:14px;';
-  function mk(t, url, dis){
-    var a = document.createElement('a');
-    a.textContent = t; a.href = url;
-    a.style.cssText = 'text-decoration:none;color:#7a5cc4;padding:5px 10px;border-radius:16px;background:#efe9ff;display:inline-block;';
-    if(dis){ a.style.opacity = .4; a.style.pointerEvents = 'none'; }
-    return a;
-  }
-  var home = document.createElement('a');
-  home.textContent = '📋 课程表'; home.href = '../index.html';
-  home.style.cssText = 'text-decoration:none;color:#fff;padding:5px 10px;border-radius:16px;background:linear-gradient(135deg,#ff8c42,#ff5d73);';
-  d.appendChild(mk('⬅️', '../'+yq+'季'+(n-1)+'课-互动课程/index.html', n<=1));
-  d.appendChild(home);
-  d.appendChild(mk('➡️', '../'+yq+'季'+(n+1)+'课-互动课程/index.html', n>=13));
-  document.body.appendChild(d);
-})();
 </script>
 </body>
 </html>

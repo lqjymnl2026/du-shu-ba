@@ -361,6 +361,15 @@ body.mobile .talk{font-size:18px;}
 .vrow .vpreview{margin-left:auto; border:none; border-radius:12px; padding:6px 12px; font-size:13px; font-weight:800; background:#efe9ff; color:var(--purple); cursor:pointer;}
 .vrow .vpreview:hover{background:var(--purple); color:#fff;}
 .voice-note{font-size:13px; color:#8a7fb0; font-weight:700; line-height:1.7;}
+
+/* ===== 文字排版左对齐（正文更易读） ===== */
+.content > .sub{width:100%; max-width:920px; text-align:left; margin-left:auto; margin-right:auto;}
+.scene-txt{text-align:left; line-height:1.85; padding:12px 18px 10px;}
+.talk{text-align:left;}
+#prayerText{text-align:left;}
+.q-q{text-align:left;}
+.q-opt{text-align:left;}
+
 </style>
 </head>
 <body>
@@ -384,7 +393,7 @@ body.mobile .talk{font-size:18px;}
       <div class="kicker">A1季 · 互动课程</div>
       <div class="emoji-xl floaty" style="margin-bottom:6px;">🐟</div>
       <h1 class="title">第十课 · 捕鱼去</h1>
-      <div class="sub">上帝爱我们。。</div>
+      <div class="sub">上帝爱我们。</div>
       <div style="margin-top:10px;"><span class="chip">📖 经文：参本课</span><span class="chip">💜 信息：上帝爱我们。</span><span class="chip">⭐ 存心节：</span></div>
       <button class="bigbtn" onclick="go(1)">🚀 开始上课</button>
       <div class="note">🎧 点「🔊」可以开关朗读声音（请在浏览器允许语音）</div>
@@ -410,7 +419,7 @@ body.mobile .talk{font-size:18px;}
           <div style="font-size:16px; color:var(--ink2);">#2ecc71</div>
         </div>
       </div>
-      <button class="speakbtn" data-speak="这一课，我们要晓得：上帝爱我们。。" onclick="speakThis(this)">🔊 听听这一课</button>
+      <button class="speakbtn" data-speak="这一课，我们要晓得：上帝爱我们。" onclick="speakThis(this)">🔊 听听这一课</button>
       <div style="margin-top:14px;"><span class="pill">💜 信息：上帝爱我们。</span></div>
     </div>
   </section>
@@ -704,7 +713,7 @@ body.mobile .talk{font-size:18px;}
         </div>        <div class="card" style="flex:1; min-width:260px; text-align:left;">
           <div style="font-size:38px; text-align:center;">💝</div>
           <div style="font-weight:900; color:#2ecc71; font-size:19px; margin:6px 0;">本周信息</div>
-          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「条弧线落在水里，溅起层层」。。</div>
+          <div style="font-size:17px; color:var(--ink2); line-height:1.8;">和孩子聊聊这一课：「捕鱼去」。</div>
         </div>
       </div>
       <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
@@ -720,7 +729,7 @@ body.mobile .talk{font-size:18px;}
       <h2 class="title" style="font-size:34px;">🙏 一起祷告</h2>
       <div class="card" style="max-width:820px; width:100%; position:relative; padding:14px 20px;">
         <div style="font-size:52px; line-height:1;" class="floaty">🌟</div>
-        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢。<br>就像「条弧线落在水里，溅起层层」的故事一样，<br>求祢帮助我做一个好孩子。<br>奉耶稣的名祷告，阿们！</div>
+        <div style="font-size:19px; font-weight:800; color:var(--ink); line-height:1.75; margin:8px 0;" id="prayerText">亲爱的天父，<br>谢谢祢。<br>就像「捕鱼去」的故事一样，<br>求祢帮助我做一个好孩子。<br>奉耶稣的名祷告，阿们！</div>
         <div style="display:flex; justify-content:center;">
           <button class="speakbtn" onclick="speakText(document.getElementById('prayerText').innerText.replace(/<br>/g,'。'))">🔊 跟著念</button>
         </div>
@@ -1073,7 +1082,7 @@ function versePick(btn, w){
 function verseReset(){ verseInit(); }
 
 /* ================= 第一天：光 ================= *//* ================= 第一幕：鱼和彼得 ================= */
-const s0M = {'a00':'你是否曾经看过別人捕鱼？。', 'a01':'西门彼得曾整晚在船上打鱼，却什么都没有捕到。。', 'a02':'西门彼得曾整晚在船上打鱼，却什么都没有捕到。。'};
+const s0M = {'a00':'你是否曾经看过別人捕鱼？。', 'a01':'西门彼得曾整晚在船上打鱼，却什么都没有捕到。', 'a02':'西门彼得曾整晚在船上打鱼，却什么都没有捕到。'};
 let s0Seen = {}, s0Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1090,7 +1099,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第二幕：风和水 ================= */
-const s1M = {'a10':'凉风习习吹拂在革尼撒勒湖的水面上。。', 'a11':'凉风习习吹拂在革尼撒勒湖的水面上。。', 'a12':'西门彼得正在和他的伙伴──雅各和约翰，一起捕鱼。。'};
+const s1M = {'a10':'凉风习习吹拂在革尼撒勒湖的水面上。', 'a11':'凉风习习吹拂在革尼撒勒湖的水面上。', 'a12':'西门彼得正在和他的伙伴──雅各和约翰，一起捕鱼。'};
 let s1Seen = {}, s1Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1107,7 +1116,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第三幕：彼得和月亮 ================= */
-const s2M = {'a20':'彼得不时地抬头观看月亮和星星的位置，来判断时间。。', 'a21':'彼得不时地抬头观看月亮和星星的位置，来判断时间。。', 'a22':'彼得不时地抬头观看月亮和星星的位置，来判断时间。。'};
+const s2M = {'a20':'彼得不时地抬头观看月亮和星星的位置，来判断时间。', 'a21':'彼得不时地抬头观看月亮和星星的位置，来判断时间。', 'a22':'彼得不时地抬头观看月亮和星星的位置，来判断时间。'};
 let s2Seen = {}, s2Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1124,7 +1133,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第四幕：彼得和月亮 ================= */
-const s3M = {'a30':'过了几分钟，彼得开始收网，一把一把地拉着，希望在月光中，能看见鱼鳞闪耀的光影。。', 'a31':'过了几分钟，彼得开始收网，一把一把地拉着，希望在月光中，能看见鱼鳞闪耀的光影。。', 'a32':'过了几分钟，彼得开始收网，一把一把地拉着，希望在月光中，能看见鱼鳞闪耀的光影。。'};
+const s3M = {'a30':'过了几分钟，彼得开始收网，一把一把地拉着，希望在月光中，能看见鱼鳞闪耀的光影。', 'a31':'过了几分钟，彼得开始收网，一把一把地拉着，希望在月光中，能看见鱼鳞闪耀的光影。', 'a32':'过了几分钟，彼得开始收网，一把一把地拉着，希望在月光中，能看见鱼鳞闪耀的光影。'};
 let s3Seen = {}, s3Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1141,7 +1150,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第五幕：彼得和耶稣 ================= */
-const s4M = {'a40':'彼得忙着手头的工作，没有注意到耶稣的靠近，并祂身后的那一大群人。。', 'a41':'彼得忙着手头的工作，没有注意到耶稣的靠近，并祂身后的那一大群人。。', 'a42':'耶稣正在向这些人讲论，上帝多么爱他们。。'};
+const s4M = {'a40':'彼得忙着手头的工作，没有注意到耶稣的靠近，并祂身后的那一大群人。', 'a41':'彼得忙着手头的工作，没有注意到耶稣的靠近，并祂身后的那一大群人。', 'a42':'耶稣正在向这些人讲论，上帝多么爱他们。'};
 let s4Seen = {}, s4Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1158,7 +1167,7 @@ document.addEventListener('click', e=>{
 });
 
 /* ================= 第六幕：耶稣和彼得 ================= */
-const s5M = {'a50':'耶稣讲完了，但人们仍然不愿意离开。。', 'a51':'于是，耶稣就对彼得说：“西门，把你的船划到水深的地方，撒下网去。。', 'a52':'于是，耶稣就对彼得说：“西门，把你的船划到水深的地方，撒下网去。。'};
+const s5M = {'a50':'耶稣讲完了，但人们仍然不愿意离开。', 'a51':'于是，耶稣就对彼得说：“西门，把你的船划到水深的地方，撒下网去。', 'a52':'于是，耶稣就对彼得说：“西门，把你的船划到水深的地方，撒下网去。'};
 let s5Seen = {}, s5Done = 0;
 document.addEventListener('click', e=>{
   const t = e.target;
@@ -1407,12 +1416,14 @@ document.addEventListener('click', e=>{
   }
 });
 /* ================= 唱游时间 ================= */
-const SONGS = [
-  {name:'信息之歌', lines:[['上帝爱我们。', '踏步走'], ['这是今天的道理！', '手放胸前'], ['我也要这样行！', '比一个爱心']]},
-  {name:'条弧线落在水里，溅起层层的故事', lines:[['我们来听条弧线落在水里，溅起层层，', '手放耳朵旁'], ['上帝的爱在其中！', '举起双手'], ['让我们一起歌唱！', '拍拍手']]},
-  {name:'赞美真美好', lines:[['赞美真美好，真美好！', '举起双手'], ['唱歌跳舞赞美主！', '转个圈圈'], ['哈利路亚！哈利路亚！', '拍拍手']]},
-  {name:'耶稣爱我', lines:[['耶稣爱我，耶稣爱我！', '抱抱自己'], ['祂看顾我每一天！', '向上指'], ['我也爱耶稣！', '比一个爱心']]}
-];
+const SONGS = [[
+{name:'信息之歌', lines:[['上帝爱我们。', '踏步走'], ['这是今天的道理！', '手放胸前'], ['我也要这样行！', '比一个爱心']]},
+{name:'条弧线落在水里，溅起层层的故事', lines:[['我们来听条弧线落在水里，溅起层层，', '手放耳朵旁'], ['上帝的爱在其中！', '举起双手'], ['让我们一起歌唱！', '拍拍手']]},
+{name:'存心节之歌', lines:[['「上帝爱我们。」','手放胸前'],['这是上帝的话语！','举起双手'],['我要记住在心里！','手放胸前']]},
+{name:'捕鱼去的故事', lines:[['我们来听捕鱼去，','手放耳朵旁'],['上帝的爱在其中！','举起双手'],['让我们一起歌唱！','拍拍手']]},
+{name:'赞美真美好', lines:[['赞美真美好，真美好！','举起双手'],['唱歌跳舞赞美主！','转个圈圈'],['哈利路亚！哈利路亚！','拍拍手']]},
+{name:'耶稣爱我', lines:[['耶稣爱我，耶稣爱我！','抱抱自己'],['祂看顾我每一天！','向上指'],['我也爱耶稣！','比一个爱心']]}
+]];
 let songIdx = 0, songTimer = null;
 function songRender(){
   const tabs = document.getElementById('songTabs');
@@ -1453,13 +1464,13 @@ function speakSong(){
 }
 
 /* ================= 动手做做看 ================= */
-const CRAFTS = [
-  {ico:'🎨', nm:'画一画这一课', wk:'第1周', desc:'把这一课的故事画下来！'},
-  {ico:'✂️', nm:'故事小书', wk:'第2周', desc:'做一本这一课的故事小书！'},
-  {ico:'⭐', nm:'存心节星星', wk:'第3周', desc:'做一颗星星，写上存心节！'},
-  {ico:'💌', nm:'爱心卡', wk:'第4周', desc:'做一张爱心卡，把这一课的祝福送给家人！'},
-  {ico:'🚩', nm:'赞美旗', wk:'第5周', desc:'做一面赞美旗，唱赞美歌时挥一挥！'}
-];
+const CRAFTS = [[
+{ico:'🎨', nm:'画一画这一课', wk:'第1周', desc:'把这一课的故事画下来！'},
+{ico:'✂️', nm:'故事小书', wk:'第2周', desc:'做一本这一课的故事小书！'},
+{ico:'⭐', nm:'存心节星星', wk:'第3周', desc:'做一颗星星，写上存心节！'},
+{ico:'💌', nm:'爱心卡', wk:'第4周', desc:'做一张爱心卡，把这一课的祝福送给家人！'},
+{ico:'🚩', nm:'赞美旗', wk:'第5周', desc:'做一面赞美旗，唱赞美歌时挥一挥！'}
+]];
 function craftRender(){
   const g = document.getElementById('craftGrid');
   if(g.dataset.done) return; g.dataset.done = '1';
@@ -1662,15 +1673,24 @@ document.getElementById('albumBtn').onclick = openAlbum;
 
 
 const COURSE_ID = 'a1m10';
-const AI_KB = [
-  {keys:['故事', '讲了什么', '主要内容', '这个故事', '在讲'], a:'这一课讲的是：上帝爱我们。上帝爱我们。'},
-  {keys:['主角', '人物', '故事里', '里面'], a:'这个故事里有：鱼、彼得、船、风、水。上帝爱我们。'},
-  {keys:['信息', '这一课', '告诉我们', '道理', '学习', '明白', '主题', '重点'], a:'上帝爱我们。'},
-  {keys:['上帝', '耶稣'], a:'上帝爱我们。上帝爱我们！'},
-  {keys:['你好', '哈喽', '你是谁', 'hello'], a:'你好呀！我是你的小帮手，今天我们一起认识「捕鱼去」的故事！'},
-  {keys:['为什么', '结局', '后来', '然后', '结果', '最后'], a:'上帝爱我们。上帝爱我们！'}
-];
-const AI_SUGGEST = ['这个故事讲了什么？','存心节是什么？','信息是什么？','你好！'];
+const AI_KB = [[
+{keys:['故事里说：「你是否曾经看过別人捕＿＿＿＿」横线里应该填什么','你是否曾经看过別人捕','横线里应该填什么','故事里说'], a:'对！就是「鱼」！你读得好仔细！'},
+{keys:['故事里说：「西门＿＿＿＿曾整晚在船上打鱼却什么都没有捕到」横线里应该填什么','彼得','曾整晚在船上打鱼','却什么都没有捕到','横线里应该填什么'], a:'对！就是「彼得」！你读得好仔细！'},
+{keys:['故事里说：「西门彼得曾整晚在＿＿＿＿上打鱼却什么都没有捕到」横线里应该填什么','彼得','西门彼得曾整晚在','却什么都没有捕到','横线里应该填什么'], a:'对！就是「船」！你读得好仔细！'},
+{keys:['故事里说：「凉＿＿＿＿习习吹拂在革尼撒勒湖的水面上」横线里应该填什么','习习吹拂在革尼撒勒湖的水面上','横线里应该填什么','故事里说'], a:'对！就是「风」！你读得好仔细！'},
+{keys:['故事里说：「凉风习习吹拂在革尼撒勒湖的＿＿＿＿面上」横线里应该填什么','凉风习习吹拂在革尼撒勒湖的','横线里应该填什么','故事里说'], a:'对！就是「水」！你读得好仔细！'},
+{keys:['故事里说：「西门彼得正在和他的伙伴──＿＿＿＿和约翰一起捕鱼」横线里应该填什么','雅各','彼得','先知','西门彼得正在和他的伙伴','横线里应该填什么','故事里说'], a:'对！就是「雅各」！你读得好仔细！'},
+{keys:['故事里说：「西门彼得正在和他的伙伴──雅各和＿＿＿＿一起捕鱼」横线里应该填什么','先知','彼得','雅各','西门彼得正在和他的伙伴','横线里应该填什么','故事里说'], a:'对！就是「先知」！你读得好仔细！'},
+{keys:['故事里说：「彼得不时地抬头观看＿＿＿＿和星星的位置来判断时间」横线里应该填什么','月亮','彼得','星星','彼得不时地抬头观看','横线里应该填什么','和星星的位置'], a:'对！就是「月亮」！你读得好仔细！'},
+{keys:['故事','讲了什么','主要内容','这个故事','在讲'], a:'这一课讲的是：上帝爱我们。上帝爱我们。'},
+{keys:['主角','人物','故事里','里面'], a:'这个故事里有：鱼、彼得、月亮、星星、光。上帝爱我们。'},
+{keys:['信息','这一课','告诉我们','道理','学习','明白','主题','重点'], a:'上帝爱我们。'},
+{keys:['存心节','金句','经文','背诵','记忆'], a:'「上帝爱我们。」'},
+{keys:['上帝','耶稣'], a:'上帝爱我们。上帝爱我们！'},
+{keys:['你好','哈喽','你是谁','hello'], a:'你好呀！我是你的小帮手，今天我们一起认识「捕鱼去」的故事！'},
+{keys:['为什么','结局','后来','然后','结果','最后'], a:'上帝爱我们。上帝爱我们！'}
+]];
+const AI_SUGGEST = [['故事里说：「你是否曾经看过別人捕＿＿＿＿？」，横线里应该填什么？','故事里说：「西门＿＿＿＿曾整晚在船上打鱼，却什么都没有捕到。」，横线里应该填什么？','故事里说：「西门彼得曾整晚在＿＿＿＿上打鱼，却什么都没有捕到。」，横线里应该填什么？','故事里说：「凉＿＿＿＿习习吹拂在革尼撒勒湖的水面上。」，横线里应该填什么？','这个故事讲了什么？','存心节是什么？','信息是什么？','你好！']];
 const COACH_VERSE = '上帝爱我们。';
 const COACH_WORDS = ['上帝爱','我们'];
 
