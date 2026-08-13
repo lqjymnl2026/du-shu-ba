@@ -149,6 +149,8 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 .para .sent.playing{background:rgba(201,162,75,.32);box-shadow:0 0 0 2px rgba(201,162,75,.45);border-radius:6px}
 .para .sent.done{color:#a08a63}
 .para .sent.hl{background:#ffe9a8;box-shadow:0 0 0 2px #f3cf7a;border-radius:6px}
+.cloudtag{margin-top:8px;font-size:12.5px;color:var(--ink-soft);font-weight:600}
+.cloudtag:empty{display:none}
 .gold-sent{margin:8px 0 26px;background:linear-gradient(120deg,#fff8e6,#fdf0cf);border:1px solid #ecd9a8;
   border-radius:14px;padding:14px 18px;font-family:var(--font-read);font-size:17px;color:#7a5b26;
   display:flex;gap:10px;align-items:flex-start;box-shadow:0 6px 16px rgba(201,162,75,.18)}

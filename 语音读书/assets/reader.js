@@ -100,40 +100,86 @@
   function renderBadges(){ /* 阅读器顶部不展示徽章详情，跳过 */ }
 
   /* ---------- 朗读 ---------- */
+  var audioEl=null, ENGINE="browser", cloudWarned=false;
+  function engineVoice(){ return ENGINE==="yunxi" ? "yunxi" : "xiaoxiao"; }
+  function neuralInfo(){
+    try{ return (window.NEURAL||{})[BID] && (window.NEURAL||{})[BID][String(CH.n)]; }catch(e){ return null; }
+  }
+  function cloudAvailable(){
+    if(ENGINE==="browser") return false;
+    var vk=engineVoice();
+    var info=neuralInfo();
+    return !!(info && info[vk] && info[vk].count===SENTENCES.length);
+  }
+  var advancing=false;
+  function onUtteranceEnd(){
+    if(advancing) return;
+    advancing=true;
+    try{
+      markRead(CUR);
+      highlight(CUR);
+      if(CUR<SENTENCES.length-1){ CUR++; speak(CUR); }
+      else {
+        PLAYING=false; PAUSED=false; highlight(-1); $("playBtn").textContent="▶";
+        if(CUR>=SENTENCES.length-1) STATE.stats.voiceFull=true;
+        saveState(); checkBadges();
+      }
+    } finally { advancing=false; }
+  }
+  function setPlayBtn(playing){ $("playBtn").textContent=playing?"⏸":"▶"; }
+  function nowTxt(i){ $("nowTxt").textContent=SENTENCES[i].text.slice(0,26)+(SENTENCES[i].text.length>26?"…":""); }
+  function cloudSpeak(i){
+    var vk=engineVoice();
+    audioEl=new Audio("audio/"+BID+"/"+CH.n+"/"+vk+"/"+i+".mp3");
+    audioEl.onended=onUtteranceEnd;
+    audioEl.onerror=function(){ /* 单个音频缺失/失败：跳到下一句，避免卡住 */ onUtteranceEnd(); };
+    audioEl.play().catch(function(){ onUtteranceEnd(); });
+    highlight(CUR); setPlayBtn(true); nowTxt(i);
+  }
   function speak(i){
     if(i<0||i>=SENTENCES.length) return;
     stop();
     CUR=i; PLAYING=true; PAUSED=false;
+    if(ENGINE!=="browser"){
+      if(cloudAvailable()){ cloudSpeak(i); return; }
+      if(!cloudWarned){ cloudWarned=true; toast("本章"+(engineVoice()==="xiaoxiao"?"晓晓":"云希")+"云端语音未生成，先用浏览器语音"); renderCloudTag(); }
+    }
     var u=new SpeechSynthesisUtterance(SENTENCES[i].text);
     u.lang="zh-CN";
     u.rate=parseFloat(STATE.settings.rate)||1;
     var v=STATE.settings.voice;
     if(v){ var vs=speechSynthesis.getVoices().filter(function(x){return x.voiceURI===v;}); if(vs.length) u.voice=vs[0]; }
-    u.onend=function(){
-      markRead(CUR);
-      highlight(CUR);
-      if(CUR<SENTENCES.length-1){ CUR++; speak(CUR); }
-      else { PLAYING=false; highlight(-1); $("playBtn").textContent="▶"; if(CUR>=SENTENCES.length-1) STATE.stats.voiceFull=true; saveState(); checkBadges(); }
-    };
-    u.onerror=function(){ PLAYING=false; $("playBtn").textContent="▶"; };
+    u.onend=onUtteranceEnd;
+    u.onerror=function(){ PLAYING=false; PAUSED=false; setPlayBtn(false); };
     speechSynthesis.cancel();
     speechSynthesis.speak(u);
-    highlight(CUR);
-    $("playBtn").textContent="⏸";
-    $("nowTxt").textContent=SENTENCES[i].text.slice(0,26)+(SENTENCES[i].text.length>26?"…":"");
+    highlight(CUR); setPlayBtn(true); nowTxt(i);
   }
   function togglePlay(){
     if(PLAYING){
-      if(PAUSED){ speechSynthesis.resume(); PAUSED=false; $("playBtn").textContent="⏸"; }
-      else { speechSynthesis.pause(); PAUSED=true; $("playBtn").textContent="▶"; }
+      if(PAUSED){
+        if(ENGINE!=="browser" && audioEl){ audioEl.play().catch(function(){}); }
+        else speechSynthesis.resume();
+        PAUSED=false; setPlayBtn(true);
+      } else {
+        if(ENGINE!=="browser" && audioEl) audioEl.pause();
+        else speechSynthesis.pause();
+        PAUSED=true; setPlayBtn(false);
+      }
       return;
     }
-    // 从上次位置或开头开始
     if(CUR>=SENTENCES.length-1 && STATE.books[BID][CH.n] && STATE.books[BID][CH.n].maxSent>=SENTENCES.length-1) CUR=0;
     if(CUR<0) CUR=0;
     speak(CUR);
   }
-  function stop(){ speechSynthesis.cancel(); PLAYING=false; PAUSED=false; $("playBtn").textContent="▶"; }
+  function stop(){
+    speechSynthesis.cancel();
+    if(audioEl){
+      try{ audioEl.onended=null; audioEl.onerror=null; audioEl.pause(); audioEl.removeAttribute("src"); audioEl.load(); }catch(e){}
+      audioEl=null;
+    }
+    PLAYING=false; PAUSED=false; setPlayBtn(false);
+  }
   function step(d){
     var ni=CUR+d;
     if(ni<0||ni>=SENTENCES.length) return;
@@ -156,7 +202,18 @@
     }).join("");
     sel.onchange=function(){ STATE.settings.voice=sel.value; saveState(); };
   }
-
+  function renderCloudTag(){
+    var el=$("cloudTag"); if(!el) return;
+    var info=neuralInfo();
+    if(ENGINE==="browser"){
+      var av=[];
+      if(info){ if(info.xiaoxiao) av.push("晓晓"); if(info.yunxi) av.push("云希"); }
+      el.innerHTML=av.length?("🌥️ 云端神经语音可用："+av.join(" / ")+" · 到「设置」切换"):"";
+    } else {
+      var vk=engineVoice();
+      el.innerHTML=cloudAvailable()?("🎧 正在用 "+(vk==="xiaoxiao"?"晓晓":"云希")+" 神经语音朗读"):("⚠️ 本章"+(vk==="xiaoxiao"?"晓晓":"云希")+"语音未生成，已回退浏览器语音");
+    }
+  }
   /* ---------- 渲染 ---------- */
   function render(){
     var th=THEMES[BID]||THEMES.DA;
@@ -199,8 +256,10 @@
     SENTENCES=[];
     var box=$("chapterBox"); box.innerHTML="";
     var head=document.createElement("div"); head.className="chhead";
-    head.innerHTML="<div class='chapno'>"+(CH.n?"第"+cnNum(CH.n)+"章":"序")+"</div><h1>"+esc(CH.title)+"</h1>"+(CH.note?"<div class='note'>📌 "+esc(CH.note)+"</div>":"");
+    head.innerHTML="<div class='chapno'>"+(CH.n?"第"+cnNum(CH.n)+"章":"序")+"</div><h1>"+esc(CH.title)+"</h1>"+(CH.note?"<div class='note'>📌 "+esc(CH.note)+"</div>":"")+"<div class='cloudtag' id='cloudTag'></div>";
     box.appendChild(head);
+    cloudWarned=false;
+    renderCloudTag();
     // 本章金句
     var gq=goldQuote(CH);
     if(gq){ var g=document.createElement("div"); g.className="gold-sent"; g.innerHTML="<span class='star'>✨</span><div>"+esc(gq)+"</div>"; box.appendChild(g); }
@@ -336,6 +395,13 @@
   }
 
   /* ---------- 设置 ---------- */
+  function setEngine(e){
+    stop();
+    ENGINE=(e==="xiaoxiao"||e==="yunxi")?e:"browser";
+    STATE.settings.engine=ENGINE;
+    saveState(); syncSettings(); renderCloudTag();
+    toast(ENGINE==="browser"?"已切换为浏览器语音":("已切换为云端 "+(ENGINE==="xiaoxiao"?"晓晓":"云希")+" 神经语音"));
+  }
   function openSheet(){ $("sheet").classList.add("open"); syncSettings(); }
   function closeSheet(){ $("sheet").classList.remove("open"); }
   function syncSettings(){
@@ -344,8 +410,13 @@
     document.body.classList.add("theme-"+th,"size-"+sz);
     document.querySelectorAll(".seg[data-set=theme] button").forEach(function(b){ b.classList.toggle("on", b.getAttribute("data-v")===th); });
     document.querySelectorAll(".seg[data-set=size] button").forEach(function(b){ b.classList.toggle("on", b.getAttribute("data-v")===sz); });
+    document.querySelectorAll(".seg[data-set=engine] button").forEach(function(b){ b.classList.toggle("on", b.getAttribute("data-v")===ENGINE); });
     $("rateRange").value=STATE.settings.rate;
     $("ambientChk").checked=!!STATE.settings.ambient;
+    var cloud=ENGINE!=="browser";
+    $("rateRange").disabled=cloud;
+    $("voiceSel").disabled=cloud;
+    renderCloudTag();
   }
 
   /* ---------- 环境音 ---------- */
@@ -387,6 +458,7 @@
   function init(){
     STATE=DS.load();
     Q=window.QUIZZES||{};
+    ENGINE=(STATE.settings.engine==="xiaoxiao"||STATE.settings.engine==="yunxi")?STATE.settings.engine:"browser";
     var p=params();
     var bid=p.book||"DA";
     if(!window.BOOK_DATA[bid]) bid=window.BOOKS[0].id;
@@ -430,6 +502,9 @@
     });
     document.querySelectorAll(".seg[data-set=size] button").forEach(function(b){
       b.addEventListener("click",function(){ STATE.settings.size=b.getAttribute("data-v"); saveState(); syncSettings(); });
+    });
+    document.querySelectorAll(".seg[data-set=engine] button").forEach(function(b){
+      b.addEventListener("click",function(){ setEngine(b.getAttribute("data-v")); });
     });
     $("ambientChk").addEventListener("change",function(){ toggleAmbient(this.checked); });
     // 键盘

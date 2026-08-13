@@ -85,6 +85,14 @@
       </div>
     </div>
     <div class="setrow">
+      <div class="label">朗读引擎<small>🌥️ 云端 = Edge 神经语音（晓晓/云希），任何浏览器都能听；没有云端音频时自动回退浏览器语音</small></div>
+      <div class="seg" data-set="engine">
+        <button data-v="browser">🖥️ 浏览器</button>
+        <button data-v="xiaoxiao">🌥️ 晓晓</button>
+        <button data-v="yunxi">🌥️ 云希</button>
+      </div>
+    </div>
+    <div class="setrow">
       <div class="label">环境音<small>轻柔的雨声与低音垫，帮助专注</small></div>
       <label style="display:flex;gap:8px;align-items:center;font-size:14px">
         <input type="checkbox" id="ambientChk" style="width:18px;height:18px;accent-color:#c9a24b"> 开启
@@ -105,6 +113,7 @@
 <script src="data/AA.js"></script>
 <script src="data/GC.js"></script>
 <script src="data/quizzes.js"></script>
+<script src="audio/manifest.js"></script>
 <script src="assets/common.js"></script>
 <script src="assets/reader.js"></script>
 </body>
