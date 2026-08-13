@@ -1520,7 +1520,9 @@ function printCert(){
   <p>亲爱的 <b style="font-size:26px;">${name}</b>，<br>恭喜你完成了第五课「饶恕之火」的互动课程，<br>并获得了 <b>${stars}</b> 颗星星！</p>
   <div class="row"><div><p style="text-align:left;">存心节：<br><b style="color:#ff8c42; font-size:22px;">「上帝所造的每一样都是好的。」</b><br>（创世记 1:31）</p></div><div class="seal">完成<br>五<br>💜</div></div>
   <p>上帝创造我们的世界，因为祂爱我们。💜</p></div>
-  <script>window.print();<\/script></body></html>`);
+  <script>window.print();<\/script>
+
+</body></html>`);
   w.document.close();
 }
 
@@ -1907,6 +1909,32 @@ function previewVoiceCloud(code){
 /* init */
 go(0);
 loadProgress();
+</script>
+
+<script>
+(function(){
+  if(document.getElementById('lessonNav')) return;
+  var m = decodeURIComponent(location.pathname).match(/([A-D]\d)季(\d+)课-互动课程\/index\.html/);
+  if(!m) return;
+  var yq = m[1], n = parseInt(m[2],10);
+  var d = document.createElement('div');
+  d.id = 'lessonNav';
+  d.style.cssText = 'position:fixed;top:62px;left:12px;z-index:900;display:flex;gap:6px;background:rgba(255,255,255,.95);padding:6px 10px;border-radius:22px;box-shadow:0 4px 14px rgba(0,0,0,.18);font-weight:800;font-size:14px;';
+  function mk(t, url, dis){
+    var a = document.createElement('a');
+    a.textContent = t; a.href = url;
+    a.style.cssText = 'text-decoration:none;color:#7a5cc4;padding:5px 10px;border-radius:16px;background:#efe9ff;display:inline-block;';
+    if(dis){ a.style.opacity = .4; a.style.pointerEvents = 'none'; }
+    return a;
+  }
+  var home = document.createElement('a');
+  home.textContent = '📋 课程表'; home.href = '../index.html';
+  home.style.cssText = 'text-decoration:none;color:#fff;padding:5px 10px;border-radius:16px;background:linear-gradient(135deg,#ff8c42,#ff5d73);';
+  d.appendChild(mk('⬅️', '../'+yq+'季'+(n-1)+'课-互动课程/index.html', n<=1));
+  d.appendChild(home);
+  d.appendChild(mk('➡️', '../'+yq+'季'+(n+1)+'课-互动课程/index.html', n>=13));
+  document.body.appendChild(d);
+})();
 </script>
 </body>
 </html>
