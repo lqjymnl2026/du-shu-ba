@@ -38,10 +38,17 @@ h2{font-size:20px; color:#3a2e5c; margin-bottom:6px; line-height:1.4;}
 .btn{display:inline-block; margin-top:12px; text-align:center; text-decoration:none; font-weight:800; font-size:16px; color:#fff;
   background:linear-gradient(135deg,#ff8c42,#ff5d73); border-radius:30px; padding:10px 16px; box-shadow:0 6px 18px rgba(255,93,115,.4); transition:.15s;}
 .btn:hover{transform:translateY(-2px);}
+.searchbox{max-width:640px; width:100%; margin:18px auto 0;}
+.searchbox input{width:100%; padding:13px 18px; border-radius:30px; border:2px solid rgba(255,255,255,.35); background:rgba(255,255,255,.12); color:#fff; font-size:16px; outline:none; backdrop-filter:blur(4px);}
+.searchbox input::placeholder{color:#c9bdea;}
+.searchbox input:focus{border-color:#ff8c42; background:rgba(255,255,255,.2);}
+.searchinfo{color:#cbb9f0; font-size:14px; margin-top:8px; min-height:20px;}
+.course.hidden{display:none;}
 .foot{color:#8f7fc0; margin-top:46px; font-size:14px; text-align:center; line-height:1.9;}
 @media (max-width:700px){
   h1{font-size:24px;} .hero .big{font-size:44px;}
   .ytitle{font-size:24px;} .qtitle{font-size:20px;} .grid{grid-template-columns:1fr;}
+  .searchbox input{font-size:15px; padding:11px 14px;}
 }
 </style>
 </head>
@@ -57,6 +64,10 @@ h2{font-size:20px; color:#3a2e5c; margin-bottom:6px; line-height:1.4;}
       <span class="pill">🎤 AI 跟读教练</span>
       <span class="pill">🎹 音乐钢琴</span>
       <span class="pill">📱 手机／电脑都好看</span>
+    </div>
+    <div class="searchbox">
+      <input id="qsearch" type="search" placeholder="🔍 搜课程：输入课名／人物／经文，例如「摩西」「彩虹」「耶稣」" autocomplete="off">
+      <div class="searchinfo" id="searchinfo"></div>
     </div>
   </div>
   <div class="year" id="year-A">
@@ -2204,5 +2215,24 @@ h2{font-size:20px; color:#3a2e5c; margin-bottom:6px; line-height:1.4;}
     </div>
   </div>
   <div class="foot">📖 初级学课（A/B/C/D 年，共 16 季 208 课）<br>每一课都是独立的互动课程，点「进入课程」开始！</div>
+<script>
+(function(){
+  var input = document.getElementById('qsearch');
+  var info = document.getElementById('searchinfo');
+  var cards = Array.prototype.slice.call(document.querySelectorAll('.course'));
+  function run(){
+    var q = input.value.trim().replace(/[\s]+/g,'');
+    if(!q){ cards.forEach(function(c){ c.classList.remove('hidden'); }); info.textContent = '共 ' + cards.length + ' 门课 · 输入关键词可快速筛选'; return; }
+    var n = 0;
+    cards.forEach(function(c){
+      var t = (c.textContent || '').replace(/[\s]+/g,'');
+      if(t.indexOf(q) !== -1){ c.classList.remove('hidden'); n++; } else { c.classList.add('hidden'); }
+    });
+    info.textContent = n ? '找到 ' + n + ' 门课' : '没有找到，换个词试试，例如「摩西」「彩虹」「耶稣」';
+  }
+  input.addEventListener('input', run);
+  run();
+})();
+</script>
 </body>
 </html>
