@@ -944,10 +944,18 @@ if('speechSynthesis' in window){
   speechSynthesis.onvoiceschanged = ()=>{ voices = speechSynthesis.getVoices(); };
 }
 function fnv1a64(str){
-  let h = 0xcbf29ce484222325n, prime = 0x100000001b3n;
+  const M32 = 4294967296;
+  let hi = 0xcbf29ce4, lo = 0x84222325;
   const bytes = new TextEncoder().encode(str);
-  for(let i=0;i<bytes.length;i++){ h ^= BigInt(bytes[i]); h = (h * prime) & 0xffffffffffffffffn; }
-  return h.toString(16).padStart(16,'0');
+  for(let i=0;i<bytes.length;i++){
+    lo = (lo ^ bytes[i]) >>> 0;
+    const A = lo * 0x1b3;
+    const B = lo * 0x100 + hi * 0x1b3;
+    const carry = Math.floor(A / M32);
+    lo = (A - carry * M32) >>> 0;
+    hi = (B + carry) % M32;
+  }
+  return hi.toString(16).padStart(8,'0') + lo.toString(16).padStart(8,'0');
 }
 let cloudAudio = null;
 function stopCloudAudio(){ if(cloudAudio){ try{ cloudAudio.pause(); }catch(e){} cloudAudio = null; } }
