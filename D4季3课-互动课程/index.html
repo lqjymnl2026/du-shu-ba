@@ -1370,14 +1370,14 @@ function memInit(){
   arr.forEach((m,i)=>{
     const c = document.createElement('button');
     c.className = 'mcard';
-    c.dataset.k = m.k; c.dataset.i = i; c.textContent = '❓';
+    c.dataset.k = m.k; c.dataset.e = m.e; c.dataset.i = i; c.textContent = '❓';
     c.onclick = ()=> memFlip(c);
     grid.appendChild(c);
   });
 }
 function memFlip(c){
   if(memLock || c.classList.contains('flip') || c.classList.contains('matched')) return;
-  c.classList.add('flip'); c.textContent = MEM[c.dataset.i].e; pop();
+  c.classList.add('flip'); c.textContent = c.dataset.e; pop();
   memOpen.push(c);
   if(memOpen.length === 2){
     memLock = true;
