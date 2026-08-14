@@ -1060,7 +1060,8 @@ function verseInit(){
   const line = document.getElementById('verseLine');
   line.innerHTML = VERSE.map(()=>'<span class="wslot"></span>').join('');
   const chips = document.getElementById('verseChips');
-  const shuffled = [...VERSE].sort(()=>Math.random()-.5);
+  const shuffled = [...VERSE];
+  for(let i=shuffled.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); const t=shuffled[i]; shuffled[i]=shuffled[j]; shuffled[j]=t; }
   chips.innerHTML = '';
   shuffled.forEach(w=>{
     const b = document.createElement('button');
@@ -1227,10 +1228,12 @@ function renderQ(){
   document.getElementById('qQ').textContent = q.q;
   const box = document.getElementById('qOpts');
   box.innerHTML = '';
-  q.opts.forEach((o,i)=>{
+  const oidx = q.opts.map((_,i)=>i);
+  for(let i=oidx.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); const t=oidx[i]; oidx[i]=oidx[j]; oidx[j]=t; }
+  oidx.forEach((oi,pos)=>{
     const b = document.createElement('button');
-    b.className = 'q-opt'; b.textContent = o;
-    b.onclick = ()=> answer(i, b);
+    b.className = 'q-opt'; b.textContent = q.opts[oi];
+    b.onclick = ()=> answer(oi, b);
     box.appendChild(b);
   });
   document.getElementById('qFb').textContent = '';
